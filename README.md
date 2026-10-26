@@ -8,7 +8,8 @@ Evaluating MathLive for a QTI 3.0 authoring tool: how it works, Froala integrati
 | Spike: MathML for storage | done | [`findings/mathml-converters.md`](findings/mathml-converters.md) |
 | Spike: print path (MathML → SVG) | done | [`findings/print-svg.md`](findings/print-svg.md) |
 | Spike: screen/print consistency | done | [`findings/consistency.md`](findings/consistency.md) |
-| Demo: render an inserted equation | in review | [`findings/insert-demo.md`](findings/insert-demo.md) |
+| Demo: render an inserted equation | done | [`findings/insert-demo.md`](findings/insert-demo.md) |
+| Spike: Temml on a Java backend | in review | [`findings/java-temml.md`](findings/java-temml.md) |
 | M2 Froala | not started | |
 | M3 Equation builder | not started | |
 | M4 Decision | not started | |
