@@ -13,7 +13,7 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 | `@mathjax/mathjax-newcm-font` | 4.1.3 (exact) | `sandbox/converters` | Font data for MathJax's SVG output in the print-path spike (already a transitive dependency; pinned directly because `src/print.ts` imports it). |
 | `@resvg/resvg-js` | 2.6.2 | dev (`sandbox/converters`) | Independent, non-browser SVG renderer: stands in for the PDF engine's rasteriser in the screen/print consistency proof. Also the candidate SVG→PNG step if the engine needs PNG. MPL-2.0. |
 | `pixelmatch` + `pngjs` (+ `@types/pngjs`) | 8.0.0 / 7.0.0 | dev (`sandbox/converters`) | Pixel diff of screen vs print renders, and PNG decode/encode for it. ISC / MIT. |
-| GraalJS (`org.graalvm.polyglot:polyglot`, `js-community`) | 24.2.1 | `sandbox/java-temml` | Runs the same Temml build on a Java backend without Node (UPL / MIT). |
+| GraalJS (`org.graalvm.polyglot:polyglot`, `js-community`) | 24.2.1 | `sandbox/java-temml` | Runs the same Temml and MathJax builds on a Java backend without Node (UPL / MIT). |
 | JUnit 5, Jackson | 5.11.4 / 2.18.2 | `sandbox/java-temml` (test) | Tests; Jackson reads the Node results to compare. |
 | `vite` | 8.3.5 | dev | Sandbox dev server and build. |
 | `vitest` + `@vitest/browser-playwright` | 5.0.5 | dev | MathLive needs a real browser (layout, FontFace, custom elements, adoptedStyleSheets), so tests run in Chromium, not jsdom. |
@@ -22,6 +22,13 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 | `@types/node` | 22 | dev | Types for the config files and scripts. |
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
+
+## 2026-10-26 — Spike: MathJax SVG on a Java backend
+
+- Ton asked to cover the gap "the MathJax SVG step in Java is untested". MathJax 4.1.3 in GraalJS gives byte-identical SVG to Node for all 60 formulas, also end to end from LaTeX through `TemmlConverter`. → `findings/java-temml.md`, `MathmlToSvg.java`.
+- The trick: `src/svg-sync.ts` eagerly imports every font range (`import.meta.glob(..., { eager: true })`) and sets `mathjax.asyncIsSynchronous = true` with a synchronous `asyncLoad`. MathJax then applies a range the first time a glyph needs it (`FontData.loadDynamicFileSync`) and `doc.convert()` works without Promises. Built as one IIFE with `vite.svg-sync.config.ts` (12 MB).
+- `prepareForSvg()` moved to `src/prepare-svg.ts` so the bundle doesn't pull in `asyncLoad/esm.js` (which uses `import.meta.url`). `print.ts` re-exports it.
+- About 25 ms per formula interpreted, 1.9 s start-up. Graal 24.2's JIT needs JDK 24+, so it wasn't measured on JDK 21.
 
 ## 2026-10-26 — Spike: Temml on a Java backend
 

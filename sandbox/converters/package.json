@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:svg-sync": "vite build -c vite.svg-sync.config.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit -p .",
     "compare": "VITE_PROBE=1 vitest run tests/compare-dump.test.ts",

@@ -3,9 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <!-- Spike: run Temml (JavaScript) inside a Java backend with GraalJS, no Node.
-       The Temml files come from ../converters/node_modules (run pnpm install first),
-       so Java and the browser use the exact same Temml version. -->
+  <!-- Spike: run Temml and MathJax (JavaScript) inside a Java backend with GraalJS, no Node.
+       The scripts come from ../converters (run pnpm install and pnpm build:svg-sync first),
+       so Java and the browser use the exact same Temml and MathJax versions. -->
   <groupId>eval</groupId>
   <artifactId>java-temml</artifactId>
   <version>0.1.0</version>
@@ -15,6 +15,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <graal.version>24.2.1</graal.version>
     <temml.dir>${project.basedir}/../converters/node_modules/temml</temml.dir>
+    <!-- MathJax + font bundle: pnpm build:svg-sync in ../converters -->
+    <svg.bundle.dir>${project.basedir}/../converters/dist-svg-sync</svg.bundle.dir>
   </properties>
 
   <dependencies>
@@ -54,6 +56,11 @@
         <directory>${temml.dir}/contrib/mhchem</directory>
         <targetPath>temml</targetPath>
         <includes><include>mhchem.js</include></includes>
+      </resource>
+      <resource>
+        <directory>${svg.bundle.dir}</directory>
+        <targetPath>mathjax</targetPath>
+        <includes><include>mathml-to-svg.js</include></includes>
       </resource>
     </resources>
     <plugins>
