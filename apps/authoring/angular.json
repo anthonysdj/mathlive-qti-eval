@@ -91,7 +91,17 @@
               "buildTarget": "authoring:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "prebundle": {
+              "exclude": [
+                "@sandbox/basic",
+                "@sandbox/builder",
+                "@sandbox/converters",
+                "@sandbox/froala"
+              ]
+            }
+          }
         }
       }
     }

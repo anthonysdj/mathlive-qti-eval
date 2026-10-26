@@ -11,7 +11,7 @@ Evaluating MathLive for a QTI 3.0 authoring tool: how it works, Froala integrati
 | Demo: render an inserted equation | done | [`findings/insert-demo.md`](findings/insert-demo.md) |
 | Spike: Temml and MathJax on a Java backend | done | [`findings/java-temml.md`](findings/java-temml.md) |
 | M2 Froala | done | [`docs/02-froala-integration.md`](docs/02-froala-integration.md) |
-| M3 Equation builder | in review | [`docs/03-equation-builder.md`](docs/03-equation-builder.md) |
+| M3 Equation builder | done | [`docs/03-equation-builder.md`](docs/03-equation-builder.md) |
 | M4 Decision | not started | |
 
 Surprises and version pins are in [`NOTES.md`](NOTES.md).
