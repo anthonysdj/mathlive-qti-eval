@@ -1,0 +1,1127 @@
+<!doctype html><meta charset="utf-8"><title>MathML converters</title><style>/*
+Temml.woff2 is a clone of KaTeX_Script-Regular, except that the code points
+have been changed from ASCII to Unicode Mathematical Alphanumeric Symbols Script capitals,
+Unicode range 1D49C to 1D4B5.
+*/
+
+
+
+math {
+  font-family: "Cambria Math", 'STIXTwoMath-Regular', 'NotoSansMath-Regular', math;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size-adjust: none;
+  text-indent: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  direction: ltr;
+  /* Prevent Firefox from omitting the dot on i or j. */
+  font-feature-settings: "dtls" off;
+}
+
+math * {
+  border-color: currentColor;
+}
+
+/* display: block is necessary in Firefox and Safari.
+ * Not in Chromium, which recognizes display: "block math" written inline. */
+ math.tml-display {
+  display: block;
+  width: 100%;
+}
+
+*.mathcal {
+  /* NotoSans */
+  font-feature-settings: 'ss01';
+}
+
+math .mathscr {
+  font-family: "Temml";
+}
+
+mo.tml-prime {
+  font-family: Temml;
+}
+
+/* Cramped superscripts in WebKit */
+mfrac > :nth-child(2),
+msqrt,
+mover > :first-child {
+  math-shift: compact
+}
+
+.menclose {
+  display: inline-block;
+  position: relative;
+  padding: 0.5ex 0ex;
+}
+.tml-cancelto {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5ex 0ex;
+  background-color: currentColor;
+  /* Use the SVG as an alpha mask (painted by background-color) */
+  -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><defs><marker id='a' markerHeight='5' markerUnits='strokeWidth' markerWidth='7' orient='auto' refX='7' refY='2.5'><path fill='black' d='m0 0 7 2.5L0 5z'/></marker></defs><line x2='100%25' y1='100%25' stroke='black' stroke-width='.06em' marker-end='url(%23a)' vector-effect='non-scaling-stroke'/></svg>");
+          mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><defs><marker id='a' markerHeight='5' markerUnits='strokeWidth' markerWidth='7' orient='auto' refX='7' refY='2.5'><path fill='black' d='m0 0 7 2.5L0 5z'/></marker></defs><line x2='100%25' y1='100%25' stroke='black' stroke-width='.06em' marker-end='url(%23a)' vector-effect='non-scaling-stroke'/></svg>");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+  -webkit-mask-position: 0 0;
+          mask-position: 0 0;
+}
+
+@supports (-moz-appearance: none) {
+  /* \vec w/o italic correction for Firefox */
+  .tml-vec {
+    transform: scale(0.75)
+  }
+  /* Fix \cancelto in Firefox */
+  .ff-narrow {
+    width: 0em;
+  }
+  .ff-nudge-left {
+    margin-left: -0.2em;
+  }
+  /* Squash hidden mrows in \bordermatrix. Messes with centering, but necessary to squash. */
+  .ff-squash mtd {
+    display: block;
+    height: 0;
+  }
+}
+
+@supports (not (-moz-appearance: none)) {
+  /* Chromium and WebKit */
+  /* prime vertical alignment */
+  mo.tml-prime {
+    font-family: Temml;
+  }
+  /* Italic correction on superscripts */
+  .tml-sml-pad {
+    padding-left: 0.05em;
+  }
+  .tml-med-pad {
+    padding-left: 0.10em;
+  }
+  .tml-lrg-pad {
+    padding-left: 0.15em;
+  }
+}
+
+@supports (-webkit-backdrop-filter: blur(1px)) {
+  /* WebKit vertical & italic correction on accents */
+  .wbk-acc {
+    /* lower by x-height distance */
+    transform: translate(0em, 0.431em);
+  }
+  .wbk-sml {
+    transform: translate(0.07em, 0);
+  }
+  .wbk-sml-acc {
+    transform: translate(0.07em, 0.431em);
+  }
+  .wbk-sml-vec {
+    transform: scale(0.75) translate(0.07em, 0);
+  }
+  .wbk-med {
+    transform: translate(0.14em, 0);
+  }
+  .wbk-med-acc {
+    transform: translate(0.14em, 0.431em);
+  }
+  .wbk-med-vec {
+    transform: scale(0.75) translate(0.14em, 0);
+  }
+  .wbk-lrg {
+    transform: translate(0.21em, 0);
+  }
+  .wbk-lrg-acc {
+    transform: translate(0.21em, 0.431em);
+  }
+  .wbk-lrg-vec {
+    transform: scale(0.75) translate(0.21em, 0);
+  }
+}
+
+/* \cancel & \phase use background images. Get them to print. */
+menclose {
+  -webkit-print-color-adjust: exact;  /* Chrome & Edge */
+          print-color-adjust: exact;
+}
+
+/* Array cell justification in Firefox & WebKit */
+.tml-right {
+  text-align: right;
+}
+.tml-left {
+  text-align: left;
+}
+
+/* For CD labels that grow to the left in Firefox and WebKit */
+.tml-shift-left { margin-left:-200% }
+
+/* Styles for Chromium only */
+@supports (not (-webkit-backdrop-filter: blur(1px))) and (not (-moz-appearance: none)) {
+  /* Italic correction on accents */
+  .chr-sml {
+    transform: translate(0.07em, 0)
+  }
+  .chr-sml-vec {
+    transform: scale(0.75) translate(0.07em, 0)
+  }
+  .chr-med {
+    transform: translate(0.14em, 0)
+  }
+  .chr-med-vec {
+    transform: scale(0.75) translate(0.14em, 0)
+  }
+  .chr-lrg {
+    transform: translate(0.21em, 0)
+  }
+  .chr-lrg-vec {
+    transform: scale(0.75) translate(0.21em, 0)
+  }
+
+  /* For CD labels that grow to the left */
+  .tml-shift-left { margin-left:-100% }
+
+  /* MathML Core & Chromium do not support the MathML 3.0 element <menclose> attributes. */
+  /* So use styles. */
+  menclose {
+    position: relative;
+    padding: 0.5ex 0ex;
+  }
+  
+    .tml-overline {
+    padding: 0.1em 0 0 0;
+    border-top: 0.065em solid;
+  }
+
+  .tml-underline {
+    padding: 0 0 0.1em 0;
+    border-bottom: 0.065em solid;
+  }
+
+  .tml-cancel {
+    display: inline-block;
+    position: absolute;
+    left: 0.5px;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: currentColor;
+  }
+  .upstrike {
+    clip-path: polygon(0.05em 100%, 0em calc(100% - 0.05em), calc(100% - 0.05em) 0em, 100% 0.05em);
+  }
+  .downstrike {
+    clip-path: polygon(0em 0.05em, 0.05em 0em, 100% calc(100% - 0.05em), calc(100% - 0.05em) 100%);
+  }
+  .sout {
+    clip-path: polygon(0em calc(55% + 0.0333em), 0em calc(55% - 0.0333em), 100% calc(55% - 0.0333em), 100% calc(55% + 0.0333em));
+  }
+  .tml-xcancel {
+    clip-path: polygon(0.05em 0em, 0em 0.05em, calc(50% - 0.05em) 50%, 0em calc(100% - 0.05em), 0.05em 100%, 50% calc(50% + 0.05em), calc(100% - 0.05em) 100%, 100% calc(100% - 0.05em), calc(50% + 0.05em) 50%, 100% 0.05em, calc(100% - 0.05em) 0%, 50% calc(50% - 0.05em));
+  }
+
+  .longdiv-top {
+    border-top: 0.067em solid;
+    padding: 0.1em 0.2em 0.2em 0.433em;
+  }
+  .longdiv-arc {
+    position: absolute;
+    top: 0;
+    bottom: 0.1em;
+    left: -0.4em;
+    width: 0.7em;
+    border: 0.067em solid;
+    transform: translateY(-0.067em);
+    border-radius: 70%;
+    clip-path: inset(0 0 0 0.4em);
+    box-sizing: border-box;}
+    .menclose {display: inline-block;
+    text-align: left;
+    position: relative;
+  }
+  
+  .phasor-bottom {
+    border-bottom: 0.067em solid;
+    padding: 0.2em 0.2em 0.1em 0.6em;
+  }
+  .phasor-angle {
+    display: inline-block;
+    position: absolute;
+    left: 0.5px;
+    bottom: -0.04em;
+    height: 100%;
+    aspect-ratio: 0.5;
+    background-color: currentColor;
+    clip-path: polygon(0.05em 100%, 0em calc(100% - 0.05em), calc(100% - 0.05em) 0em, 100% 0.05em);
+  }
+
+  .tml-fbox {
+    padding: 3pt;
+    border: 1px solid;
+  }
+
+  .circle-pad {
+    padding: 0.267em;
+  }
+  .textcircle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border: 0.067em solid;
+    border-radius: 50%;
+   }
+
+   .actuarial {
+    padding: 0.03889em 0.03889em 0 0.03889em;
+    border-width: 0.08em 0.08em 0em 0em;
+    border-style: solid;
+    margin-right: 0.03889em;
+   }
+
+   /* Stretch \widetilde */
+  .tml-tilde-2 {
+    transform: scale(2.0, 1.1)
+  }
+  .tml-tilde-3 {
+    transform: scale(3.0, 1.1)
+  }
+  .tml-tilde-4 {
+    transform: scale(4.0, 1.1)
+  }
+  /* Stretch \widehat */
+  .tml-hat-1 {
+    transform: scale(1.9, 1.0)
+  }
+  .tml-hat-2 {
+    transform: scale(3.9, 1.0)
+  }
+  .tml-hat-3 {
+    transform: scale(5.8, 1.0)
+  }
+  .tml-hat-4 {
+    transform: scale(7.8, 1.0)
+  }
+  
+  /* set array cell justification */
+  .tml-right {
+    text-align: -webkit-right;
+  }
+  .tml-left {
+    text-align: -webkit-left;
+  }
+}
+
+.special-fraction {
+  font-family: 'STIX TWO', 'Times New Roman', Times, Tinos, serif;
+}
+
+/* flex-wrap for line-breaking in Chromium */
+math {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+math > mrow {
+  padding: 0.5ex 0ex;
+}
+
+/* Default mtd top padding is 0.5ex per MathML-Core and user-agent CSS */
+/* We adjust for jot and small */
+mtable.tml-jot > mtr > mtd {
+  padding-top: 0.7ex;
+  padding-bottom: 0.7ex;
+}
+mtable.tml-small mtd {
+  padding-top: 0.35ex;
+  padding-bottom: 0.35ex;
+}
+
+/* Firefox */
+@-moz-document url-prefix() {
+  /* Avoid flex-wrap */
+  math { display: inline; }
+  math > mrow { padding: 0 }
+  /* Adjust Firefox spacing between array rows */
+  mtd, mtable.tml-small mtd { padding-top: 0; padding-bottom: 0; }
+  mtable.tml-jot > mtr > mtd { padding-top: 0.2ex; padding-bottom: 0.2ex; }
+}
+
+/* AMS environment auto-numbering via CSS counter. */
+.tml-eqn::before {
+  counter-increment: tmlEqnNo;
+  content: "(" counter(tmlEqnNo) ")";
+}
+
+body {
+  counter-reset: tmlEqnNo;
+}
+</style>
+<style>
+body{font:14px system-ui,sans-serif;margin:16px;background:#fff;color:#222}
+table{border-collapse:collapse} td,th{border:1px solid #ddd;padding:6px 10px;vertical-align:middle}
+th{background:#f4f4f4;position:sticky;top:0} td:first-child{font:12px ui-monospace,monospace;max-width:260px}
+td math{font-size:22px} .bad{background:#fde8e8;color:#a00;font-size:12px} .warn{background:#fff6dd}
+</style>
+<h1>Native MathML rendering (Chromium) of each converter's output, with Temml-Local.css loaded</h1>
+<p>Yellow: structural problem or missing content. Red: cannot be stored. Generated by sandbox/converters/scripts/gallery.mjs.</p>
+<table><tr><th>LaTeX</th><th>MathLive 0.111.1</th><th>Temml 0.14.0</th><th>MathJax 4.1.3</th></tr>
+<tr><td>\frac{a}{b}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mi>a</mi><mi>b</mi></mfrac></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mi>a</mi><mi>b</mi></mfrac></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\frac{a}{b}">
+  <mfrac data-latex="\frac{a}{b}">
+    <mi data-latex="a">a</mi>
+    <mi data-latex="b">b</mi>
+  </mfrac>
+</math></td></tr>
+<tr><td>\frac12</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>1</mn><mn>2</mn></mfrac></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>1</mn><mn>2</mn></mfrac></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\frac12">
+  <mfrac data-latex="\frac12">
+    <mn data-latex="1">1</mn>
+    <mn data-latex="2">2</mn>
+  </mfrac>
+</math></td></tr>
+<tr><td>\dfrac{1}{x+1}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mstyle></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\dfrac{1}{x+1}">
+  <mstyle displaystyle="true" data-latex="\dfrac{1}{x+1}">
+    <mfrac>
+      <mn data-latex="1">1</mn>
+      <mrow data-latex="x+1">
+        <mi data-latex="x">x</mi>
+        <mo data-latex="+">+</mo>
+        <mn data-latex="1">1</mn>
+      </mrow>
+    </mfrac>
+  </mstyle>
+</math></td></tr>
+<tr><td>\binom{n}{k}</td><td class="warn"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>(</mo><mtable><mtr><mi>n</mi></mtr><mtr><mi>k</mi></mtr></mtable><mo>)</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mi>n</mi><mi>k</mi></mfrac><mo fence="true">)</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\binom{n}{k}">
+  <mrow data-mjx-texclass="ORD" data-latex="\binom{n}{k}">
+    <mrow data-mjx-texclass="OPEN" data-latex="\bigl (">
+      <mo minsize="1.2em" maxsize="1.2em">(</mo>
+    </mrow>
+    <mfrac linethickness="0">
+      <mi data-latex="n">n</mi>
+      <mi data-latex="k">k</mi>
+    </mfrac>
+    <mrow data-mjx-texclass="CLOSE" data-latex="\bigr )">
+      <mo minsize="1.2em" maxsize="1.2em">)</mo>
+    </mrow>
+  </mrow>
+</math></td></tr>
+<tr><td>\frac{1}{1+\frac{1}{x}}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow></mfrac></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mn scriptlevel="2" style="math-depth:2;">1</mn><mi scriptlevel="2" style="math-depth:2;">x</mi></mfrac></mrow></mfrac></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\frac{1}{1+\frac{1}{x}}">
+  <mfrac data-latex="\frac{1}{1+\frac{1}{x}}">
+    <mn data-latex="1">1</mn>
+    <mrow data-latex="1+\frac{1}{x}">
+      <mn data-latex="1">1</mn>
+      <mo data-latex="+">+</mo>
+      <mfrac data-latex="\frac{1}{x}">
+        <mn data-latex="1">1</mn>
+        <mi data-latex="x">x</mi>
+      </mfrac>
+    </mrow>
+  </mfrac>
+</math></td></tr>
+<tr><td>\sqrt{x^2+1}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></msqrt></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mrow><msup><mi>x</mi><mn class="tml-sml-pad">2</mn></msup><mo>+</mo><mn>1</mn></mrow></msqrt></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\sqrt{x^2+1}">
+  <msqrt data-latex="\sqrt{x^2+1}">
+    <msup data-latex="x^2">
+      <mi data-latex="x">x</mi>
+      <mn data-latex="2">2</mn>
+    </msup>
+    <mo data-latex="+">+</mo>
+    <mn data-latex="1">1</mn>
+  </msqrt>
+</math></td></tr>
+<tr><td>\sqrt[3]{x}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mroot><mi>x</mi><mn>3</mn></mroot></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mroot><mrow><mi>x</mi><mspace width="0pt" height="0.5em"></mspace></mrow><mn>3</mn></mroot></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\sqrt[3]{x}">
+  <mroot data-latex="\sqrt[3]{x}">
+    <mi data-latex="x">x</mi>
+    <mn data-latex="3">3</mn>
+  </mroot>
+</math></td></tr>
+<tr><td>x^2</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>x</mi><mn>2</mn></msup></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>x</mi><mn class="tml-sml-pad">2</mn></msup></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="x^2">
+  <msup data-latex="x^2">
+    <mi data-latex="x">x</mi>
+    <mn data-latex="2">2</mn>
+  </msup>
+</math></td></tr>
+<tr><td>x_i^2</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><msubsup><mi>x</mi><mi>i</mi><mn>2</mn></msubsup></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><msubsup><mi>x</mi><mi>i</mi><mn class="tml-sml-pad">2</mn></msubsup></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="x_{i}^2">
+  <msubsup data-latex="x_{i}^2">
+    <mi data-latex="x">x</mi>
+    <mrow data-mjx-texclass="ORD" data-latex="{i}">
+      <mi data-latex="i">i</mi>
+    </mrow>
+    <mn data-latex="2">2</mn>
+  </msubsup>
+</math></td></tr>
+<tr><td>f'(x)</td><td class="warn"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mi>f</mi><mo>&#x2061;</mo><mi>′</mi></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mi>f</mi><mo lspace="0em" rspace="0em" class="tml-prime tml-lrg-pad">′</mo></msup><mrow><mo fence="true" form="prefix" stretchy="false">(</mo><mi>x</mi><mo fence="true" form="postfix" stretchy="false">)</mo></mrow></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="f^{\prime}(x)">
+  <msup data-latex="f^{\prime}">
+    <mi data-latex="f">f</mi>
+    <mrow data-mjx-texclass="ORD" data-latex="{\prime}">
+      <mi data-mjx-alternate="1" data-latex="\prime">&#x2032;</mi>
+    </mrow>
+  </msup>
+  <mo data-latex="(" stretchy="false">(</mo>
+  <mi data-latex="x">x</mi>
+  <mo data-latex=")" stretchy="false">)</mo>
+</math></td></tr>
+<tr><td>6.02\times10^{23}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>6.02</mn><mo>&#215;</mo><msup><mn>10</mn><mn>23</mn></msup></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>6.02</mn><mo>×</mo><msup><mn>10</mn><mn>23</mn></msup></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="6.02\times10^{23}">
+  <mn data-latex="6.02">6.02</mn>
+  <mo data-latex="\times">&#xD7;</mo>
+  <msup data-latex="10^{23}">
+    <mn data-latex="10">10</mn>
+    <mrow data-mjx-texclass="ORD" data-latex="{23}">
+      <mn data-latex="23">23</mn>
+    </mrow>
+  </msup>
+</math></td></tr>
+<tr><td>\begin{pmatrix}1&amp;2\\3&amp;4\end{pmatrix}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>(</mo><mtable columnalign="center center center center center center center center center center "><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable><mo>)</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo fence="true" form="prefix" stretchy="true">(</mo><mtable><mtr><mtd style="padding-left:0em;padding-right:5.9776pt;"><mn>1</mn></mtd><mtd style="padding-left:5.9776pt;padding-right:0em;"><mn>2</mn></mtd></mtr><mtr><mtd style="padding-left:0em;padding-right:5.9776pt;"><mn>3</mn></mtd><mtd style="padding-left:5.9776pt;padding-right:0em;"><mn>4</mn></mtd></mtr></mtable><mo fence="true" form="postfix" stretchy="true">)</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix}">
+  <mrow data-mjx-texclass="INNER" data-latex="\begin{pmatrix}1 &amp; 2\\ 3 &amp; 4\end{pmatrix}">
+    <mo data-mjx-texclass="OPEN">(</mo>
+    <mtable columnspacing="1em" rowspacing="4pt">
+      <mtr>
+        <mtd>
+          <mn data-latex="1">1</mn>
+        </mtd>
+        <mtd>
+          <mn data-latex="2">2</mn>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mn data-latex="3">3</mn>
+        </mtd>
+        <mtd>
+          <mn data-latex="4">4</mn>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo data-mjx-texclass="CLOSE">)</mo>
+  </mrow>
+</math></td></tr>
+<tr><td>\begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>[</mo><mtable columnalign="center center center center center center center center center center "><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo fence="true" form="prefix" stretchy="true">[</mo><mtable><mtr><mtd style="padding-left:0em;padding-right:5.9776pt;"><mi>a</mi></mtd><mtd style="padding-left:5.9776pt;padding-right:0em;"><mi>b</mi></mtd></mtr><mtr><mtd style="padding-left:0em;padding-right:5.9776pt;"><mi>c</mi></mtd><mtd style="padding-left:5.9776pt;padding-right:0em;"><mi>d</mi></mtd></mtr></mtable><mo fence="true" form="postfix" stretchy="true">]</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\begin{bmatrix}a &amp; b\\ c &amp; d\end{bmatrix}">
+  <mrow data-mjx-texclass="INNER" data-latex="\begin{bmatrix}a &amp; b\\ c &amp; d\end{bmatrix}">
+    <mo data-mjx-texclass="OPEN">[</mo>
+    <mtable columnspacing="1em" rowspacing="4pt">
+      <mtr>
+        <mtd>
+          <mi data-latex="a">a</mi>
+        </mtd>
+        <mtd>
+          <mi data-latex="b">b</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mi data-latex="c">c</mi>
+        </mtd>
+        <mtd>
+          <mi data-latex="d">d</mi>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo data-mjx-texclass="CLOSE">]</mo>
+  </mrow>
+</math></td></tr>
+<tr><td>f(x)=\begin{cases}1&amp;x>0\\0&amp;\text{otherwise}\end{cases}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>f</mi><mo>&#x2061;</mo><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnalign="left left left left left left left left left left "><mtr><mtd><mn>1</mn></mtd><mtd><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mtext >otherwise</mtext></mtd></mtr></mtable></mrow></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>f</mi><mrow><mo fence="true" form="prefix" stretchy="false">(</mo><mi>x</mi><mo fence="true" form="postfix" stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo fence="true" form="prefix" stretchy="true">{</mo><mtable><mtr><mtd class="tml-left" style="padding-left:0em;padding-right:0em;"><mn>1</mn></mtd><mtd class="tml-left" style="padding-left:1em;padding-right:0em;"><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd class="tml-left" style="padding-left:0em;padding-right:0em;"><mn>0</mn></mtd><mtd class="tml-left" style="padding-left:1em;padding-right:0em;"><mtext>otherwise</mtext></mtd></mtr></mtable><mo fence="true" form="postfix" stretchy="true"></mo></mrow></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="f(x)=\begin{cases}1 &amp; x&gt;0\\ 0 &amp; \text{otherwise}\end{cases}">
+  <mi data-latex="f">f</mi>
+  <mo data-latex="(" stretchy="false">(</mo>
+  <mi data-latex="x">x</mi>
+  <mo data-latex=")" stretchy="false">)</mo>
+  <mo data-latex="=">=</mo>
+  <mrow data-mjx-texclass="INNER" data-latex="{cases}">
+    <mo data-mjx-texclass="OPEN">{</mo>
+    <mtable columnspacing="1em" rowspacing=".2em" columnalign="left left">
+      <mtr>
+        <mtd>
+          <mn data-latex="1">1</mn>
+        </mtd>
+        <mtd>
+          <mi data-latex="x">x</mi>
+          <mo data-latex="&gt;">&gt;</mo>
+          <mn data-latex="0">0</mn>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mn data-latex="0">0</mn>
+        </mtd>
+        <mtd>
+          <mtext data-latex="\text{otherwise}">otherwise</mtext>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true"></mo>
+  </mrow>
+</math></td></tr>
+<tr><td>\begin{aligned}a&amp;=b+c\\&amp;=d\end{aligned}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mtable columnalign="right left "><mtr><mtd><mi>a</mi></mtd><mtd><mrow><mo>=</mo><mi>b</mi><mo>+</mo><mi>c</mi></mrow></mtd></mtr><mtr><mtd></mtd><mtd><mrow><mo>=</mo><mi>d</mi></mrow></mtd></mtr></mtable></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mtable displaystyle="true" class="tml-jot"><mtr><mtd class="tml-right" style="padding-left:0em;padding-right:0em;"><mi>a</mi></mtd><mtd class="tml-left" style="padding-left:0em;padding-right:0em;"><mrow><mo>=</mo><mi>b</mi><mo>+</mo><mi>c</mi></mrow></mtd></mtr><mtr><mtd class="tml-right" style="padding-left:0em;padding-right:0em;"><mrow></mrow></mtd><mtd class="tml-left" style="padding-left:0em;padding-right:0em;"><mrow><mo>=</mo><mi>d</mi></mrow></mtd></mtr></mtable></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\begin{aligned}a &amp; =b+c\\  &amp; =d\end{aligned}">
+  <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt" data-break-align="bottom top" data-latex="\begin{aligned}a &amp; =b+c\\  &amp; =d\end{aligned}">
+    <mtr>
+      <mtd>
+        <mi data-latex="a">a</mi>
+      </mtd>
+      <mtd>
+        <mstyle indentshift="2em">
+          <mi></mi>
+          <mo data-latex="=">=</mo>
+          <mi data-latex="b">b</mi>
+          <mo data-latex="+">+</mo>
+          <mi data-latex="c">c</mi>
+        </mstyle>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>
+        <mstyle indentshift="2em">
+          <mi></mi>
+          <mo data-latex="=">=</mo>
+          <mi data-latex="d">d</mi>
+        </mstyle>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></td></tr>
+<tr><td>\int_0^1 f(x)\,dx</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mi>f</mi><mo>&#x2061;</mo><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mspace width="0.16666666666666666em"/><mi>d</mi><mo>&#8290;</mo><mi>x</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msubsup><mo movablelimits="false">∫</mo><mn>0</mn><mn>1</mn></msubsup><mi>f</mi><mrow><mo fence="true" form="prefix" stretchy="false">(</mo><mi>x</mi><mo fence="true" form="postfix" stretchy="false">)</mo></mrow><mspace width="0.1667em"></mspace><mi>d</mi><mi>x</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\int_0^1f(x)\,dx">
+  <msubsup data-latex="\int_0^1">
+    <mo data-latex="\int">&#x222B;</mo>
+    <mn data-latex="0">0</mn>
+    <mn data-latex="1">1</mn>
+  </msubsup>
+  <mi data-latex="f">f</mi>
+  <mo data-latex="(" stretchy="false">(</mo>
+  <mi data-latex="x">x</mi>
+  <mo data-latex=")" stretchy="false">)</mo>
+  <mspace width="0.167em" data-latex="\,"></mspace>
+  <mi data-latex="d">d</mi>
+  <mi data-latex="x">x</mi>
+</math></td></tr>
+<tr><td>\sum_{i=1}^{n} i^2</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msup><mi>i</mi><mn>2</mn></msup></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msubsup><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msup><mi>i</mi><mn>2</mn></msup></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\sum_{i=1}^{n}i^2">
+  <munderover data-latex="\sum_{i=1}^{n}">
+    <mo data-latex="\sum">&#x2211;</mo>
+    <mrow data-mjx-texclass="ORD" data-latex="{i=1}">
+      <mi data-latex="i">i</mi>
+      <mo data-latex="=">=</mo>
+      <mn data-latex="1">1</mn>
+    </mrow>
+    <mrow data-mjx-texclass="ORD" data-latex="{n}">
+      <mi data-latex="n">n</mi>
+    </mrow>
+  </munderover>
+  <msup data-latex="i^2">
+    <mi data-latex="i">i</mi>
+    <mn data-latex="2">2</mn>
+  </msup>
+</math></td></tr>
+<tr><td>\lim_{x\to\infty}\frac{1}{x}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><munder><mo>lim</mo><mrow><mi>x</mi><mo>→</mo><mi>&#x221e;</mi></mrow></munder><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mi>lim</mi><mrow><mi>x</mi><mo>→</mo><mi>∞</mi></mrow></msub><mo>⁡</mo><mspace width="0.1667em"></mspace><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\lim_{x\to\infty}\frac{1}{x}">
+  <munder data-latex="\lim_{x\to\infty}">
+    <mo data-mjx-texclass="OP" movablelimits="true" data-latex="\lim">lim</mo>
+    <mrow data-mjx-texclass="ORD" data-latex="{x\to\infty}">
+      <mi data-latex="x">x</mi>
+      <mo accent="false" stretchy="false" data-latex="\to">&#x2192;</mo>
+      <mi mathvariant="normal" data-latex="\infty">&#x221E;</mi>
+    </mrow>
+  </munder>
+  <mfrac data-latex="\frac{1}{x}">
+    <mn data-latex="1">1</mn>
+    <mi data-latex="x">x</mi>
+  </mfrac>
+</math></td></tr>
+<tr><td>\frac{\partial f}{\partial x}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mi>∂</mi><mo>&#8290;</mo><mi>f</mi><mo>&#x2061;</mo></mrow><mrow><mi>∂</mi><mo>&#8290;</mo><mi>x</mi></mrow></mfrac></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mi>∂</mi><mi>f</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\frac{\partial f}{\partial x}">
+  <mfrac data-latex="\frac{\partial f}{\partial x}">
+    <mrow data-latex="\partial f">
+      <mi data-latex="\partial">&#x2202;</mi>
+      <mi data-latex="f">f</mi>
+    </mrow>
+    <mrow data-latex="\partial x">
+      <mi data-latex="\partial">&#x2202;</mi>
+      <mi data-latex="x">x</mi>
+    </mrow>
+  </mfrac>
+</math></td></tr>
+<tr><td>\oint_C \vec{F}\cdot d\vec{r}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mo>∮</mo><mi>C</mi></msub><mover accent="true"><mi>F</mi><mo>&#x20d7;</mo></mover><mo>⋅</mo><mi>d</mi><mover accent="true"><mi>r</mi><mo>&#x20d7;</mo></mover></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mo movablelimits="false">∮</mo><mi>C</mi></msub><mover><mi>F</mi><mo stretchy="false" class="tml-vec chr-lrg wbk-lrg-vec">→</mo></mover><mo>⋅</mo><mi>d</mi><mover><mi>r</mi><mo stretchy="false" class="tml-vec chr-sml wbk-sml-vec">→</mo></mover></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\oint_{C}\vec{F}\cdot d\vec{r}">
+  <msub data-latex="\oint_{C}">
+    <mo data-latex="\oint">&#x222E;</mo>
+    <mrow data-mjx-texclass="ORD" data-latex="{C}">
+      <mi data-latex="C">C</mi>
+    </mrow>
+  </msub>
+  <mrow data-mjx-texclass="ORD" data-latex="\vec{F}">
+    <mover>
+      <mi data-latex="F">F</mi>
+      <mo stretchy="false">&#x2192;</mo>
+    </mover>
+  </mrow>
+  <mo data-latex="\cdot">&#x22C5;</mo>
+  <mi data-latex="d">d</mi>
+  <mrow data-mjx-texclass="ORD" data-latex="\vec{r}">
+    <mover>
+      <mi data-latex="r">r</mi>
+      <mo stretchy="false">&#x2192;</mo>
+    </mover>
+  </mrow>
+</math></td></tr>
+<tr><td>\left(\frac{a}{b}\right)</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>(</mo><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>)</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo fence="true" form="prefix" stretchy="true">(</mo><mfrac><mi>a</mi><mi>b</mi></mfrac><mo fence="true" form="postfix" stretchy="true">)</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\left(\frac{a}{b}\right)">
+  <mrow data-mjx-texclass="INNER" data-latex="\left(\frac{a}{b}\right)">
+    <mo data-mjx-texclass="OPEN" data-latex="\left(">(</mo>
+    <mfrac data-latex="\frac{a}{b}">
+      <mi data-latex="a">a</mi>
+      <mi data-latex="b">b</mi>
+    </mfrac>
+    <mo data-mjx-texclass="CLOSE" data-latex="\right)">)</mo>
+  </mrow>
+</math></td></tr>
+<tr><td>\left|x\right|</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo fence="true" form="prefix" stretchy="true">|</mo><mi>x</mi><mo fence="true" form="postfix" stretchy="true">|</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\left|x\right|">
+  <mrow data-mjx-texclass="INNER" data-latex="\left|x\right|">
+    <mo data-mjx-texclass="OPEN" data-latex="\left|">|</mo>
+    <mi data-latex="x">x</mi>
+    <mo data-mjx-texclass="CLOSE" data-latex="\right|">|</mo>
+  </mrow>
+</math></td></tr>
+<tr><td>\lVert v\rVert</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∥</mo><mi>v</mi><mo>∥</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo fence="true" form="prefix" stretchy="false">‖</mo><mi>v</mi><mo fence="true" form="postfix" stretchy="false">‖</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\lVert v\rVert">
+  <mo data-mjx-texclass="OPEN" fence="false" stretchy="false" data-latex="\lVert">&#x2016;</mo>
+  <mi data-latex="v">v</mi>
+  <mo data-mjx-texclass="CLOSE" fence="false" stretchy="false" data-latex="\rVert">&#x2016;</mo>
+</math></td></tr>
+<tr><td>\langle u,v\rangle</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>⟨</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo>⟩</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo fence="true" form="prefix" stretchy="false">⟨</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo fence="true" form="postfix" stretchy="false">⟩</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\langle u,v\rangle">
+  <mo fence="false" stretchy="false" data-latex="\langle">&#x27E8;</mo>
+  <mi data-latex="u">u</mi>
+  <mo data-latex=",">,</mo>
+  <mi data-latex="v">v</mi>
+  <mo fence="false" stretchy="false" data-latex="\rangle">&#x27E9;</mo>
+</math></td></tr>
+<tr><td>\{x\mid x>0\}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>{</mo><mi>x</mi><mo>∣</mo><mi>x</mi><mo>&gt;</mo><mn>0</mn><mo>}</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo fence="true" form="prefix" stretchy="false">{</mo><mi>x</mi><mo lspace="0.22em" rspace="0.22em" stretchy="false">|</mo><mi>x</mi><mo>&gt;</mo><mn>0</mn><mo fence="true" form="postfix" stretchy="false">}</mo></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\{x\mid x&gt;0\}">
+  <mo fence="false" stretchy="false" data-latex="\{">{</mo>
+  <mi data-latex="x">x</mi>
+  <mo data-latex="\mid">&#x2223;</mo>
+  <mi data-latex="x">x</mi>
+  <mo data-latex="&gt;">&gt;</mo>
+  <mn data-latex="0">0</mn>
+  <mo fence="false" stretchy="false" data-latex="\}">}</mo>
+</math></td></tr>
+<tr><td>\alpha+\beta=\Gamma</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>&#x03b1;</mi><mo>+</mo><mi>β</mi><mo>=</mo><mi>Γ</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>α</mi><mo>+</mo><mi>β</mi><mo>=</mo><mrow><mi mathvariant="normal">Γ</mi><mspace></mspace></mrow></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\alpha+\beta=\Gamma">
+  <mi data-latex="\alpha">&#x3B1;</mi>
+  <mo data-latex="+">+</mo>
+  <mi data-latex="\beta">&#x3B2;</mi>
+  <mo data-latex="=">=</mo>
+  <mi mathvariant="normal" data-latex="\Gamma">&#x393;</mi>
+</math></td></tr>
+<tr><td>\mathbb{R}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ℝ</mi></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ℝ</mi></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\mathbb{R}">
+  <mrow data-mjx-texclass="ORD" data-latex="\mathbb{R}">
+    <mi mathvariant="double-struck" data-latex="R">R</mi>
+  </mrow>
+</math></td></tr>
+<tr><td>\mathbf{v}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="bold">v</mi></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>𝐯</mi></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\mathbf{v}">
+  <mrow data-mjx-texclass="ORD" data-latex="\mathbf{v}">
+    <mi mathvariant="bold" data-latex="v">v</mi>
+  </mrow>
+</math></td></tr>
+<tr><td>a\le b\ne c\approx d</td><td class="bad">malformed XML (cannot be stored)</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>a</mi><mo>≤</mo><mi>b</mi><mo>≠</mo><mi>c</mi><mo>≈</mo><mi>d</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="a\le b\ne c\approx d">
+  <mi data-latex="a">a</mi>
+  <mo data-latex="\le">&#x2264;</mo>
+  <mi data-latex="b">b</mi>
+  <mo data-latex="\ne">&#x2260;</mo>
+  <mi data-latex="c">c</mi>
+  <mo data-latex="\approx">&#x2248;</mo>
+  <mi data-latex="d">d</mi>
+</math></td></tr>
+<tr><td>x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>&#177;</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mo>&#8290;</mo><mi>a</mi><mo>&#8290;</mo><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mo>&#8290;</mo><mi>a</mi></mrow></mfrac></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo form="prefix" stretchy="false" lspace="0em" rspace="0em">−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
+  <mi data-latex="x">x</mi>
+  <mo data-latex="=">=</mo>
+  <mfrac data-latex="\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
+    <mrow data-latex="-b\pm\sqrt{b^2-4ac}">
+      <mo data-latex="-">&#x2212;</mo>
+      <mi data-latex="b">b</mi>
+      <mo data-latex="\pm">&#xB1;</mo>
+      <msqrt data-latex="\sqrt{b^2-4ac}">
+        <msup data-latex="b^2">
+          <mi data-latex="b">b</mi>
+          <mn data-latex="2">2</mn>
+        </msup>
+        <mo data-latex="-">&#x2212;</mo>
+        <mn data-latex="4">4</mn>
+        <mi data-latex="a">a</mi>
+        <mi data-latex="c">c</mi>
+      </msqrt>
+    </mrow>
+    <mrow data-latex="2a">
+      <mn data-latex="2">2</mn>
+      <mi data-latex="a">a</mi>
+    </mrow>
+  </mfrac>
+</math></td></tr>
+<tr><td>\sin^2\theta+\cos^2\theta=1</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mo>sin</mo><mn>2</mn></msup><mi>θ</mi><mo>+</mo><msup><mo>cos</mo><mn>2</mn></msup><mi>θ</mi><mo>=</mo><mn>1</mn></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mspace width="0.1667em"></mspace><mi>θ</mi><mo>+</mo><msup><mi>cos</mi><mn>2</mn></msup><mo>⁡</mo><mspace width="0.1667em"></mspace><mi>θ</mi><mo>=</mo><mn>1</mn></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\sin^2\theta+\cos^2\theta=1">
+  <msup data-latex="\sin^2">
+    <mi data-latex="\sin">sin</mi>
+    <mn data-latex="2">2</mn>
+  </msup>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi data-latex="\theta">&#x3B8;</mi>
+  <mo data-latex="+">+</mo>
+  <msup data-latex="\cos^2">
+    <mi data-latex="\cos">cos</mi>
+    <mn data-latex="2">2</mn>
+  </msup>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi data-latex="\theta">&#x3B8;</mi>
+  <mo data-latex="=">=</mo>
+  <mn data-latex="1">1</mn>
+</math></td></tr>
+<tr><td>\log_2 8=3</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mo>log</mo><mn>2</mn></msub><mn>8</mn><mo>=</mo><mn>3</mn></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mi>log</mi><mn>2</mn></msub><mo>⁡</mo><mspace width="0.1667em"></mspace><mn>8</mn><mo>=</mo><mn>3</mn></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\log_28=3">
+  <msub data-latex="\log_2">
+    <mi data-latex="\log">log</mi>
+    <mn data-latex="2">2</mn>
+  </msub>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mn data-latex="8">8</mn>
+  <mo data-latex="=">=</mo>
+  <mn data-latex="3">3</mn>
+</math></td></tr>
+<tr><td>\operatorname{lcm}(a,b)</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>lcm</mi><mo>&#8290;</mo><mrow><mo>(</mo><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><mo>)</mo></mrow></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>lcm</mi><mo>⁡</mo><mrow><mo fence="true" form="prefix" stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo fence="true" form="postfix" stretchy="false">)</mo></mrow></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\operatorname{\mathrm{lcm}}(a,b)">
+  <mrow data-mjx-texclass="OP" data-latex="\operatorname{\mathrm{lcm}}">
+    <mrow data-mjx-texclass="ORD" data-latex="\mathrm{lcm}">
+      <mi data-mjx-auto-op="false" data-latex="lcm">lcm</mi>
+    </mrow>
+  </mrow>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mo data-latex="(" stretchy="false">(</mo>
+  <mi data-latex="a">a</mi>
+  <mo data-latex=",">,</mo>
+  <mi data-latex="b">b</mi>
+  <mo data-latex=")" stretchy="false">)</mo>
+</math></td></tr>
+<tr><td>\forall x\in A,\exists y</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>&#x2200;</mi><mo>&#8290;</mo><mi>x</mi><mo>∈</mo><mi>A</mi><mo separator="true">,</mo><mi>&#x2203;</mi><mo>&#8290;</mo><mi>y</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>∀</mi><mi>x</mi><mo>∈</mo><mi>A</mi><mo separator="true">,</mo><mi>∃</mi><mi>y</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\forall x\in A,\exists y">
+  <mi mathvariant="normal" data-latex="\forall">&#x2200;</mi>
+  <mi data-latex="x">x</mi>
+  <mo data-latex="\in">&#x2208;</mo>
+  <mi data-latex="A">A</mi>
+  <mo data-latex=",">,</mo>
+  <mi mathvariant="normal" data-latex="\exists">&#x2203;</mi>
+  <mi data-latex="y">y</mi>
+</math></td></tr>
+<tr><td>A\Rightarrow B</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><mo>⇒</mo><mi>B</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><mo stretchy="false">⇒</mo><mi>B</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="A\Rightarrow B">
+  <mi data-latex="A">A</mi>
+  <mo stretchy="false" data-latex="\Rightarrow">&#x21D2;</mo>
+  <mi data-latex="B">B</mi>
+</math></td></tr>
+<tr><td>\vec{v}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mover accent="true"><mi>v</mi><mo>&#x20d7;</mo></mover></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mover><mi>v</mi><mo stretchy="false" class="tml-vec chr-sml wbk-sml-vec">→</mo></mover></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\vec{v}">
+  <mrow data-mjx-texclass="ORD" data-latex="\vec{v}">
+    <mover>
+      <mi data-latex="v">v</mi>
+      <mo stretchy="false">&#x2192;</mo>
+    </mover>
+  </mrow>
+</math></td></tr>
+<tr><td>\hat{x}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mover accent="true"><mi>x</mi><mo>&#x005e;</mo></mover></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mover><mi>x</mi><mo stretchy="false" class="chr-sml wbk-sml-acc" style="math-depth:0;">ˆ</mo></mover></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\hat{x}">
+  <mrow data-mjx-texclass="ORD" data-latex="\hat{x}">
+    <mover>
+      <mi data-latex="x">x</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+</math></td></tr>
+<tr><td>\bar{x}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mover accent="true"><mi>x</mi><mo>&#x00af;</mo></mover></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mover><mi>x</mi><mo stretchy="false" class="chr-sml wbk-sml-acc" style="math-depth:0;">‾</mo></mover></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\bar{x}">
+  <mrow data-mjx-texclass="ORD" data-latex="\bar{x}">
+    <mover>
+      <mi data-latex="x">x</mi>
+      <mo stretchy="false">&#xAF;</mo>
+    </mover>
+  </mrow>
+</math></td></tr>
+<tr><td>\overline{AB}</td><td class="warn"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><menclose notation="top" class="tml-overline"><mrow><mi>A</mi><mi>B</mi></mrow></menclose></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\overline{AB}">
+  <mover data-latex="\overline{AB}">
+    <mrow data-latex="AB">
+      <mi data-latex="A">A</mi>
+      <mi data-latex="B">B</mi>
+    </mrow>
+    <mo accent="true">&#x2015;</mo>
+  </mover>
+</math></td></tr>
+<tr><td>\overrightarrow{AB}</td><td class="warn"><math xmlns="http://www.w3.org/1998/Math/MathML"><mover >→</mover></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mover><mrow><mi>A</mi><mi>B</mi></mrow><mo stretchy="true" style="math-depth:0;">→</mo></mover></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\overrightarrow{AB}">
+  <mover data-latex="\overrightarrow{AB}">
+    <mrow data-latex="AB">
+      <mi data-latex="A">A</mi>
+      <mi data-latex="B">B</mi>
+    </mrow>
+    <mo>&#x2192;</mo>
+  </mover>
+</math></td></tr>
+<tr><td>\underbrace{a+b}_{n}</td><td class="warn"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><munder >⏟</munder><mi>n</mi></msub></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><munder><munder><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo stretchy="true" style="math-depth:0;">⏟</mo></munder><mi>n</mi></munder></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\underbrace{a+b}_{n}">
+  <munder data-latex="\underbrace{a+b}_{n}">
+    <mrow data-mjx-texclass="OP" data-latex="\underbrace{a+b}">
+      <mstyle displaystyle="true">
+        <munder>
+          <mrow data-latex="a+b">
+            <mi data-latex="a">a</mi>
+            <mo data-latex="+">+</mo>
+            <mi data-latex="b">b</mi>
+          </mrow>
+          <mo>&#x23DF;</mo>
+        </munder>
+      </mstyle>
+    </mrow>
+    <mrow data-mjx-texclass="ORD" data-latex="{n}">
+      <mi data-latex="n">n</mi>
+    </mrow>
+  </munder>
+</math></td></tr>
+<tr><td>\overbrace{a+b}^{n}</td><td class="warn"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mover >⏞</mover><mi>n</mi></msup></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mover><mover><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo stretchy="true" style="math-depth:0;">⏞</mo></mover><mi>n</mi></mover></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\overbrace{a+b}^{n}">
+  <mover data-latex="\overbrace{a+b}^{n}">
+    <mrow data-mjx-texclass="OP" data-latex="\overbrace{a+b}">
+      <mstyle displaystyle="true">
+        <mover>
+          <mrow data-latex="a+b">
+            <mi data-latex="a">a</mi>
+            <mo data-latex="+">+</mo>
+            <mi data-latex="b">b</mi>
+          </mrow>
+          <mo>&#x23DE;</mo>
+        </mover>
+      </mstyle>
+    </mrow>
+    <mrow data-mjx-texclass="ORD" data-latex="{n}">
+      <mi data-latex="n">n</mi>
+    </mrow>
+  </mover>
+</math></td></tr>
+<tr><td>\mathring{A}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mover accent="true"><mi>A</mi><mo>730</mo></mover></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mover><mi>A</mi><mo stretchy="false" class="chr-lrg wbk-lrg-acc" style="math-depth:0;">˚</mo></mover></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\mathring{A}">
+  <mrow data-mjx-texclass="ORD" data-latex="\mathring{A}">
+    <mover>
+      <mi data-latex="A">A</mi>
+      <mo>&#x2DA;</mo>
+    </mover>
+  </mrow>
+</math></td></tr>
+<tr><td>A\xrightarrow{k}B</td><td class="warn"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><munderover >→<mi>k</mi></munderover><mi>B</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><mrow><mspace width="0.2778em"></mspace><mover accent="false"><mo stretchy="true" lspace="0" rspace="0">→</mo><mover><mrow><mspace width="0.4286em"></mspace><mi>k</mi><mspace width="0.4286em"></mspace></mrow><mspace width="3.5000em"></mspace></mover></mover><mspace width="0.2778em"></mspace></mrow><mi>B</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="A\xrightarrow{k}B">
+  <mi data-latex="A">A</mi>
+  <mrow data-mjx-texclass="REL" data-latex="\xrightarrow{k}">
+    <mrow data-mjx-texclass="NONE"></mrow>
+    <mover>
+      <mo data-mjx-texclass="ORD">&#x2192;</mo>
+      <mpadded width="+0.833em" lspace="0.278em" voffset="-.2em" height="-.2em">
+        <mi data-latex="k">k</mi>
+        <mspace depth=".2em"></mspace>
+      </mpadded>
+    </mover>
+  </mrow>
+  <mi data-latex="B">B</mi>
+</math></td></tr>
+<tr><td>\ce{H2O}</td><td class="warn"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi mathvariant="normal">H</mi><mspace></mspace></mrow><msub><mrow></mrow><mn>2</mn></msub><mrow><mi mathvariant="normal">O</mi><mspace></mspace></mrow></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\ce{H2O}">
+  <mrow data-mjx-texclass="ORD" data-latex="{\mathrm{H}{\vphantom{A}}_{\smash[t]{2}}\mathrm{O}}">
+    <mrow data-mjx-texclass="ORD" data-latex="\mathrm{H}">
+      <mi mathvariant="normal" data-latex="H">H</mi>
+    </mrow>
+    <msub data-latex="{\vphantom{A}}_{\smash[t]{2}}">
+      <mrow data-mjx-texclass="ORD" data-latex="{\vphantom{A}}">
+        <mrow data-mjx-texclass="ORD" data-latex="\vphantom{A}">
+          <mpadded width="0">
+            <mphantom>
+              <mi data-latex="A">A</mi>
+            </mphantom>
+          </mpadded>
+        </mrow>
+      </mrow>
+      <mrow data-mjx-texclass="ORD" data-latex="{\smash[t]{2}}">
+        <mrow data-mjx-texclass="ORD" data-latex="\smash[t]{2}">
+          <mpadded height="0">
+            <mn data-latex="2">2</mn>
+          </mpadded>
+        </mrow>
+      </mrow>
+    </msub>
+    <mrow data-mjx-texclass="ORD" data-latex="\mathrm{O}">
+      <mi mathvariant="normal" data-latex="O">O</mi>
+    </mrow>
+  </mrow>
+</math></td></tr>
+<tr><td>\ce{2H2 + O2 -> 2H2O}</td><td class="warn"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>2</mn><mspace width="0.1667em"></mspace><mrow><mi mathvariant="normal">H</mi><mspace></mspace></mrow><msub><mrow></mrow><mn>2</mn></msub><mrow></mrow><mo>+</mo><mrow></mrow><mrow><mi mathvariant="normal">O</mi><mspace></mspace></mrow><msub><mrow></mrow><mn>2</mn></msub><mrow><mspace width="0.2778em"></mspace><mover accent="false"><mo stretchy="true" lspace="0" rspace="0">→</mo><mspace width="2.8571em"></mspace></mover><mspace width="0.2778em"></mspace></mrow><mn>2</mn><mspace width="0.1667em"></mspace><mrow><mi mathvariant="normal">H</mi><mspace></mspace></mrow><msub><mrow></mrow><mn>2</mn></msub><mrow><mi mathvariant="normal">O</mi><mspace></mspace></mrow></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\ce{2H2 + O2 -&gt; 2H2O}">
+  <mrow data-mjx-texclass="ORD" data-latex="{2\,\mathrm{H}{\vphantom{A}}_{\smash[t]{2}} {}+{} \mathrm{O}{\vphantom{A}}_{\smash[t]{2}} {}\mathrel{\mhchemlongrightarrow}{} 2\,\mathrm{H}{\vphantom{A}}_{\smash[t]{2}}\mathrm{O}}">
+    <mn data-latex="2">2</mn>
+    <mspace width="0.167em" data-latex="\,"></mspace>
+    <mrow data-mjx-texclass="ORD" data-latex="\mathrm{H}">
+      <mi mathvariant="normal" data-latex="H">H</mi>
+    </mrow>
+    <msub data-latex="{\vphantom{A}}_{\smash[t]{2}}">
+      <mrow data-mjx-texclass="ORD" data-latex="{\vphantom{A}}">
+        <mrow data-mjx-texclass="ORD" data-latex="\vphantom{A}">
+          <mpadded width="0">
+            <mphantom>
+              <mi data-latex="A">A</mi>
+            </mphantom>
+          </mpadded>
+        </mrow>
+      </mrow>
+      <mrow data-mjx-texclass="ORD" data-latex="{\smash[t]{2}}">
+        <mrow data-mjx-texclass="ORD" data-latex="\smash[t]{2}">
+          <mpadded height="0">
+            <mn data-latex="2">2</mn>
+          </mpadded>
+        </mrow>
+      </mrow>
+    </msub>
+    <mrow data-mjx-texclass="ORD" data-latex="{}"></mrow>
+    <mo data-latex="+">+</mo>
+    <mrow data-mjx-texclass="ORD" data-latex="{}"></mrow>
+    <mrow data-mjx-texclass="ORD" data-latex="\mathrm{O}">
+      <mi mathvariant="normal" data-latex="O">O</mi>
+    </mrow>
+    <msub data-latex="{\vphantom{A}}_{\smash[t]{2}}">
+      <mrow data-mjx-texclass="ORD" data-latex="{\vphantom{A}}">
+        <mrow data-mjx-texclass="ORD" data-latex="\vphantom{A}">
+          <mpadded width="0">
+            <mphantom>
+              <mi data-latex="A">A</mi>
+            </mphantom>
+          </mpadded>
+        </mrow>
+      </mrow>
+      <mrow data-mjx-texclass="ORD" data-latex="{\smash[t]{2}}">
+        <mrow data-mjx-texclass="ORD" data-latex="\smash[t]{2}">
+          <mpadded height="0">
+            <mn data-latex="2">2</mn>
+          </mpadded>
+        </mrow>
+      </mrow>
+    </msub>
+    <mrow data-mjx-texclass="ORD" data-latex="{}"></mrow>
+    <mrow data-mjx-texclass="REL" data-latex="\mathrel{\mhchemlongrightarrow}">
+      <mo data-mjx-variant="-mhchem" data-mjx-texclass="REL" stretchy="true" data-latex="\mhchemlongrightarrow">&#xE429;</mo>
+    </mrow>
+    <mrow data-mjx-texclass="ORD" data-latex="{}"></mrow>
+    <mn data-latex="2">2</mn>
+    <mspace width="0.167em" data-latex="\,"></mspace>
+    <mrow data-mjx-texclass="ORD" data-latex="\mathrm{H}">
+      <mi mathvariant="normal" data-latex="H">H</mi>
+    </mrow>
+    <msub data-latex="{\vphantom{A}}_{\smash[t]{2}}">
+      <mrow data-mjx-texclass="ORD" data-latex="{\vphantom{A}}">
+        <mrow data-mjx-texclass="ORD" data-latex="\vphantom{A}">
+          <mpadded width="0">
+            <mphantom>
+              <mi data-latex="A">A</mi>
+            </mphantom>
+          </mpadded>
+        </mrow>
+      </mrow>
+      <mrow data-mjx-texclass="ORD" data-latex="{\smash[t]{2}}">
+        <mrow data-mjx-texclass="ORD" data-latex="\smash[t]{2}">
+          <mpadded height="0">
+            <mn data-latex="2">2</mn>
+          </mpadded>
+        </mrow>
+      </mrow>
+    </msub>
+    <mrow data-mjx-texclass="ORD" data-latex="\mathrm{O}">
+      <mi mathvariant="normal" data-latex="O">O</mi>
+    </mrow>
+  </mrow>
+</math></td></tr>
+<tr><td>\mathrm{H_2O}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mi mathvariant="normal">H</mi><mn>2</mn></msub><mi mathvariant="normal">O</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mrow><mi mathvariant="normal">H</mi><mspace></mspace></mrow><mn>2</mn></msub><mrow><mi mathvariant="normal">O</mi><mspace></mspace></mrow></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\mathrm{H_2O}">
+  <mrow data-mjx-texclass="ORD" data-latex="\mathrm{H_2O}">
+    <msub data-latex="H_2">
+      <mi mathvariant="normal" data-latex="H">H</mi>
+      <mn data-latex="2">2</mn>
+    </msub>
+    <mi mathvariant="normal" data-latex="O">O</mi>
+  </mrow>
+</math></td></tr>
+<tr><td>9.8\,\mathrm{m/s^2}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>9.8</mn><mspace width="0.16666666666666666em"/><msup><mi mathvariant="normal">m/s</mi><mn>2</mn></msup></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>9.8</mn><mspace width="0.1667em"></mspace><msup><mrow><mrow><mi mathvariant="normal">m</mi><mspace></mspace></mrow><mi>/</mi><mrow><mi mathvariant="normal">s</mi><mspace></mspace></mrow></mrow><mn>2</mn></msup></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="9.8\,\mathrm{m/s}^2">
+  <mn data-latex="9.8">9.8</mn>
+  <mspace width="0.167em" data-latex="\,"></mspace>
+  <msup data-latex="\mathrm{m/s}^2">
+    <mrow data-mjx-texclass="ORD" data-latex="\mathrm{m/s}">
+      <mi mathvariant="normal" data-latex="m">m</mi>
+      <mo data-latex="/">/</mo>
+      <mi mathvariant="normal" data-latex="s">s</mi>
+    </mrow>
+    <mn data-latex="2">2</mn>
+  </msup>
+</math></td></tr>
+<tr><td>90\degree</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>90</mn><mo>&#8290;</mo><mi>°</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>90</mn><mi>°</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="90\degree">
+  <mn data-latex="90">90</mn>
+  <mi mathvariant="normal" class="MathML-Unit" data-latex="\degree">&#xB0;</mi>
+</math></td></tr>
+<tr><td>50\%</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>50</mn><mo>&#8290;</mo><mi>%</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>50</mn><mi>%</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="50\%">
+  <mn data-latex="50">50</mn>
+  <mi mathvariant="normal" data-latex="\%">%</mi>
+</math></td></tr>
+<tr><td>\text{if } x>0</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mtext >if </mtext><mo>&#8290;</mo><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mtext>if </mtext><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\text{if }x&gt;0">
+  <mtext data-latex="\text{if }">if&#xA0;</mtext>
+  <mi data-latex="x">x</mi>
+  <mo data-latex="&gt;">&gt;</mo>
+  <mn data-latex="0">0</mn>
+</math></td></tr>
+<tr><td>\textcolor{red}{x}+y</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi style="color:#ff0000;">x</mi><mo>+</mo><mi>y</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\textcolor{red}{x}+y">
+  <mstyle mathcolor="red" data-latex="\textcolor{red}{x}">
+    <mi data-latex="x">x</mi>
+  </mstyle>
+  <mo data-latex="+">+</mo>
+  <mi data-latex="y">y</mi>
+</math></td></tr>
+<tr><td>a~b</td><td class="bad">malformed XML (cannot be stored)</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>a</mi><mtext> </mtext><mi>b</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="a~b">
+  <mi data-latex="a">a</mi>
+  <mtext data-latex="~">&#xA0;</mtext>
+  <mi data-latex="b">b</mi>
+</math></td></tr>
+<tr><td>\phantom{x}+1</td><td class="warn"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>+</mo><mn>1</mn></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mphantom><mi>x</mi></mphantom><mo>+</mo><mn>1</mn></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\phantom{x}+1">
+  <mrow data-mjx-texclass="ORD" data-latex="\phantom{x}">
+    <mphantom>
+      <mi data-latex="x">x</mi>
+    </mphantom>
+  </mrow>
+  <mo data-latex="+">+</mo>
+  <mn data-latex="1">1</mn>
+</math></td></tr>
+<tr><td>\boxed{x=1}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><menclose notation="box"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></menclose></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow scriptlevel="0" displaystyle="true" style="padding:3pt;border:1px solid;"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\boxed{x=1}">
+  <menclose notation="box" data-latex="\fbox{$\displaystyle{x=1}$}">
+    <mrow data-mjx-texclass="ORD">
+      <mstyle displaystyle="true" data-latex="\displaystyle{x=1}">
+        <mrow data-mjx-texclass="ORD" data-latex="{x=1}">
+          <mi data-latex="x">x</mi>
+          <mo data-latex="=">=</mo>
+          <mn data-latex="1">1</mn>
+        </mrow>
+      </mstyle>
+    </mrow>
+  </menclose>
+</math></td></tr>
+<tr><td>\frac{\placeholder{}}{\placeholder{}}</td><td class="warn"><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac>??</mfrac></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mi>□</mi><mi>□</mi></mfrac></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\frac{\square}{\square}">
+  <mfrac data-latex="\frac{\square}{\square}">
+    <mi data-latex="\square">&#x25FB;</mi>
+    <mi data-latex="\square">&#x25FB;</mi>
+  </mfrac>
+</math></td></tr>
+<tr><td>x+\placeholder[ans]{}=5</td><td class="bad">malformed XML (cannot be stored)</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>x</mi><mo>+</mo><mi>□</mi><mo>=</mo><mn>5</mn></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="x+\square=5">
+  <mi data-latex="x">x</mi>
+  <mo data-latex="+">+</mo>
+  <mi data-latex="\square">&#x25FB;</mi>
+  <mo data-latex="=">=</mo>
+  <mn data-latex="5">5</mn>
+</math></td></tr>
+<tr><td>3{,}14</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>3.14</mn></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>3,14</mn></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="3{,}14">
+  <mn data-latex="3">3</mn>
+  <mrow data-mjx-texclass="ORD" data-latex="{,}">
+    <mo data-latex=",">,</mo>
+  </mrow>
+  <mn data-latex="14">14</mn>
+</math></td></tr>
+<tr><td>x\in\R</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>x</mi><mo>∈</mo><mi>ℝ</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>x</mi><mo>∈</mo><mi>ℝ</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="x\in\mathbb{R}">
+  <mi data-latex="x">x</mi>
+  <mo data-latex="\in">&#x2208;</mo>
+  <mrow data-mjx-texclass="ORD" data-latex="\mathbb{R}">
+    <mi mathvariant="double-struck" data-latex="R">R</mi>
+  </mrow>
+</math></td></tr>
+<tr><td>\vecb{v}+\vecb{w}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi mathvariant="bold">v</mi><mo>+</mo><mi mathvariant="bold">w</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>𝐯</mi><mo>+</mo><mi>𝐰</mi></mrow></math></td><td><math xmlns="http://www.w3.org/1998/Math/MathML" data-latex="\mathbf{v}+\mathbf{w}">
+  <mrow data-mjx-texclass="ORD" data-latex="\mathbf{v}">
+    <mi mathvariant="bold" data-latex="v">v</mi>
+  </mrow>
+  <mo data-latex="+">+</mo>
+  <mrow data-mjx-texclass="ORD" data-latex="\mathbf{w}">
+    <mi mathvariant="bold" data-latex="w">w</mi>
+  </mrow>
+</math></td></tr>
+</table>

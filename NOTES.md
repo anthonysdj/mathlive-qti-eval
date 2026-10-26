@@ -8,6 +8,8 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 |---|---|---|---|
 | `mathlive` | **0.111.1** (exact) | `sandbox/basic` | Subject of the study. Latest release (2026-10-09). It fixes 3 XSS advisories in `\enclose`, `\htmlData`/`\href` and the MathML output, so don't go below it. Source reference: commit `30ad20a7` of arnog/mathlive (there's no git tag). |
 | `mathml-to-latex` | 1.8.0 (exact) | `sandbox/basic` (runtime) | MathLive cannot read MathML. We need *some* MathML→LaTeX path to re-hydrate annotation-less content (Wiris, legacy). Used by `src/serialize.ts` as the fallback only. MIT. |
+| `temml` | 0.14.0 (exact) | `sandbox/converters` | Candidate LaTeX→MathML converter for stored MathML (MIT). Includes its mhchem extension. Recommended in `findings/mathml-converters.md`. |
+| `@mathjax/src` | 4.1.3 (exact) | `sandbox/converters` | Second candidate converter, for comparison (Apache-2.0). Only the TeX input and the MathML serialiser are used. |
 | `vite` | 8.3.5 | dev | Sandbox dev server and build. |
 | `vitest` + `@vitest/browser-playwright` | 5.0.5 | dev | MathLive needs a real browser (layout, FontFace, custom elements, adoptedStyleSheets), so tests run in Chromium, not jsdom. |
 | `playwright` | 1.64.1 | dev | Browser driver for Vitest and the runtime-check script. |
@@ -15,6 +17,15 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 | `@types/node` | 22 | dev | Types for the config files and scripts. |
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
+
+## 2026-10-26 — Spike: MathML converters
+
+- Ran the M1 corpus plus 2 custom-macro cases through MathLive, Temml and MathJax (`sandbox/converters`). **Temml and MathJax: 60/60 clean. MathLive: 46/60.** Recommendation: store Temml output, and use MathLive only for editing. → `findings/mathml-converters.md`.
+- Temml's mhchem extension is a plain script that needs a global `temml`. Set `globalThis.temml` and then `await import('temml/contrib/mhchem/mhchem.js')`.
+- Temml output uses `class="tml-…"` and inline `style` for `\overline`, `\cancel` and `\boxed`. The delivery side needs `Temml-Local.css` (~9 KB), or those commands must be excluded.
+- MathJax output sets `mathvariant="double-struck"` for `\mathbb`, which Chromium's native MathML ignores, so it renders as a plain R. It also adds `data-latex` attributes to every node.
+- `temml.renderToString(latex, { xml: true, annotate: true })` produces exactly the planned `<semantics>` + `application/x-tex` annotation format.
+- Typing in the field gives `\left(`…`\right)`, not `\mleft`. `\mleft`/`\mright` only appear in pasted or loaded LaTeX, and `toStandardLatex()` maps them anyway.
 
 ## 2026-10-26 — M1 kickoff
 

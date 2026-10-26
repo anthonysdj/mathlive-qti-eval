@@ -1,0 +1,2269 @@
+[
+  {
+    "id": "frac",
+    "category": "Fractions",
+    "latex": "\\frac{a}{b}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\frac{a}{b}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mi>a</mi><mi>b</mi></mfrac></math>",
+        "ms": 5.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\frac{a}{b}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mi>a</mi><mi>b</mi></mfrac></math>",
+        "ms": 3,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\frac{a}{b}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\frac{a}{b}\">\n  <mfrac data-latex=\"\\frac{a}{b}\">\n    <mi data-latex=\"a\">a</mi>\n    <mi data-latex=\"b\">b</mi>\n  </mfrac>\n</math>",
+        "ms": 5.100000000093132,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "frac-short",
+    "category": "Fractions",
+    "latex": "\\frac12",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\frac12",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mn>2</mn></mfrac></math>",
+        "ms": 1.1000000000931323,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\frac12",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mn>2</mn></mfrac></math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\frac12",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\frac12\">\n  <mfrac data-latex=\"\\frac12\">\n    <mn data-latex=\"1\">1</mn>\n    <mn data-latex=\"2\">2</mn>\n  </mfrac>\n</math>",
+        "ms": 0.8999999999068677,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "dfrac",
+    "category": "Fractions",
+    "latex": "\\dfrac{1}{x+1}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\dfrac{1}{x+1}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac></math>",
+        "ms": 1,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\dfrac{1}{x+1}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\" scriptlevel=\"0\"><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mstyle></math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\dfrac{1}{x+1}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\dfrac{1}{x+1}\">\n  <mstyle displaystyle=\"true\" data-latex=\"\\dfrac{1}{x+1}\">\n    <mfrac>\n      <mn data-latex=\"1\">1</mn>\n      <mrow data-latex=\"x+1\">\n        <mi data-latex=\"x\">x</mi>\n        <mo data-latex=\"+\">+</mo>\n        <mn data-latex=\"1\">1</mn>\n      </mrow>\n    </mfrac>\n  </mstyle>\n</math>",
+        "ms": 2,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "binom",
+    "category": "Fractions",
+    "latex": "\\binom{n}{k}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\binom{n}{k}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>(</mo><mtable><mtr><mi>n</mi></mtr><mtr><mi>k</mi></mtr></mtable><mo>)</mo></mrow></math>",
+        "ms": 0.5999999999767169,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [
+          "<mtr> child that is not <mtd>"
+        ],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\binom{n}{k}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mi>k</mi></mfrac><mo fence=\"true\">)</mo></mrow></math>",
+        "ms": 0.2999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\binom{n}{k}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\binom{n}{k}\">\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\binom{n}{k}\">\n    <mrow data-mjx-texclass=\"OPEN\" data-latex=\"\\bigl (\">\n      <mo minsize=\"1.2em\" maxsize=\"1.2em\">(</mo>\n    </mrow>\n    <mfrac linethickness=\"0\">\n      <mi data-latex=\"n\">n</mi>\n      <mi data-latex=\"k\">k</mi>\n    </mfrac>\n    <mrow data-mjx-texclass=\"CLOSE\" data-latex=\"\\bigr )\">\n      <mo minsize=\"1.2em\" maxsize=\"1.2em\">)</mo>\n    </mrow>\n  </mrow>\n</math>",
+        "ms": 2.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "nested-frac",
+    "category": "Fractions",
+    "latex": "\\frac{1}{1+\\frac{1}{x}}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\frac{1}{1+\\frac{1}{x}}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow></mfrac></math>",
+        "ms": 0.8000000000465661,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\frac{1}{1+\\frac{1}{x}}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mn scriptlevel=\"2\" style=\"math-depth:2;\">1</mn><mi scriptlevel=\"2\" style=\"math-depth:2;\">x</mi></mfrac></mrow></mfrac></math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\frac{1}{1+\\frac{1}{x}}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\frac{1}{1+\\frac{1}{x}}\">\n  <mfrac data-latex=\"\\frac{1}{1+\\frac{1}{x}}\">\n    <mn data-latex=\"1\">1</mn>\n    <mrow data-latex=\"1+\\frac{1}{x}\">\n      <mn data-latex=\"1\">1</mn>\n      <mo data-latex=\"+\">+</mo>\n      <mfrac data-latex=\"\\frac{1}{x}\">\n        <mn data-latex=\"1\">1</mn>\n        <mi data-latex=\"x\">x</mi>\n      </mfrac>\n    </mrow>\n  </mfrac>\n</math>",
+        "ms": 0.7999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "sqrt",
+    "category": "Roots",
+    "latex": "\\sqrt{x^2+1}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\sqrt{x^2+1}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></msqrt></math>",
+        "ms": 1.900000000023283,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\sqrt{x^2+1}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mrow><msup><mi>x</mi><mn class=\"tml-sml-pad\">2</mn></msup><mo>+</mo><mn>1</mn></mrow></msqrt></math>",
+        "ms": 1,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\sqrt{x^2+1}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\sqrt{x^2+1}\">\n  <msqrt data-latex=\"\\sqrt{x^2+1}\">\n    <msup data-latex=\"x^2\">\n      <mi data-latex=\"x\">x</mi>\n      <mn data-latex=\"2\">2</mn>\n    </msup>\n    <mo data-latex=\"+\">+</mo>\n    <mn data-latex=\"1\">1</mn>\n  </msqrt>\n</math>",
+        "ms": 2,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "nthroot",
+    "category": "Roots",
+    "latex": "\\sqrt[3]{x}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\sqrt[3]{x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>x</mi><mn>3</mn></mroot></math>",
+        "ms": 1,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\sqrt[3]{x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mrow><mi>x</mi><mspace width=\"0pt\" height=\"0.5em\"></mspace></mrow><mn>3</mn></mroot></math>",
+        "ms": 0.7999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\sqrt[3]{x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\sqrt[3]{x}\">\n  <mroot data-latex=\"\\sqrt[3]{x}\">\n    <mi data-latex=\"x\">x</mi>\n    <mn data-latex=\"3\">3</mn>\n  </mroot>\n</math>",
+        "ms": 0.7999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "sup",
+    "category": "Scripts",
+    "latex": "x^2",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "x^2",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>x</mi><mn>2</mn></msup></math>",
+        "ms": 0.7000000000698492,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "x^2",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>x</mi><mn class=\"tml-sml-pad\">2</mn></msup></math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "x^2",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"x^2\">\n  <msup data-latex=\"x^2\">\n    <mi data-latex=\"x\">x</mi>\n    <mn data-latex=\"2\">2</mn>\n  </msup>\n</math>",
+        "ms": 0.8000000000465661,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "subsup",
+    "category": "Scripts",
+    "latex": "x_i^2",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "x_{i}^2",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mi>x</mi><mi>i</mi><mn>2</mn></msubsup></math>",
+        "ms": 0.8000000000465661,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "x_{i}^2",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mi>x</mi><mi>i</mi><mn class=\"tml-sml-pad\">2</mn></msubsup></math>",
+        "ms": 0.30000000004656613,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "x_{i}^2",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"x_{i}^2\">\n  <msubsup data-latex=\"x_{i}^2\">\n    <mi data-latex=\"x\">x</mi>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"{i}\">\n      <mi data-latex=\"i\">i</mi>\n    </mrow>\n    <mn data-latex=\"2\">2</mn>\n  </msubsup>\n</math>",
+        "ms": 1.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "prime",
+    "category": "Scripts",
+    "latex": "f'(x)",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "f^{\\prime}(x)",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>f</mi><mo>&#x2061;</mo><mi>′</mi></msup><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math>",
+        "ms": 0.9000000000232831,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [
+          "<msup> has 3 children (needs 2)"
+        ],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "f^{\\prime}(x)",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>f</mi><mo lspace=\"0em\" rspace=\"0em\" class=\"tml-prime tml-lrg-pad\">′</mo></msup><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>x</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>",
+        "ms": 1,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "f^{\\prime}(x)",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"f^{\\prime}(x)\">\n  <msup data-latex=\"f^{\\prime}\">\n    <mi data-latex=\"f\">f</mi>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"{\\prime}\">\n      <mi data-mjx-alternate=\"1\" data-latex=\"\\prime\">&#x2032;</mi>\n    </mrow>\n  </msup>\n  <mo data-latex=\"(\" stretchy=\"false\">(</mo>\n  <mi data-latex=\"x\">x</mi>\n  <mo data-latex=\")\" stretchy=\"false\">)</mo>\n</math>",
+        "ms": 1.599999999976717,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "sci",
+    "category": "Scripts",
+    "latex": "6.02\\times10^{23}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "6.02\\times10^{23}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>6.02</mn><mo>&#215;</mo><msup><mn>10</mn><mn>23</mn></msup></mrow></math>",
+        "ms": 0.8000000000465661,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "6.02\\times10^{23}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>6.02</mn><mo>×</mo><msup><mn>10</mn><mn>23</mn></msup></mrow></math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "6.02\\times10^{23}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"6.02\\times10^{23}\">\n  <mn data-latex=\"6.02\">6.02</mn>\n  <mo data-latex=\"\\times\">&#xD7;</mo>\n  <msup data-latex=\"10^{23}\">\n    <mn data-latex=\"10\">10</mn>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"{23}\">\n      <mn data-latex=\"23\">23</mn>\n    </mrow>\n  </msup>\n</math>",
+        "ms": 1,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "pmatrix",
+    "category": "Matrices",
+    "latex": "\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\begin{pmatrix}1 & 2\\\\ 3 & 4\\end{pmatrix}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>(</mo><mtable columnalign=\"center center center center center center center center center center \"><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable><mo>)</mo></mrow></math>",
+        "ms": 2.099999999976717,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\begin{pmatrix}1 & 2\\\\ 3 & 4\\end{pmatrix}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mtable><mtr><mtd style=\"padding-left:0em;padding-right:5.9776pt;\"><mn>1</mn></mtd><mtd style=\"padding-left:5.9776pt;padding-right:0em;\"><mn>2</mn></mtd></mtr><mtr><mtd style=\"padding-left:0em;padding-right:5.9776pt;\"><mn>3</mn></mtd><mtd style=\"padding-left:5.9776pt;padding-right:0em;\"><mn>4</mn></mtd></mtr></mtable><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></math>",
+        "ms": 2,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\begin{pmatrix}1 & 2\\\\ 3 & 4\\end{pmatrix}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\begin{pmatrix}1 &amp; 2\\\\ 3 &amp; 4\\end{pmatrix}\">\n  <mrow data-mjx-texclass=\"INNER\" data-latex=\"\\begin{pmatrix}1 &amp; 2\\\\ 3 &amp; 4\\end{pmatrix}\">\n    <mo data-mjx-texclass=\"OPEN\">(</mo>\n    <mtable columnspacing=\"1em\" rowspacing=\"4pt\">\n      <mtr>\n        <mtd>\n          <mn data-latex=\"1\">1</mn>\n        </mtd>\n        <mtd>\n          <mn data-latex=\"2\">2</mn>\n        </mtd>\n      </mtr>\n      <mtr>\n        <mtd>\n          <mn data-latex=\"3\">3</mn>\n        </mtd>\n        <mtd>\n          <mn data-latex=\"4\">4</mn>\n        </mtd>\n      </mtr>\n    </mtable>\n    <mo data-mjx-texclass=\"CLOSE\">)</mo>\n  </mrow>\n</math>",
+        "ms": 4.099999999976717,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "bmatrix",
+    "category": "Matrices",
+    "latex": "\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\begin{bmatrix}a & b\\\\ c & d\\end{bmatrix}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>[</mo><mtable columnalign=\"center center center center center center center center center center \"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>",
+        "ms": 1,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\begin{bmatrix}a & b\\\\ c & d\\end{bmatrix}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">[</mo><mtable><mtr><mtd style=\"padding-left:0em;padding-right:5.9776pt;\"><mi>a</mi></mtd><mtd style=\"padding-left:5.9776pt;padding-right:0em;\"><mi>b</mi></mtd></mtr><mtr><mtd style=\"padding-left:0em;padding-right:5.9776pt;\"><mi>c</mi></mtd><mtd style=\"padding-left:5.9776pt;padding-right:0em;\"><mi>d</mi></mtd></mtr></mtable><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">]</mo></mrow></math>",
+        "ms": 0.5999999999767169,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\begin{bmatrix}a & b\\\\ c & d\\end{bmatrix}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\begin{bmatrix}a &amp; b\\\\ c &amp; d\\end{bmatrix}\">\n  <mrow data-mjx-texclass=\"INNER\" data-latex=\"\\begin{bmatrix}a &amp; b\\\\ c &amp; d\\end{bmatrix}\">\n    <mo data-mjx-texclass=\"OPEN\">[</mo>\n    <mtable columnspacing=\"1em\" rowspacing=\"4pt\">\n      <mtr>\n        <mtd>\n          <mi data-latex=\"a\">a</mi>\n        </mtd>\n        <mtd>\n          <mi data-latex=\"b\">b</mi>\n        </mtd>\n      </mtr>\n      <mtr>\n        <mtd>\n          <mi data-latex=\"c\">c</mi>\n        </mtd>\n        <mtd>\n          <mi data-latex=\"d\">d</mi>\n        </mtd>\n      </mtr>\n    </mtable>\n    <mo data-mjx-texclass=\"CLOSE\">]</mo>\n  </mrow>\n</math>",
+        "ms": 2,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "cases",
+    "category": "Matrices",
+    "latex": "f(x)=\\begin{cases}1&x>0\\\\0&\\text{otherwise}\\end{cases}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "f(x)=\\begin{cases}1 & x>0\\\\ 0 & \\text{otherwise}\\end{cases}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>f</mi><mo>&#x2061;</mo><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnalign=\"left left left left left left left left left left \"><mtr><mtd><mn>1</mn></mtd><mtd><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mtext >otherwise</mtext></mtd></mtr></mtable></mrow></mrow></math>",
+        "ms": 2.199999999953434,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "f(x)=\\begin{cases}1 & x>0\\\\ 0 & \\text{otherwise}\\end{cases}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>f</mi><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>x</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>=</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">{</mo><mtable><mtr><mtd class=\"tml-left\" style=\"padding-left:0em;padding-right:0em;\"><mn>1</mn></mtd><mtd class=\"tml-left\" style=\"padding-left:1em;padding-right:0em;\"><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd class=\"tml-left\" style=\"padding-left:0em;padding-right:0em;\"><mn>0</mn></mtd><mtd class=\"tml-left\" style=\"padding-left:1em;padding-right:0em;\"><mtext>otherwise</mtext></mtd></mtr></mtable><mo fence=\"true\" form=\"postfix\" stretchy=\"true\"></mo></mrow></mrow></math>",
+        "ms": 1.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "f(x)=\\begin{cases}1 & x>0\\\\ 0 & \\text{otherwise}\\end{cases}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"f(x)=\\begin{cases}1 &amp; x&gt;0\\\\ 0 &amp; \\text{otherwise}\\end{cases}\">\n  <mi data-latex=\"f\">f</mi>\n  <mo data-latex=\"(\" stretchy=\"false\">(</mo>\n  <mi data-latex=\"x\">x</mi>\n  <mo data-latex=\")\" stretchy=\"false\">)</mo>\n  <mo data-latex=\"=\">=</mo>\n  <mrow data-mjx-texclass=\"INNER\" data-latex=\"{cases}\">\n    <mo data-mjx-texclass=\"OPEN\">{</mo>\n    <mtable columnspacing=\"1em\" rowspacing=\".2em\" columnalign=\"left left\">\n      <mtr>\n        <mtd>\n          <mn data-latex=\"1\">1</mn>\n        </mtd>\n        <mtd>\n          <mi data-latex=\"x\">x</mi>\n          <mo data-latex=\"&gt;\">&gt;</mo>\n          <mn data-latex=\"0\">0</mn>\n        </mtd>\n      </mtr>\n      <mtr>\n        <mtd>\n          <mn data-latex=\"0\">0</mn>\n        </mtd>\n        <mtd>\n          <mtext data-latex=\"\\text{otherwise}\">otherwise</mtext>\n        </mtd>\n      </mtr>\n    </mtable>\n    <mo data-mjx-texclass=\"CLOSE\" fence=\"true\" stretchy=\"true\" symmetric=\"true\"></mo>\n  </mrow>\n</math>",
+        "ms": 4.700000000069849,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "aligned",
+    "category": "Matrices",
+    "latex": "\\begin{aligned}a&=b+c\\\\&=d\\end{aligned}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\begin{aligned}a & =b+c\\\\  & =d\\end{aligned}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable columnalign=\"right left \"><mtr><mtd><mi>a</mi></mtd><mtd><mrow><mo>=</mo><mi>b</mi><mo>+</mo><mi>c</mi></mrow></mtd></mtr><mtr><mtd></mtd><mtd><mrow><mo>=</mo><mi>d</mi></mrow></mtd></mtr></mtable></math>",
+        "ms": 0.5999999999767169,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\begin{aligned}a & =b+c\\\\  & =d\\end{aligned}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable displaystyle=\"true\" class=\"tml-jot\"><mtr><mtd class=\"tml-right\" style=\"padding-left:0em;padding-right:0em;\"><mi>a</mi></mtd><mtd class=\"tml-left\" style=\"padding-left:0em;padding-right:0em;\"><mrow><mo>=</mo><mi>b</mi><mo>+</mo><mi>c</mi></mrow></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"padding-left:0em;padding-right:0em;\"><mrow></mrow></mtd><mtd class=\"tml-left\" style=\"padding-left:0em;padding-right:0em;\"><mrow><mo>=</mo><mi>d</mi></mrow></mtd></mtr></mtable></math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\begin{aligned}a & =b+c\\\\  & =d\\end{aligned}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\begin{aligned}a &amp; =b+c\\\\  &amp; =d\\end{aligned}\">\n  <mtable displaystyle=\"true\" columnalign=\"right left\" columnspacing=\"0em\" rowspacing=\"3pt\" data-break-align=\"bottom top\" data-latex=\"\\begin{aligned}a &amp; =b+c\\\\  &amp; =d\\end{aligned}\">\n    <mtr>\n      <mtd>\n        <mi data-latex=\"a\">a</mi>\n      </mtd>\n      <mtd>\n        <mstyle indentshift=\"2em\">\n          <mi></mi>\n          <mo data-latex=\"=\">=</mo>\n          <mi data-latex=\"b\">b</mi>\n          <mo data-latex=\"+\">+</mo>\n          <mi data-latex=\"c\">c</mi>\n        </mstyle>\n      </mtd>\n    </mtr>\n    <mtr>\n      <mtd></mtd>\n      <mtd>\n        <mstyle indentshift=\"2em\">\n          <mi></mi>\n          <mo data-latex=\"=\">=</mo>\n          <mi data-latex=\"d\">d</mi>\n        </mstyle>\n      </mtd>\n    </mtr>\n  </mtable>\n</math>",
+        "ms": 2,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "int",
+    "category": "Calculus",
+    "latex": "\\int_0^1 f(x)\\,dx",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\int_0^1f(x)\\,dx",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mi>f</mi><mo>&#x2061;</mo><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mspace width=\"0.16666666666666666em\"/><mi>d</mi><mo>&#8290;</mo><mi>x</mi></mrow></math>",
+        "ms": 0.6999999999534339,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\int_0^1f(x)\\,dx",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msubsup><mo movablelimits=\"false\">∫</mo><mn>0</mn><mn>1</mn></msubsup><mi>f</mi><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>x</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mspace width=\"0.1667em\"></mspace><mi>d</mi><mi>x</mi></mrow></math>",
+        "ms": 0.9000000000232831,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\int_0^1f(x)\\,dx",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\int_0^1f(x)\\,dx\">\n  <msubsup data-latex=\"\\int_0^1\">\n    <mo data-latex=\"\\int\">&#x222B;</mo>\n    <mn data-latex=\"0\">0</mn>\n    <mn data-latex=\"1\">1</mn>\n  </msubsup>\n  <mi data-latex=\"f\">f</mi>\n  <mo data-latex=\"(\" stretchy=\"false\">(</mo>\n  <mi data-latex=\"x\">x</mi>\n  <mo data-latex=\")\" stretchy=\"false\">)</mo>\n  <mspace width=\"0.167em\" data-latex=\"\\,\"></mspace>\n  <mi data-latex=\"d\">d</mi>\n  <mi data-latex=\"x\">x</mi>\n</math>",
+        "ms": 1.1000000000931323,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "sum",
+    "category": "Calculus",
+    "latex": "\\sum_{i=1}^{n} i^2",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\sum_{i=1}^{n}i^2",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msup><mi>i</mi><mn>2</mn></msup></mrow></math>",
+        "ms": 0.39999999990686774,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\sum_{i=1}^{n}i^2",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msubsup><mo movablelimits=\"false\">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msup><mi>i</mi><mn>2</mn></msup></mrow></math>",
+        "ms": 0.30000000004656613,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\sum_{i=1}^{n}i^2",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\sum_{i=1}^{n}i^2\">\n  <munderover data-latex=\"\\sum_{i=1}^{n}\">\n    <mo data-latex=\"\\sum\">&#x2211;</mo>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"{i=1}\">\n      <mi data-latex=\"i\">i</mi>\n      <mo data-latex=\"=\">=</mo>\n      <mn data-latex=\"1\">1</mn>\n    </mrow>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"{n}\">\n      <mi data-latex=\"n\">n</mi>\n    </mrow>\n  </munderover>\n  <msup data-latex=\"i^2\">\n    <mi data-latex=\"i\">i</mi>\n    <mn data-latex=\"2\">2</mn>\n  </msup>\n</math>",
+        "ms": 1.400000000023283,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "lim",
+    "category": "Calculus",
+    "latex": "\\lim_{x\\to\\infty}\\frac{1}{x}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\lim_{x\\to\\infty}\\frac{1}{x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><munder><mo>lim</mo><mrow><mi>x</mi><mo>→</mo><mi>&#x221e;</mi></mrow></munder><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow></math>",
+        "ms": 0.8000000000465661,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\lim_{x\\to\\infty}\\frac{1}{x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>lim</mi><mrow><mi>x</mi><mo>→</mo><mi>∞</mi></mrow></msub><mo>⁡</mo><mspace width=\"0.1667em\"></mspace><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow></math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\lim_{x\\to\\infty}\\frac{1}{x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\lim_{x\\to\\infty}\\frac{1}{x}\">\n  <munder data-latex=\"\\lim_{x\\to\\infty}\">\n    <mo data-mjx-texclass=\"OP\" movablelimits=\"true\" data-latex=\"\\lim\">lim</mo>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"{x\\to\\infty}\">\n      <mi data-latex=\"x\">x</mi>\n      <mo accent=\"false\" stretchy=\"false\" data-latex=\"\\to\">&#x2192;</mo>\n      <mi mathvariant=\"normal\" data-latex=\"\\infty\">&#x221E;</mi>\n    </mrow>\n  </munder>\n  <mfrac data-latex=\"\\frac{1}{x}\">\n    <mn data-latex=\"1\">1</mn>\n    <mi data-latex=\"x\">x</mi>\n  </mfrac>\n</math>",
+        "ms": 1,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "partial",
+    "category": "Calculus",
+    "latex": "\\frac{\\partial f}{\\partial x}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\frac{\\partial f}{\\partial x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mi>∂</mi><mo>&#8290;</mo><mi>f</mi><mo>&#x2061;</mo></mrow><mrow><mi>∂</mi><mo>&#8290;</mo><mi>x</mi></mrow></mfrac></math>",
+        "ms": 0.5999999999767169,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\frac{\\partial f}{\\partial x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mi>∂</mi><mi>f</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac></math>",
+        "ms": 0.19999999995343387,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\frac{\\partial f}{\\partial x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\frac{\\partial f}{\\partial x}\">\n  <mfrac data-latex=\"\\frac{\\partial f}{\\partial x}\">\n    <mrow data-latex=\"\\partial f\">\n      <mi data-latex=\"\\partial\">&#x2202;</mi>\n      <mi data-latex=\"f\">f</mi>\n    </mrow>\n    <mrow data-latex=\"\\partial x\">\n      <mi data-latex=\"\\partial\">&#x2202;</mi>\n      <mi data-latex=\"x\">x</mi>\n    </mrow>\n  </mfrac>\n</math>",
+        "ms": 0.5999999999767169,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "oint",
+    "category": "Calculus",
+    "latex": "\\oint_C \\vec{F}\\cdot d\\vec{r}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\oint_{C}\\vec{F}\\cdot d\\vec{r}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mo>∮</mo><mi>C</mi></msub><mover accent=\"true\"><mi>F</mi><mo>&#x20d7;</mo></mover><mo>⋅</mo><mi>d</mi><mover accent=\"true\"><mi>r</mi><mo>&#x20d7;</mo></mover></mrow></math>",
+        "ms": 1.3999999999068677,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\oint_{C}\\vec{F}\\cdot d\\vec{r}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mo movablelimits=\"false\">∮</mo><mi>C</mi></msub><mover><mi>F</mi><mo stretchy=\"false\" class=\"tml-vec chr-lrg wbk-lrg-vec\">→</mo></mover><mo>⋅</mo><mi>d</mi><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover></mrow></math>",
+        "ms": 0.8000000000465661,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\oint_{C}\\vec{F}\\cdot d\\vec{r}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\oint_{C}\\vec{F}\\cdot d\\vec{r}\">\n  <msub data-latex=\"\\oint_{C}\">\n    <mo data-latex=\"\\oint\">&#x222E;</mo>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"{C}\">\n      <mi data-latex=\"C\">C</mi>\n    </mrow>\n  </msub>\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\vec{F}\">\n    <mover>\n      <mi data-latex=\"F\">F</mi>\n      <mo stretchy=\"false\">&#x2192;</mo>\n    </mover>\n  </mrow>\n  <mo data-latex=\"\\cdot\">&#x22C5;</mo>\n  <mi data-latex=\"d\">d</mi>\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\vec{r}\">\n    <mover>\n      <mi data-latex=\"r\">r</mi>\n      <mo stretchy=\"false\">&#x2192;</mo>\n    </mover>\n  </mrow>\n</math>",
+        "ms": 2.3999999999068677,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "leftright",
+    "category": "Brackets",
+    "latex": "\\left(\\frac{a}{b}\\right)",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\left(\\frac{a}{b}\\right)",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>(</mo><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>)</mo></mrow></math>",
+        "ms": 1.3000000000465661,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\left(\\frac{a}{b}\\right)",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mi>a</mi><mi>b</mi></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></math>",
+        "ms": 0.6999999999534339,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\left(\\frac{a}{b}\\right)",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\left(\\frac{a}{b}\\right)\">\n  <mrow data-mjx-texclass=\"INNER\" data-latex=\"\\left(\\frac{a}{b}\\right)\">\n    <mo data-mjx-texclass=\"OPEN\" data-latex=\"\\left(\">(</mo>\n    <mfrac data-latex=\"\\frac{a}{b}\">\n      <mi data-latex=\"a\">a</mi>\n      <mi data-latex=\"b\">b</mi>\n    </mfrac>\n    <mo data-mjx-texclass=\"CLOSE\" data-latex=\"\\right)\">)</mo>\n  </mrow>\n</math>",
+        "ms": 1.400000000023283,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "abs",
+    "category": "Brackets",
+    "latex": "\\left|x\\right|",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\left|x\\right|",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow></math>",
+        "ms": 0.5999999999767169,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\left|x\\right|",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">|</mo><mi>x</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">|</mo></mrow></math>",
+        "ms": 0.2999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\left|x\\right|",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\left|x\\right|\">\n  <mrow data-mjx-texclass=\"INNER\" data-latex=\"\\left|x\\right|\">\n    <mo data-mjx-texclass=\"OPEN\" data-latex=\"\\left|\">|</mo>\n    <mi data-latex=\"x\">x</mi>\n    <mo data-mjx-texclass=\"CLOSE\" data-latex=\"\\right|\">|</mo>\n  </mrow>\n</math>",
+        "ms": 0.9000000000232831,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "norm",
+    "category": "Brackets",
+    "latex": "\\lVert v\\rVert",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\lVert v\\rVert",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>∥</mo><mi>v</mi><mo>∥</mo></mrow></math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\lVert v\\rVert",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">‖</mo><mi>v</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">‖</mo></mrow></math>",
+        "ms": 0.19999999995343387,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\lVert v\\rVert",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\lVert v\\rVert\">\n  <mo data-mjx-texclass=\"OPEN\" fence=\"false\" stretchy=\"false\" data-latex=\"\\lVert\">&#x2016;</mo>\n  <mi data-latex=\"v\">v</mi>\n  <mo data-mjx-texclass=\"CLOSE\" fence=\"false\" stretchy=\"false\" data-latex=\"\\rVert\">&#x2016;</mo>\n</math>",
+        "ms": 0.7999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "angle",
+    "category": "Brackets",
+    "latex": "\\langle u,v\\rangle",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\langle u,v\\rangle",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>⟨</mo><mi>u</mi><mo separator=\"true\">,</mo><mi>v</mi><mo>⟩</mo></mrow></math>",
+        "ms": 0.5999999999767169,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\langle u,v\\rangle",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">⟨</mo><mi>u</mi><mo separator=\"true\">,</mo><mi>v</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">⟩</mo></mrow></math>",
+        "ms": 0.30000000004656613,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\langle u,v\\rangle",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\langle u,v\\rangle\">\n  <mo fence=\"false\" stretchy=\"false\" data-latex=\"\\langle\">&#x27E8;</mo>\n  <mi data-latex=\"u\">u</mi>\n  <mo data-latex=\",\">,</mo>\n  <mi data-latex=\"v\">v</mi>\n  <mo fence=\"false\" stretchy=\"false\" data-latex=\"\\rangle\">&#x27E9;</mo>\n</math>",
+        "ms": 1.400000000023283,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "set",
+    "category": "Brackets",
+    "latex": "\\{x\\mid x>0\\}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\{x\\mid x>0\\}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>{</mo><mi>x</mi><mo>∣</mo><mi>x</mi><mo>&gt;</mo><mn>0</mn><mo>}</mo></mrow></math>",
+        "ms": 0.6000000000931323,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\{x\\mid x>0\\}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">{</mo><mi>x</mi><mo lspace=\"0.22em\" rspace=\"0.22em\" stretchy=\"false\">|</mo><mi>x</mi><mo>&gt;</mo><mn>0</mn><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">}</mo></mrow></math>",
+        "ms": 0.30000000004656613,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\{x\\mid x>0\\}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\{x\\mid x&gt;0\\}\">\n  <mo fence=\"false\" stretchy=\"false\" data-latex=\"\\{\">{</mo>\n  <mi data-latex=\"x\">x</mi>\n  <mo data-latex=\"\\mid\">&#x2223;</mo>\n  <mi data-latex=\"x\">x</mi>\n  <mo data-latex=\"&gt;\">&gt;</mo>\n  <mn data-latex=\"0\">0</mn>\n  <mo fence=\"false\" stretchy=\"false\" data-latex=\"\\}\">}</mo>\n</math>",
+        "ms": 1.099999999976717,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "greek",
+    "category": "Greek",
+    "latex": "\\alpha+\\beta=\\Gamma",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\alpha+\\beta=\\Gamma",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>&#x03b1;</mi><mo>+</mo><mi>β</mi><mo>=</mo><mi>Γ</mi></mrow></math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\alpha+\\beta=\\Gamma",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>α</mi><mo>+</mo><mi>β</mi><mo>=</mo><mrow><mi mathvariant=\"normal\">Γ</mi><mspace></mspace></mrow></mrow></math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\alpha+\\beta=\\Gamma",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\alpha+\\beta=\\Gamma\">\n  <mi data-latex=\"\\alpha\">&#x3B1;</mi>\n  <mo data-latex=\"+\">+</mo>\n  <mi data-latex=\"\\beta\">&#x3B2;</mi>\n  <mo data-latex=\"=\">=</mo>\n  <mi mathvariant=\"normal\" data-latex=\"\\Gamma\">&#x393;</mi>\n</math>",
+        "ms": 0.9000000000232831,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "mathbb",
+    "category": "Greek",
+    "latex": "\\mathbb{R}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\mathbb{R}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>ℝ</mi></math>",
+        "ms": 0.7000000000698492,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\mathbb{R}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>ℝ</mi></math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\mathbb{R}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\mathbb{R}\">\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathbb{R}\">\n    <mi mathvariant=\"double-struck\" data-latex=\"R\">R</mi>\n  </mrow>\n</math>",
+        "ms": 0.7999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "mathbf",
+    "category": "Greek",
+    "latex": "\\mathbf{v}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\mathbf{v}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"bold\">v</mi></math>",
+        "ms": 0.5999999999767169,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\mathbf{v}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>𝐯</mi></math>",
+        "ms": 0.30000000004656613,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\mathbf{v}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\mathbf{v}\">\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathbf{v}\">\n    <mi mathvariant=\"bold\" data-latex=\"v\">v</mi>\n  </mrow>\n</math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "relations",
+    "category": "Operators",
+    "latex": "a\\le b\\ne c\\approx d",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "a\\le b\\ne c\\approx d",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi><mo>≤</mo><mi>b</mi><mo>&ne;</mo><mi>c</mi><mo>≈</mo><mi>d</mi></mrow></math>",
+        "ms": 0.9000000000232831,
+        "wellFormed": false,
+        "empty": false,
+        "merror": false,
+        "problems": [
+          "not well-formed XML"
+        ],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "a\\le b\\ne c\\approx d",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi><mo>≤</mo><mi>b</mi><mo>≠</mo><mi>c</mi><mo>≈</mo><mi>d</mi></mrow></math>",
+        "ms": 0.2999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "a\\le b\\ne c\\approx d",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"a\\le b\\ne c\\approx d\">\n  <mi data-latex=\"a\">a</mi>\n  <mo data-latex=\"\\le\">&#x2264;</mo>\n  <mi data-latex=\"b\">b</mi>\n  <mo data-latex=\"\\ne\">&#x2260;</mo>\n  <mi data-latex=\"c\">c</mi>\n  <mo data-latex=\"\\approx\">&#x2248;</mo>\n  <mi data-latex=\"d\">d</mi>\n</math>",
+        "ms": 1.099999999976717,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "pm",
+    "category": "Operators",
+    "latex": "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>&#177;</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mo>&#8290;</mo><mi>a</mi><mo>&#8290;</mo><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mo>&#8290;</mo><mi>a</mi></mrow></mfrac></mrow></math>",
+        "ms": 1.3000000000465661,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow></math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\">\n  <mi data-latex=\"x\">x</mi>\n  <mo data-latex=\"=\">=</mo>\n  <mfrac data-latex=\"\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\">\n    <mrow data-latex=\"-b\\pm\\sqrt{b^2-4ac}\">\n      <mo data-latex=\"-\">&#x2212;</mo>\n      <mi data-latex=\"b\">b</mi>\n      <mo data-latex=\"\\pm\">&#xB1;</mo>\n      <msqrt data-latex=\"\\sqrt{b^2-4ac}\">\n        <msup data-latex=\"b^2\">\n          <mi data-latex=\"b\">b</mi>\n          <mn data-latex=\"2\">2</mn>\n        </msup>\n        <mo data-latex=\"-\">&#x2212;</mo>\n        <mn data-latex=\"4\">4</mn>\n        <mi data-latex=\"a\">a</mi>\n        <mi data-latex=\"c\">c</mi>\n      </msqrt>\n    </mrow>\n    <mrow data-latex=\"2a\">\n      <mn data-latex=\"2\">2</mn>\n      <mi data-latex=\"a\">a</mi>\n    </mrow>\n  </mfrac>\n</math>",
+        "ms": 2.199999999953434,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "trig",
+    "category": "Operators",
+    "latex": "\\sin^2\\theta+\\cos^2\\theta=1",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\sin^2\\theta+\\cos^2\\theta=1",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mo>sin</mo><mn>2</mn></msup><mi>θ</mi><mo>+</mo><msup><mo>cos</mo><mn>2</mn></msup><mi>θ</mi><mo>=</mo><mn>1</mn></mrow></math>",
+        "ms": 1.2000000000698492,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\sin^2\\theta+\\cos^2\\theta=1",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mspace width=\"0.1667em\"></mspace><mi>θ</mi><mo>+</mo><msup><mi>cos</mi><mn>2</mn></msup><mo>⁡</mo><mspace width=\"0.1667em\"></mspace><mi>θ</mi><mo>=</mo><mn>1</mn></mrow></math>",
+        "ms": 0.5999999999767169,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\sin^2\\theta+\\cos^2\\theta=1",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\sin^2\\theta+\\cos^2\\theta=1\">\n  <msup data-latex=\"\\sin^2\">\n    <mi data-latex=\"\\sin\">sin</mi>\n    <mn data-latex=\"2\">2</mn>\n  </msup>\n  <mo data-mjx-texclass=\"NONE\">&#x2061;</mo>\n  <mi data-latex=\"\\theta\">&#x3B8;</mi>\n  <mo data-latex=\"+\">+</mo>\n  <msup data-latex=\"\\cos^2\">\n    <mi data-latex=\"\\cos\">cos</mi>\n    <mn data-latex=\"2\">2</mn>\n  </msup>\n  <mo data-mjx-texclass=\"NONE\">&#x2061;</mo>\n  <mi data-latex=\"\\theta\">&#x3B8;</mi>\n  <mo data-latex=\"=\">=</mo>\n  <mn data-latex=\"1\">1</mn>\n</math>",
+        "ms": 2.099999999976717,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "log",
+    "category": "Operators",
+    "latex": "\\log_2 8=3",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\log_28=3",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mo>log</mo><mn>2</mn></msub><mn>8</mn><mo>=</mo><mn>3</mn></mrow></math>",
+        "ms": 0.7000000000698492,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\log_28=3",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>log</mi><mn>2</mn></msub><mo>⁡</mo><mspace width=\"0.1667em\"></mspace><mn>8</mn><mo>=</mo><mn>3</mn></mrow></math>",
+        "ms": 1.599999999976717,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\log_28=3",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\log_28=3\">\n  <msub data-latex=\"\\log_2\">\n    <mi data-latex=\"\\log\">log</mi>\n    <mn data-latex=\"2\">2</mn>\n  </msub>\n  <mo data-mjx-texclass=\"NONE\">&#x2061;</mo>\n  <mn data-latex=\"8\">8</mn>\n  <mo data-latex=\"=\">=</mo>\n  <mn data-latex=\"3\">3</mn>\n</math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "operatorname",
+    "category": "Operators",
+    "latex": "\\operatorname{lcm}(a,b)",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\operatorname{\\mathrm{lcm}}(a,b)",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>lcm</mi><mo>&#8290;</mo><mrow><mo>(</mo><mrow><mi>a</mi><mo separator=\"true\">,</mo><mi>b</mi></mrow><mo>)</mo></mrow></mrow></math>",
+        "ms": 0.7000000000698492,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\operatorname{\\mathrm{lcm}}(a,b)",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>lcm</mi><mo>⁡</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>a</mi><mo separator=\"true\">,</mo><mi>b</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>",
+        "ms": 0.6000000000931323,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\operatorname{\\mathrm{lcm}}(a,b)",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\operatorname{\\mathrm{lcm}}(a,b)\">\n  <mrow data-mjx-texclass=\"OP\" data-latex=\"\\operatorname{\\mathrm{lcm}}\">\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathrm{lcm}\">\n      <mi data-mjx-auto-op=\"false\" data-latex=\"lcm\">lcm</mi>\n    </mrow>\n  </mrow>\n  <mo data-mjx-texclass=\"NONE\">&#x2061;</mo>\n  <mo data-latex=\"(\" stretchy=\"false\">(</mo>\n  <mi data-latex=\"a\">a</mi>\n  <mo data-latex=\",\">,</mo>\n  <mi data-latex=\"b\">b</mi>\n  <mo data-latex=\")\" stretchy=\"false\">)</mo>\n</math>",
+        "ms": 1.099999999976717,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "logic",
+    "category": "Operators",
+    "latex": "\\forall x\\in A,\\exists y",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\forall x\\in A,\\exists y",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>&#x2200;</mi><mo>&#8290;</mo><mi>x</mi><mo>∈</mo><mi>A</mi><mo separator=\"true\">,</mo><mi>&#x2203;</mi><mo>&#8290;</mo><mi>y</mi></mrow></math>",
+        "ms": 0.19999999995343387,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\forall x\\in A,\\exists y",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>∀</mi><mi>x</mi><mo>∈</mo><mi>A</mi><mo separator=\"true\">,</mo><mi>∃</mi><mi>y</mi></mrow></math>",
+        "ms": 0.09999999997671694,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\forall x\\in A,\\exists y",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\forall x\\in A,\\exists y\">\n  <mi mathvariant=\"normal\" data-latex=\"\\forall\">&#x2200;</mi>\n  <mi data-latex=\"x\">x</mi>\n  <mo data-latex=\"\\in\">&#x2208;</mo>\n  <mi data-latex=\"A\">A</mi>\n  <mo data-latex=\",\">,</mo>\n  <mi mathvariant=\"normal\" data-latex=\"\\exists\">&#x2203;</mi>\n  <mi data-latex=\"y\">y</mi>\n</math>",
+        "ms": 0.5999999999767169,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "arrow",
+    "category": "Operators",
+    "latex": "A\\Rightarrow B",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "A\\Rightarrow B",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>A</mi><mo>⇒</mo><mi>B</mi></mrow></math>",
+        "ms": 0.19999999995343387,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "A\\Rightarrow B",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>A</mi><mo stretchy=\"false\">⇒</mo><mi>B</mi></mrow></math>",
+        "ms": 0.10000000009313226,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "A\\Rightarrow B",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"A\\Rightarrow B\">\n  <mi data-latex=\"A\">A</mi>\n  <mo stretchy=\"false\" data-latex=\"\\Rightarrow\">&#x21D2;</mo>\n  <mi data-latex=\"B\">B</mi>\n</math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "vec",
+    "category": "Accents",
+    "latex": "\\vec{v}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\vec{v}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover accent=\"true\"><mi>v</mi><mo>&#x20d7;</mo></mover></math>",
+        "ms": 0.2000000000698492,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\vec{v}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>v</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover></math>",
+        "ms": 0.2000000000698492,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\vec{v}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\vec{v}\">\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\vec{v}\">\n    <mover>\n      <mi data-latex=\"v\">v</mi>\n      <mo stretchy=\"false\">&#x2192;</mo>\n    </mover>\n  </mrow>\n</math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "hat",
+    "category": "Accents",
+    "latex": "\\hat{x}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\hat{x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover accent=\"true\"><mi>x</mi><mo>&#x005e;</mo></mover></math>",
+        "ms": 0.2999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\hat{x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover></math>",
+        "ms": 0.19999999995343387,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\hat{x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\hat{x}\">\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\hat{x}\">\n    <mover>\n      <mi data-latex=\"x\">x</mi>\n      <mo stretchy=\"false\">^</mo>\n    </mover>\n  </mrow>\n</math>",
+        "ms": 0.2999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "bar",
+    "category": "Accents",
+    "latex": "\\bar{x}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\bar{x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover accent=\"true\"><mi>x</mi><mo>&#x00af;</mo></mover></math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\bar{x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">‾</mo></mover></math>",
+        "ms": 0.19999999995343387,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\bar{x}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\bar{x}\">\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\bar{x}\">\n    <mover>\n      <mi data-latex=\"x\">x</mi>\n      <mo stretchy=\"false\">&#xAF;</mo>\n    </mover>\n  </mrow>\n</math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "overline",
+    "category": "Accents",
+    "latex": "\\overline{AB}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\overline{AB}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"></math>",
+        "ms": 3.200000000069849,
+        "wellFormed": true,
+        "empty": true,
+        "merror": false,
+        "problems": [],
+        "missing": [
+          "A",
+          "B"
+        ]
+      },
+      "Temml 0.14.0": {
+        "input": "\\overline{AB}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"top\" class=\"tml-overline\"><mrow><mi>A</mi><mi>B</mi></mrow></menclose></math>",
+        "ms": 0.30000000004656613,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\overline{AB}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\overline{AB}\">\n  <mover data-latex=\"\\overline{AB}\">\n    <mrow data-latex=\"AB\">\n      <mi data-latex=\"A\">A</mi>\n      <mi data-latex=\"B\">B</mi>\n    </mrow>\n    <mo accent=\"true\">&#x2015;</mo>\n  </mover>\n</math>",
+        "ms": 0.6000000000931323,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "overrightarrow",
+    "category": "Accents",
+    "latex": "\\overrightarrow{AB}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\overrightarrow{AB}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover >→</mover></math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [
+          "<mover> has 0 children (needs 2)",
+          "bare text \"→\" in <mover>"
+        ],
+        "missing": [
+          "A",
+          "B"
+        ]
+      },
+      "Temml 0.14.0": {
+        "input": "\\overrightarrow{AB}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mrow><mi>A</mi><mi>B</mi></mrow><mo stretchy=\"true\" style=\"math-depth:0;\">→</mo></mover></math>",
+        "ms": 0.19999999995343387,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\overrightarrow{AB}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\overrightarrow{AB}\">\n  <mover data-latex=\"\\overrightarrow{AB}\">\n    <mrow data-latex=\"AB\">\n      <mi data-latex=\"A\">A</mi>\n      <mi data-latex=\"B\">B</mi>\n    </mrow>\n    <mo>&#x2192;</mo>\n  </mover>\n</math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "underbrace",
+    "category": "Accents",
+    "latex": "\\underbrace{a+b}_{n}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\underbrace{a+b}_{n}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><munder >⏟</munder><mi>n</mi></msub></math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [
+          "<munder> has 0 children (needs 2)",
+          "bare text \"⏟\" in <munder>"
+        ],
+        "missing": [
+          "a",
+          "b"
+        ]
+      },
+      "Temml 0.14.0": {
+        "input": "\\underbrace{a+b}_{n}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><munder><munder><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo stretchy=\"true\" style=\"math-depth:0;\">⏟</mo></munder><mi>n</mi></munder></mrow></math>",
+        "ms": 0.2999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\underbrace{a+b}_{n}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\underbrace{a+b}_{n}\">\n  <munder data-latex=\"\\underbrace{a+b}_{n}\">\n    <mrow data-mjx-texclass=\"OP\" data-latex=\"\\underbrace{a+b}\">\n      <mstyle displaystyle=\"true\">\n        <munder>\n          <mrow data-latex=\"a+b\">\n            <mi data-latex=\"a\">a</mi>\n            <mo data-latex=\"+\">+</mo>\n            <mi data-latex=\"b\">b</mi>\n          </mrow>\n          <mo>&#x23DF;</mo>\n        </munder>\n      </mstyle>\n    </mrow>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"{n}\">\n      <mi data-latex=\"n\">n</mi>\n    </mrow>\n  </munder>\n</math>",
+        "ms": 1,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "overbrace",
+    "category": "Accents",
+    "latex": "\\overbrace{a+b}^{n}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\overbrace{a+b}^{n}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mover >⏞</mover><mi>n</mi></msup></math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [
+          "<mover> has 0 children (needs 2)",
+          "bare text \"⏞\" in <mover>"
+        ],
+        "missing": [
+          "a",
+          "b"
+        ]
+      },
+      "Temml 0.14.0": {
+        "input": "\\overbrace{a+b}^{n}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mover><mover><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo stretchy=\"true\" style=\"math-depth:0;\">⏞</mo></mover><mi>n</mi></mover></mrow></math>",
+        "ms": 0.09999999997671694,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\overbrace{a+b}^{n}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\overbrace{a+b}^{n}\">\n  <mover data-latex=\"\\overbrace{a+b}^{n}\">\n    <mrow data-mjx-texclass=\"OP\" data-latex=\"\\overbrace{a+b}\">\n      <mstyle displaystyle=\"true\">\n        <mover>\n          <mrow data-latex=\"a+b\">\n            <mi data-latex=\"a\">a</mi>\n            <mo data-latex=\"+\">+</mo>\n            <mi data-latex=\"b\">b</mi>\n          </mrow>\n          <mo>&#x23DE;</mo>\n        </mover>\n      </mstyle>\n    </mrow>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"{n}\">\n      <mi data-latex=\"n\">n</mi>\n    </mrow>\n  </mover>\n</math>",
+        "ms": 0.7999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "mathring",
+    "category": "Accents",
+    "latex": "\\mathring{A}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\mathring{A}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover accent=\"true\"><mi>A</mi><mo>730</mo></mover></math>",
+        "ms": 0.30000000004656613,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\mathring{A}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>A</mi><mo stretchy=\"false\" class=\"chr-lrg wbk-lrg-acc\" style=\"math-depth:0;\">˚</mo></mover></math>",
+        "ms": 0.09999999997671694,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\mathring{A}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\mathring{A}\">\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathring{A}\">\n    <mover>\n      <mi data-latex=\"A\">A</mi>\n      <mo>&#x2DA;</mo>\n    </mover>\n  </mrow>\n</math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "xrightarrow",
+    "category": "Accents",
+    "latex": "A\\xrightarrow{k}B",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "A\\xrightarrow{k}B",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>A</mi><munderover >→<mi>k</mi></munderover><mi>B</mi></mrow></math>",
+        "ms": 0.6000000000931323,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [
+          "<munderover> has 1 children (needs 3)",
+          "bare text \"→\" in <munderover>"
+        ],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "A\\xrightarrow{k}B",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>A</mi><mrow><mspace width=\"0.2778em\"></mspace><mover accent=\"false\"><mo stretchy=\"true\" lspace=\"0\" rspace=\"0\">→</mo><mover><mrow><mspace width=\"0.4286em\"></mspace><mi>k</mi><mspace width=\"0.4286em\"></mspace></mrow><mspace width=\"3.5000em\"></mspace></mover></mover><mspace width=\"0.2778em\"></mspace></mrow><mi>B</mi></mrow></math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "A\\xrightarrow{k}B",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"A\\xrightarrow{k}B\">\n  <mi data-latex=\"A\">A</mi>\n  <mrow data-mjx-texclass=\"REL\" data-latex=\"\\xrightarrow{k}\">\n    <mrow data-mjx-texclass=\"NONE\"></mrow>\n    <mover>\n      <mo data-mjx-texclass=\"ORD\">&#x2192;</mo>\n      <mpadded width=\"+0.833em\" lspace=\"0.278em\" voffset=\"-.2em\" height=\"-.2em\">\n        <mi data-latex=\"k\">k</mi>\n        <mspace depth=\".2em\"></mspace>\n      </mpadded>\n    </mover>\n  </mrow>\n  <mi data-latex=\"B\">B</mi>\n</math>",
+        "ms": 0.6999999999534339,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "ce-water",
+    "category": "Chemistry",
+    "latex": "\\ce{H2O}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\ce{H2O}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"></math>",
+        "ms": 2.799999999930151,
+        "wellFormed": true,
+        "empty": true,
+        "merror": false,
+        "problems": [],
+        "missing": [
+          "H",
+          "2",
+          "O"
+        ]
+      },
+      "Temml 0.14.0": {
+        "input": "\\ce{H2O}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">H</mi><mspace></mspace></mrow><msub><mrow></mrow><mn>2</mn></msub><mrow><mi mathvariant=\"normal\">O</mi><mspace></mspace></mrow></mrow></math>",
+        "ms": 1.2999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\ce{H2O}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\ce{H2O}\">\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"{\\mathrm{H}{\\vphantom{A}}_{\\smash[t]{2}}\\mathrm{O}}\">\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathrm{H}\">\n      <mi mathvariant=\"normal\" data-latex=\"H\">H</mi>\n    </mrow>\n    <msub data-latex=\"{\\vphantom{A}}_{\\smash[t]{2}}\">\n      <mrow data-mjx-texclass=\"ORD\" data-latex=\"{\\vphantom{A}}\">\n        <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\vphantom{A}\">\n          <mpadded width=\"0\">\n            <mphantom>\n              <mi data-latex=\"A\">A</mi>\n            </mphantom>\n          </mpadded>\n        </mrow>\n      </mrow>\n      <mrow data-mjx-texclass=\"ORD\" data-latex=\"{\\smash[t]{2}}\">\n        <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\smash[t]{2}\">\n          <mpadded height=\"0\">\n            <mn data-latex=\"2\">2</mn>\n          </mpadded>\n        </mrow>\n      </mrow>\n    </msub>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathrm{O}\">\n      <mi mathvariant=\"normal\" data-latex=\"O\">O</mi>\n    </mrow>\n  </mrow>\n</math>",
+        "ms": 2.400000000023283,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "ce-reaction",
+    "category": "Chemistry",
+    "latex": "\\ce{2H2 + O2 -> 2H2O}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\ce{2H2 + O2 -> 2H2O}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"></math>",
+        "ms": 2.199999999953434,
+        "wellFormed": true,
+        "empty": true,
+        "merror": false,
+        "problems": [],
+        "missing": [
+          "2",
+          "H",
+          "O"
+        ]
+      },
+      "Temml 0.14.0": {
+        "input": "\\ce{2H2 + O2 -> 2H2O}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>2</mn><mspace width=\"0.1667em\"></mspace><mrow><mi mathvariant=\"normal\">H</mi><mspace></mspace></mrow><msub><mrow></mrow><mn>2</mn></msub><mrow></mrow><mo>+</mo><mrow></mrow><mrow><mi mathvariant=\"normal\">O</mi><mspace></mspace></mrow><msub><mrow></mrow><mn>2</mn></msub><mrow><mspace width=\"0.2778em\"></mspace><mover accent=\"false\"><mo stretchy=\"true\" lspace=\"0\" rspace=\"0\">→</mo><mspace width=\"2.8571em\"></mspace></mover><mspace width=\"0.2778em\"></mspace></mrow><mn>2</mn><mspace width=\"0.1667em\"></mspace><mrow><mi mathvariant=\"normal\">H</mi><mspace></mspace></mrow><msub><mrow></mrow><mn>2</mn></msub><mrow><mi mathvariant=\"normal\">O</mi><mspace></mspace></mrow></mrow></math>",
+        "ms": 0.9000000000232831,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\ce{2H2 + O2 -> 2H2O}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\ce{2H2 + O2 -&gt; 2H2O}\">\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"{2\\,\\mathrm{H}{\\vphantom{A}}_{\\smash[t]{2}} {}+{} \\mathrm{O}{\\vphantom{A}}_{\\smash[t]{2}} {}\\mathrel{\\mhchemlongrightarrow}{} 2\\,\\mathrm{H}{\\vphantom{A}}_{\\smash[t]{2}}\\mathrm{O}}\">\n    <mn data-latex=\"2\">2</mn>\n    <mspace width=\"0.167em\" data-latex=\"\\,\"></mspace>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathrm{H}\">\n      <mi mathvariant=\"normal\" data-latex=\"H\">H</mi>\n    </mrow>\n    <msub data-latex=\"{\\vphantom{A}}_{\\smash[t]{2}}\">\n      <mrow data-mjx-texclass=\"ORD\" data-latex=\"{\\vphantom{A}}\">\n        <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\vphantom{A}\">\n          <mpadded width=\"0\">\n            <mphantom>\n              <mi data-latex=\"A\">A</mi>\n            </mphantom>\n          </mpadded>\n        </mrow>\n      </mrow>\n      <mrow data-mjx-texclass=\"ORD\" data-latex=\"{\\smash[t]{2}}\">\n        <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\smash[t]{2}\">\n          <mpadded height=\"0\">\n            <mn data-latex=\"2\">2</mn>\n          </mpadded>\n        </mrow>\n      </mrow>\n    </msub>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"{}\"></mrow>\n    <mo data-latex=\"+\">+</mo>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"{}\"></mrow>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathrm{O}\">\n      <mi mathvariant=\"normal\" data-latex=\"O\">O</mi>\n    </mrow>\n    <msub data-latex=\"{\\vphantom{A}}_{\\smash[t]{2}}\">\n      <mrow data-mjx-texclass=\"ORD\" data-latex=\"{\\vphantom{A}}\">\n        <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\vphantom{A}\">\n          <mpadded width=\"0\">\n            <mphantom>\n              <mi data-latex=\"A\">A</mi>\n            </mphantom>\n          </mpadded>\n        </mrow>\n      </mrow>\n      <mrow data-mjx-texclass=\"ORD\" data-latex=\"{\\smash[t]{2}}\">\n        <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\smash[t]{2}\">\n          <mpadded height=\"0\">\n            <mn data-latex=\"2\">2</mn>\n          </mpadded>\n        </mrow>\n      </mrow>\n    </msub>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"{}\"></mrow>\n    <mrow data-mjx-texclass=\"REL\" data-latex=\"\\mathrel{\\mhchemlongrightarrow}\">\n      <mo data-mjx-variant=\"-mhchem\" data-mjx-texclass=\"REL\" stretchy=\"true\" data-latex=\"\\mhchemlongrightarrow\">&#xE429;</mo>\n    </mrow>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"{}\"></mrow>\n    <mn data-latex=\"2\">2</mn>\n    <mspace width=\"0.167em\" data-latex=\"\\,\"></mspace>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathrm{H}\">\n      <mi mathvariant=\"normal\" data-latex=\"H\">H</mi>\n    </mrow>\n    <msub data-latex=\"{\\vphantom{A}}_{\\smash[t]{2}}\">\n      <mrow data-mjx-texclass=\"ORD\" data-latex=\"{\\vphantom{A}}\">\n        <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\vphantom{A}\">\n          <mpadded width=\"0\">\n            <mphantom>\n              <mi data-latex=\"A\">A</mi>\n            </mphantom>\n          </mpadded>\n        </mrow>\n      </mrow>\n      <mrow data-mjx-texclass=\"ORD\" data-latex=\"{\\smash[t]{2}}\">\n        <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\smash[t]{2}\">\n          <mpadded height=\"0\">\n            <mn data-latex=\"2\">2</mn>\n          </mpadded>\n        </mrow>\n      </mrow>\n    </msub>\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathrm{O}\">\n      <mi mathvariant=\"normal\" data-latex=\"O\">O</mi>\n    </mrow>\n  </mrow>\n</math>",
+        "ms": 3.199999999953434,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "chem-manual",
+    "category": "Chemistry",
+    "latex": "\\mathrm{H_2O}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\mathrm{H_2O}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi mathvariant=\"normal\">H</mi><mn>2</mn></msub><mi mathvariant=\"normal\">O</mi></mrow></math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\mathrm{H_2O}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mrow><mi mathvariant=\"normal\">H</mi><mspace></mspace></mrow><mn>2</mn></msub><mrow><mi mathvariant=\"normal\">O</mi><mspace></mspace></mrow></mrow></math>",
+        "ms": 0.19999999995343387,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\mathrm{H_2O}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\mathrm{H_2O}\">\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathrm{H_2O}\">\n    <msub data-latex=\"H_2\">\n      <mi mathvariant=\"normal\" data-latex=\"H\">H</mi>\n      <mn data-latex=\"2\">2</mn>\n    </msub>\n    <mi mathvariant=\"normal\" data-latex=\"O\">O</mi>\n  </mrow>\n</math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "unit-mathrm",
+    "category": "Units",
+    "latex": "9.8\\,\\mathrm{m/s^2}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "9.8\\,\\mathrm{m/s}^2",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>9.8</mn><mspace width=\"0.16666666666666666em\"/><msup><mi mathvariant=\"normal\">m/s</mi><mn>2</mn></msup></mrow></math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "9.8\\,\\mathrm{m/s}^2",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>9.8</mn><mspace width=\"0.1667em\"></mspace><msup><mrow><mrow><mi mathvariant=\"normal\">m</mi><mspace></mspace></mrow><mi>/</mi><mrow><mi mathvariant=\"normal\">s</mi><mspace></mspace></mrow></mrow><mn>2</mn></msup></mrow></math>",
+        "ms": 0.19999999995343387,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "9.8\\,\\mathrm{m/s}^2",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"9.8\\,\\mathrm{m/s}^2\">\n  <mn data-latex=\"9.8\">9.8</mn>\n  <mspace width=\"0.167em\" data-latex=\"\\,\"></mspace>\n  <msup data-latex=\"\\mathrm{m/s}^2\">\n    <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathrm{m/s}\">\n      <mi mathvariant=\"normal\" data-latex=\"m\">m</mi>\n      <mo data-latex=\"/\">/</mo>\n      <mi mathvariant=\"normal\" data-latex=\"s\">s</mi>\n    </mrow>\n    <mn data-latex=\"2\">2</mn>\n  </msup>\n</math>",
+        "ms": 0.9000000000232831,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "unit-degree",
+    "category": "Units",
+    "latex": "90\\degree",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "90\\degree",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>90</mn><mo>&#8290;</mo><mi>°</mi></mrow></math>",
+        "ms": 0.39999999990686774,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "90\\degree",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>90</mn><mi>°</mi></mrow></math>",
+        "ms": 0.19999999995343387,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "90\\degree",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"90\\degree\">\n  <mn data-latex=\"90\">90</mn>\n  <mi mathvariant=\"normal\" class=\"MathML-Unit\" data-latex=\"\\degree\">&#xB0;</mi>\n</math>",
+        "ms": 0.2999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "percent",
+    "category": "Units",
+    "latex": "50\\%",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "50\\%",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>50</mn><mo>&#8290;</mo><mi>%</mi></mrow></math>",
+        "ms": 0.30000000004656613,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "50\\%",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>50</mn><mi>%</mi></mrow></math>",
+        "ms": 0.2000000000698492,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "50\\%",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"50\\%\">\n  <mn data-latex=\"50\">50</mn>\n  <mi mathvariant=\"normal\" data-latex=\"\\%\">%</mi>\n</math>",
+        "ms": 1.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "text",
+    "category": "Text & style",
+    "latex": "\\text{if } x>0",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\text{if }x>0",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mtext >if </mtext><mo>&#8290;</mo><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\text{if }x>0",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mtext>if </mtext><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></math>",
+        "ms": 0.30000000004656613,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\text{if }x>0",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\text{if }x&gt;0\">\n  <mtext data-latex=\"\\text{if }\">if&#xA0;</mtext>\n  <mi data-latex=\"x\">x</mi>\n  <mo data-latex=\"&gt;\">&gt;</mo>\n  <mn data-latex=\"0\">0</mn>\n</math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "color",
+    "category": "Text & style",
+    "latex": "\\textcolor{red}{x}+y",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\textcolor{red}{x}+y",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow></math>",
+        "ms": 1.2999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\textcolor{red}{x}+y",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi style=\"color:#ff0000;\">x</mi><mo>+</mo><mi>y</mi></mrow></math>",
+        "ms": 0.5999999999767169,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\textcolor{red}{x}+y",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\textcolor{red}{x}+y\">\n  <mstyle mathcolor=\"red\" data-latex=\"\\textcolor{red}{x}\">\n    <mi data-latex=\"x\">x</mi>\n  </mstyle>\n  <mo data-latex=\"+\">+</mo>\n  <mi data-latex=\"y\">y</mi>\n</math>",
+        "ms": 0.7000000000698492,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "space-tilde",
+    "category": "Text & style",
+    "latex": "a~b",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "a~b",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi>&nbsp;<mi>b</mi></mrow></math>",
+        "ms": 0.19999999995343387,
+        "wellFormed": false,
+        "empty": false,
+        "merror": false,
+        "problems": [
+          "not well-formed XML"
+        ],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "a~b",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi><mtext> </mtext><mi>b</mi></mrow></math>",
+        "ms": 0.10000000009313226,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "a~b",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"a~b\">\n  <mi data-latex=\"a\">a</mi>\n  <mtext data-latex=\"~\">&#xA0;</mtext>\n  <mi data-latex=\"b\">b</mi>\n</math>",
+        "ms": 0.30000000004656613,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "phantom",
+    "category": "Text & style",
+    "latex": "\\phantom{x}+1",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\phantom{x}+1",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>+</mo><mn>1</mn></mrow></math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": [
+          "x"
+        ]
+      },
+      "Temml 0.14.0": {
+        "input": "\\phantom{x}+1",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mphantom><mi>x</mi></mphantom><mo>+</mo><mn>1</mn></mrow></math>",
+        "ms": 0.19999999995343387,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\phantom{x}+1",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\phantom{x}+1\">\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\phantom{x}\">\n    <mphantom>\n      <mi data-latex=\"x\">x</mi>\n    </mphantom>\n  </mrow>\n  <mo data-latex=\"+\">+</mo>\n  <mn data-latex=\"1\">1</mn>\n</math>",
+        "ms": 0.2999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "boxed",
+    "category": "Text & style",
+    "latex": "\\boxed{x=1}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\boxed{x=1}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"box\"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></menclose></math>",
+        "ms": 0.5999999999767169,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\boxed{x=1}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow scriptlevel=\"0\" displaystyle=\"true\" style=\"padding:3pt;border:1px solid;\"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></mrow></math>",
+        "ms": 0.09999999997671694,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\boxed{x=1}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\boxed{x=1}\">\n  <menclose notation=\"box\" data-latex=\"\\fbox{$\\displaystyle{x=1}$}\">\n    <mrow data-mjx-texclass=\"ORD\">\n      <mstyle displaystyle=\"true\" data-latex=\"\\displaystyle{x=1}\">\n        <mrow data-mjx-texclass=\"ORD\" data-latex=\"{x=1}\">\n          <mi data-latex=\"x\">x</mi>\n          <mo data-latex=\"=\">=</mo>\n          <mn data-latex=\"1\">1</mn>\n        </mrow>\n      </mstyle>\n    </mrow>\n  </menclose>\n</math>",
+        "ms": 1.1999999999534339,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "placeholder",
+    "category": "Editor",
+    "latex": "\\frac{\\placeholder{}}{\\placeholder{}}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\frac{\\placeholder{}}{\\placeholder{}}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac>??</mfrac></math>",
+        "ms": 1.900000000023283,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [
+          "<mfrac> has 0 children (needs 2)",
+          "bare text \"??\" in <mfrac>"
+        ],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\frac{\\square}{\\square}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mi>□</mi><mi>□</mi></mfrac></math>",
+        "ms": 0.19999999995343387,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\frac{\\square}{\\square}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\frac{\\square}{\\square}\">\n  <mfrac data-latex=\"\\frac{\\square}{\\square}\">\n    <mi data-latex=\"\\square\">&#x25FB;</mi>\n    <mi data-latex=\"\\square\">&#x25FB;</mi>\n  </mfrac>\n</math>",
+        "ms": 0.39999999990686774,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "prompt",
+    "category": "Editor",
+    "latex": "x+\\placeholder[ans]{}=5",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "x+\\placeholder[ans]{}=5",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>+</mo><menclose notation=\"roundexbox\"\"\"></menclose><mo>=</mo><mn>5</mn></mrow></math>",
+        "ms": 0.5,
+        "wellFormed": false,
+        "empty": false,
+        "merror": false,
+        "problems": [
+          "not well-formed XML"
+        ],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "x+\\square=5",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>+</mo><mi>□</mi><mo>=</mo><mn>5</mn></mrow></math>",
+        "ms": 0.10000000009313226,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "x+\\square=5",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"x+\\square=5\">\n  <mi data-latex=\"x\">x</mi>\n  <mo data-latex=\"+\">+</mo>\n  <mi data-latex=\"\\square\">&#x25FB;</mi>\n  <mo data-latex=\"=\">=</mo>\n  <mn data-latex=\"5\">5</mn>\n</math>",
+        "ms": 0.30000000004656613,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "decimal-comma",
+    "category": "Editor",
+    "latex": "3{,}14",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "3{,}14",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>3.14</mn></math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "3{,}14",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>3,14</mn></math>",
+        "ms": 0.09999999997671694,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "3{,}14",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"3{,}14\">\n  <mn data-latex=\"3\">3</mn>\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"{,}\">\n    <mo data-latex=\",\">,</mo>\n  </mrow>\n  <mn data-latex=\"14\">14</mn>\n</math>",
+        "ms": 0.2999999999301508,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "macro-R",
+    "category": "Macros",
+    "latex": "x\\in\\R",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "x\\in\\mathbb{R}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>∈</mo><mi>ℝ</mi></mrow></math>",
+        "ms": 0.5999999999767169,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "x\\in\\mathbb{R}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>x</mi><mo>∈</mo><mi>ℝ</mi></mrow></math>",
+        "ms": 0.09999999997671694,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "x\\in\\mathbb{R}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"x\\in\\mathbb{R}\">\n  <mi data-latex=\"x\">x</mi>\n  <mo data-latex=\"\\in\">&#x2208;</mo>\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathbb{R}\">\n    <mi mathvariant=\"double-struck\" data-latex=\"R\">R</mi>\n  </mrow>\n</math>",
+        "ms": 0.5,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  },
+  {
+    "id": "macro-vecb",
+    "category": "Macros",
+    "latex": "\\vecb{v}+\\vecb{w}",
+    "results": {
+      "MathLive 0.111.1": {
+        "input": "\\mathbf{v}+\\mathbf{w}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi mathvariant=\"bold\">v</mi><mo>+</mo><mi mathvariant=\"bold\">w</mi></mrow></math>",
+        "ms": 0.6999999999534339,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "Temml 0.14.0": {
+        "input": "\\mathbf{v}+\\mathbf{w}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>𝐯</mi><mo>+</mo><mi>𝐰</mi></mrow></math>",
+        "ms": 0.19999999995343387,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      },
+      "MathJax 4.1.3": {
+        "input": "\\mathbf{v}+\\mathbf{w}",
+        "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" data-latex=\"\\mathbf{v}+\\mathbf{w}\">\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathbf{v}\">\n    <mi mathvariant=\"bold\" data-latex=\"v\">v</mi>\n  </mrow>\n  <mo data-latex=\"+\">+</mo>\n  <mrow data-mjx-texclass=\"ORD\" data-latex=\"\\mathbf{w}\">\n    <mi mathvariant=\"bold\" data-latex=\"w\">w</mi>\n  </mrow>\n</math>",
+        "ms": 0.40000000002328306,
+        "wellFormed": true,
+        "empty": false,
+        "merror": false,
+        "problems": [],
+        "missing": []
+      }
+    }
+  }
+]
