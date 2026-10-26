@@ -5,7 +5,7 @@
 // Usage: pnpm compare && node --experimental-strip-types scripts/print-svg.mjs
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { chromium } from 'playwright';
-import { mathmlToSvg } from '../src/print.ts';
+import { mathmlToSvg } from '../src/print-node.ts';
 
 const rows = JSON.parse(readFileSync('../../findings/mathml-converters-raw.json', 'utf8'));
 const TEMML = 'Temml 0.14.0';

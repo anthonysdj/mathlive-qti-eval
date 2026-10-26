@@ -4,8 +4,8 @@
 //
 // Same MathJax, font, options and prepareForSvg() as src/print.ts, so the SVG
 // is byte-identical. The difference is loading: print.ts imports the rarer
-// glyph ranges (double-struck, fraktur, …) on demand, which needs a module
-// loader and Promises. Here every range is compiled into the script, and
+// glyph ranges (double-struck, fraktur, …) on demand (print-node.ts in Node),
+// which needs a module loader and Promises. Here every range is compiled into the script, and
 // MathJax is told its loader is synchronous, so a conversion is one plain
 // function call with no event loop.
 import { mathjax } from '@mathjax/src/js/mathjax.js';
