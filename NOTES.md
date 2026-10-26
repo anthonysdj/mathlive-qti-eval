@@ -8,6 +8,11 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 |---|---|---|---|
 | `mathlive` | **0.111.1** (exact) | `sandbox/basic` | Subject of the study. Latest release (2026-10-09). It fixes 3 XSS advisories in `\enclose`, `\htmlData`/`\href` and the MathML output, so don't go below it. Source reference: commit `30ad20a7` of arnog/mathlive (there's no git tag). |
 | `mathml-to-latex` | 1.8.0 (exact) | `sandbox/basic` (runtime) | MathLive cannot read MathML. We need *some* MathML→LaTeX path to re-hydrate annotation-less content (Wiris, legacy). Used by `src/serialize.ts` as the fallback only. MIT. |
+| `temml` | 0.14.0 (exact) | `sandbox/converters` | Candidate LaTeX→MathML converter for stored MathML (MIT). Includes its mhchem extension. Recommended in `findings/mathml-converters.md`. |
+| `@mathjax/src` | 4.1.3 (exact) | `sandbox/converters` | Second candidate converter, for comparison (Apache-2.0). Only the TeX input and the MathML serialiser are used. |
+| `@mathjax/mathjax-newcm-font` | 4.1.3 (exact) | `sandbox/converters` | Font data for MathJax's SVG output in the print-path spike (already a transitive dependency; pinned directly because `src/print.ts` imports it). |
+| `@resvg/resvg-js` | 2.6.2 | dev (`sandbox/converters`) | Independent, non-browser SVG renderer: stands in for the PDF engine's rasteriser in the screen/print consistency proof. Also the candidate SVG→PNG step if the engine needs PNG. MPL-2.0. |
+| `pixelmatch` + `pngjs` (+ `@types/pngjs`) | 8.0.0 / 7.0.0 | dev (`sandbox/converters`) | Pixel diff of screen vs print renders, and PNG decode/encode for it. ISC / MIT. |
 | `vite` | 8.3.5 | dev | Sandbox dev server and build. |
 | `vitest` + `@vitest/browser-playwright` | 5.0.5 | dev | MathLive needs a real browser (layout, FontFace, custom elements, adoptedStyleSheets), so tests run in Chromium, not jsdom. |
 | `playwright` | 1.64.1 | dev | Browser driver for Vitest and the runtime-check script. |
@@ -15,6 +20,30 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 | `@types/node` | 22 | dev | Types for the config files and scripts. |
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
+
+## 2026-10-26 — Spike: screen/print consistency
+
+- Ton asked whether screen and print can be made 100% consistent. Yes, if the screen shows the same MathJax SVG as print: median 0.28% differing pixels (max 2.69%, `\bar`), anti-aliasing only. Today's native MathML vs SVG: median 45.7%. → `findings/consistency.md`.
+- Print side measured with resvg (not XEP). Needs a real PDF from our engine to close.
+- SVG on screen needs the MathML kept for screen readers (M4 accessibility check).
+- `tests/consistency.node.test.ts` drives Chromium from the Node project with Playwright directly (no Vitest browser mode), because it needs resvg's native binding next to the browser.
+
+## 2026-10-26 — Spike: print path (MathML → SVG)
+
+- Ton recalls RenderX (probably XEP, XSL-FO) as the PDF engine, with formulas converted to images. Not confirmed yet.
+- Temml MathML → MathJax SVG (Node, `fontCache: 'none'`): all 60 cases correct after `prepareForSvg()`. → `findings/print-svg.md`.
+- Two surprises, found only by looking at the rendered images: (1) Temml's `<mtd style="padding…">` makes MathJax overlap matrix entries and clip `cases`; (2) MathJax copies Temml's `class="tml-…"` onto the SVG, where Temml's CSS (if loaded on the same page) hides `\vec`/`\bar`. The fix is to strip both before conversion.
+- MathJax 4 loads font ranges on demand. In Node, import `@mathjax/src/js/util/asyncLoad/esm.js` or `\mathbb` fails ("No mathjax.asyncLoad method specified").
+- `sandbox/converters` now has two Vitest projects: browser (Chromium) and node (print path).
+
+## 2026-10-26 — Spike: MathML converters
+
+- Ran the M1 corpus plus 2 custom-macro cases through MathLive, Temml and MathJax (`sandbox/converters`). **Temml and MathJax: 60/60 clean. MathLive: 46/60.** Recommendation: store Temml output, and use MathLive only for editing. → `findings/mathml-converters.md`.
+- Temml's mhchem extension is a plain script that needs a global `temml`. Set `globalThis.temml` and then `await import('temml/contrib/mhchem/mhchem.js')`.
+- Temml output uses `class="tml-…"` and inline `style` for `\overline`, `\cancel` and `\boxed`. The delivery side needs `Temml-Local.css` (~9 KB), or those commands must be excluded.
+- MathJax output sets `mathvariant="double-struck"` for `\mathbb`, which Chromium's native MathML ignores, so it renders as a plain R. It also adds `data-latex` attributes to every node.
+- `temml.renderToString(latex, { xml: true, annotate: true })` produces exactly the planned `<semantics>` + `application/x-tex` annotation format.
+- Typing in the field gives `\left(`…`\right)`, not `\mleft`. `\mleft`/`\mright` only appear in pasted or loaded LaTeX, and `toStandardLatex()` maps them anyway.
 
 ## 2026-10-26 — M1 kickoff
 

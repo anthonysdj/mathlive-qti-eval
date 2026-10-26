@@ -192,7 +192,7 @@ No `unsafe-eval` is needed: there is no `eval`/`new Function` in the source. Wit
 
 ## 6. Gotchas
 
-1. **`getValue('math-ml')` is not safe to store as-is.** It can give malformed XML (`&ne;`, `&nbsp;`, a typo with stray quotes on prompts), can produce nothing for `\ce{}` and `\overline`, drops bodies of `\overrightarrow`/`\underbrace`, and **drops user-defined macros entirely**. Validate or post-process it, or use another converter for storage. The full list is in [`findings/roundtrip.md`](../findings/roundtrip.md).
+1. **`getValue('math-ml')` is not safe to store as-is.** It can give malformed XML (`&ne;`, `&nbsp;`, a typo with stray quotes on prompts), can produce nothing for `\ce{}` and `\overline`, drops bodies of `\overrightarrow`/`\underbrace`, and **drops user-defined macros entirely**. The full list is in [`findings/roundtrip.md`](../findings/roundtrip.md). **Decision input:** Temml produced clean MathML for every case. See [`findings/mathml-converters.md`](../findings/mathml-converters.md).
 2. **MathLive cannot read MathML.** There is no MathML parser. Keeping LaTeX next to the MathML (annotation or `data-latex`) is required for editing. Annotation-less content (e.g. from Wiris) needs a converter (`mathml-to-latex`), and that conversion loses detail.
 3. **Programmatic changes are inconsistent about events.** `value=` and `setValue()` are silent; `setValue(v, {…})` and `insert()` are not.
 4. **`focus()` is asynchronous (~60 ms).** If the field loses focus during that window, the blur is swallowed with no `blur` event (`events.test.ts`). Code that focuses and then immediately types or checks `hasFocus()` will be flaky.
