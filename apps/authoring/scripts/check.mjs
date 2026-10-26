@@ -70,6 +70,15 @@ await page.keyboard.press('Enter');
 await page.waitForFunction(() => document.querySelectorAll('.fr-element math-eq').length === 3);
 await page.waitForTimeout(100);
 out.storedAfterInsert = (await stored()).includes('<annotation encoding="application/x-tex">x=2</annotation>');
+
+// A formula that needs one of MathJax's on-demand font ranges (double-struck)
+await page.locator('.fr-element math-eq').nth(2).click();
+await page.waitForSelector('dialog.math-eq-dialog[open]');
+await page.locator('dialog math-field').evaluate((mf) => mf.setValue('x\\in\\mathbb{R}'));
+await page.keyboard.press('Enter');
+await page.waitForFunction(() => document.querySelectorAll('.fr-element math-eq')[2].getAttribute('data-mathml').includes('mathbb'));
+await page.waitForTimeout(500);
+out.mathbbGlyphs = await page.evaluate(() => document.querySelectorAll('.fr-element math-eq')[2].shadowRoot.querySelectorAll('svg path').length);
 out.previewAfterInsert = await page.locator('.preview math-eq').count();
 
 // Edit the first one
