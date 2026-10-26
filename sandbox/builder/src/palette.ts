@@ -138,6 +138,9 @@ export const CATEGORIES: Category[] = [
     label: 'Operators',
     short: '±×',
     items: [
+      // Plain signs are typed, but someone building by dragging needs them too
+      sym('plus', '+', 'Plus'),
+      sym('minus', '-', 'Minus'),
       sym('plus-minus', '\\pm', 'Plus or minus'),
       sym('minus-plus', '\\mp', 'Minus or plus'),
       sym('times', '\\times', 'Times'),
@@ -154,6 +157,9 @@ export const CATEGORIES: Category[] = [
     label: 'Relations',
     short: '≤',
     items: [
+      sym('eq', '=', 'Equals'),
+      sym('lt', '<', 'Less than'),
+      sym('gt', '>', 'Greater than'),
       sym('ne', '\\ne', 'Not equal to'),
       sym('le', '\\le', 'Less than or equal to'),
       sym('ge', '\\ge', 'Greater than or equal to'),

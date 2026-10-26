@@ -20,9 +20,12 @@
 
   @if (active(); as c) {
     <div class="eb-panel" id="eb-panel" role="tabpanel" [attr.aria-labelledby]="'eb-tab-' + c.id">
-      <div class="eb-keys">
+      <p class="eb-hint" id="eb-hint">
+        Drag a piece into the equation, or onto an empty box. Or press it to insert at the cursor; Tab moves between empty boxes.
+      </p>
+      <div class="eb-keys" role="group" aria-describedby="eb-hint">
         @for (item of c.items; track item.id) {
-          <!-- mousedown keeps the caret in the field; a keyboard user's Enter/Space still works -->
+          <!-- mousedown keeps the caret in the field; a keyboard user's Enter/Space still works. Dragging: PaletteDrag -->
           <button
             type="button"
             class="eb-key"

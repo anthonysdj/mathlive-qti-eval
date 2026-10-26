@@ -38,6 +38,12 @@
 
 .eb-panel { padding: 8px 0 0; }
 
+.eb-hint {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: var(--eb-muted, #667085);
+}
+
 .eb-keys {
   display: flex;
   flex-wrap: wrap;
@@ -54,7 +60,11 @@
   background: var(--eb-surface-alt, #f8f9fb);
   color: inherit;
   font-size: 16px;
-  cursor: pointer;
+  cursor: grab;
+  /* A touch on a key drags it rather than scrolling the page */
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .eb-key:hover { border-color: var(--eb-accent, #0b5fff); }
 .eb-key:focus-visible, .eb-tab:focus-visible, .eb-entry :focus-visible {

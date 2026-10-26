@@ -46,6 +46,12 @@ math-field::part(menu-toggle) { color: var(--eb-muted); }
 math-field::part(virtual-keyboard-toggle) { color: var(--eb-accent); }
 /* Panel UI: no keyboard toggle (the keyboard still shows itself on touch devices) */
 math-field.eb-hide-keyboard-toggle::part(virtual-keyboard-toggle) { display: none; }
+/* Dragging a palette piece (sandbox/builder/src/drag.ts): the field it would land in */
+math-field.eb-drop-over {
+  outline: 2px dashed var(--eb-accent);
+  outline-offset: 3px;
+}
+html.eb-dragging, html.eb-dragging * { cursor: grabbing !important; user-select: none; }
 
 /* MathLive's virtual keyboard, from the same tokens */
 :root {

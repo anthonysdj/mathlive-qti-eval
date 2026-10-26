@@ -9,6 +9,7 @@ import type { MathfieldElement, Selection } from 'mathlive';
 
 type MenuItem = MathfieldElement['menuItems'][number];
 import { describeToken, resolveAllowed, type Allowed, type AllowedProfile } from './allowed';
+import { dropInsert } from './drag';
 import { keyboardLayouts } from './keyboard';
 import { MACROS, SHORTCUTS, shortcutValue } from './notation';
 import type { PaletteItem, TextEntry } from './palette';
@@ -95,6 +96,18 @@ export class BuilderController {
   /** Insert a palette item at the caret (wrapping the selection where the item takes one) */
   insert(item: PaletteItem) {
     this.field.insert(item.insert, { focus: true, scrollIntoView: true, format: 'latex' });
+  }
+
+  /**
+   * Insert a palette item dragged to a caret offset (from dropTargetAt);
+   * at an empty box's offset it replaces the box. The item's first empty box
+   * is selected afterwards, so typing fills it.
+   */
+  drop(item: PaletteItem, offset: number) {
+    const f = this.field;
+    f.focus();
+    f.position = Math.max(0, Math.min(offset, f.lastOffset));
+    f.insert(dropInsert(item), { focus: true, scrollIntoView: true, format: 'latex' });
   }
 
   /** Insert what the author typed into a text entry. Throws with a message for the author. */

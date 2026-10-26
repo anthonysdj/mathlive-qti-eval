@@ -84,10 +84,15 @@ export class EquationDialog {
   #resolve: ((mathml: string | null) => void) | null = null;
   #keyboardLayer: HTMLElement;
   #extension: DialogExtension;
-  // Keep the dialog above the keyboard while both are on screen
+  // Keep the dialog above the keyboard while both are on screen. On a phone
+  // the dialog is taller than what the keyboard leaves, so it is capped to
+  // that and scrolls: otherwise it moved up past the top of the screen and
+  // took the field with it.
   #onKeyboardGeometry = () => {
     const kb = window.mathVirtualKeyboard;
-    this.dialog.style.marginBottom = kb.visible && this.dialog.open ? `${kb.boundingRect.height + 8}px` : '';
+    const h = kb.visible && this.dialog.open ? kb.boundingRect.height : 0;
+    this.dialog.style.marginBottom = h ? `${h + 8}px` : '';
+    this.dialog.style.maxHeight = h ? `calc(100dvh - ${h + 16}px)` : '';
   };
 
   constructor(doc: Document = document, extend?: DialogExtender) {
@@ -205,6 +210,7 @@ export class EquationDialog {
     window.mathVirtualKeyboard.hide();
     if (window.mathVirtualKeyboard.container === this.#keyboardLayer) moveKeyboard(this.dialog.ownerDocument.body);
     this.dialog.style.marginBottom = '';
+    this.dialog.style.maxHeight = '';
     if (this.dialog.open) this.dialog.close();
     resolve?.(result);
   }

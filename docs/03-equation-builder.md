@@ -18,7 +18,7 @@ MathLive **0.111.1**, Temml **0.14.0**, Angular **22.2.3**. Every claim below po
 
 ```mermaid
 flowchart TB
-  P["palette.ts<br/>14 categories, 138 templates,<br/>2 text entries"] --> A["allowed.ts<br/>profile → allowed tokens"]
+  P["palette.ts<br/>14 categories, 143 templates,<br/>2 text entries"] --> A["allowed.ts<br/>profile → allowed tokens"]
   A --> C["BuilderController<br/>(one per math-field)"]
   P --> K["keyboard.ts<br/>MathLive layouts"]
   A --> K
@@ -150,7 +150,45 @@ Under the palette, updated 120 ms after each change ([`preview.ts`](../sandbox/b
 
 Enter with boxes still empty keeps the dialog open: "Fill in the 2 empty boxes, or delete them." (`flows.emptySlotsError`). Before M3 they were saved as `□`.
 
-## 8. Theming
+## 8. Drag and drop
+
+An author can also build the equation by dragging: drag a fraction into the field, drag a root onto its top box, drag π onto its bottom box, drag a + after it, and so on. Each drop puts that piece's LaTeX in at the drop point, so dragging is another way of writing the same LaTeX. It goes through the same insert, profile check, undo and Temml MathML as a click. Code: [`drag.ts`](../sandbox/builder/src/drag.ts) and `BuilderController.drop()`. Tests: [`drag.test.ts`](../sandbox/builder/tests/drag.test.ts). Checked in the running app (`pnpm start`) with a real mouse and a real touch: [`drag-check.mjs`](../apps/authoring/scripts/drag-check.mjs) → [`findings/drag-check.json`](../findings/drag-check.json).
+
+![Dragging a root onto the fraction's top box](../findings/screenshots/drag-into-box.png)
+
+**Where a drop goes.** MathLive has no drop support, but it has the two calls that are needed. `getOffsetFromPoint(x, y)` gives the caret offset under the pointer, and `getElementInfo(offset).bounds` says where each atom is drawn, in client coordinates. An empty box (`\placeholder{}`) is an atom of its own, and inserting at its offset replaces it. So "onto an empty box" and "between two pieces" are the same operation. While dragging, the box under the pointer is highlighted, or a caret line shows where the piece will go, and the field gets a dashed outline.
+
+**Built in the app with the mouse** (`mouse` in drag-check.json):
+
+| Drop | Field after |
+|---|---|
+| fraction, into the empty field | `\frac{□}{□}` |
+| square root, onto the top box | `\frac{\sqrt{□}}{□}` |
+| fraction, onto the box under the root | `\frac{\sqrt{\frac{□}{□}}}{□}` |
+| π, onto the bottom box | `\frac{\sqrt{\frac{□}{□}}}{\pi}` |
+| +, after it | `…{\pi}+` |
+| power, after the + | `…{\pi}+□^{□}` |
+
+Then the author types into the boxes. Stored: `\frac{\sqrt{\frac14}}{\pi}+x^2`, with MathML `<mfrac><msqrt><mfrac>…</mfrac></msqrt><mi>π</mi></mfrac><mo>+</mo><msup>…`.
+
+**Decisions:**
+
+- **Pointer events, not HTML drag and drop.** One code path for mouse, pen and touch. HTML drag and drop doesn't start from a touch in most mobile browsers. The phone run drops a fraction, then π onto its top box, then a +, with a finger (`touch`). The keys have `touch-action: none` so that a drag doesn't scroll the page. The cost is that a swipe that starts on a key doesn't scroll the dialog.
+- **A press that doesn't move (under 6 px) is still a click**, and inserts at the caret as before. The click that follows a real drag is swallowed. Escape cancels a drag, and a drop outside the field does nothing.
+- **Keyboard users** keep the M3 flow: Tab to an empty box, then Enter on a palette key fills it (`keyboard.clickThenKeyboard`: `\frac{a}{\sqrt{□}}`). The panel says so ("…or press it to insert at the cursor; Tab moves between empty boxes"), and the keys are a group described by that line.
+- **`#@` on a drop.** A click at the caret takes the term before it (3x, then the fraction button, gives 3x as the numerator). A drop is placed by hand, so `\frac{#@}{#?}` becomes `\frac{#?}{#?}`. A dropped fraction doesn't swallow its neighbour. A piece that starts with `#@` (power, subscript, square, `a/b`) still attaches to what it's dropped after: square dropped after `3x` gives `3x^2`.
+- **Plain + − = < > are in the palette now** (Operators, Relations). They were left out because they're typed, but someone building by dragging needs them.
+
+**What it took to make it work:**
+
+1. The ghost and the drop mark were invisible. The palette is in a modal `<dialog>`, which is in the browser's top layer, so nothing else in `<body>` can be drawn over it, whatever its z-index. Both are now shown as manual popovers (`popover="manual"`, `showPopover()`), which go into the top layer above the dialog.
+2. MathLive gives no `bounds` for a superscript/subscript atom (`x^2` is `x`, then a `^2` atom holding the 2). The caret line after a power is built from its contents and its base.
+3. A tall atom's bounds (a fraction with a root in it) reach above the field, so the caret line is clipped to the field.
+4. **On a phone, the dialog moved up past the top of the screen** once MathLive's keyboard showed, and took the field with it (field top at −37 px). The M2 dialog made room for the keyboard with `margin-bottom` only. It now also caps its height to what the keyboard leaves, and scrolls. builder-check.json now records `fieldBelowTopOfScreen`, which was `false` before the fix and is `true` after. This was there before drag and drop, but with drag and drop you need the field on screen to drop into it.
+
+**Not done:** moving or re-ordering pieces that are already in the equation by dragging them. MathLive's own selection drag isn't exposed, and this would need a model of the parse tree on our side. Today you select and delete, then drop again. There's also no auto-scroll while dragging, so on a small screen the key and the field both have to be in view.
+
+## 9. Theming
 
 Everything takes its colours and sizes from custom properties with defaults, so a host app sets them on any ancestor ([`styles.css`](../apps/authoring/src/styles.css)):
 
@@ -159,7 +197,7 @@ Everything takes its colours and sizes from custom properties with defaults, so 
 
 The demo has a dark theme that changes only the tokens ([screenshot](../findings/screenshots/builder-dark.png)). Keys are at least 44 px (WCAG 2.5.5).
 
-## 9. Gotchas
+## 10. Gotchas
 
 1. **`\ce{}` and `\mathrm{}` can't be typed into** (§2). MathLive also has no spoken text for `\ce`.
 2. **After a literal `\mathrm{d}` the variable joins it** (`\mathrm{dx}`). Use `\differentialD`.
@@ -173,7 +211,7 @@ The demo has a dark theme that changes only the tokens ([screenshot](../findings
 10. **`window.mathVirtualKeyboard.layouts` is global.** The controller sets it from the profile; two fields with different profiles on one page would need to set it on focus.
 11. **The extension's host is the dialog's slot**, not an `<app-equation-builder>` element, so select it by its `eb` class.
 
-## 10. Not done yet
+## 11. Not done yet
 
 - Testing with real authors (the action counts are scripted, not timed with people).
 - Screen reader testing of the dialog (NVDA, JAWS, VoiceOver), planned for M4.
@@ -187,9 +225,10 @@ The demo has a dark theme that changes only the tokens ([screenshot](../findings
 ```sh
 pnpm install
 cd sandbox/builder
-pnpm test                         # 171 tests in Chromium (set PW_CHROMIUM if Playwright's browser isn't installed)
+pnpm test                         # 185 tests in Chromium (set PW_CHROMIUM if Playwright's browser isn't installed)
 
 cd ../../apps/authoring           # needs Node >= 22.22.3 or 24.15
 pnpm start                        # demo: Allowed symbols / Input / Theme above the editor
 pnpm build && pnpm builder-check  # builder flows, panel vs keyboard, phone → findings/builder-check.json
+node scripts/drag-check.mjs       # with pnpm start running: drag and drop, mouse and touch → findings/drag-check.json
 ```
