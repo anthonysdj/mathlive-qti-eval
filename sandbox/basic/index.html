@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MathLive basic sandbox</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>&lt;math-field&gt; sandbox <small id="version"></small></h1>
+      <label for="mf">Equation</label>
+      <math-field id="mf">x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</math-field>
+      <div class="controls">
+        <input id="latex-in" placeholder="Paste LaTeX and press Set" />
+        <button id="set">Set</button>
+        <button id="kbd">Toggle keyboard</button>
+        <label><input type="checkbox" id="ro" /> read-only</label>
+      </div>
+      <section class="outputs">
+        <div><h2>LaTeX</h2><pre id="out-latex"></pre></div>
+        <div><h2>MathML</h2><pre id="out-mathml"></pre><p id="mathml-ok"></p></div>
+        <div><h2>Spoken</h2><pre id="out-spoken"></pre></div>
+        <div><h2>ASCIIMath</h2><pre id="out-ascii"></pre></div>
+        <div><h2>MathML rendered by the browser</h2><div id="out-native"></div></div>
+        <div><h2>Events</h2><ol id="events" reversed></ol></div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

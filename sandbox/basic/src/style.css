@@ -1,0 +1,13 @@
+body { font: 15px/1.4 system-ui, sans-serif; margin: 0; background: #fafafa; color: #222; }
+main { max-width: 960px; margin: 0 auto; padding: 16px; }
+h1 small { font-size: 0.5em; color: #777; }
+math-field { display: block; font-size: 1.6em; padding: 8px; border: 1px solid #bbb; border-radius: 6px; background: #fff; }
+.controls { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; align-items: center; }
+.controls input[type=text], #latex-in { flex: 1; min-width: 200px; padding: 6px; }
+.outputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.outputs > div { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 8px; overflow: auto; }
+h2 { font-size: 0.85em; text-transform: uppercase; color: #666; margin: 0 0 6px; }
+pre { white-space: pre-wrap; word-break: break-all; margin: 0; font-size: 12px; }
+#events { max-height: 220px; overflow: auto; font: 12px ui-monospace, monospace; margin: 0; }
+#out-native { font-size: 1.4em; }
+.bad { color: #b00; } .good { color: #070; }
