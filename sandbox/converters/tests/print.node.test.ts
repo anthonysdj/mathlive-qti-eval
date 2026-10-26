@@ -4,7 +4,7 @@
 import { readFileSync } from 'node:fs';
 import { beforeAll, describe, expect, it } from 'vitest';
 import temml from 'temml';
-import { mathmlToSvg, prepareForSvg } from '../src/print';
+import { mathmlToSvg, prepareForSvg } from '../src/print-node';
 import { loadTemmlMhchem } from '../src/temml-mhchem';
 
 type Row = { id: string; latex: string; results: Record<string, { input: string; mathml: string }> };

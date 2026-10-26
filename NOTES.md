@@ -27,6 +27,12 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
 
+## 2026-10-26 — Fix: MathJax "dynamic import cannot be analyzed" warning in `pnpm start`
+
+- `src/print.ts` (sandbox/converters) imported MathJax's Node loader `@mathjax/src/js/util/asyncLoad/esm.js`. Its `import(name)` of a computed name made Vite warn twice on every dev server start. In the browser it was dead code anyway: `mathjax-browser-fonts.ts` sets `mathjax.asyncLoad` first, and esm.js only fills it in when it's unset.
+- Fix: print.ts no longer imports it. Node callers import `src/print-node.ts`, which adds the loader. Checked: no warning with a cleared `.angular/cache`, and ℝ/fraktur still render in the dev server. Converters tests (388) pass, including the Node print and consistency tests.
+- Seen while checking: `pnpm print` (scripts/print-svg.mjs under `--experimental-strip-types`) already failed on main, because Node can't resolve the extensionless `./prepare-svg` import. Not changed here.
+
 ## 2026-10-26 — Saved equations with shortcuts
 
 - **A saved equation's shortcut is just another inline shortcut** (`field.inlineShortcuts`), with `#?` for its empty boxes. MathLive types the letters, then swaps them for the equation as soon as the last one is typed. → `docs/03-equation-builder.md` §9.

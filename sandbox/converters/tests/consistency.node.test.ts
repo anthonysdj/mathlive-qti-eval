@@ -7,7 +7,7 @@ import { chromium, type Browser, type Page } from 'playwright';
 import { Resvg } from '@resvg/resvg-js';
 import { PNG } from 'pngjs';
 import pixelmatch from 'pixelmatch';
-import { mathmlToSvg } from '../src/print';
+import { mathmlToSvg } from '../src/print-node';
 
 type Row = { id: string; results: Record<string, { mathml: string }> };
 const rows: Row[] = JSON.parse(
