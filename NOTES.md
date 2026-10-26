@@ -13,6 +13,8 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 | `@mathjax/mathjax-newcm-font` | 4.1.3 (exact) | `sandbox/converters` | Font data for MathJax's SVG output in the print-path spike (already a transitive dependency; pinned directly because `src/print.ts` imports it). |
 | `@resvg/resvg-js` | 2.6.2 | dev (`sandbox/converters`) | Independent, non-browser SVG renderer: stands in for the PDF engine's rasteriser in the screen/print consistency proof. Also the candidate SVG→PNG step if the engine needs PNG. MPL-2.0. |
 | `pixelmatch` + `pngjs` (+ `@types/pngjs`) | 8.0.0 / 7.0.0 | dev (`sandbox/converters`) | Pixel diff of screen vs print renders, and PNG decode/encode for it. ISC / MIT. |
+| GraalJS (`org.graalvm.polyglot:polyglot`, `js-community`) | 24.2.1 | `sandbox/java-temml` | Runs the same Temml build on a Java backend without Node (UPL / MIT). |
+| JUnit 5, Jackson | 5.11.4 / 2.18.2 | `sandbox/java-temml` (test) | Tests; Jackson reads the Node results to compare. |
 | `vite` | 8.3.5 | dev | Sandbox dev server and build. |
 | `vitest` + `@vitest/browser-playwright` | 5.0.5 | dev | MathLive needs a real browser (layout, FontFace, custom elements, adoptedStyleSheets), so tests run in Chromium, not jsdom. |
 | `playwright` | 1.64.1 | dev | Browser driver for Vitest and the runtime-check script. |
@@ -20,6 +22,13 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 | `@types/node` | 22 | dev | Types for the config files and scripts. |
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
+
+## 2026-10-26 — Spike: Temml on a Java backend
+
+- Ton asked whether Temml exists for Java. It doesn't, but GraalJS (Maven: `org.graalvm.polyglot:polyglot` + `js-community` 24.2.1) runs it on OpenJDK 21 with no Node. 60/60 corpus outputs are byte-identical to Node, and the attack inputs are rejected. → `findings/java-temml.md`, `sandbox/java-temml`.
+- It is interpreted on a stock JDK, at about 2.3 ms per formula. The MathJax SVG step in GraalJS is untested.
+- Temml security (read from the 0.14.0 source + 23 attack inputs): `trust` defaults to false; link/HTML commands are unsupported; colours are validated; text and the annotation are escaped; `maxExpand` is 1000. Not covered by Temml: input length, deep nesting (stack overflow) and `\rule` size (`maxSize`). Those guards are in `TemmlConverter.java`.
+- MathLive (0.111.1) does support `\href` (http/https only), `\htmlData`, `\cssId` and `\class`, sanitising their values. Rejecting them at save time via Temml keeps them out of every editor.
 
 ## 2026-10-26 — Same math font for native MathML?
 
