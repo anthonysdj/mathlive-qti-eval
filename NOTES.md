@@ -30,6 +30,11 @@ On machines with a pre-installed Chromium that doesn't match Playwright's build,
 - Temml security (read from the 0.14.0 source + 23 attack inputs): `trust` defaults to false; link/HTML commands are unsupported; colours are validated; text and the annotation are escaped; `maxExpand` is 1000. Not covered by Temml: input length, deep nesting (stack overflow) and `\rule` size (`maxSize`). Those guards are in `TemmlConverter.java`.
 - MathLive (0.111.1) does support `\href` (http/https only), `\htmlData`, `\cssId` and `\class`, sanitising their values. Rejecting them at save time via Temml keeps them out of every editor.
 
+## 2026-10-26 — Same math font for native MathML?
+
+- Ton asked whether pointing the browser at the same math font would make screen and print consistent. Measured in Chromium with New Computer Modern Math as a web font: median 42.0% differing pixels vs the print SVG (45.7% with the default font, 0.3% with the same SVG). Shapes match; layout (operator spacing, script size, matrix gaps) doesn't. → `findings/consistency.md`, `findings/same-font.html`.
+- The font isn't committed (1.1 MB, GUST font licence). CTAN is blocked from the cloud container; the copy used came from the `typst-assets` 0.13.1 crate (crates.io).
+
 ## 2026-10-26 — Demo: render an inserted equation in the page
 
 - `sandbox/converters` now has a Vite demo (`pnpm dev`). Insert in MathLive stores Temml MathML; the page shows MathJax SVG (same as print) plus a visually hidden `<math>` for screen readers. Click an equation to edit it. → `findings/insert-demo.md`.
