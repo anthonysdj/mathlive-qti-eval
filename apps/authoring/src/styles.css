@@ -1,1 +1,62 @@
-body { margin: 0; background: #fafafa; color: #222; }
+/*
+ * Theme tokens. The equation builder and the equation dialog read the
+ * --eb-* properties; MathLive's field and virtual keyboard read their own,
+ * mapped from the same tokens below. A host app sets these to match itself.
+ */
+:root {
+  --eb-accent: #0b5fff;
+  --eb-on-accent: #fff;
+  --eb-surface: #fff;
+  --eb-surface-alt: #f4f6fa;
+  --eb-border: #d0d5dd;
+  --eb-border-strong: #98a2b3;
+  --eb-text: #1d2433;
+  --eb-muted: #667085;
+  --eb-error: #b00020;
+  --eb-radius: 6px;
+  --muted: #555;
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  --eb-accent: #7aa7ff;
+  --eb-on-accent: #0b1220;
+  --eb-surface: #1b2230;
+  --eb-surface-alt: #252e3f;
+  --eb-border: #3a465c;
+  --eb-border-strong: #5b6880;
+  --eb-text: #e7ecf5;
+  --eb-muted: #9aa6bb;
+  --eb-error: #ff8a8a;
+  --muted: #9aa6bb;
+  color-scheme: dark;
+}
+body { margin: 0; background: var(--eb-surface-alt); color: var(--eb-text); }
+
+/* MathLive's field, from the same tokens */
+math-field {
+  --caret-color: var(--eb-accent);
+  --selection-background-color: color-mix(in srgb, var(--eb-accent) 25%, transparent);
+  --contains-highlight-background-color: color-mix(in srgb, var(--eb-accent) 8%, transparent);
+  --placeholder-color: var(--eb-accent);
+  --placeholder-opacity: 0.6;
+  --primary-color: var(--eb-accent);
+  --text-font-family: system-ui, sans-serif;
+}
+math-field::part(menu-toggle) { color: var(--eb-muted); }
+math-field::part(virtual-keyboard-toggle) { color: var(--eb-accent); }
+/* Panel UI: no keyboard toggle (the keyboard still shows itself on touch devices) */
+math-field.eb-hide-keyboard-toggle::part(virtual-keyboard-toggle) { display: none; }
+
+/* MathLive's virtual keyboard, from the same tokens */
+:root {
+  --keyboard-accent-color: var(--eb-accent);
+  --keyboard-background: var(--eb-surface-alt);
+  --keyboard-border: var(--eb-border);
+  --keycap-background: var(--eb-surface);
+  --keycap-background-hover: color-mix(in srgb, var(--eb-accent) 10%, var(--eb-surface));
+  --keycap-text: var(--eb-text);
+  --keycap-secondary-background: var(--eb-surface-alt);
+  --keycap-secondary-text: var(--eb-text);
+  --keyboard-toolbar-text: var(--eb-text);
+  --keyboard-toolbar-background-hover: var(--eb-surface);
+}

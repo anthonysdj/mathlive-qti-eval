@@ -1,0 +1,133 @@
+/*
+ * Theming: every colour and size comes from a custom property with a
+ * default, so a host app restyles the builder (and the dialog around it,
+ * which reads the same --eb-* properties) by setting them on any ancestor.
+ * The field itself is themed with MathLive's own properties and ::part()
+ * in src/styles.css.
+ */
+:host {
+  display: block;
+  margin-top: 10px;
+  font: var(--eb-font, 14px/1.4 system-ui, sans-serif);
+  color: var(--eb-text, #1d2433);
+}
+
+.eb-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  border-bottom: 1px solid var(--eb-border, #d0d5dd);
+  padding-bottom: 6px;
+}
+
+.eb-tab {
+  font: inherit;
+  font-size: 13px;
+  padding: 4px 10px;
+  border: 1px solid transparent;
+  border-radius: var(--eb-radius, 6px);
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+.eb-tab:hover { background: var(--eb-surface-alt, #f2f4f7); }
+.eb-tab[aria-selected='true'] {
+  background: var(--eb-accent, #0b5fff);
+  color: var(--eb-on-accent, #fff);
+}
+
+.eb-panel { padding: 8px 0 0; }
+
+.eb-keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* 44 px minimum target (WCAG 2.5.5) */
+.eb-key {
+  min-width: max(44px, var(--eb-key-size, 52px));
+  min-height: max(44px, var(--eb-key-size, 52px));
+  padding: 4px;
+  border: 1px solid var(--eb-border, #d0d5dd);
+  border-radius: var(--eb-radius, 6px);
+  background: var(--eb-surface-alt, #f8f9fb);
+  color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+.eb-key:hover { border-color: var(--eb-accent, #0b5fff); }
+.eb-key:focus-visible, .eb-tab:focus-visible, .eb-entry :focus-visible {
+  outline: 2px solid var(--eb-focus, var(--eb-accent, #0b5fff));
+  outline-offset: 2px;
+}
+.eb-key math-span { pointer-events: none; }
+
+.eb-entry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+.eb-entry input {
+  flex: 1 1 12em;
+  font: 15px ui-monospace, monospace;
+  padding: 5px 8px;
+  border: 1px solid var(--eb-border-strong, #98a2b3);
+  border-radius: var(--eb-radius, 6px);
+  background: var(--eb-surface, #fff);
+  color: inherit;
+}
+.eb-entry button {
+  font: inherit;
+  padding: 5px 12px;
+  border-radius: var(--eb-radius, 6px);
+  border: 1px solid var(--eb-border-strong, #98a2b3);
+  background: var(--eb-surface, #fff);
+  color: inherit;
+  cursor: pointer;
+}
+.eb-entry-error, .eb-preview-error { color: var(--eb-error, #b00020); flex-basis: 100%; }
+
+.eb-message {
+  min-height: 1.4em;
+  margin: 6px 0 0;
+  color: var(--eb-error, #b00020);
+}
+
+.eb-preview {
+  border-top: 1px solid var(--eb-border, #d0d5dd);
+  padding-top: 6px;
+}
+.eb-preview summary { cursor: pointer; font-weight: 600; font-size: 13px; }
+.eb-preview dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+  margin: 6px 0 0;
+}
+.eb-preview dl > div { min-width: 0; }
+.eb-preview dt {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--eb-muted, #667085);
+}
+.eb-preview dd { margin: 2px 0 0; }
+.eb-print dd { font-size: 20px; min-height: 1.6em; }
+.eb-latex { font-size: 12px; word-break: break-all; }
+.eb-mathml { grid-column: 1 / -1; }
+.eb-mathml pre {
+  margin: 0;
+  max-height: 140px;
+  overflow: auto;
+  font-size: 11px;
+  background: var(--eb-surface-alt, #f8f9fb);
+  border-radius: var(--eb-radius, 6px);
+  padding: 6px 8px;
+}
+
+@media (max-width: 560px) {
+  .eb-preview dl { grid-template-columns: 1fr; }
+}

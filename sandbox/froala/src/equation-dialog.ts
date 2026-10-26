@@ -28,6 +28,27 @@ import { loadTemmlMhchem } from '@sandbox/converters/src/temml-mhchem';
 MathfieldElement.soundsDirectory = null;
 const mhchem = loadTemmlMhchem();
 
+/** What a dialog extension (the equation builder) gets: the field it works on and a place for its UI */
+export interface DialogContext {
+  dialog: HTMLDialogElement;
+  field: MathfieldElement;
+  /** Below the field, above the error line and buttons */
+  slot: HTMLElement;
+}
+
+/** Hooks an extension can return */
+export interface DialogExtension {
+  /** The dialog has opened and the field holds the equation (set without an input event) */
+  opened?(): void;
+  /** Before saving: a message keeps the dialog open and is shown as the error */
+  validate?(): string | null;
+  /** The dialog is being destroyed */
+  destroy?(): void;
+}
+
+/** Called once, when the dialog is created. The Froala option `mathEquationExtend` takes one. */
+export type DialogExtender = (ctx: DialogContext) => DialogExtension | void;
+
 export interface OpenOptions {
   /** LaTeX to start from (empty for a new equation) */
   latex?: string;
@@ -37,16 +58,17 @@ export interface OpenOptions {
 }
 
 const DIALOG_CSS = `
-.math-eq-dialog { border: 1px solid #ccc; border-radius: 8px; padding: 16px 20px; width: min(560px, calc(100vw - 32px)); box-sizing: border-box; font: 14px/1.4 system-ui, sans-serif; }
+.math-eq-dialog { border: 1px solid var(--eb-border, #ccc); border-radius: 8px; padding: 16px 20px; width: min(560px, calc(100vw - 32px)); box-sizing: border-box; font: 14px/1.4 system-ui, sans-serif; background: var(--eb-surface, #fff); color: var(--eb-text, CanvasText); }
+.math-eq-dialog.extended { width: min(820px, calc(100vw - 16px)); max-height: calc(100vh - 16px); padding: 12px 16px; }
 .math-eq-dialog::backdrop { background: rgb(0 0 0 / 0.25); }
 .math-eq-dialog h2 { font-size: 16px; margin: 0 0 12px; }
-.math-eq-dialog math-field { display: block; width: 100%; font-size: 24px; padding: 6px; border: 1px solid #999; border-radius: 4px; box-sizing: border-box; }
+.math-eq-dialog math-field { display: block; width: 100%; font-size: 24px; padding: 6px; border: 1px solid var(--eb-border-strong, #999); border-radius: 4px; box-sizing: border-box; background: var(--eb-surface, #fff); color: inherit; }
 .math-eq-dialog .note { margin: 0 0 8px; padding: 6px 8px; background: #fff6d6; border-radius: 4px; }
-.math-eq-dialog .error { margin: 8px 0 0; color: #b00020; }
+.math-eq-dialog .error { margin: 8px 0 0; color: var(--eb-error, #b00020); }
 .math-eq-dialog .keyboard-layer { position: fixed; inset: 0; pointer-events: none; }
 .math-eq-dialog .actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
-.math-eq-dialog button { font: inherit; padding: 6px 14px; border-radius: 4px; border: 1px solid #888; background: #fff; cursor: pointer; }
-.math-eq-dialog button.primary { background: #0b5fff; border-color: #0b5fff; color: #fff; }
+.math-eq-dialog .actions button { font: inherit; padding: 6px 14px; border-radius: 4px; border: 1px solid var(--eb-border-strong, #888); background: var(--eb-surface, #fff); color: inherit; cursor: pointer; }
+.math-eq-dialog .actions button.primary { background: var(--eb-accent, #0b5fff); border-color: var(--eb-accent, #0b5fff); color: var(--eb-on-accent, #fff); }
 `;
 let cssAdded = false;
 
@@ -61,13 +83,14 @@ export class EquationDialog {
   #ok: HTMLButtonElement;
   #resolve: ((mathml: string | null) => void) | null = null;
   #keyboardLayer: HTMLElement;
+  #extension: DialogExtension;
   // Keep the dialog above the keyboard while both are on screen
   #onKeyboardGeometry = () => {
     const kb = window.mathVirtualKeyboard;
     this.dialog.style.marginBottom = kb.visible && this.dialog.open ? `${kb.boundingRect.height + 8}px` : '';
   };
 
-  constructor(doc: Document = document) {
+  constructor(doc: Document = document, extend?: DialogExtender) {
     if (!cssAdded) {
       const sheet = new CSSStyleSheet();
       sheet.replaceSync(DIALOG_CSS);
@@ -82,6 +105,7 @@ export class EquationDialog {
       <h2 id="${id}-title"></h2>
       <p class="note" hidden></p>
       <math-field aria-label="Equation"></math-field>
+      <div class="extension"></div>
       <p class="error" role="alert" hidden></p>
       <div class="actions">
         <button type="button" data-action="cancel">Cancel</button>
@@ -94,6 +118,9 @@ export class EquationDialog {
     this.#ok = this.dialog.querySelector('[data-action="ok"]')!;
     this.field = this.dialog.querySelector('math-field') as MathfieldElement;
     this.#keyboardLayer = this.dialog.querySelector('.keyboard-layer')!;
+    const slot = this.dialog.querySelector<HTMLElement>('.extension')!;
+    this.#extension = extend?.({ dialog: this.dialog, field: this.field, slot }) ?? {};
+    this.dialog.classList.toggle('extended', !!extend);
 
     this.dialog.addEventListener('click', (e) => {
       const action = (e.target as Element).closest('button')?.dataset.action;
@@ -142,6 +169,7 @@ export class EquationDialog {
     window.mathVirtualKeyboard.addEventListener('geometrychange', this.#onKeyboardGeometry);
     this.dialog.showModal();
     this.field.focus();
+    this.#extension.opened?.();
     return new Promise((resolve) => (this.#resolve = resolve));
   }
 
@@ -150,6 +178,8 @@ export class EquationDialog {
     if (!this.#resolve) return;
     await mhchem;
     if (!this.field.getValue('latex').trim()) return this.#showError('The equation is empty.');
+    const refused = this.#extension.validate?.();
+    if (refused) return this.#showError(refused);
     let mathml: string;
     try {
       mathml = storedMathml(this.field);
@@ -181,6 +211,7 @@ export class EquationDialog {
 
   destroy() {
     this.#close(null);
+    this.#extension.destroy?.();
     this.dialog.remove();
   }
 }

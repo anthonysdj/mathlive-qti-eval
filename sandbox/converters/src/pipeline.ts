@@ -8,6 +8,8 @@ import type { Converter, Result } from './converters';
  *   become their content, or `\square` when empty.
  * - `\mleft` / `\mright` (from the mleftright package; MathLive parses them and they can
  *   arrive in pasted or loaded LaTeX) become `\left` / `\right`.
+ * - `\doubleprime` / `\tripleprime`, which MathLive writes for a typed `y''`
+ *   (`y^{\doubleprime}`) and Temml doesn't know, become repeated `\prime`.
  * Built-in MathLive macros such as `\differentialD` are already expanded by
  * `latex-expanded`. Other MathLive-only commands (`\enclose`, `\bbox`,
  * `\displaylines`, `\unicode` …) are not mapped: the equation builder's
@@ -18,7 +20,9 @@ export function toStandardLatex(latex: string): string {
     .replace(/\\placeholder(?:\[[^\]]*\])?\{([^{}]*)\}/g, (_m, body: string) =>
       body.trim() ? `{${body}}` : '\\square'
     )
-    .replace(/\\m(left|right)(?![a-zA-Z])/g, '\\$1');
+    .replace(/\\m(left|right)(?![a-zA-Z])/g, '\\$1')
+    .replace(/\\doubleprime(?![a-zA-Z])/g, '\\prime\\prime')
+    .replace(/\\tripleprime(?![a-zA-Z])/g, '\\prime\\prime\\prime');
 }
 
 /**

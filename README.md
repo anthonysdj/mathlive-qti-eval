@@ -10,8 +10,8 @@ Evaluating MathLive for a QTI 3.0 authoring tool: how it works, Froala integrati
 | Spike: screen/print consistency | done | [`findings/consistency.md`](findings/consistency.md) |
 | Demo: render an inserted equation | done | [`findings/insert-demo.md`](findings/insert-demo.md) |
 | Spike: Temml and MathJax on a Java backend | done | [`findings/java-temml.md`](findings/java-temml.md) |
-| M2 Froala | in review | [`docs/02-froala-integration.md`](docs/02-froala-integration.md) |
-| M3 Equation builder | not started | |
+| M2 Froala | done | [`docs/02-froala-integration.md`](docs/02-froala-integration.md) |
+| M3 Equation builder | in review | [`docs/03-equation-builder.md`](docs/03-equation-builder.md) |
 | M4 Decision | not started | |
 
 Surprises and version pins are in [`NOTES.md`](NOTES.md).
@@ -40,6 +40,16 @@ pnpm build && pnpm demo:check   # drive the built demo, screenshots
 cd apps/authoring               # Angular 22: needs Node >= 22.22.3 or 24.15
 pnpm start
 pnpm build && pnpm check        # insert/edit/save/reload + teardown checks
+```
+
+## Running the equation builder
+
+```sh
+cd sandbox/builder
+pnpm test                         # 171 tests in Chromium: palette, allowed symbols, notation, controller
+
+cd apps/authoring                 # the builder is in the equation dialog of the Angular demo
+pnpm build && pnpm builder-check  # builder flows, panel vs virtual keyboard, phone size → findings/builder-check.json
 ```
 
 ## Running the converters sandbox

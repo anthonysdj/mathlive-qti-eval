@@ -65,7 +65,8 @@ export function registerMathPlugin(FroalaEditor: any) {
   FroalaEditor.PLUGINS[PLUGIN] = function (editor: Froala): MathEquationApi & { _init(): void } {
     let dialog: EquationDialog | null = null;
     let wrapper: HTMLElement | null = null;
-    const getDialog = () => (dialog ??= new EquationDialog(editor.doc ?? document));
+    // `mathEquationExtend` (optional): adds UI to the dialog, e.g. the equation builder
+    const getDialog = () => (dialog ??= new EquationDialog(editor.doc ?? document, editor.opts.mathEquationExtend));
 
     function selected(): HTMLElement | null {
       const sel = editor.selection.get() as Selection;
