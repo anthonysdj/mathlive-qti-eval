@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Froala equation demo</title>
+    <link rel="stylesheet" href="/demo/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Equations in Froala</h1>
+      <p class="hint">
+        Use the <b>√</b> button (or Ctrl+Shift+M) to insert an equation. Click an equation to edit it.
+        <b>Save</b> shows what would be stored; <b>Reload</b> loads it back into a new editor.
+      </p>
+      <div id="editor"></div>
+      <div class="controls">
+        <button id="save">Save</button>
+        <button id="reload">Reload saved</button>
+        <button id="wiris">Load Wiris content</button>
+        <span id="status" role="status"></span>
+      </div>
+      <h2>Stored HTML (item body)</h2>
+      <pre id="stored"></pre>
+    </main>
+    <script type="module" src="/demo/main.ts"></script>
+  </body>
+</html>

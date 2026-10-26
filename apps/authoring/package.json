@@ -1,0 +1,31 @@
+{
+  "name": "@apps/authoring",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "check": "node scripts/check.mjs"
+  },
+  "dependencies": {
+    "@angular/common": "22.2.3",
+    "@angular/compiler": "22.2.3",
+    "@angular/core": "22.2.3",
+    "@angular/forms": "22.2.3",
+    "@angular/platform-browser": "22.2.3",
+    "@sandbox/froala": "workspace:*",
+    "angular-froala-wysiwyg": "5.5.0",
+    "froala-editor": "5.5.0",
+    "mathlive": "0.111.1",
+    "rxjs": "7.8.2",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular/build": "22.2.4",
+    "@angular/cli": "22.2.4",
+    "@angular/compiler-cli": "22.2.3",
+    "playwright": "1.64.1",
+    "typescript": "6.0.3"
+  }
+}

@@ -13,6 +13,10 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 | `@mathjax/mathjax-newcm-font` | 4.1.3 (exact) | `sandbox/converters` | Font data for MathJax's SVG output in the print-path spike (already a transitive dependency; pinned directly because `src/print.ts` imports it). |
 | `@resvg/resvg-js` | 2.6.2 | dev (`sandbox/converters`) | Independent, non-browser SVG renderer: stands in for the PDF engine's rasteriser in the screen/print consistency proof. Also the candidate SVG→PNG step if the engine needs PNG. MPL-2.0. |
 | `pixelmatch` + `pngjs` (+ `@types/pngjs`) | 8.0.0 / 7.0.0 | dev (`sandbox/converters`) | Pixel diff of screen vs print renders, and PNG decode/encode for it. ISC / MIT. |
+| `froala-editor` | 5.5.0 (exact) | `sandbox/froala`, `apps/authoring` | The rich-text editor we integrate with (M2). Commercial licence; used unlicensed here, which shows "Powered by Froala". |
+| `angular-froala-wysiwyg` | 5.5.0 (exact) | `apps/authoring` | Froala's official Angular directive, wrapped by our component. |
+| `@angular/*` | 22.2.3 (core, compiler-cli…), 22.2.4 (build, cli) | `apps/authoring` | The final integration demo must run in Angular. Needs Node ≥ 22.22.3 / 24.15. |
+| `typescript` | 6.0.3 | dev (`apps/authoring`) | What Angular 22 supports (the sandboxes use 7.0.2). |
 | GraalJS (`org.graalvm.polyglot:polyglot`, `js-community`) | 24.2.1 | `sandbox/java-temml` | Runs the same Temml and MathJax builds on a Java backend without Node (UPL / MIT). |
 | JUnit 5, Jackson | 5.11.4 / 2.18.2 | `sandbox/java-temml` (test) | Tests; Jackson reads the Node results to compare. |
 | `vite` | 8.3.5 | dev | Sandbox dev server and build. |
@@ -22,6 +26,18 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 | `@types/node` | 22 | dev | Types for the config files and scripts. |
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
+
+## 2026-10-26 — M2: Froala integration
+
+- Strategy **(b)** built: the content holds `<math-eq data-mathml>` elements that show the MathJax SVG from a shadow root; a modal `<dialog>` with one `<math-field>` inserts and edits. Measured (a) for comparison: ~10× slower load and undo at 100 equations, and its screen rendering isn't the print SVG. The evidence wasn't split, so (b) without asking. → `docs/02-froala-integration.md`.
+- **Default Froala turns MathML into stray text** (unwraps `<math>`, keeps the annotation as visible text). Needs a MathML allow-list, in the options from the start, because Froala cleans the initial content before plugins run.
+- Froala collapses runs of spaces in MathML text when it cleans; the plugin wraps `html.set()` to convert first.
+- Froala 5.5.0 removes `fr-deletable` elements on Backspace but not on Delete; the plugin handles Delete.
+- MathLive's virtual keyboard is inert behind a modal dialog, has zero height in a non-body container, and can't be moved at all inside an iframe (proxy). Workarounds in `equation-dialog.ts`.
+- **Bug found in the print path:** MathJax 4.1.3 draws a multi-child `<math>` (how Wiris writes MathML) only up to the first operator. Fixed in `prepareForSvg()`.
+- The MathJax font loader no longer uses `import.meta.glob`, so the Angular CLI can build it. In Vite, `@mathjax/src` must also stay out of `optimizeDeps` when the loader lives in another package.
+- MathLive leaves three one-shot document/window listeners per blur (`restoreFocusWhenDocumentFocused`); they go on the next click or focus. The teardown tests account for it.
+- Angular CLI 22 refuses Node 22.22.0 (container); built with Node 24.15.0 from `npx node@24.15.0`.
 
 ## 2026-10-26 — Spike: MathJax SVG on a Java backend
 

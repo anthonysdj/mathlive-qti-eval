@@ -1,0 +1,23 @@
+{
+  "equations": 100,
+  "distinct": 60,
+  "a": {
+    "loadMs": 451,
+    "undoMs": 415,
+    "mounted": 100,
+    "snapshotBytes": 12836,
+    "hostContentEditable": "false",
+    "hostTabIndex": 0,
+    "htmlGet": "<p>Q: <math-field read-only=\"\" class=\"fr-deletable\" contenteditable=\"false\" tabindex=\"0\">\\frac{a}{b}</math-field> end</p><p>Q: <math-field read-only=\"\" class=\"f",
+    "arrowLeftLandsIn": "the text",
+    "activeAfterArrow": "div",
+    "backspaceRemoves": true,
+    "coldLoadMs": 449
+  },
+  "b": {
+    "coldLoadMs": 191,
+    "loadMs": 39,
+    "undoMs": 47,
+    "snapshotBytes": 58109
+  }
+}

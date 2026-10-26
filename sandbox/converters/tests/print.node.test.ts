@@ -35,6 +35,27 @@ describe('the stored format (with the LaTeX annotation) gives the same image', (
   });
 });
 
+describe('MathML with several top-level children (as Wiris writes it)', () => {
+  // Found in M2 with Wiris content: MathJax drew `e^{iπ}+1=0` as `e^{iπ}`.
+  const NS = 'http://www.w3.org/1998/Math/MathML';
+  const paths = (svg: string) => (svg.match(/<path /g) ?? []).length;
+  it.each([
+    ['a+b', `<mi>a</mi><mo>+</mo><mi>b</mi>`, 3],
+    ['e^x+1', `<msup><mi>e</mi><mi>x</mi></msup><mo>+</mo><mn>1</mn>`, 4],
+    ['H2O', `<msub><mi>H</mi><mn>2</mn></msub><mi>O</mi>`, 3],
+  ])('%s is drawn whole, the same as with an outer <mrow>', async (_name, body, glyphs) => {
+    const bare = await mathmlToSvg(`<math xmlns="${NS}">${body}</math>`);
+    expect(paths(bare)).toBe(glyphs);
+    expect(bare).toBe(await mathmlToSvg(`<math xmlns="${NS}"><mrow>${body}</mrow></math>`));
+  });
+  it('leaves a <math> with one child as it is', () => {
+    const one = `<math xmlns="${NS}"><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></math>`;
+    expect(prepareForSvg(one)).toBe(one);
+    const leaf = `<math xmlns="${NS}"><mspace width="1em"/></math>`;
+    expect(prepareForSvg(leaf)).toBe(leaf);
+  });
+});
+
 describe('prepareForSvg', () => {
   it('drops Temml column padding on <mtd> (it makes MathJax overlap matrix entries)', () => {
     const tml = temml.renderToString('\\begin{pmatrix}1&2\\end{pmatrix}', { xml: true });
