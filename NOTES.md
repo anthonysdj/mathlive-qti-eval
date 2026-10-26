@@ -11,6 +11,8 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 | `temml` | 0.14.0 (exact) | `sandbox/converters` | Candidate LaTeX→MathML converter for stored MathML (MIT). Includes its mhchem extension. Recommended in `findings/mathml-converters.md`. |
 | `@mathjax/src` | 4.1.3 (exact) | `sandbox/converters` | Second candidate converter, for comparison (Apache-2.0). Only the TeX input and the MathML serialiser are used. |
 | `@mathjax/mathjax-newcm-font` | 4.1.3 (exact) | `sandbox/converters` | Font data for MathJax's SVG output in the print-path spike (already a transitive dependency; pinned directly because `src/print.ts` imports it). |
+| `@resvg/resvg-js` | 2.6.2 | dev (`sandbox/converters`) | Independent, non-browser SVG renderer: stands in for the PDF engine's rasteriser in the screen/print consistency proof. Also the candidate SVG→PNG step if the engine needs PNG. MPL-2.0. |
+| `pixelmatch` + `pngjs` (+ `@types/pngjs`) | 8.0.0 / 7.0.0 | dev (`sandbox/converters`) | Pixel diff of screen vs print renders, and PNG decode/encode for it. ISC / MIT. |
 | `vite` | 8.3.5 | dev | Sandbox dev server and build. |
 | `vitest` + `@vitest/browser-playwright` | 5.0.5 | dev | MathLive needs a real browser (layout, FontFace, custom elements, adoptedStyleSheets), so tests run in Chromium, not jsdom. |
 | `playwright` | 1.64.1 | dev | Browser driver for Vitest and the runtime-check script. |
@@ -18,6 +20,13 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 | `@types/node` | 22 | dev | Types for the config files and scripts. |
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
+
+## 2026-10-26 — Spike: screen/print consistency
+
+- Ton asked whether screen and print can be made 100% consistent. Yes, if the screen shows the same MathJax SVG as print: median 0.28% differing pixels (max 2.69%, `\bar`), anti-aliasing only. Today's native MathML vs SVG: median 45.7%. → `findings/consistency.md`.
+- Print side measured with resvg (not XEP). Needs a real PDF from our engine to close.
+- SVG on screen needs the MathML kept for screen readers (M4 accessibility check).
+- `tests/consistency.node.test.ts` drives Chromium from the Node project with Playwright directly (no Vitest browser mode), because it needs resvg's native binding next to the browser.
 
 ## 2026-10-26 — Spike: print path (MathML → SVG)
 

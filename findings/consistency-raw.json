@@ -1,0 +1,975 @@
+{
+  "summary": {
+    "pxPerUnit": 0.048,
+    "sameSvg": {
+      "median": 0.002777777777777778,
+      "max": 0.026923076923076925
+    },
+    "nativeVsSvg": {
+      "median": 0.45707656612529,
+      "max": 0.6370087336244541
+    }
+  },
+  "rows": [
+    {
+      "id": "frac",
+      "latex": "\\frac{a}{b}",
+      "w": 40,
+      "h": 51,
+      "sameSvg": {
+        "changed": 2,
+        "ink": 366,
+        "ratio": 0.00546448087431694
+      },
+      "nativeVsSvg": {
+        "changed": 450,
+        "ink": 864,
+        "ratio": 0.5208333333333334
+      }
+    },
+    {
+      "id": "frac-short",
+      "latex": "\\frac12",
+      "w": 39,
+      "h": 59,
+      "sameSvg": {
+        "changed": 3,
+        "ink": 344,
+        "ratio": 0.00872093023255814
+      },
+      "nativeVsSvg": {
+        "changed": 316,
+        "ink": 686,
+        "ratio": 0.4606413994169096
+      }
+    },
+    {
+      "id": "dfrac",
+      "latex": "\\dfrac{1}{x+1}",
+      "w": 132,
+      "h": 102,
+      "sameSvg": {
+        "changed": 2,
+        "ink": 1277,
+        "ratio": 0.0015661707126076742
+      },
+      "nativeVsSvg": {
+        "changed": 902,
+        "ink": 2406,
+        "ratio": 0.37489609310058186
+      }
+    },
+    {
+      "id": "binom",
+      "latex": "\\binom{n}{k}",
+      "w": 73,
+      "h": 56,
+      "sameSvg": {
+        "changed": 2,
+        "ink": 611,
+        "ratio": 0.0032733224222585926
+      },
+      "nativeVsSvg": {
+        "changed": 429,
+        "ink": 1140,
+        "ratio": 0.3763157894736842
+      }
+    },
+    {
+      "id": "nested-frac",
+      "latex": "\\frac{1}{1+\\frac{1}{x}}",
+      "w": 94,
+      "h": 76,
+      "sameSvg": {
+        "changed": 2,
+        "ink": 798,
+        "ratio": 0.002506265664160401
+      },
+      "nativeVsSvg": {
+        "changed": 696,
+        "ink": 1466,
+        "ratio": 0.4747612551159618
+      }
+    },
+    {
+      "id": "sqrt",
+      "latex": "\\sqrt{x^2+1}",
+      "w": 173,
+      "h": 51,
+      "sameSvg": {
+        "changed": 4,
+        "ink": 1391,
+        "ratio": 0.002875629043853343
+      },
+      "nativeVsSvg": {
+        "changed": 811,
+        "ink": 2004,
+        "ratio": 0.40469061876247503
+      }
+    },
+    {
+      "id": "nthroot",
+      "latex": "\\sqrt[3]{x}",
+      "w": 69,
+      "h": 51,
+      "sameSvg": {
+        "changed": 1,
+        "ink": 640,
+        "ratio": 0.0015625
+      },
+      "nativeVsSvg": {
+        "changed": 485,
+        "ink": 1047,
+        "ratio": 0.46322827125119387
+      }
+    },
+    {
+      "id": "sup",
+      "latex": "x^2",
+      "w": 49,
+      "h": 41,
+      "sameSvg": {
+        "changed": 5,
+        "ink": 354,
+        "ratio": 0.014124293785310734
+      },
+      "nativeVsSvg": {
+        "changed": 253,
+        "ink": 548,
+        "ratio": 0.46167883211678834
+      }
+    },
+    {
+      "id": "subsup",
+      "latex": "x_i^2",
+      "w": 49,
+      "h": 55,
+      "sameSvg": {
+        "changed": 4,
+        "ink": 432,
+        "ratio": 0.009259259259259259
+      },
+      "nativeVsSvg": {
+        "changed": 309,
+        "ink": 710,
+        "ratio": 0.4352112676056338
+      }
+    },
+    {
+      "id": "prime",
+      "latex": "f'(x)",
+      "w": 112,
+      "h": 48,
+      "sameSvg": {
+        "changed": 2,
+        "ink": 796,
+        "ratio": 0.002512562814070352
+      },
+      "nativeVsSvg": {
+        "changed": 651,
+        "ink": 1408,
+        "ratio": 0.46235795454545453
+      }
+    },
+    {
+      "id": "sci",
+      "latex": "6.02\\times10^{23}",
+      "w": 230,
+      "h": 43,
+      "sameSvg": {
+        "changed": 7,
+        "ink": 1849,
+        "ratio": 0.0037858301784748512
+      },
+      "nativeVsSvg": {
+        "changed": 1262,
+        "ink": 2740,
+        "ratio": 0.46058394160583943
+      }
+    },
+    {
+      "id": "pmatrix",
+      "latex": "\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}",
+      "w": 158,
+      "h": 117,
+      "sameSvg": {
+        "changed": 2,
+        "ink": 1969,
+        "ratio": 0.001015744032503809
+      },
+      "nativeVsSvg": {
+        "changed": 1963,
+        "ink": 3613,
+        "ratio": 0.5433158040409631
+      }
+    },
+    {
+      "id": "bmatrix",
+      "latex": "\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}",
+      "w": 140,
+      "h": 117,
+      "sameSvg": {
+        "changed": 2,
+        "ink": 2014,
+        "ratio": 0.0009930486593843098
+      },
+      "nativeVsSvg": {
+        "changed": 2479,
+        "ink": 4052,
+        "ratio": 0.611796643632774
+      }
+    },
+    {
+      "id": "cases",
+      "latex": "f(x)=\\begin{cases}1&x>0\\\\0&\\text{otherwise}\\end{cases}",
+      "w": 452,
+      "h": 117,
+      "sameSvg": {
+        "changed": 6,
+        "ink": 4438,
+        "ratio": 0.0013519603424966202
+      },
+      "nativeVsSvg": {
+        "changed": 4383,
+        "ink": 8102,
+        "ratio": 0.5409775364107627
+      }
+    },
+    {
+      "id": "aligned",
+      "latex": "\\begin{aligned}a&=b+c\\\\&=d\\end{aligned}",
+      "w": 215,
+      "h": 117,
+      "sameSvg": {
+        "changed": 3,
+        "ink": 1485,
+        "ratio": 0.00202020202020202
+      },
+      "nativeVsSvg": {
+        "changed": 1895,
+        "ink": 3413,
+        "ratio": 0.5552300029299736
+      }
+    },
+    {
+      "id": "int",
+      "latex": "\\int_0^1 f(x)\\,dx",
+      "w": 216,
+      "h": 66,
+      "sameSvg": {
+        "changed": 6,
+        "ink": 1819,
+        "ratio": 0.003298515667949423
+      },
+      "nativeVsSvg": {
+        "changed": 1704,
+        "ink": 3356,
+        "ratio": 0.5077473182359953
+      }
+    },
+    {
+      "id": "sum",
+      "latex": "\\sum_{i=1}^{n} i^2",
+      "w": 156,
+      "h": 55,
+      "sameSvg": {
+        "changed": 5,
+        "ink": 1270,
+        "ratio": 0.003937007874015748
+      },
+      "nativeVsSvg": {
+        "changed": 880,
+        "ink": 1856,
+        "ratio": 0.47413793103448276
+      }
+    },
+    {
+      "id": "lim",
+      "latex": "\\lim_{x\\to\\infty}\\frac{1}{x}",
+      "w": 213,
+      "h": 59,
+      "sameSvg": {
+        "changed": 10,
+        "ink": 1476,
+        "ratio": 0.006775067750677507
+      },
+      "nativeVsSvg": {
+        "changed": 979,
+        "ink": 2460,
+        "ratio": 0.39796747967479673
+      }
+    },
+    {
+      "id": "partial",
+      "latex": "\\frac{\\partial f}{\\partial x}",
+      "w": 60,
+      "h": 65,
+      "sameSvg": {
+        "changed": 11,
+        "ink": 751,
+        "ratio": 0.014647137150466045
+      },
+      "nativeVsSvg": {
+        "changed": 752,
+        "ink": 1578,
+        "ratio": 0.47655259822560203
+      }
+    },
+    {
+      "id": "oint",
+      "latex": "\\oint_C \\vec{F}\\cdot d\\vec{r}",
+      "w": 189,
+      "h": 69,
+      "sameSvg": {
+        "changed": 2,
+        "ink": 1501,
+        "ratio": 0.0013324450366422385
+      },
+      "nativeVsSvg": {
+        "changed": 1262,
+        "ink": 2523,
+        "ratio": 0.5001981767736822
+      }
+    },
+    {
+      "id": "leftright",
+      "latex": "\\left(\\frac{a}{b}\\right)",
+      "w": 80,
+      "h": 56,
+      "sameSvg": {
+        "changed": 1,
+        "ink": 663,
+        "ratio": 0.0015082956259426848
+      },
+      "nativeVsSvg": {
+        "changed": 638,
+        "ink": 1427,
+        "ratio": 0.4470918009810792
+      }
+    },
+    {
+      "id": "abs",
+      "latex": "\\left|x\\right|",
+      "w": 55,
+      "h": 48,
+      "sameSvg": {
+        "changed": 1,
+        "ink": 403,
+        "ratio": 0.0024813895781637717
+      },
+      "nativeVsSvg": {
+        "changed": 257,
+        "ink": 707,
+        "ratio": 0.3635077793493635
+      }
+    },
+    {
+      "id": "norm",
+      "latex": "\\lVert v\\rVert",
+      "w": 62,
+      "h": 48,
+      "sameSvg": {
+        "changed": 0,
+        "ink": 738,
+        "ratio": 0
+      },
+      "nativeVsSvg": {
+        "changed": 442,
+        "ink": 1039,
+        "ratio": 0.42540904716073147
+      }
+    },
+    {
+      "id": "angle",
+      "latex": "\\langle u,v\\rangle",
+      "w": 110,
+      "h": 48,
+      "sameSvg": {
+        "changed": 1,
+        "ink": 717,
+        "ratio": 0.001394700139470014
+      },
+      "nativeVsSvg": {
+        "changed": 381,
+        "ink": 1181,
+        "ratio": 0.32260795935647757
+      }
+    },
+    {
+      "id": "set",
+      "latex": "\\{x\\mid x>0\\}",
+      "w": 226,
+      "h": 48,
+      "sameSvg": {
+        "changed": 15,
+        "ink": 1412,
+        "ratio": 0.010623229461756374
+      },
+      "nativeVsSvg": {
+        "changed": 780,
+        "ink": 2077,
+        "ratio": 0.3755416466056813
+      }
+    },
+    {
+      "id": "greek",
+      "latex": "\\alpha+\\beta=\\Gamma",
+      "w": 211,
+      "h": 44,
+      "sameSvg": {
+        "changed": 3,
+        "ink": 1179,
+        "ratio": 0.002544529262086514
+      },
+      "nativeVsSvg": {
+        "changed": 598,
+        "ink": 1748,
+        "ratio": 0.34210526315789475
+      }
+    },
+    {
+      "id": "mathbb",
+      "latex": "\\mathbb{R}",
+      "w": 35,
+      "h": 33,
+      "sameSvg": {
+        "changed": 0,
+        "ink": 471,
+        "ratio": 0
+      },
+      "nativeVsSvg": {
+        "changed": 266,
+        "ink": 579,
+        "ratio": 0.459412780656304
+      }
+    },
+    {
+      "id": "mathbf",
+      "latex": "\\mathbf{v}",
+      "w": 30,
+      "h": 22,
+      "sameSvg": {
+        "changed": 5,
+        "ink": 221,
+        "ratio": 0.02262443438914027
+      },
+      "nativeVsSvg": {
+        "changed": 143,
+        "ink": 309,
+        "ratio": 0.4627831715210356
+      }
+    },
+    {
+      "id": "relations",
+      "latex": "a\\le b\\ne c\\approx d",
+      "w": 284,
+      "h": 47,
+      "sameSvg": {
+        "changed": 0,
+        "ink": 1737,
+        "ratio": 0
+      },
+      "nativeVsSvg": {
+        "changed": 1313,
+        "ink": 2910,
+        "ratio": 0.4512027491408935
+      }
+    },
+    {
+      "id": "pm",
+      "latex": "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+      "w": 315,
+      "h": 70,
+      "sameSvg": {
+        "changed": 8,
+        "ink": 2830,
+        "ratio": 0.0028268551236749115
+      },
+      "nativeVsSvg": {
+        "changed": 2073,
+        "ink": 4770,
+        "ratio": 0.4345911949685535
+      }
+    },
+    {
+      "id": "trig",
+      "latex": "\\sin^2\\theta+\\cos^2\\theta=1",
+      "w": 389,
+      "h": 46,
+      "sameSvg": {
+        "changed": 1,
+        "ink": 2586,
+        "ratio": 0.0003866976024748647
+      },
+      "nativeVsSvg": {
+        "changed": 1501,
+        "ink": 3810,
+        "ratio": 0.3939632545931758
+      }
+    },
+    {
+      "id": "log",
+      "latex": "\\log_2 8=3",
+      "w": 211,
+      "h": 45,
+      "sameSvg": {
+        "changed": 1,
+        "ink": 1605,
+        "ratio": 0.0006230529595015577
+      },
+      "nativeVsSvg": {
+        "changed": 976,
+        "ink": 2256,
+        "ratio": 0.4326241134751773
+      }
+    },
+    {
+      "id": "operatorname",
+      "latex": "\\operatorname{lcm}(a,b)",
+      "w": 180,
+      "h": 48,
+      "sameSvg": {
+        "changed": 2,
+        "ink": 1513,
+        "ratio": 0.0013218770654329147
+      },
+      "nativeVsSvg": {
+        "changed": 864,
+        "ink": 2385,
+        "ratio": 0.3622641509433962
+      }
+    },
+    {
+      "id": "logic",
+      "latex": "\\forall x\\in A,\\exists y",
+      "w": 226,
+      "h": 45,
+      "sameSvg": {
+        "changed": 5,
+        "ink": 1580,
+        "ratio": 0.0031645569620253164
+      },
+      "nativeVsSvg": {
+        "changed": 1035,
+        "ink": 2595,
+        "ratio": 0.3988439306358382
+      }
+    },
+    {
+      "id": "arrow",
+      "latex": "A\\Rightarrow B",
+      "w": 148,
+      "h": 36,
+      "sameSvg": {
+        "changed": 0,
+        "ink": 1039,
+        "ratio": 0
+      },
+      "nativeVsSvg": {
+        "changed": 727,
+        "ink": 1628,
+        "ratio": 0.4465601965601966
+      }
+    },
+    {
+      "id": "vec",
+      "latex": "\\vec{v}",
+      "w": 27,
+      "h": 41,
+      "sameSvg": {
+        "changed": 1,
+        "ink": 251,
+        "ratio": 0.00398406374501992
+      },
+      "nativeVsSvg": {
+        "changed": 171,
+        "ink": 378,
+        "ratio": 0.4523809523809524
+      }
+    },
+    {
+      "id": "hat",
+      "latex": "\\hat{x}",
+      "w": 28,
+      "h": 41,
+      "sameSvg": {
+        "changed": 1,
+        "ink": 270,
+        "ratio": 0.003703703703703704
+      },
+      "nativeVsSvg": {
+        "changed": 185,
+        "ink": 428,
+        "ratio": 0.4322429906542056
+      }
+    },
+    {
+      "id": "bar",
+      "latex": "\\bar{x}",
+      "w": 35,
+      "h": 34,
+      "sameSvg": {
+        "changed": 7,
+        "ink": 260,
+        "ratio": 0.026923076923076925
+      },
+      "nativeVsSvg": {
+        "changed": 220,
+        "ink": 448,
+        "ratio": 0.49107142857142855
+      }
+    },
+    {
+      "id": "overline",
+      "latex": "\\overline{AB}",
+      "w": 73,
+      "h": 48,
+      "sameSvg": {
+        "changed": 3,
+        "ink": 1057,
+        "ratio": 0.002838221381267739
+      },
+      "nativeVsSvg": {
+        "changed": 1167,
+        "ink": 1832,
+        "ratio": 0.6370087336244541
+      }
+    },
+    {
+      "id": "overrightarrow",
+      "latex": "\\overrightarrow{AB}",
+      "w": 73,
+      "h": 70,
+      "sameSvg": {
+        "changed": 0,
+        "ink": 1011,
+        "ratio": 0
+      },
+      "nativeVsSvg": {
+        "changed": 1228,
+        "ink": 2088,
+        "ratio": 0.5881226053639846
+      }
+    },
+    {
+      "id": "underbrace",
+      "latex": "\\underbrace{a+b}_{n}",
+      "w": 105,
+      "h": 92,
+      "sameSvg": {
+        "changed": 5,
+        "ink": 1140,
+        "ratio": 0.0043859649122807015
+      },
+      "nativeVsSvg": {
+        "changed": 1121,
+        "ink": 2073,
+        "ratio": 0.5407621804148577
+      }
+    },
+    {
+      "id": "overbrace",
+      "latex": "\\overbrace{a+b}^{n}",
+      "w": 105,
+      "h": 87,
+      "sameSvg": {
+        "changed": 2,
+        "ink": 1157,
+        "ratio": 0.001728608470181504
+      },
+      "nativeVsSvg": {
+        "changed": 961,
+        "ink": 1980,
+        "ratio": 0.48535353535353537
+      }
+    },
+    {
+      "id": "mathring",
+      "latex": "\\mathring{A}",
+      "w": 36,
+      "h": 53,
+      "sameSvg": {
+        "changed": 1,
+        "ink": 360,
+        "ratio": 0.002777777777777778
+      },
+      "nativeVsSvg": {
+        "changed": 449,
+        "ink": 727,
+        "ratio": 0.6176066024759285
+      }
+    },
+    {
+      "id": "xrightarrow",
+      "latex": "A\\xrightarrow{k}B",
+      "w": 197,
+      "h": 69,
+      "sameSvg": {
+        "changed": 12,
+        "ink": 1268,
+        "ratio": 0.00946372239747634
+      },
+      "nativeVsSvg": {
+        "changed": 1646,
+        "ink": 2749,
+        "ratio": 0.598763186613314
+      }
+    },
+    {
+      "id": "ce-water",
+      "latex": "\\ce{H2O}",
+      "w": 95,
+      "h": 42,
+      "sameSvg": {
+        "changed": 9,
+        "ink": 1077,
+        "ratio": 0.008356545961002786
+      },
+      "nativeVsSvg": {
+        "changed": 414,
+        "ink": 1317,
+        "ratio": 0.3143507972665148
+      }
+    },
+    {
+      "id": "ce-reaction",
+      "latex": "\\ce{2H2 + O2 -> 2H2O}",
+      "w": 470,
+      "h": 43,
+      "sameSvg": {
+        "changed": 7,
+        "ink": 3357,
+        "ratio": 0.002085195114685731
+      },
+      "nativeVsSvg": {
+        "changed": 1885,
+        "ink": 4501,
+        "ratio": 0.41879582315041103
+      }
+    },
+    {
+      "id": "chem-manual",
+      "latex": "\\mathrm{H_2O}",
+      "w": 95,
+      "h": 42,
+      "sameSvg": {
+        "changed": 9,
+        "ink": 1077,
+        "ratio": 0.008356545961002786
+      },
+      "nativeVsSvg": {
+        "changed": 414,
+        "ink": 1317,
+        "ratio": 0.3143507972665148
+      }
+    },
+    {
+      "id": "unit-mathrm",
+      "latex": "9.8\\,\\mathrm{m/s^2}",
+      "w": 179,
+      "h": 58,
+      "sameSvg": {
+        "changed": 0,
+        "ink": 1470,
+        "ratio": 0
+      },
+      "nativeVsSvg": {
+        "changed": 1198,
+        "ink": 2528,
+        "ratio": 0.47389240506329117
+      }
+    },
+    {
+      "id": "unit-degree",
+      "latex": "90\\degree",
+      "w": 71,
+      "h": 34,
+      "sameSvg": {
+        "changed": 2,
+        "ink": 694,
+        "ratio": 0.002881844380403458
+      },
+      "nativeVsSvg": {
+        "changed": 294,
+        "ink": 914,
+        "ratio": 0.32166301969365424
+      }
+    },
+    {
+      "id": "percent",
+      "latex": "50\\%",
+      "w": 89,
+      "h": 39,
+      "sameSvg": {
+        "changed": 5,
+        "ink": 970,
+        "ratio": 0.005154639175257732
+      },
+      "nativeVsSvg": {
+        "changed": 471,
+        "ink": 1289,
+        "ratio": 0.365399534522886
+      }
+    },
+    {
+      "id": "text",
+      "latex": "\\text{if } x>0",
+      "w": 160,
+      "h": 37,
+      "sameSvg": {
+        "changed": 4,
+        "ink": 1059,
+        "ratio": 0.003777148253068933
+      },
+      "nativeVsSvg": {
+        "changed": 472,
+        "ink": 1386,
+        "ratio": 0.34054834054834054
+      }
+    },
+    {
+      "id": "color",
+      "latex": "\\textcolor{red}{x}+y",
+      "w": 110,
+      "h": 38,
+      "sameSvg": {
+        "changed": 5,
+        "ink": 688,
+        "ratio": 0.007267441860465116
+      },
+      "nativeVsSvg": {
+        "changed": 475,
+        "ink": 865,
+        "ratio": 0.5491329479768786
+      }
+    },
+    {
+      "id": "space-tilde",
+      "latex": "a~b",
+      "w": 62,
+      "h": 34,
+      "sameSvg": {
+        "changed": 4,
+        "ink": 471,
+        "ratio": 0.008492569002123142
+      },
+      "nativeVsSvg": {
+        "changed": 323,
+        "ink": 738,
+        "ratio": 0.43766937669376693
+      }
+    },
+    {
+      "id": "phantom",
+      "latex": "\\phantom{x}+1",
+      "w": 111,
+      "h": 36,
+      "sameSvg": {
+        "changed": 1,
+        "ink": 374,
+        "ratio": 0.00267379679144385
+      },
+      "nativeVsSvg": {
+        "changed": 148,
+        "ink": 439,
+        "ratio": 0.33712984054669703
+      }
+    },
+    {
+      "id": "boxed",
+      "latex": "\\boxed{x=1}",
+      "w": 150,
+      "h": 67,
+      "sameSvg": {
+        "changed": 0,
+        "ink": 1868,
+        "ratio": 0
+      },
+      "nativeVsSvg": {
+        "changed": 1701,
+        "ink": 3134,
+        "ratio": 0.5427568602425016
+      }
+    },
+    {
+      "id": "placeholder",
+      "latex": "\\frac{\\placeholder{}}{\\placeholder{}}",
+      "w": 48,
+      "h": 59,
+      "sameSvg": {
+        "changed": 0,
+        "ink": 568,
+        "ratio": 0
+      },
+      "nativeVsSvg": {
+        "changed": 533,
+        "ink": 1086,
+        "ratio": 0.49079189686924496
+      }
+    },
+    {
+      "id": "prompt",
+      "latex": "x+\\placeholder[ans]{}=5",
+      "w": 212,
+      "h": 36,
+      "sameSvg": {
+        "changed": 1,
+        "ink": 1251,
+        "ratio": 0.0007993605115907274
+      },
+      "nativeVsSvg": {
+        "changed": 788,
+        "ink": 1724,
+        "ratio": 0.45707656612529
+      }
+    },
+    {
+      "id": "decimal-comma",
+      "latex": "3{,}14",
+      "w": 86,
+      "h": 42,
+      "sameSvg": {
+        "changed": 1,
+        "ink": 750,
+        "ratio": 0.0013333333333333333
+      },
+      "nativeVsSvg": {
+        "changed": 395,
+        "ink": 1038,
+        "ratio": 0.3805394990366089
+      }
+    },
+    {
+      "id": "macro-R",
+      "latex": "x\\in\\R",
+      "w": 121,
+      "h": 35,
+      "sameSvg": {
+        "changed": 3,
+        "ink": 929,
+        "ratio": 0.0032292787944025836
+      },
+      "nativeVsSvg": {
+        "changed": 662,
+        "ink": 1373,
+        "ratio": 0.48215586307356156
+      }
+    },
+    {
+      "id": "macro-vecb",
+      "latex": "\\vecb{v}+\\vecb{w}",
+      "w": 128,
+      "h": 32,
+      "sameSvg": {
+        "changed": 1,
+        "ink": 808,
+        "ratio": 0.0012376237623762376
+      },
+      "nativeVsSvg": {
+        "changed": 456,
+        "ink": 1118,
+        "ratio": 0.407871198568873
+      }
+    }
+  ]
+}

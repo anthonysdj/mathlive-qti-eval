@@ -7,6 +7,7 @@ Evaluating MathLive for a QTI 3.0 authoring tool: how it works, Froala integrati
 | M1 Fundamentals | done | [`docs/01-how-mathfield-works.md`](docs/01-how-mathfield-works.md), [`findings/roundtrip.md`](findings/roundtrip.md) |
 | Spike: MathML for storage | in review | [`findings/mathml-converters.md`](findings/mathml-converters.md) |
 | Spike: print path (MathML → SVG) | in review | [`findings/print-svg.md`](findings/print-svg.md) |
+| Spike: screen/print consistency | in review | [`findings/consistency.md`](findings/consistency.md) |
 | M2 Froala | not started | |
 | M3 Equation builder | not started | |
 | M4 Decision | not started | |
@@ -30,9 +31,10 @@ pnpm ssr-check      # what MathLive offers under Node
 
 ```sh
 cd sandbox/converters
-pnpm test      # 195 tests: converter output (Chromium) + print path SVG (Node)
+pnpm test      # 255 tests: converter output (Chromium) + print path SVG and screen/print consistency (Node)
 pnpm compare   # regenerate findings/mathml-converters-raw.json and -timing.json
 pnpm gallery   # converters rendered side by side (HTML + screenshots)
 pnpm print     # Temml MathML → SVG for print, side by side with screen rendering
+pnpm consistency  # pixel-diff the same SVG on screen (Chromium) vs print (resvg) → findings/consistency.html
 pnpm size      # bundle size per converter
 ```

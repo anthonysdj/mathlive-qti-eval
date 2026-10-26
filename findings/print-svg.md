@@ -32,7 +32,7 @@ After the fix, all 60 formulas look right in the side-by-side page. That include
 
 ## Screen vs print will look slightly different
 
-The screen uses the browser's math font (Chromium's default, or Temml's CSS font stack), while print uses MathJax's New Computer Modern. Layout, symbols and structure match, but glyph shapes and spacing differ a little (compare the two columns). If identical screen and print output becomes a requirement, render the screen with MathJax too, from the same stored MathML. That's a delivery choice and doesn't change what we store.
+The screen uses the browser's math font (Chromium's default, or Temml's CSS font stack), while print uses MathJax's New Computer Modern. Layout, symbols and structure match, but glyph shapes and spacing differ a little (compare the two columns). If identical screen and print output becomes a requirement, render the screen with MathJax too, from the same stored MathML. That's a delivery choice and doesn't change what we store. **Measured in [consistency.md](consistency.md):** with the same SVG on both sides, screen and print differ by 0.28% of pixels (median), anti-aliasing only.
 
 ## Open points
 
