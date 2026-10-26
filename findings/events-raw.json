@@ -1,0 +1,274 @@
+{
+  "append to DOM": [
+    {
+      "type": "mount"
+    }
+  ],
+  "mf.value = (not focused)": [],
+  "setValue() default": [],
+  "insert()": [
+    {
+      "type": "beforeinput",
+      "detail": "insertText"
+    },
+    {
+      "type": "selection-change"
+    },
+    {
+      "type": "undo-state-change",
+      "detail": "{\"type\":\"snapshot\"}"
+    },
+    {
+      "type": "input",
+      "detail": "insertText"
+    }
+  ],
+  "focus()": [],
+  "type \"2\"": [
+    {
+      "type": "focus"
+    },
+    {
+      "type": "focusin"
+    },
+    {
+      "type": "keydown",
+      "detail": "2"
+    },
+    {
+      "type": "beforeinput",
+      "detail": "insertText"
+    },
+    {
+      "type": "selection-change"
+    },
+    {
+      "type": "undo-state-change",
+      "detail": "{\"type\":\"snapshot\"}"
+    },
+    {
+      "type": "input",
+      "detail": "insertText"
+    }
+  ],
+  "ArrowLeft": [
+    {
+      "type": "selection-change"
+    },
+    {
+      "type": "keydown",
+      "detail": "ArrowLeft"
+    }
+  ],
+  "Home then ArrowLeft (edge)": [
+    {
+      "type": "selection-change"
+    },
+    {
+      "type": "keydown",
+      "detail": "Home"
+    },
+    {
+      "type": "move-out",
+      "detail": "{\"direction\":\"backward\"}"
+    },
+    {
+      "type": "keydown",
+      "detail": "ArrowLeft"
+    }
+  ],
+  "Enter": [
+    {
+      "type": "beforeinput",
+      "detail": "insertLineBreak"
+    },
+    {
+      "type": "change"
+    },
+    {
+      "type": "keydown",
+      "detail": "Enter"
+    },
+    {
+      "type": "input",
+      "detail": "insertLineBreak"
+    }
+  ],
+  "type \"\\\\\" (latex mode)": [
+    {
+      "type": "mode-change"
+    },
+    {
+      "type": "selection-change"
+    },
+    {
+      "type": "keydown",
+      "detail": "\\"
+    },
+    {
+      "type": "input",
+      "detail": "insertText"
+    }
+  ],
+  "Escape": [
+    {
+      "type": "mode-change"
+    },
+    {
+      "type": "selection-change"
+    },
+    {
+      "type": "beforeinput",
+      "detail": "insertText"
+    },
+    {
+      "type": "selection-change"
+    },
+    {
+      "type": "undo-state-change",
+      "detail": "{\"type\":\"snapshot\"}"
+    },
+    {
+      "type": "keydown",
+      "detail": "Escape"
+    },
+    {
+      "type": "input",
+      "detail": "insertText"
+    }
+  ],
+  "executeCommand undo": [
+    {
+      "type": "beforeinput",
+      "detail": "historyUndo"
+    },
+    {
+      "type": "selection-change"
+    },
+    {
+      "type": "undo-state-change",
+      "detail": "{\"type\":\"undo\"}"
+    },
+    {
+      "type": "input",
+      "detail": "historyUndo"
+    }
+  ],
+  "type \"pi\" (inline shortcut)": [
+    {
+      "type": "keydown",
+      "detail": "p"
+    },
+    {
+      "type": "beforeinput",
+      "detail": "insertText"
+    },
+    {
+      "type": "selection-change"
+    },
+    {
+      "type": "undo-state-change",
+      "detail": "{\"type\":\"snapshot\"}"
+    },
+    {
+      "type": "undo-state-change",
+      "detail": "{\"type\":\"snapshot\"}"
+    },
+    {
+      "type": "undo-state-change",
+      "detail": "{\"type\":\"snapshot\"}"
+    },
+    {
+      "type": "selection-change"
+    },
+    {
+      "type": "keydown",
+      "detail": "i"
+    },
+    {
+      "type": "input",
+      "detail": "insertText"
+    },
+    {
+      "type": "input",
+      "detail": "insertText"
+    }
+  ],
+  "show keyboard": [
+    {
+      "type": "before-virtual-keyboard-toggle",
+      "detail": "{\"visible\":true}"
+    },
+    {
+      "type": "virtual-keyboard-toggle"
+    },
+    {
+      "type": "blur"
+    },
+    {
+      "type": "focusout"
+    },
+    {
+      "type": "focus"
+    },
+    {
+      "type": "focusin"
+    }
+  ],
+  "hide keyboard": [
+    {
+      "type": "before-virtual-keyboard-toggle",
+      "detail": "{\"visible\":false}"
+    },
+    {
+      "type": "virtual-keyboard-toggle"
+    },
+    {
+      "type": "blur"
+    },
+    {
+      "type": "focusout"
+    },
+    {
+      "type": "focus"
+    },
+    {
+      "type": "focusin"
+    }
+  ],
+  "blur by focusing other input": [
+    {
+      "type": "change"
+    },
+    {
+      "type": "blur"
+    },
+    {
+      "type": "focusout"
+    }
+  ],
+  "focus + blur without edit": [
+    {
+      "type": "focus"
+    },
+    {
+      "type": "focusin"
+    }
+  ],
+  "remove from DOM": [
+    {
+      "type": "blur"
+    },
+    {
+      "type": "focusout"
+    },
+    {
+      "type": "unmount"
+    }
+  ],
+  "__value": [
+    {
+      "type": "\\pi y\\frac122"
+    }
+  ]
+}
