@@ -5,3 +5,4 @@ export { keyboardLayouts } from './keyboard';
 export { BuilderController, refusalMessage, type BuilderOptions, type Refusal } from './controller';
 export { previewOf, prettyMathml, type Preview } from './preview';
 export { PaletteDrag, dropTargetAt, dropInsert, type DropTarget, type PaletteDragOptions } from './drag';
+export { SavedEquations, savedItem, shortcutProblem, localSavedStorage, memorySavedStorage, type SavedEquation, type SavedStorage } from './saved';

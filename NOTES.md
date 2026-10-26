@@ -27,6 +27,13 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
 
+## 2026-10-26 — Saved equations with shortcuts
+
+- **A saved equation's shortcut is just another inline shortcut** (`field.inlineShortcuts`), with `#?` for its empty boxes. MathLive types the letters, then swaps them for the equation as soon as the last one is typed. → `docs/03-equation-builder.md` §9.
+- Shortcuts that MathLive or we already define are refused (typing `sin` would stop giving sin). `BuilderController.takenShortcuts()` lists them whatever the profile.
+- **Removing the focused input leaves focus on `<body>`**, and the field's `focus()` is async (M1), so focusing the field in the same tick as hiding the save form lost focus. It now focuses on the next task.
+- Saved equations go through the profile check like palette items (`itemTokens`), so whatever is in localStorage is only offered when the profile allows it.
+
 ## 2026-10-26 — Drag and drop in the equation builder
 
 - **MathLive has no drop support, but `getOffsetFromPoint` + `getElementInfo(offset).bounds` are enough.** Inserting at an empty box's offset replaces the box. → `docs/03-equation-builder.md` §8.

@@ -26,7 +26,9 @@ export type CategoryId =
   | 'sets'
   | 'geometry'
   | 'chemistry'
-  | 'units';
+  | 'units'
+  // The author's saved equations (saved.ts): not in CATEGORIES, the host adds the tab
+  | 'saved';
 
 export interface PaletteItem {
   id: string;

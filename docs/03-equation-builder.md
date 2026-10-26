@@ -188,7 +188,22 @@ Then the author types into the boxes. Stored: `\frac{\sqrt{\frac14}}{\pi}+x^2`, 
 
 **Not done:** moving or re-ordering pieces that are already in the equation by dragging them. MathLive's own selection drag isn't exposed, and this would need a model of the parse tree on our side. Today you select and delete, then drop again. There's also no auto-scroll while dragging, so on a small screen the key and the field both have to be in view.
 
-## 9. Theming
+## 9. Saved equations and shortcuts
+
+An author can save what's in the field and get it back later. "Save equation…" under the palette asks for a name and an optional shortcut. After that, the equation is under **My equations**, where you can click it, drag it, or delete it. Typing the shortcut in any equation inserts it: type `x=quadf` and you get x = the quadratic formula. Code: [`saved.ts`](../sandbox/builder/src/saved.ts) and `BuilderController.setSaved()` / `savedItems()` / `takenShortcuts()`. Tests: [`saved.test.ts`](../sandbox/builder/tests/saved.test.ts). Checked in the running app (`pnpm start`) by [`saved-check.mjs`](../apps/authoring/scripts/saved-check.mjs) → [`findings/saved-check.json`](../findings/saved-check.json).
+
+![My equations, after typing x=quadf](../findings/screenshots/saved-tab.png)
+
+- **What's saved is the field's LaTeX.** Empty boxes stay empty (`\placeholder{}` becomes `#?`), so an equation saved half-built works as a template. `□^2+□^2=□^2` saved as `pyth` inserts three boxes, and Tab moves between them.
+- **The shortcut is a MathLive inline shortcut**, like `abs` in §3, so it inserts plain LaTeX. Stored MathML never depends on it (`storedByShortcut` and `storedMathml`).
+- **Shortcut rules:** 2 to 16 letters. It can't be one the field already has: MathLive's ~260 (sin, pi, alpha…), ours, or another saved one. Otherwise typing `sin` would stop giving sin. The form says why a shortcut is refused (`takenShortcutError`, `badShortcutError`).
+- **The allowed-symbols profile still holds.** A saved equation that uses something the profile refuses isn't offered, and its shortcut is off. Under "Primary arithmetic", the quadratic formula is hidden and typing `quadf` gives the letters (`arithmetic`). This also covers anything hand-edited into storage: a saved `\href` is never offered.
+- **Where they're kept** is up to the host (`SavedStorage`). The demo uses this browser's `localStorage` (`eb-saved-equations`), so they survive a reload (`afterReload`) but belong to one browser. Reads and writes never throw. A real authoring tool would keep them per author on its server, and maybe share a set per subject.
+- Accessibility: the save form has labels and a described shortcut field, and errors use `role="alert"`. The "Saved…" and "Deleted…" notes are a polite live region. Delete is a 44 px button named "Delete *name*". After a save, focus goes back to the equation. After a delete, it goes to the My equations tab.
+
+Not done: renaming a saved equation or changing its shortcut (for now, delete it and save it again), saved equations on the virtual keyboard, and import/export.
+
+## 10. Theming
 
 Everything takes its colours and sizes from custom properties with defaults, so a host app sets them on any ancestor ([`styles.css`](../apps/authoring/src/styles.css)):
 
@@ -197,7 +212,7 @@ Everything takes its colours and sizes from custom properties with defaults, so 
 
 The demo has a dark theme that changes only the tokens ([screenshot](../findings/screenshots/builder-dark.png)). Keys are at least 44 px (WCAG 2.5.5).
 
-## 10. Gotchas
+## 11. Gotchas
 
 1. **`\ce{}` and `\mathrm{}` can't be typed into** (§2). MathLive also has no spoken text for `\ce`.
 2. **After a literal `\mathrm{d}` the variable joins it** (`\mathrm{dx}`). Use `\differentialD`.
@@ -211,7 +226,7 @@ The demo has a dark theme that changes only the tokens ([screenshot](../findings
 10. **`window.mathVirtualKeyboard.layouts` is global.** The controller sets it from the profile; two fields with different profiles on one page would need to set it on focus.
 11. **The extension's host is the dialog's slot**, not an `<app-equation-builder>` element, so select it by its `eb` class.
 
-## 11. Not done yet
+## 12. Not done yet
 
 - Testing with real authors (the action counts are scripted, not timed with people).
 - Screen reader testing of the dialog (NVDA, JAWS, VoiceOver), planned for M4.
@@ -225,10 +240,11 @@ The demo has a dark theme that changes only the tokens ([screenshot](../findings
 ```sh
 pnpm install
 cd sandbox/builder
-pnpm test                         # 185 tests in Chromium (set PW_CHROMIUM if Playwright's browser isn't installed)
+pnpm test                         # 192 tests in Chromium (set PW_CHROMIUM if Playwright's browser isn't installed)
 
 cd ../../apps/authoring           # needs Node >= 22.22.3 or 24.15
 pnpm start                        # demo: Allowed symbols / Input / Theme above the editor
 pnpm build && pnpm builder-check  # builder flows, panel vs keyboard, phone → findings/builder-check.json
 node scripts/drag-check.mjs       # with pnpm start running: drag and drop, mouse and touch → findings/drag-check.json
+node scripts/saved-check.mjs      # with pnpm start running: save, shortcut, reload, profile, delete → findings/saved-check.json
 ```

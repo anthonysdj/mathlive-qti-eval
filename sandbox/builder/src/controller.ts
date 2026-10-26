@@ -8,11 +8,12 @@
 import type { MathfieldElement, Selection } from 'mathlive';
 
 type MenuItem = MathfieldElement['menuItems'][number];
-import { describeToken, resolveAllowed, type Allowed, type AllowedProfile } from './allowed';
+import { describeToken, itemTokens, resolveAllowed, type Allowed, type AllowedProfile } from './allowed';
 import { dropInsert } from './drag';
 import { keyboardLayouts } from './keyboard';
 import { MACROS, SHORTCUTS, shortcutValue } from './notation';
 import type { PaletteItem, TextEntry } from './palette';
+import { savedItem, type SavedEquation } from './saved';
 
 /** The field's context-menu items we keep: editing, and matrix rows/columns when matrices are allowed */
 const MENU_KEEP = ['cut', 'copy', 'paste', 'select-all'];
@@ -50,6 +51,7 @@ export class BuilderController {
   // Tokens the profile refuses that were already there when the equation was
   // loaded: editing an older equation shouldn't undo every keystroke.
   #baseline = new Set<string>();
+  #saved: readonly SavedEquation[] = [];
   #abort = new AbortController();
 
   constructor(field: MathfieldElement, opts: BuilderOptions) {
@@ -78,13 +80,40 @@ export class BuilderController {
     const f = this.field;
     // Macros first: shortcuts are checked by what they expand to
     f.macros = { ...this.#defaults.macros, ...Object.fromEntries(Object.entries(MACROS).filter(([, def]) => fits(def))) };
-    f.inlineShortcuts = Object.fromEntries(
-      Object.entries({ ...this.#defaults.shortcuts, ...SHORTCUTS }).filter(([, def]) => fits(shortcutValue(def)))
-    );
+    this.#applyShortcuts();
     const keep = new Set([...MENU_KEEP, ...(allowed.isAllowed('\\begin{pmatrix}') ? MENU_MATRIX : [])]);
     f.menuItems = tidyDividers(this.#defaults.menu.filter((m) => m.type === 'divider' || ('id' in m && keep.has(m.id!))));
     if (this.#opts.keyboard !== false) window.mathVirtualKeyboard.layouts = keyboardLayouts(allowed);
     this.reset();
+  }
+
+  /** The author's saved equations (saved.ts): offered when the profile allows them, and their shortcuts */
+  setSaved(list: readonly SavedEquation[]) {
+    this.#saved = list;
+    this.#applyShortcuts();
+  }
+
+  /** Saved equations as palette pieces, leaving out those the profile refuses */
+  savedItems(): PaletteItem[] {
+    return this.#saved.map(savedItem).filter((i) => this.#fitsItem(i));
+  }
+
+  /** Shortcuts a saved equation can't take: MathLive's and ours, whatever the profile */
+  takenShortcuts(): string[] {
+    return Object.keys({ ...this.#defaults.shortcuts, ...SHORTCUTS });
+  }
+
+  #fitsItem(item: PaletteItem): boolean {
+    return [...itemTokens(item)].every((t) => this.#allowed.isAllowed(t));
+  }
+
+  #applyShortcuts() {
+    const fits = (latex: string) => this.#allowed.refused(latex).length === 0;
+    const saved = this.#saved.filter((s) => s.shortcut && this.#fitsItem(savedItem(s)));
+    this.field.inlineShortcuts = {
+      ...Object.fromEntries(Object.entries({ ...this.#defaults.shortcuts, ...SHORTCUTS }).filter(([, def]) => fits(shortcutValue(def)))),
+      ...Object.fromEntries(saved.map((s) => [s.shortcut!, savedItem(s).insert])),
+    };
   }
 
   /** Call after the field's value was set without an input event (e.g. setValue on opening a dialog) */

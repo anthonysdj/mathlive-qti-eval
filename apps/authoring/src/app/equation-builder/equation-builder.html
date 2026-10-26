@@ -20,25 +20,59 @@
 
   @if (active(); as c) {
     <div class="eb-panel" id="eb-panel" role="tabpanel" [attr.aria-labelledby]="'eb-tab-' + c.id">
-      <p class="eb-hint" id="eb-hint">
-        Drag a piece into the equation, or onto an empty box. Or press it to insert at the cursor; Tab moves between empty boxes.
-      </p>
-      <div class="eb-keys" role="group" aria-describedby="eb-hint">
-        @for (item of c.items; track item.id) {
-          <!-- mousedown keeps the caret in the field; a keyboard user's Enter/Space still works. Dragging: PaletteDrag -->
-          <button
-            type="button"
-            class="eb-key"
-            [attr.data-item]="item.id"
-            [attr.aria-label]="item.label"
-            [title]="item.label"
-            (mousedown)="$event.preventDefault()"
-            (click)="insert(item)"
-          >
-            <math-span aria-hidden="true" tabindex="-1">{{ display(item, '\\square') }}</math-span>
-          </button>
+      @if (c.id === 'saved') {
+        @if (!saved().length) {
+          <p class="eb-hint">Nothing saved yet. Build an equation, then use "Save equation" below to keep it here, with a shortcut if you like.</p>
+        } @else if (!c.items.length) {
+          <p class="eb-hint">Your saved equations use symbols this assessment doesn't allow, so they aren't offered here.</p>
+        } @else {
+          <p class="eb-hint" id="eb-hint">Drag a saved equation into the equation, press it to insert it at the cursor, or type its shortcut.</p>
+          <ul class="eb-saved" role="list" aria-describedby="eb-hint">
+            @for (item of c.items; track item.id) {
+              @if (savedOf(item); as s) {
+                <li>
+                  <button
+                    type="button"
+                    class="eb-key"
+                    [attr.data-item]="item.id"
+                    [attr.aria-label]="item.label"
+                    [title]="item.label"
+                    (mousedown)="$event.preventDefault()"
+                    (click)="insert(item)"
+                  >
+                    <math-span aria-hidden="true" tabindex="-1">{{ display(item, '\\square') }}</math-span>
+                  </button>
+                  <span class="eb-saved-name">{{ s.name }}</span>
+                  @if (s.shortcut) {
+                    <span class="eb-saved-shortcut">type <kbd>{{ s.shortcut }}</kbd></span>
+                  }
+                  <button type="button" class="eb-saved-delete" [attr.aria-label]="'Delete ' + s.name" title="Delete" (click)="deleteSaved(s)">×</button>
+                </li>
+              }
+            }
+          </ul>
         }
-      </div>
+      } @else {
+        <p class="eb-hint" id="eb-hint">
+          Drag a piece into the equation, or onto an empty box. Or press it to insert at the cursor; Tab moves between empty boxes.
+        </p>
+        <div class="eb-keys" role="group" aria-describedby="eb-hint">
+          @for (item of c.items; track item.id) {
+            <!-- mousedown keeps the caret in the field; a keyboard user's Enter/Space still works. Dragging: PaletteDrag -->
+            <button
+              type="button"
+              class="eb-key"
+              [attr.data-item]="item.id"
+              [attr.aria-label]="item.label"
+              [title]="item.label"
+              (mousedown)="$event.preventDefault()"
+              (click)="insert(item)"
+            >
+              <math-span aria-hidden="true" tabindex="-1">{{ display(item, '\\square') }}</math-span>
+            </button>
+          }
+        </div>
+      }
 
       @if (c.entry; as entry) {
         <form class="eb-entry" (submit)="insertEntry(c, entryInput, $event)">
@@ -64,6 +98,37 @@
 }
 
 <p class="eb-message" role="status" aria-live="polite">{{ message() }}</p>
+
+<div class="eb-save">
+  @if (saving()) {
+    <form class="eb-save-form" (submit)="save(saveName, saveShortcut, $event)">
+      <label for="eb-save-name">Name</label>
+      <input #saveName id="eb-save-name" type="text" autocomplete="off" placeholder="e.g. Quadratic formula" (keydown.enter)="$event.stopPropagation()" />
+      <label for="eb-save-shortcut">Shortcut <span class="eb-optional">(optional)</span></label>
+      <input
+        #saveShortcut
+        id="eb-save-shortcut"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="e.g. quadf"
+        aria-describedby="eb-save-help"
+        (keydown.enter)="$event.stopPropagation()"
+      />
+      <span id="eb-save-help" class="eb-save-help">Letters you type in the equation to insert this one. Empty boxes are kept, so a half-built equation saves as a template.</span>
+      <span class="eb-save-actions">
+        <button type="submit">Save</button>
+        <button type="button" (click)="saving.set(false)">Cancel</button>
+      </span>
+      @if (saveError()) {
+        <span class="eb-entry-error" role="alert">{{ saveError() }}</span>
+      }
+    </form>
+  } @else {
+    <button type="button" class="eb-save-open" (click)="startSave()">Save equation…</button>
+  }
+  <span class="eb-saved-note" role="status" aria-live="polite">{{ savedNote() }}</span>
+</div>
 
 @if (showPreview()) {
   <details class="eb-preview" open>
