@@ -47,6 +47,9 @@ describe('Wiris content in Froala', () => {
     expect(ed.el.textContent).not.toContain('«');
     await rendered(ed);
     for (const eq of found) expect(eq.shadowRoot!.querySelector('svg path')).not.toBeNull();
+    // Wiris MathML has no outer <mrow>; all five tokens of y = 3 U+00A0 π are drawn
+    // (MathJax used to stop at the first operator, see prepareForSvg)
+    expect(found[2].shadowRoot!.querySelectorAll('svg path')).toHaveLength(5);
 
     const out = ed.html.get();
     const doc = new DOMParser().parseFromString(`<div xmlns="http://www.w3.org/1999/xhtml">${out}</div>`, 'application/xml');

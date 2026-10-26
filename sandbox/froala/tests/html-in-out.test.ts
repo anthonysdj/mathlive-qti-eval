@@ -92,6 +92,21 @@ describe('stored HTML is well-formed XML', () => {
   });
 });
 
+describe('save → load → save is stable', () => {
+  it('Froala turns a typed U+00A0 into a plain space on load, with or without equations', async () => {
+    ed = await createEditor();
+    ed.html.set('<p><strong>a</strong>\u00a0(b)</p>');
+    expect(ed.html.get()).toBe('<p><strong>a</strong> (b)</p>');
+    const m = await stored('x');
+    ed.html.set(toEditorHtml(`<p>${m}\u00a0(b)</p>`));
+    const once = ed.html.get();
+    expect(xml(once)).toBe(xml(`<p>${m} (b)</p>`));
+    // From then on, load → save gives back exactly the same string
+    ed.html.set(toEditorHtml(once));
+    expect(ed.html.get()).toBe(once);
+  });
+});
+
 describe('content already in the element when Froala starts', () => {
   it('loses its MathML: Froala cleans it before plugins start', async () => {
     const mathml = await stored('\\sqrt{2}');

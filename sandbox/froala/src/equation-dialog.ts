@@ -4,6 +4,9 @@
 // return for free. Its catch: everything outside the top layer is inert,
 // including MathLive's virtual keyboard, which lives in <body>. So while the
 // dialog is open the keyboard is moved into it (mathVirtualKeyboard.container).
+// Outside <body>, MathLive sizes the keyboard to fill its container, so the
+// container is a fixed, full-viewport layer inside the dialog that lets clicks
+// through, and the dialog moves up out of the keyboard's way.
 // Inside an iframe, mathVirtualKeyboard is a proxy to the top window's
 // keyboard and its container cannot be changed (MathLive throws), so there the
 // keyboard is left where MathLive puts it.
@@ -39,6 +42,7 @@ const DIALOG_CSS = `
 .math-eq-dialog math-field { display: block; width: 100%; font-size: 24px; padding: 6px; border: 1px solid #999; border-radius: 4px; box-sizing: border-box; }
 .math-eq-dialog .note { margin: 0 0 8px; padding: 6px 8px; background: #fff6d6; border-radius: 4px; }
 .math-eq-dialog .error { margin: 8px 0 0; color: #b00020; }
+.math-eq-dialog .keyboard-layer { position: fixed; inset: 0; pointer-events: none; }
 .math-eq-dialog .actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
 .math-eq-dialog button { font: inherit; padding: 6px 14px; border-radius: 4px; border: 1px solid #888; background: #fff; cursor: pointer; }
 .math-eq-dialog button.primary { background: #0b5fff; border-color: #0b5fff; color: #fff; }
@@ -55,6 +59,12 @@ export class EquationDialog {
   #error: HTMLElement;
   #ok: HTMLButtonElement;
   #resolve: ((mathml: string | null) => void) | null = null;
+  #keyboardLayer: HTMLElement;
+  // Keep the dialog above the keyboard while both are on screen
+  #onKeyboardGeometry = () => {
+    const kb = window.mathVirtualKeyboard;
+    this.dialog.style.marginBottom = kb.visible && this.dialog.open ? `${kb.boundingRect.height + 8}px` : '';
+  };
 
   constructor(doc: Document = document) {
     if (!cssAdded) {
@@ -75,12 +85,14 @@ export class EquationDialog {
       <div class="actions">
         <button type="button" data-action="cancel">Cancel</button>
         <button type="button" data-action="ok" class="primary"></button>
-      </div>`;
+      </div>
+      <div class="keyboard-layer"></div>`;
     this.#title = this.dialog.querySelector('h2')!;
     this.#note = this.dialog.querySelector('.note')!;
     this.#error = this.dialog.querySelector('.error')!;
     this.#ok = this.dialog.querySelector('[data-action="ok"]')!;
     this.field = this.dialog.querySelector('math-field') as MathfieldElement;
+    this.#keyboardLayer = this.dialog.querySelector('.keyboard-layer')!;
 
     this.dialog.addEventListener('click', (e) => {
       const action = (e.target as Element).closest('button')?.dataset.action;
@@ -125,7 +137,8 @@ export class EquationDialog {
     this.#note.textContent = note ?? '';
     this.#error.hidden = true;
     this.field.setValue(latex, { silenceNotifications: true });
-    moveKeyboard(this.dialog);
+    moveKeyboard(this.#keyboardLayer);
+    window.mathVirtualKeyboard.addEventListener('geometrychange', this.#onKeyboardGeometry);
     this.dialog.showModal();
     this.field.focus();
     return new Promise((resolve) => (this.#resolve = resolve));
@@ -157,8 +170,10 @@ export class EquationDialog {
   #close(result: string | null) {
     const resolve = this.#resolve;
     this.#resolve = null;
+    window.mathVirtualKeyboard.removeEventListener('geometrychange', this.#onKeyboardGeometry);
     window.mathVirtualKeyboard.hide();
-    if (window.mathVirtualKeyboard.container === this.dialog) moveKeyboard(this.dialog.ownerDocument.body);
+    if (window.mathVirtualKeyboard.container === this.#keyboardLayer) moveKeyboard(this.dialog.ownerDocument.body);
+    this.dialog.style.marginBottom = '';
     if (this.dialog.open) this.dialog.close();
     resolve?.(result);
   }

@@ -9,7 +9,8 @@
     "dev": "vite",
     "build": "vite build",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit -p ."
+    "typecheck": "tsc --noEmit -p .",
+    "demo:check": "node scripts/demo-check.mjs"
   },
   "dependencies": {
     "@mathjax/mathjax-newcm-font": "4.1.3",
