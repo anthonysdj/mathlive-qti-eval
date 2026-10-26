@@ -9,6 +9,7 @@ Evaluating MathLive for a QTI 3.0 authoring tool: how it works, Froala integrati
 | Spike: print path (MathML → SVG) | done | [`findings/print-svg.md`](findings/print-svg.md) |
 | Spike: screen/print consistency | done | [`findings/consistency.md`](findings/consistency.md) |
 | Demo: render an inserted equation | done | [`findings/insert-demo.md`](findings/insert-demo.md) |
+| Spike: Temml and MathJax on a Java backend | done | [`findings/java-temml.md`](findings/java-temml.md) |
 | M2 Froala | in review | [`docs/02-froala-integration.md`](docs/02-froala-integration.md) |
 | M3 Equation builder | not started | |
 | M4 Decision | not started | |
