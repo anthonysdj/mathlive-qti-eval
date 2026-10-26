@@ -32,6 +32,22 @@ Then the two bitmaps are pixel-diffed. (The run used Temml MathML without the La
 2. **Pin one MathJax version and font for both sides.** A version mismatch is the most likely way the two drift apart. The test above catches it for the print path; the player has to use the same pin.
 3. **Keep the formula accessible.** An SVG on its own is a picture to a screen reader, and accessibility is a hard requirement. MathJax can keep the MathML alongside the SVG for assistive technology (its assistive MathML / speech options), or the player can keep the `<math>` element in the DOM, hidden visually. To be checked with real screen readers in M4.
 
+## What if the browser uses the same math font?
+
+**Tested 2026-10-26: it helps the look, but not the match.** Native MathML in Chromium was rendered with New Computer Modern Math (the font MathJax's SVG is drawn from), loaded as a web font, and diffed against the print SVG the same way:
+
+| Screen | Median differing pixels vs print | Worst |
+|---|---|---|
+| Browser MathML, default font (today) | 45.7% | 63.7% |
+| Browser MathML, **same font** | 42.0% | 58.2% |
+| **Same SVG** | **0.3%** | 2.7% |
+
+The glyph shapes now match, but Chromium's layout doesn't. It puts more space around `=`, `±` and `−`, uses smaller scripts, spaces `i = 1` under `∑`, puts matrix columns closer together, and places root indices differently. Each of those shifts symbols by a few pixels, and a pixel diff counts every shifted pixel. So the number overstates how different it *looks*, but it confirms that layout, not the font, is the main gap. Firefox and Safari have their own layout rules, so they would differ again.
+
+![Same font vs same SVG](screenshots/same-font.png)
+
+All 60 formulas: [`same-font.html`](same-font.html). Numbers: [`same-font-raw.json`](same-font-raw.json). Script: [`scripts/same-font.mjs`](../sandbox/converters/scripts/same-font.mjs) (it needs the font file; see the script header).
+
 ## Limits
 
 - **resvg is not XEP.** It shows that a second, independent renderer gives the same picture. The final check is one PDF from our actual engine, compared with the screen render. If the engine needs PNG, we can rasterise with resvg ourselves and the PDF would carry exactly the pixels measured here.
