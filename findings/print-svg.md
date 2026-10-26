@@ -21,11 +21,12 @@ stored <math> (Temml) ──prepareForSvg()──► MathJax MathML input ──
 
 ## What needed fixing (found by looking at the images, not by the tests)
 
-On the first run, three things were wrong:
+On the first run, three things were wrong, and a fourth turned up later:
 
 | Problem | Cause | Fix in `prepareForSvg()` |
 |---|---|---|
 | Matrix entries overlapped their brackets (`pmatrix`, `bmatrix`) and `cases` was clipped on the right | Temml spaces columns with `style="padding-…"` on every `<mtd>`, and MathJax misreads it | Strip `style` from `<mtd>`, so MathJax uses its own TeX-style column spacing |
+| Only the first symbol was drawn (`a+b` → `a`) for our stored format, which has `<semantics>` + annotation. Found later, in the [insert demo](insert-demo.md) | MathJax 4.1.3 draws only the first child of the `<mrow>` inside `<semantics>` | Strip `<semantics>` and `<annotation>` (the annotation is for editing, not the image) |
 | `\vec` and `\bar` accents vanished, but only on a page that also loaded Temml's CSS | MathJax copies Temml's `class="tml-…"` onto the SVG, where Temml's CSS then restyles the glyphs | Strip `class` attributes (they only mean something with Temml's CSS) |
 
 After the fix, all 60 formulas look right in the side-by-side page. That includes matrices, cases, aligned, chemistry, `\boxed`, colour, arrows, braces, the decimal comma and `ℝ`. `\cancel` is checked separately. Other inline styles are kept, because MathJax honours them, which is why `\boxed` and colour survive. The tests pin all of this, so a Temml or MathJax upgrade that changes it will fail loudly.

@@ -24,7 +24,7 @@ For each formula, the stored Temml MathML goes through `mathmlToSvg()`. The SVG 
 - **Screen:** inline in an HTML page in Chromium, which is what a candidate's browser does.
 - **Print:** by resvg, a separate SVG renderer with no browser code, standing in for the PDF engine's SVG rasteriser.
 
-Then the two bitmaps are pixel-diffed. For contrast, the browser's native MathML rendering of the same formula is scaled into the same box and diffed against the print image too. Scaling it into the SVG's box is generous to native MathML on size, so the 45.7% comes from glyph shapes, font and spacing. The native column in the HTML shows it: a sans-serif font, different fences, different spacing.
+Then the two bitmaps are pixel-diffed. (The run used Temml MathML without the LaTeX annotation. A later fix in `prepareForSvg()` makes the stored, annotated form give a byte-identical SVG, and `tests/print.node.test.ts` checks that for all 60 cases. See [insert-demo.md](insert-demo.md).) For contrast, the browser's native MathML rendering of the same formula is scaled into the same box and diffed against the print image too. Scaling it into the SVG's box is generous to native MathML on size, so the 45.7% comes from glyph shapes, font and spacing. The native column in the HTML shows it: a sans-serif font, different fences, different spacing.
 
 ## What it takes
 

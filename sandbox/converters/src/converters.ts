@@ -46,13 +46,8 @@ export const mathliveConverter: Converter = {
 };
 
 // --- Temml ---------------------------------------------------------------
-// The mhchem extension is a plain script that registers \ce on a global
-// `temml`, so it is loaded lazily after the global is set: call
-// loadTemmlMhchem() once before converting chemistry.
-export async function loadTemmlMhchem() {
-  (globalThis as any).temml = temml;
-  await import('temml/contrib/mhchem/mhchem.js');
-}
+// \ce needs Temml's mhchem extension: call loadTemmlMhchem() once first.
+export { loadTemmlMhchem } from './temml-mhchem';
 
 export const temmlConverter: Converter = {
   name: 'Temml 0.14.0',

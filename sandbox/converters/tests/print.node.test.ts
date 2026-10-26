@@ -2,11 +2,12 @@
 // recorded in findings/mathml-converters-raw.json (`pnpm compare`), so this
 // test checks exactly what the converter spike stored.
 import { readFileSync } from 'node:fs';
-import { describe, expect, it } from 'vitest';
+import { beforeAll, describe, expect, it } from 'vitest';
 import temml from 'temml';
 import { mathmlToSvg, prepareForSvg } from '../src/print';
+import { loadTemmlMhchem } from '../src/temml-mhchem';
 
-type Row = { id: string; latex: string; results: Record<string, { mathml: string }> };
+type Row = { id: string; latex: string; results: Record<string, { input: string; mathml: string }> };
 const rows: Row[] = JSON.parse(
   readFileSync(new URL('../../../findings/mathml-converters-raw.json', import.meta.url), 'utf8')
 );
@@ -19,6 +20,18 @@ describe('every stored formula becomes a self-contained SVG', () => {
     expect(svg).toMatch(/<path /); // glyphs are inlined, no font needed
     expect(svg).not.toContain('<use '); // fontCache: 'none' → no shared defs
     expect(svg).not.toContain('class="tml-');
+  });
+});
+
+describe('the stored format (with the LaTeX annotation) gives the same image', () => {
+  // MathJax 4.1.3 draws only the first child of the <mrow> inside <semantics>
+  // (`a+b` → `a`); prepareForSvg() unwraps it. Pins that the stored format
+  // gives exactly the image measured in findings/consistency.md.
+  beforeAll(loadTemmlMhchem);
+  it.each(rows.map((r) => [r.id, r.results['Temml 0.14.0']]))('%s', async (_id, { input, mathml: plain }) => {
+    const annotated = temml.renderToString(input, { xml: true, annotate: true });
+    expect(annotated).toContain('<semantics>');
+    expect(await mathmlToSvg(annotated)).toBe(await mathmlToSvg(plain));
   });
 });
 

@@ -9,5 +9,5 @@
     "noEmit": true,
     "types": ["vite/client", "node", "@vitest/browser-playwright"]
   },
-  "include": ["src", "tests", "vitest.config.ts", "scripts"]
+  "include": ["src", "tests", "demo", "vitest.config.ts", "vite.config.ts", "scripts"]
 }
