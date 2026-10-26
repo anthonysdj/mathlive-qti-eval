@@ -3,12 +3,15 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
     "test": "vitest run",
     "typecheck": "tsc --noEmit -p .",
     "compare": "VITE_PROBE=1 vitest run tests/compare-dump.test.ts",
     "gallery": "node scripts/gallery.mjs",
     "print": "node --experimental-strip-types scripts/print-svg.mjs",
     "consistency": "node scripts/consistency.mjs",
+    "demo:shot": "node scripts/demo-shot.mjs",
     "size": "node scripts/bundle-size.mjs"
   },
   "dependencies": {

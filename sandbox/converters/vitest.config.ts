@@ -6,7 +6,9 @@ import { playwright } from '@vitest/browser-playwright';
 // - node: the server-side print path (MathJax SVG loads font ranges with
 //   dynamic import(), which is simplest in Node)
 export default defineConfig({
-  optimizeDeps: { include: ['mathlive', 'temml', '@mathjax/src'] },
+  // The font stays unbundled so its on-demand ranges (src/mathjax-browser-fonts.ts)
+  // share one MathJaxNewcmFont instance with it.
+  optimizeDeps: { include: ['mathlive', 'temml', '@mathjax/src'], exclude: ['@mathjax/mathjax-newcm-font'] },
   test: {
     projects: [
       {

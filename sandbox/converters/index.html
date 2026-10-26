@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Insert equation demo</title>
+    <link rel="stylesheet" href="/demo/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Insert an equation, see the SVG</h1>
+      <p class="hint">Type in the field and press <b>Insert</b>. Click an equation in the text to edit it.</p>
+      <label for="mf">Equation</label>
+      <math-field id="mf">x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</math-field>
+      <div class="controls">
+        <button id="insert">Insert</button>
+        <span id="status" role="status"></span>
+      </div>
+      <h2>Item text (rich-text area)</h2>
+      <div id="doc" contenteditable="true">The roots are&nbsp;</div>
+      <h2>What gets saved (item body HTML)</h2>
+      <pre id="stored"></pre>
+    </main>
+    <script type="module" src="/demo/main.ts"></script>
+  </body>
+</html>

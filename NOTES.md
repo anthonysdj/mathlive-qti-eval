@@ -21,6 +21,15 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
 
+## 2026-10-26 — Demo: render an inserted equation in the page
+
+- `sandbox/converters` now has a Vite demo (`pnpm dev`). Insert in MathLive stores Temml MathML; the page shows MathJax SVG (same as print) plus a visually hidden `<math>` for screen readers. Click an equation to edit it. → `findings/insert-demo.md`.
+- **Bug found in the print path:** MathJax 4.1.3 SVG draws only the first child of the `<mrow>` inside `<semantics>`. Our stored format has `<semantics>` (Temml `annotate: true`), so `a+b` printed as `a`. The earlier spikes didn't see it because they used MathML without the annotation. Fixed in `prepareForSvg()`, which now strips `<semantics>`/`<annotation>`. A test pins that the annotated MathML gives a byte-identical SVG for all 60 cases.
+- In the browser, MathJax's on-demand font ranges are bare-specifier imports and fail. `src/mathjax-browser-fonts.ts` maps them to Vite chunks via `import.meta.glob`. `@mathjax/mathjax-newcm-font` must be in `optimizeDeps.exclude`, or the ranges register on a pre-bundled duplicate of the font class.
+- Stored HTML has to be serialised with XMLSerializer: `innerHTML` writes `&nbsp;` inside MathML.
+- Display bundle: MathJax MathML→SVG + font is 320 KB brotli. Lazy-load it, or pre-render on the server.
+- Moved `loadTemmlMhchem()` to `src/temml-mhchem.ts` so the demo doesn't pull in MathJax's TeX input. It is still re-exported from `converters.ts`.
+
 ## 2026-10-26 — Spike: screen/print consistency
 
 - Ton asked whether screen and print can be made 100% consistent. Yes, if the screen shows the same MathJax SVG as print: median 0.28% differing pixels (max 2.69%, `\bar`), anti-aliasing only. Today's native MathML vs SVG: median 45.7%. → `findings/consistency.md`.

@@ -17,6 +17,9 @@ const entries = {
     ...['base/Base', 'ams/Ams', 'mhchem/Mhchem', 'color/Color', 'newcommand/Newcommand', 'gensymb/Gensymb',
         'cancel/Cancel', 'enclose/Enclose', 'boldsymbol/Boldsymbol', 'mathtools/Mathtools'].map((p) => `input/tex/${p}Configuration.js`),
   ].map((f, i) => `export * as m${i} from '${MJ}/${f}';`).join('\n'),
+  // Display/print side: stored MathML → SVG (src/print.ts). Includes the font
+  // ranges MathJax loads on demand, as separate chunks.
+  'MathJax MathML→SVG + New CM font (display)': `export { mathmlToSvg } from '${join(process.cwd(), 'src/print.ts')}';`,
 };
 
 const kb = (n) => `${(n / 1024).toFixed(0)} KB`;
