@@ -1,5 +1,6 @@
 import FroalaEditor from 'froala-editor';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
+import 'mathlive/fonts.css';
 import { MathfieldElement } from 'mathlive';
 import { storedMathml } from '@sandbox/converters/src/render';
 import { loadTemmlMhchem } from '@sandbox/converters/src/temml-mhchem';

@@ -1,6 +1,7 @@
 // Demo: Froala with the equation plugin. Load → edit → save → reload.
 import FroalaEditor from 'froala-editor';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
+import 'mathlive/fonts.css';
 import { COMMAND, registerMathPlugin, withMathOptions } from '../src';
 
 registerMathPlugin(FroalaEditor);

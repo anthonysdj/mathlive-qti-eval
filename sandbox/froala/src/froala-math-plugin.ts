@@ -18,7 +18,8 @@ import { EQ_TAG, MATHML_ATTRS, MATHML_TAGS } from './mathml-allowlist';
 // froala-editor's own typings say an event handler returns void | boolean,
 // but chained events such as html.get take the handler's string, so the
 // editor is typed loosely here.
-type Froala = Record<string, any>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Froala = any;
 
 export const COMMAND = 'insertEquation';
 export const PLUGIN = 'mathEquation';

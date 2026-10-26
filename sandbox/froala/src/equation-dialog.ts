@@ -19,7 +19,8 @@ function moveKeyboard(to: HTMLElement) {
   }
 }
 
-import 'mathlive/fonts.css';
+// The page must load MathLive's fonts: `import 'mathlive/fonts.css'` with
+// Vite, or the stylesheet in angular.json `styles` with the Angular CLI.
 import { MathfieldElement } from 'mathlive';
 import { storedMathml } from '@sandbox/converters/src/render';
 import { loadTemmlMhchem } from '@sandbox/converters/src/temml-mhchem';
