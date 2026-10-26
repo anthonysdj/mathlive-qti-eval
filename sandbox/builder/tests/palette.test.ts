@@ -66,4 +66,5 @@ describe('each item: insert, fill every slot with Tab, store, reload', () => {
 test('button and keycap labels draw slots as boxes and drop a leading thin space', () => {
   expect(displayLatex({ id: 'x', label: 'x', insert: '\\frac{#@}{#?}' })).toBe('\\frac{\\placeholder{}}{\\placeholder{}}');
   expect(displayLatex({ id: 'x', label: 'x', insert: '\\,\\mathrm{kg}' })).toBe('\\mathrm{kg}');
+  expect(displayLatex({ id: 'x', label: 'x', insert: '\\sqrt{#0}' }, '\\square')).toBe('\\sqrt{\\square}');
 });

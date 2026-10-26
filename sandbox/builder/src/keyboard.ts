@@ -25,6 +25,8 @@ function chunk<T>(list: T[], size: number): T[][] {
  * whichever of × ÷ ^ / the profile allows.
  */
 function basicLayout(allowed: Allowed): VirtualKeyboardLayout {
+  // Without a tooltip, a keycap's aria-label is its LaTeX ("#@^{#?}"), so
+  // template keys get one
   const ok = (latex: string, token: string): Keycap => (allowed.isAllowed(token) ? latex : '[separator]');
   return {
     id: 'eb-basic',
@@ -35,7 +37,7 @@ function basicLayout(allowed: Allowed): VirtualKeyboardLayout {
       ['a', 'b', '[separator]', '4', '5', '6', ok('\\times', '\\times'), ok('\\div', '\\div')],
       ['n', '=', '[separator]', '1', '2', '3', '<', '>'],
       [
-        ok('#@^{#?}', '^'),
+        allowed.isAllowed('^') ? { latex: '#@^{#?}', tooltip: 'Power' } : '[separator]',
         '(',
         ')',
         '0',
@@ -49,9 +51,13 @@ function basicLayout(allowed: Allowed): VirtualKeyboardLayout {
   };
 }
 
-/** One keyboard layout per palette category the profile offers, after the basic one */
-export function keyboardLayouts(allowed: Allowed): VirtualKeyboardLayout[] {
-  const layouts: VirtualKeyboardLayout[] = [basicLayout(allowed)];
+/**
+ * One keyboard layout per palette category the profile offers, between the
+ * basic one and MathLive's own letters layout (a, b, x… are not enough for
+ * \(b^2-4ac\)). MathLive's letters layout has no commands in it.
+ */
+export function keyboardLayouts(allowed: Allowed): (VirtualKeyboardLayout | 'alphabetic')[] {
+  const layouts: (VirtualKeyboardLayout | 'alphabetic')[] = [basicLayout(allowed)];
   for (const c of allowed.categories) {
     if (!c.items.length) continue;
     const keys: Keycap[] = c.items.map((item) => ({
@@ -64,5 +70,6 @@ export function keyboardLayouts(allowed: Allowed): VirtualKeyboardLayout[] {
     rows.push(['[left]', '[right]', '[separator]', '[separator]', '[separator]', '[separator]', '[backspace]', '[hide-keyboard]']);
     layouts.push({ id: `eb-${c.id}`, label: c.short, tooltip: c.label, rows });
   }
+  layouts.push('alphabetic');
   return layouts;
 }

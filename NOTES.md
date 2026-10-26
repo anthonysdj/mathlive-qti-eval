@@ -27,6 +27,19 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
 
+## 2026-10-26 — M3: equation builder
+
+- Builder logic in `sandbox/builder` (palette, allowed-symbols profiles, notation, keyboard layouts, controller), Angular `EquationBuilder` in `apps/authoring`, plugged into the M2 dialog through a new extension point (`mathEquationExtend`). No new dependencies. → `docs/03-equation-builder.md`.
+- **MathLive's `\ce{}` can't be typed into.** Text typed into `\ce{#?}` is lost; into `\ce{#0}` it produces `undefined{…}`. MathLive also has no spoken text for `\ce`. Chemistry goes in through a text entry instead (`tests/notation.test.ts`).
+- **Typed text in a `\mathrm{#?}` slot doesn't stay upright**: it comes out italic, or as `\operatorname{kg}` with MathLive's default shortcuts. Units are fixed buttons plus a text entry.
+- **After a literal `\mathrm{d}`, MathLive types the variable into the same group** (`\mathrm{dx}`). Integral and derivative templates use MathLive's `\differentialD`, which `latex-expanded` writes as `\mathrm{d}`.
+- **A macro with arguments keeps its empty slot in `getValue('latex')`** while `latex-expanded` has the typed content, and its spoken text is the macro's name. Custom macros are zero-argument only; templates with slots are inline shortcuts.
+- **Typing `y''` gives `y^{\doubleprime}`, which Temml rejects**, so the M2 dialog refused to save it. Fixed in `toStandardLatex()` (`\doubleprime` → `\prime\prime`).
+- MathLive sends one `input` event for a burst of keys but `selection-change` for each, and none at all for a lone `^` (empty superscript). The allowed-symbols check listens to both.
+- MathLive reads `event.code`: a `|` sent without Shift (Vitest's `userEvent`, Playwright's `keyboard.type`) arrives as `\` and enters LaTeX mode. Tests use Shift+Backslash.
+- The virtual keyboard's keycaps are `div`s with no role and no tab stop; the layer switcher has no labels (measured in `scripts/builder-check.mjs`).
+- `<math-span>` (MathLive's static renderer) draws nothing for `\placeholder{}`; palette buttons use `\square`.
+
 ## 2026-10-26 — M2: Froala integration
 
 - Strategy **(b)** built: the content holds `<math-eq data-mathml>` elements that show the MathJax SVG from a shadow root; a modal `<dialog>` with one `<math-field>` inserts and edits. Measured (a) for comparison: ~10× slower load and undo at 100 equations, and its screen rendering isn't the print SVG. The evidence wasn't split, so (b) without asking. → `docs/02-froala-integration.md`.

@@ -314,7 +314,11 @@ export function categoryOf(itemId: string): Category | undefined {
   return CATEGORIES.find((c) => c.items.some((i) => i.id === itemId));
 }
 
-/** LaTeX for showing an item on a button or keycap: slots drawn as boxes */
-export function displayLatex(item: PaletteItem): string {
-  return (item.display ?? item.insert).replace(/#[?0@]/g, '\\placeholder{}').replace(/^\\,/, '');
+/**
+ * LaTeX for showing an item on a button or keycap, slots drawn as boxes.
+ * Keycaps draw \placeholder{}; static rendering (<math-span>) draws nothing
+ * for it, so the panel passes \square.
+ */
+export function displayLatex(item: PaletteItem, slot = '\\placeholder{}'): string {
+  return (item.display ?? item.insert).replace(/#[?0@]/g, slot).replace(/^\\,/, '');
 }

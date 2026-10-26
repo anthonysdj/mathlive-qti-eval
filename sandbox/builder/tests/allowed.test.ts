@@ -10,6 +10,7 @@ test('tokens: commands, environments, powers and subscripts', () => {
   expect([...latexTokens('5\\,\\mathrm{kg}')]).toEqual(['\\,', '\\mathrm']);
   // Inside \ce{} is mhchem syntax: ^ there is "gas given off", not a power
   expect([...latexTokens('\\ce{CO2 ^}+x')]).toEqual(['\\ce']);
+  expect([...latexTokens('\\ce{H2O}x')]).toEqual(['\\ce']);
   expect([...latexTokens('2+3=5')]).toEqual([]);
   // Primes aren't powers
   expect([...latexTokens("f^{\\prime}+g^{\\doubleprime}+h^\\prime")]).toEqual(['\\prime', '\\doubleprime']);
@@ -54,12 +55,13 @@ test('messages name what was refused in words', () => {
 
 test('keyboard layouts follow the profile', () => {
   const all = keyboardLayouts(profile('everything'));
-  expect(all.map((l) => l.id)).toEqual(['eb-basic', ...CATEGORIES.map((c) => `eb-${c.id}`)]);
+  const ids = (ls: ReturnType<typeof keyboardLayouts>) => ls.map((l) => (typeof l === 'string' ? l : l.id));
+  expect(ids(all)).toEqual(['eb-basic', ...CATEGORIES.map((c) => `eb-${c.id}`), 'alphabetic']);
   const arith = profile('arithmetic');
   const layouts = keyboardLayouts(arith);
-  expect(layouts.map((l) => l.id)).toEqual(['eb-basic', 'eb-fractions', 'eb-brackets', 'eb-operators', 'eb-relations']);
+  expect(ids(layouts)).toEqual(['eb-basic', 'eb-fractions', 'eb-brackets', 'eb-operators', 'eb-relations', 'alphabetic']);
   // Every keycap a layout offers inserts only what the profile allows
-  for (const l of layouts)
+  for (const l of layouts.filter((x) => typeof x !== 'string'))
     for (const row of (l as { rows: unknown[][] }).rows)
       for (const k of row) {
         const insert = typeof k === 'string' ? (k.startsWith('[') ? '' : k) : ((k as { insert?: string; latex?: string }).insert ?? (k as { latex?: string }).latex ?? '');

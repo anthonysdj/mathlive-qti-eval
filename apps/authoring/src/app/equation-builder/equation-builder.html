@@ -1,0 +1,97 @@
+@if (ui() !== 'keyboard') {
+  <div class="eb-tabs" role="tablist" aria-label="Symbol groups">
+    @for (c of categories(); track c.id; let i = $index) {
+      <button
+        #tab
+        type="button"
+        role="tab"
+        class="eb-tab"
+        [id]="'eb-tab-' + c.id"
+        [attr.aria-selected]="c.id === active()?.id"
+        [attr.aria-controls]="'eb-panel'"
+        [tabIndex]="c.id === active()?.id ? 0 : -1"
+        (click)="activeId.set(c.id)"
+        (keydown)="onTabKey($event, i)"
+      >
+        {{ c.label }}
+      </button>
+    }
+  </div>
+
+  @if (active(); as c) {
+    <div class="eb-panel" id="eb-panel" role="tabpanel" [attr.aria-labelledby]="'eb-tab-' + c.id">
+      <div class="eb-keys">
+        @for (item of c.items; track item.id) {
+          <!-- mousedown keeps the caret in the field; a keyboard user's Enter/Space still works -->
+          <button
+            type="button"
+            class="eb-key"
+            [attr.data-item]="item.id"
+            [attr.aria-label]="item.label"
+            [title]="item.label"
+            (mousedown)="$event.preventDefault()"
+            (click)="insert(item)"
+          >
+            <math-span aria-hidden="true" tabindex="-1">{{ display(item, '\\square') }}</math-span>
+          </button>
+        }
+      </div>
+
+      @if (c.entry; as entry) {
+        <form class="eb-entry" (submit)="insertEntry(c, entryInput, $event)">
+          <label [for]="'eb-entry-' + entry.id">{{ entry.label }}</label>
+          <input
+            #entryInput
+            [id]="'eb-entry-' + entry.id"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            [placeholder]="entry.placeholder"
+            [attr.aria-describedby]="entryError() ? 'eb-entry-error' : null"
+            (keydown.enter)="$event.stopPropagation()"
+          />
+          <button type="submit">Insert</button>
+          @if (entryError()) {
+            <span id="eb-entry-error" class="eb-entry-error">{{ entryError() }}</span>
+          }
+        </form>
+      }
+    </div>
+  }
+}
+
+<p class="eb-message" role="status" aria-live="polite">{{ message() }}</p>
+
+@if (showPreview()) {
+  <details class="eb-preview" open>
+    <summary>Preview</summary>
+    <dl>
+      <div class="eb-print">
+        <dt>As printed</dt>
+        <dd>
+          @if (preview().mathml) {
+            <math-eq [attr.data-mathml]="preview().mathml"></math-eq>
+          }
+        </dd>
+      </div>
+      <div>
+        <dt>Spoken</dt>
+        <dd class="eb-spoken">{{ preview().spoken }}</dd>
+      </div>
+      <div>
+        <dt>LaTeX</dt>
+        <dd><code class="eb-latex">{{ preview().latex }}</code></dd>
+      </div>
+      <div class="eb-mathml">
+        <dt>Stored MathML</dt>
+        <dd>
+          @if (preview().error) {
+            <span class="eb-preview-error">{{ preview().error }}</span>
+          } @else if (prettyMathml()) {
+            <pre>{{ prettyMathml() }}</pre>
+          }
+        </dd>
+      </div>
+    </dl>
+  </details>
+}

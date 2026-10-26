@@ -6,7 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "check": "node scripts/check.mjs"
+    "check": "node scripts/check.mjs",
+    "builder-check": "node scripts/builder-check.mjs"
   },
   "dependencies": {
     "@angular/common": "22.2.3",
@@ -14,6 +15,7 @@
     "@angular/core": "22.2.3",
     "@angular/forms": "22.2.3",
     "@angular/platform-browser": "22.2.3",
+    "@sandbox/builder": "workspace:*",
     "@sandbox/froala": "workspace:*",
     "angular-froala-wysiwyg": "5.5.0",
     "froala-editor": "5.5.0",

@@ -1,0 +1,204 @@
+{
+  "errors": [],
+  "flows": {
+    "firstOpenMs": 332,
+    "tabs": [
+      " Fractions ",
+      " Roots ",
+      " Powers and subscripts ",
+      " Brackets ",
+      " Operators ",
+      " Relations ",
+      " Greek letters ",
+      " Functions ",
+      " Calculus ",
+      " Matrices ",
+      " Sets and logic ",
+      " Geometry ",
+      " Chemistry ",
+      " Units "
+    ],
+    "preview": {
+      "latex": "\\int_0^1x^2\\,\\differentialD x",
+      "spoken": "the integral from 0 to 1 of 'X' squared 'D' 'X'",
+      "mathmlLines": 22,
+      "printedSvg": true
+    },
+    "storedIntegral": "\\int_0^1x^2\\,\\mathrm{d}x",
+    "emptySlotsError": "Fill in the 2 empty boxes, or delete them.",
+    "stillOpen": true,
+    "tabOrderFromField": [
+      "button[role=tab] Fractions",
+      "button Fraction",
+      "button Mixed number",
+      "button Fraction with a slash",
+      "button Large fraction",
+      "summary Preview",
+      "button Cancel",
+      "button Insert"
+    ],
+    "arrowToTab": "Roots",
+    "firstKeyAfterTab": "Square root",
+    "keyboardOnlyInsert": {
+      "latex": "\\sqrt{\\placeholder{}}",
+      "focusBackInField": true
+    },
+    "panelAria": "- tabpanel \"Roots\":\n  - button \"Square root\"\n  - button \"Cube root\"\n  - button \"Nth root\"",
+    "mathSpanTabbable": 0,
+    "arithmeticTabs": [
+      " Fractions ",
+      " Brackets ",
+      " Operators ",
+      " Relations "
+    ],
+    "arithmeticPower": {
+      "latex": "x",
+      "message": "Powers isn't allowed in this assessment."
+    },
+    "arithmeticTyped": "x2+\\left|x\\right|",
+    "arithmeticSqrtShortcutOff": "x2+\\left|x\\right|+sqrt",
+    "chemistryInField": "\\ce{2H2 + O2 -> 2H2O}",
+    "chemistryFocusBack": "math-field",
+    "storedChemistry": "\\ce{2H2 + O2 -> 2H2O}",
+    "darkDialogBackground": "rgb(27, 34, 48)"
+  },
+  "compare": [
+    {
+      "id": "fractions",
+      "expected": "\\frac34+\\frac12",
+      "panel": {
+        "latex": "\\frac34+\\frac12",
+        "ok": true,
+        "clicks": 0,
+        "keys": 8,
+        "actions": 8
+      },
+      "keyboard": {
+        "latex": "\\frac34+\\frac12",
+        "ok": true,
+        "layerSwitches": 0,
+        "taps": 8,
+        "actions": 8
+      }
+    },
+    {
+      "id": "root",
+      "expected": "\\sqrt{x^2+1}",
+      "panel": {
+        "latex": "\\sqrt{x^2+1}",
+        "ok": true,
+        "clicks": 2,
+        "keys": 5,
+        "actions": 7
+      },
+      "keyboard": {
+        "latex": "\\sqrt{x^2+1}",
+        "ok": true,
+        "layerSwitches": 2,
+        "taps": 7,
+        "actions": 9
+      }
+    },
+    {
+      "id": "matrix",
+      "expected": "\\begin{pmatrix}1 & 2\\\\ 3 & 4\\end{pmatrix}",
+      "panel": {
+        "latex": "\\begin{pmatrix}1 & 2\\\\ 3 & 4\\end{pmatrix}",
+        "ok": true,
+        "clicks": 2,
+        "keys": 7,
+        "actions": 9
+      },
+      "keyboard": {
+        "latex": "\\begin{pmatrix}1 & 2\\\\ 3 & 4\\end{pmatrix}",
+        "ok": true,
+        "layerSwitches": 2,
+        "taps": 8,
+        "actions": 10
+      }
+    },
+    {
+      "id": "integral",
+      "expected": "\\int_0^1x^2\\,\\differentialD x",
+      "panel": {
+        "latex": "\\int_0^1x^2\\,\\differentialD x",
+        "ok": true,
+        "clicks": 2,
+        "keys": 9,
+        "actions": 11
+      },
+      "keyboard": {
+        "latex": "\\int_0^1x^2\\,\\differentialD x",
+        "ok": true,
+        "layerSwitches": 2,
+        "taps": 12,
+        "actions": 14
+      }
+    },
+    {
+      "id": "quadratic",
+      "expected": "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+      "panel": {
+        "latex": "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+        "ok": true,
+        "clicks": 6,
+        "keys": 14,
+        "actions": 20
+      },
+      "keyboard": {
+        "latex": "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+        "ok": true,
+        "layerSwitches": 7,
+        "taps": 19,
+        "actions": 26
+      }
+    },
+    {
+      "id": "chemistry",
+      "expected": "\\ce{2H2 + O2 -> 2H2O}",
+      "panel": {
+        "latex": "\\ce{2H2 + O2 -> 2H2O}",
+        "ok": true,
+        "clicks": 2,
+        "keys": 17,
+        "actions": 19
+      },
+      "keyboard": "not possible"
+    }
+  ],
+  "keyboard": {
+    "keycapsInLayer": 27,
+    "tabbableKeycaps": 0,
+    "keycapsWithRole": 0,
+    "keycapAriaLabels": [
+      "x",
+      "y",
+      "7",
+      "8",
+      "9",
+      "+",
+      "-",
+      "a",
+      "b",
+      "4",
+      "5",
+      "6"
+    ],
+    "actionKeysWithoutLabel": 4,
+    "layerSwitchesWithRoleOrLabel": 0,
+    "plateHeight": 382,
+    "viewportHeight": 900,
+    "dialogBottom": 510,
+    "keyboardTop": 523,
+    "aria": "- toolbar:\n  - text: 123 Numbers a/b Fractions √ Roots xⁿ Powers and subscripts ( ) Brackets ±× Operators ≤ Relations αβ Greek letters sin Functions ∫ Calculus [::] Matrices ∈ Sets and logic ∠ Geometry H₂O Chemistry m/s Units abc Roman Letters\n  - img\n  - text: Undo\n  - img\n  - text: Redo\n  - img\n  - text: Paste from Clipboard\n- text: x y 7 8 9 + − a b 4 5 6 × ÷ n = 1 2 3 < > ■ ▢ Power ( ) 0 . ▢ ■ Fraction\n- img\n- img\n- img\n- img"
+  },
+  "phone": {
+    "keyboardShown": true,
+    "keyboardHeight": 262,
+    "keyboardShare": 0.31,
+    "fieldVisibleAboveKeyboard": true,
+    "panelKeysTop": 283,
+    "panelKeysVisibleAboveKeyboard": true,
+    "dialogScrollable": false
+  }
+}

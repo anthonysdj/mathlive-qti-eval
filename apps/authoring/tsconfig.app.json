@@ -13,6 +13,7 @@
     "src/**/*.ts",
     // The plugin and its pipeline are TypeScript sources in the workspace
     "../../sandbox/froala/src/**/*.ts",
+    "../../sandbox/builder/src/**/*.ts",
     "../../sandbox/converters/src/modules.d.ts",
     "../../sandbox/basic/src/serialize.ts"
   ],

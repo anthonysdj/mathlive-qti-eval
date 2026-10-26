@@ -46,7 +46,7 @@ export const BASE_TOKENS = [
 export function latexTokens(latex: string): Set<string> {
   const tokens = new Set<string>();
   const re = /\\begin\{([a-zA-Z*]+)\}|\\end\{[a-zA-Z*]+\}|\\[a-zA-Z]+|\\[^a-zA-Z]|[\^_]/g;
-  const plain = latex.replace(/\\ce\{[^{}]*\}/g, '\\ce').replace(/\^\{?(\\(?:double|triple)?prime)\}?/g, '$1');
+  const plain = latex.replace(/\\ce\{[^{}]*\}/g, '\\ce{}').replace(/\^\{?(\\(?:double|triple)?prime)\}?/g, '$1');
   for (const m of plain.matchAll(re)) {
     if (m[0].startsWith('\\end{')) continue;
     tokens.add(m[1] ? `\\begin{${m[1]}}` : m[0]);
