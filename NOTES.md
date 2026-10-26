@@ -8,7 +8,7 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 |---|---|---|---|
 | `mathlive` | **0.111.1** (exact) | `sandbox/basic` | Subject of the study. Latest release (2026-10-09). It fixes 3 XSS advisories in `\enclose`, `\htmlData`/`\href` and the MathML output, so don't go below it. Source reference: commit `30ad20a7` of arnog/mathlive (there's no git tag). |
 | `mathml-to-latex` | 1.8.0 (exact) | `sandbox/basic` (runtime) | MathLive cannot read MathML. We need *some* MathML→LaTeX path to re-hydrate annotation-less content (Wiris, legacy). Used by `src/serialize.ts` as the fallback only. MIT. |
-| `temml` | 0.14.0 (exact) | `sandbox/converters` | Candidate LaTeX→MathML converter for stored MathML (MIT). Includes its mhchem extension. Recommended in `findings/mathml-converters.md`. |
+| `temml` | 0.14.0 (exact) | `sandbox/converters`, `apps/authoring` | Candidate LaTeX→MathML converter for stored MathML (MIT). Includes its mhchem extension. Recommended in `findings/mathml-converters.md`. |
 | `@mathjax/src` | 4.1.3 (exact) | `sandbox/converters` | Second candidate converter, for comparison (Apache-2.0). Only the TeX input and the MathML serialiser are used. |
 | `@mathjax/mathjax-newcm-font` | 4.1.3 (exact) | `sandbox/converters` | Font data for MathJax's SVG output in the print-path spike (already a transitive dependency; pinned directly because `src/print.ts` imports it). |
 | `@resvg/resvg-js` | 2.6.2 | dev (`sandbox/converters`) | Independent, non-browser SVG renderer: stands in for the PDF engine's rasteriser in the screen/print consistency proof. Also the candidate SVG→PNG step if the engine needs PNG. MPL-2.0. |
@@ -26,6 +26,13 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 | `@types/node` | 22 | dev | Types for the config files and scripts. |
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
+
+## 2026-10-26 — Fix: `pnpm start` in apps/authoring
+
+`ng serve` failed with "Could not resolve './palette'" from `sandbox/builder/src/index.ts`. The dev server pre-bundles anything under `node_modules`, including the workspace packages that point at TypeScript sources, and its pre-bundler (rolldown) does not resolve extensionless `.ts` imports. `ng build` was unaffected, which is why the M2/M3 checks (which use the built app) passed. Fix:
+- `angular.json` → `serve.options.prebundle.exclude` lists the four `@sandbox/*` packages, so the app build compiles them like app code.
+- After that the dev server must resolve their runtime imports from `apps/authoring`, and pnpm doesn't hoist them, so `temml`, `mathml-to-latex`, `@mathjax/src` and `@mathjax/mathjax-newcm-font` are now direct dependencies of `apps/authoring` (same pinned versions; no new packages).
+Checked: `pnpm start` serves, the page loads with no console errors, and the builder opens in the dialog.
 
 ## 2026-10-26 — M3: equation builder
 
