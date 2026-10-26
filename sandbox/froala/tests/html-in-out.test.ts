@@ -27,12 +27,12 @@ describe('without the plugin, Froala 5.5.0 destroys MathML', () => {
   });
 });
 
-describe('with the plugin, every corpus formula survives load → save', () => {
+describe('with the plugin, every corpus formula survives html.set → html.get', () => {
   it.each(cases.map((c) => [c.id, c.latex]))('%s', async (_id, latex) => {
     ed ??= await createEditor();
     const mathml = await stored(latex);
     const input = `<p>Before ${mathml} after.</p>`;
-    ed.html.set(toEditorHtml(input));
+    ed.html.set(input);
 
     // In the editor: one atomic element, no MathML or SVG in Froala's own HTML
     const [eq] = eqs(ed);
@@ -49,15 +49,21 @@ describe('with the plugin, every corpus formula survives load → save', () => {
 });
 
 describe('stored HTML passed straight to html.set()', () => {
-  it('is hydrated, but Froala collapses runs of spaces in the MathML text first', async () => {
+  it('is converted before Froala cleans it, so the MathML text is untouched', async () => {
     ed = await createEditor();
     const mathml = await stored('\\begin{aligned}a&=b+c\\\\ &=d\\end{aligned}');
     expect(mathml).toContain('\\\\  &amp;'); // MathLive's serialisation has two spaces here
     ed.html.set(`<p>${mathml}</p>`);
     expect(eqs(ed)).toHaveLength(1);
-    const out = ed.html.get();
-    expect(out).toContain('\\\\ &amp;');
-    expect(xml(out)).toBe(xml(`<p>${mathml.replace('\\\\  &amp;', '\\\\ &amp;')}</p>`));
+    expect(xml(ed.html.get())).toBe(xml(`<p>${mathml}</p>`));
+  });
+
+  it('(Froala on its own collapses them: what happens without the html.set wrapper)', async () => {
+    ed = await createEditor(withMathOptions({ pluginsEnabled: [] }, FroalaEditor.DEFAULTS));
+    const mathml = await stored('\\begin{aligned}a&=b+c\\\\ &=d\\end{aligned}');
+    ed.html.set(`<p>${mathml}</p>`);
+    expect(ed.html.get()).toContain('\\\\ &amp;');
+    expect(ed.html.get()).not.toContain('\\\\  &amp;');
   });
 });
 

@@ -80,11 +80,10 @@ export function hydrate(root: ParentNode & Node): number {
 }
 
 /**
- * Stored HTML → editor HTML, before Froala sees it. Passing stored HTML
- * straight to html.set() works too (the plugin hydrates it afterwards), but
- * Froala first runs its own cleaning over the MathML text, which collapses
- * runs of spaces, e.g. inside a LaTeX annotation. Converting first means
- * Froala only ever sees the attribute.
+ * Stored HTML → editor HTML, before Froala sees it. Froala's cleaning
+ * collapses runs of spaces in text, MathML text included (e.g. inside a LaTeX
+ * annotation); converting first means Froala only ever sees the attribute.
+ * The plugin applies this to everything passed to html.set().
  */
 export function toEditorHtml(storedHtml: string, doc: Document = document): string {
   const t = doc.createElement('template');

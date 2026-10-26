@@ -2,8 +2,8 @@
 // in/out. Strategy (b): the document holds rendered equations (<math-eq>),
 // and one modal <math-field> edits whichever is inserted or clicked.
 //
-//   editor.html.set(stored)  → allow-list keeps <math>/Wiris images → hydrate() → <math-eq>
-//   paste                    → same
+//   editor.html.set(stored)  → toEditorHtml() before Froala cleans it → <math-eq>
+//   paste                    → allow-list keeps <math>/Wiris images → hydrate() → <math-eq>
 //   editor.html.get()        → toStoredHtml(): <math-eq> → <math>, serialised as XML
 //
 // Usage: registerMathPlugin(FroalaEditor) once, then add 'insertEquation' to
@@ -12,7 +12,7 @@
 import { fromPersistedMathml } from '@sandbox/basic/src/serialize';
 import { EquationDialog } from './equation-dialog';
 import { defineMathEq, type MathEqElement } from './math-eq-element';
-import { hydrate, createEq, toStoredHtml } from './math-html';
+import { hydrate, createEq, toEditorHtml, toStoredHtml } from './math-html';
 import { EQ_TAG, MATHML_ATTRS, MATHML_TAGS } from './mathml-allowlist';
 
 // froala-editor's own typings say an event handler returns void | boolean,
@@ -170,6 +170,11 @@ export function registerMathPlugin(FroalaEditor: any) {
     function _init() {
       Object.assign(editor.opts, withMathOptions(editor.opts));
 
+      // Stored HTML is converted before Froala's own cleaning sees it, so
+      // MathML text (e.g. runs of spaces in a LaTeX annotation) stays as it
+      // was. Wrapping html.set covers every caller, angular-froala included.
+      const set = editor.html.set;
+      editor.html.set = (html: string, ...rest: unknown[]) => set.call(editor.html, toEditorHtml(html ?? '', editor.doc ?? document), ...rest);
       editor.events.on('html.set', () => hydrate(editor.el));
       editor.events.on('paste.after', () => {
         if (hydrate(editor.el)) editor.undo.saveStep();

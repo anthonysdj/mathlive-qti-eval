@@ -1,7 +1,7 @@
 // Demo: Froala with the equation plugin. Load → edit → save → reload.
 import FroalaEditor from 'froala-editor';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
-import { COMMAND, registerMathPlugin, toEditorHtml, withMathOptions } from '../src';
+import { COMMAND, registerMathPlugin, withMathOptions } from '../src';
 
 registerMathPlugin(FroalaEditor);
 
@@ -32,8 +32,8 @@ function create(stored: string): Promise<void> {
           toolbarButtons: ['bold', 'italic', 'underline', '|', COMMAND, '|', 'undo', 'redo'],
           heightMin: 180,
           events: {
-            initialized() {
-              this.html.set(toEditorHtml(stored));
+            initialized(this: any) {
+              this.html.set(stored);
               this.undo.reset();
               this.undo.saveStep();
               resolve();
