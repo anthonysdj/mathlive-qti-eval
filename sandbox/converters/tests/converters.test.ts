@@ -101,6 +101,9 @@ describe('Storage format and safety', () => {
     expect(toStandardLatex('\\frac{\\placeholder{}}{\\placeholder[b]{2}}')).toBe('\\frac{\\square}{{2}}');
     expect(toStandardLatex('\\mleft(x\\mright)')).toBe('\\left(x\\right)');
     expect(temmlConverter.convert(toStandardLatex('\\mleft(x\\mright)')).error).toBeUndefined();
+    // A typed y'' (MathLive writes \doubleprime, which Temml doesn't know)
+    expect(toStandardLatex("y^{\\doubleprime}+y^{\\tripleprime}")).toBe('y^{\\prime\\prime}+y^{\\prime\\prime\\prime}');
+    expect(temmlConverter.convert(toStandardLatex('y^{\\doubleprime}')).error).toBeUndefined();
   });
 
   it('custom macros: the expanded LaTeX converts cleanly', () => {
