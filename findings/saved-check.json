@@ -1,0 +1,32 @@
+{
+  "url": "http://localhost:4200/",
+  "errors": [],
+  "emptyState": "Nothing saved yet. Build an equation, then use \"Save equation\" below to keep it here, with a shortcut if you like.",
+  "built": "\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+  "takenShortcutError": "\"sin\" is already a shortcut. Choose other letters.",
+  "badShortcutError": "A shortcut is 2 to 16 letters, with no spaces, digits or symbols.",
+  "dialogStillOpenAfterEnter": true,
+  "savedNote": "Saved \"Quadratic formula\". Type quadf in the equation to insert it, or find it under My equations.",
+  "focusAfterSave": "math-field",
+  "storedFirst": "\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+  "byShortcut": "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+  "myEquations": [
+    "Quadratic formula (type quadf)"
+  ],
+  "storedByShortcut": "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+  "storedMathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}</annotation></semantics></math>",
+  "afterReload": [
+    "Quadratic formula (type quadf)"
+  ],
+  "byClick": "\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+  "byDragIntoBox": "y=\\frac{1}{\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}}",
+  "arithmetic": {
+    "typed": "quadf",
+    "tab": "Your saved equations use symbols this assessment doesn't allow, so they aren't offered here."
+  },
+  "deleted": {
+    "note": "Deleted \"Quadratic formula\".",
+    "focus": "eb-tab-saved",
+    "shortcutAfterReload": "quadf"
+  }
+}

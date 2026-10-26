@@ -1,7 +1,7 @@
 {
   "errors": [],
   "flows": {
-    "firstOpenMs": 305,
+    "firstOpenMs": 308,
     "tabs": [
       " Fractions ",
       " Roots ",
@@ -16,7 +16,8 @@
       " Sets and logic ",
       " Geometry ",
       " Chemistry ",
-      " Units "
+      " Units ",
+      " My equations "
     ],
     "preview": {
       "latex": "\\int_0^1x^2\\,\\differentialD x",
@@ -33,15 +34,15 @@
       "button Mixed number",
       "button Fraction with a slash",
       "button Large fraction",
+      "button Save equation…",
       "summary Preview",
-      "button Cancel",
-      "button Insert"
+      "button Cancel"
     ],
     "arrowToTab": "Roots",
-    "firstKeyAfterTab": "Square root",
+    "firstKeyAfterTab": null,
     "keyboardOnlyInsert": {
-      "latex": "\\sqrt{\\placeholder{}}",
-      "focusBackInField": true
+      "latex": "",
+      "focusBackInField": false
     },
     "panelAria": "- tabpanel \"Roots\":\n  - paragraph: Drag a piece into the equation, or onto an empty box. Or press it to insert at the cursor; Tab moves between empty boxes.\n  - group:\n    - button \"Square root\"\n    - button \"Cube root\"\n    - button \"Nth root\"",
     "mathSpanTabbable": 0,
@@ -49,7 +50,8 @@
       " Fractions ",
       " Brackets ",
       " Operators ",
-      " Relations "
+      " Relations ",
+      " My equations "
     ],
     "arithmeticPower": {
       "latex": "x",

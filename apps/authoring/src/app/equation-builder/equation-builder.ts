@@ -5,7 +5,9 @@
 // live preview of the LaTeX, the stored MathML, the spoken text and the
 // rendering that will print. Palette pieces can also be dragged into the
 // field, or onto an empty box of a piece dropped earlier (PaletteDrag); a
-// press without a drag still inserts at the caret. It works on a <math-field> it is given (in the
+// press without a drag still inserts at the caret. A built equation can be
+// saved, with a typed shortcut, and comes back under "My equations"
+// (SavedEquations). It works on a <math-field> it is given (in the
 // demo, the one in the Froala equation dialog), through BuilderController
 // from sandbox/builder, which also enforces the per-assessment profile.
 import {
@@ -27,13 +29,17 @@ import {
   BuilderController,
   PROFILES,
   PaletteDrag,
+  SavedEquations,
   displayLatex,
+  localSavedStorage,
   prettyMathml,
   previewOf,
   type AllowedProfile,
   type Category,
   type PaletteItem,
   type Preview,
+  type SavedEquation,
+  type SavedStorage,
 } from '@sandbox/builder';
 
 /**
@@ -61,7 +67,21 @@ export class EquationBuilder implements OnDestroy {
   readonly ui = input<BuilderUi>('panel');
   readonly showPreview = input(true);
 
-  protected readonly categories = signal<Category[]>([]);
+  /** Where saved equations are kept; this browser's localStorage unless the host says otherwise */
+  readonly savedStorage = input<SavedStorage>();
+
+  readonly #palette = signal<Category[]>([]);
+  protected readonly savedItems = signal<PaletteItem[]>([]);
+  protected readonly saved = signal<readonly SavedEquation[]>([]);
+  protected readonly categories = computed<Category[]>(() => [
+    ...this.#palette(),
+    { id: 'saved', label: 'My equations', short: '★', items: this.savedItems() },
+  ]);
+  /** The saved equation behind a "My equations" piece */
+  protected readonly savedOf = (item: PaletteItem) => this.saved().find((s) => `saved-${s.id}` === item.id);
+  protected readonly saving = signal(false);
+  protected readonly saveError = signal('');
+  protected readonly savedNote = signal('');
   protected readonly activeId = signal<string>('');
   protected readonly active = computed(() => this.categories().find((c) => c.id === this.activeId()) ?? this.categories()[0]);
   protected readonly message = signal('');
@@ -73,6 +93,7 @@ export class EquationBuilder implements OnDestroy {
   private readonly tabs = viewChildren<ElementRef<HTMLButtonElement>>('tab');
   readonly #host: HTMLElement = inject(ElementRef).nativeElement;
   #controller: BuilderController | null = null;
+  #store: SavedEquations | null = null;
   #previewTimer = 0;
   #onInput = () => this.#schedulePreview();
 
@@ -98,7 +119,12 @@ export class EquationBuilder implements OnDestroy {
           this.#refreshPreview();
         },
       });
-      untracked(() => this.#applyProfile());
+      untracked(() => {
+        this.#store ??= new SavedEquations(this.savedStorage() ?? localSavedStorage());
+        this.saved.set(this.#store.list);
+        controller.setSaved(this.#store.list);
+        this.#applyProfile();
+      });
       onCleanup(() => {
         drag.detach();
         field.removeEventListener('input', this.#onInput);
@@ -124,8 +150,9 @@ export class EquationBuilder implements OnDestroy {
     const c = this.#controller;
     if (!c) return;
     if (c.allowed.profile !== this.profile()) c.setProfile(this.profile());
-    this.categories.set(c.allowed.categories);
-    if (!c.allowed.categories.some((x) => x.id === this.activeId())) this.activeId.set(c.allowed.categories[0]?.id ?? '');
+    this.#palette.set(c.allowed.categories);
+    this.savedItems.set(c.savedItems());
+    if (!this.categories().some((x) => x.id === this.activeId())) this.activeId.set(this.categories()[0]?.id ?? '');
     this.message.set('');
     this.#refreshPreview();
   }
@@ -135,6 +162,9 @@ export class EquationBuilder implements OnDestroy {
     this.#controller?.reset();
     this.message.set('');
     this.entryError.set('');
+    this.saving.set(false);
+    this.saveError.set('');
+    this.savedNote.set('');
     this.#refreshPreview();
     if (this.ui() === 'keyboard') window.mathVirtualKeyboard.show();
   }
@@ -160,6 +190,49 @@ export class EquationBuilder implements OnDestroy {
     } catch (e) {
       this.entryError.set((e as Error).message);
     }
+  }
+
+  // Saving what is in the field as one of "My equations"
+  protected startSave() {
+    this.saving.set(true);
+    this.saveError.set('');
+    this.savedNote.set('');
+  }
+
+  protected save(name: HTMLInputElement, shortcut: HTMLInputElement, event: Event) {
+    event.preventDefault();
+    const c = this.#controller;
+    if (!c || !this.#store) return;
+    try {
+      const field = this.field();
+      const refused = c.allowed.refused(field.getValue('latex-expanded'));
+      if (refused.length) throw new Error(`This equation uses something this assessment doesn't allow, so it can't be saved here.`);
+      const s = this.#store.add({ name: name.value, latex: field.getValue('latex'), shortcut: shortcut.value }, c.takenShortcuts());
+      this.#savedChanged();
+      this.saving.set(false);
+      this.saveError.set('');
+      this.savedNote.set(s.shortcut ? `Saved "${s.name}". Type ${s.shortcut} in the equation to insert it, or find it under My equations.` : `Saved "${s.name}" under My equations.`);
+      // Back to the equation once the form is gone (removing the focused
+      // input would otherwise leave focus on <body>)
+      setTimeout(() => field.focus());
+    } catch (e) {
+      this.saveError.set((e as Error).message);
+    }
+  }
+
+  protected deleteSaved(s: SavedEquation) {
+    this.#store?.remove(s.id);
+    this.#savedChanged();
+    this.savedNote.set(`Deleted "${s.name}".`);
+    // The button is gone: keep keyboard focus in the tab
+    this.tabs().find((t) => t.nativeElement.id === 'eb-tab-saved')?.nativeElement.focus();
+  }
+
+  #savedChanged() {
+    const c = this.#controller!;
+    this.saved.set(this.#store!.list);
+    c.setSaved(this.#store!.list);
+    this.savedItems.set(c.savedItems());
   }
 
   // Tabs: arrow keys move between them (one tab stop for the whole list)
