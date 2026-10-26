@@ -1,0 +1,122 @@
+{
+  "url": "http://localhost:4200/",
+  "errors": [],
+  "mouse": [
+    {
+      "piece": "frac",
+      "where": "field",
+      "during": {
+        "ghost": true,
+        "mark": "block",
+        "slot": "false",
+        "fieldOutlined": true
+      },
+      "latex": "\\frac{\\placeholder{}}{\\placeholder{}}"
+    },
+    {
+      "piece": "sqrt",
+      "where": 0,
+      "during": {
+        "ghost": true,
+        "mark": "block",
+        "slot": "true",
+        "fieldOutlined": true
+      },
+      "latex": "\\frac{\\sqrt{\\placeholder{}}}{\\placeholder{}}"
+    },
+    {
+      "piece": "frac",
+      "where": 0,
+      "during": {
+        "ghost": true,
+        "mark": "block",
+        "slot": "true",
+        "fieldOutlined": true
+      },
+      "latex": "\\frac{\\sqrt{\\frac{\\placeholder{}}{\\placeholder{}}}}{\\placeholder{}}"
+    },
+    {
+      "piece": "pi",
+      "where": -1,
+      "during": {
+        "ghost": true,
+        "mark": "block",
+        "slot": "true",
+        "fieldOutlined": true
+      },
+      "latex": "\\frac{\\sqrt{\\frac{\\placeholder{}}{\\placeholder{}}}}{\\pi}"
+    },
+    {
+      "piece": "plus",
+      "where": "end",
+      "during": {
+        "ghost": true,
+        "mark": "block",
+        "slot": "false",
+        "fieldOutlined": true
+      },
+      "latex": "\\frac{\\sqrt{\\frac{\\placeholder{}}{\\placeholder{}}}}{\\pi}+"
+    },
+    {
+      "piece": "power",
+      "where": "end",
+      "during": {
+        "ghost": true,
+        "mark": "block",
+        "slot": "false",
+        "fieldOutlined": true
+      },
+      "latex": "\\frac{\\sqrt{\\frac{\\placeholder{}}{\\placeholder{}}}}{\\pi}+\\placeholder{}^{\\placeholder{}}"
+    }
+  ],
+  "built": {
+    "latex": "\\frac{\\sqrt{\\frac14}}{\\pi}+x^2",
+    "previewLatex": "\\frac{\\sqrt{\\frac14}}{\\pi}+x^2",
+    "stored": "\\frac{\\sqrt{\\frac14}}{\\pi}+x^2",
+    "storedMathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><msqrt><mfrac><mn scriptlevel=\"2\" style=\"math-depth:2;\">1</mn><mn scriptlevel=\"2\" style=\"math-depth:2;\">4</mn></mfrac></msqrt><mi>π</mi></mfrac><mo>+</mo><msup><mi>x</mi><mn class=\"tml-sml-pad\">2</mn></msup></mrow><annotation encoding=\"application/x-tex\">\\frac{\\sqrt{\\frac14}}{\\pi}+x^2</annotation></semantics></math>"
+  },
+  "keyboard": {
+    "clickThenKeyboard": "\\frac{a}{\\sqrt{\\placeholder{}}}"
+  },
+  "touch": [
+    {
+      "piece": "frac",
+      "where": "field",
+      "from": [
+        60,
+        402
+      ],
+      "to": [
+        195,
+        96
+      ],
+      "latex": "\\frac{\\placeholder{}}{\\placeholder{}}"
+    },
+    {
+      "piece": "pi",
+      "where": 0,
+      "from": [
+        60,
+        518
+      ],
+      "to": [
+        59,
+        79
+      ],
+      "latex": "\\frac{\\pi}{\\placeholder{}}"
+    },
+    {
+      "piece": "plus",
+      "where": "end",
+      "from": [
+        60,
+        402
+      ],
+      "to": [
+        316,
+        96
+      ],
+      "latex": "\\frac{\\pi}{\\placeholder{}}+"
+    }
+  ]
+}

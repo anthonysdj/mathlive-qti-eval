@@ -3,7 +3,9 @@
 // The palette-driven equation builder for authors who don't know LaTeX: a
 // categorised template panel, text entries for chemistry and units, and a
 // live preview of the LaTeX, the stored MathML, the spoken text and the
-// rendering that will print. It works on a <math-field> it is given (in the
+// rendering that will print. Palette pieces can also be dragged into the
+// field, or onto an empty box of a piece dropped earlier (PaletteDrag); a
+// press without a drag still inserts at the caret. It works on a <math-field> it is given (in the
 // demo, the one in the Froala equation dialog), through BuilderController
 // from sandbox/builder, which also enforces the per-assessment profile.
 import {
@@ -14,6 +16,7 @@ import {
   OnDestroy,
   computed,
   effect,
+  inject,
   input,
   signal,
   untracked,
@@ -23,6 +26,7 @@ import type { MathfieldElement } from 'mathlive';
 import {
   BuilderController,
   PROFILES,
+  PaletteDrag,
   displayLatex,
   prettyMathml,
   previewOf,
@@ -67,6 +71,7 @@ export class EquationBuilder implements OnDestroy {
   protected readonly display = displayLatex;
 
   private readonly tabs = viewChildren<ElementRef<HTMLButtonElement>>('tab');
+  readonly #host: HTMLElement = inject(ElementRef).nativeElement;
   #controller: BuilderController | null = null;
   #previewTimer = 0;
   #onInput = () => this.#schedulePreview();
@@ -84,8 +89,18 @@ export class EquationBuilder implements OnDestroy {
       );
       this.#controller = controller;
       field.addEventListener('input', this.#onInput);
+      const drag = new PaletteDrag(this.#host, {
+        field: () => field,
+        item: (id) => this.categories().flatMap((c) => c.items).find((i) => i.id === id),
+        drop: (item, target) => {
+          this.message.set('');
+          controller.drop(item, target.offset);
+          this.#refreshPreview();
+        },
+      });
       untracked(() => this.#applyProfile());
       onCleanup(() => {
+        drag.detach();
         field.removeEventListener('input', this.#onInput);
         controller.detach();
         this.#controller = null;

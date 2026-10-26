@@ -349,6 +349,8 @@ async function runKeyboard(page, actions) {
       keyboardHeight: kbRect ? Math.round(kbRect.height) : 0,
       keyboardShare: kbRect ? +(kbRect.height / innerHeight).toFixed(2) : 0,
       fieldVisibleAboveKeyboard: kbRect ? field.bottom <= kbRect.top : true,
+      // The dialog used to move up past the top of the screen to clear the keyboard
+      fieldBelowTopOfScreen: field.top >= 0,
       panelKeysTop: keys ? Math.round(keys.top) : null,
       panelKeysVisibleAboveKeyboard: keys && kbRect ? keys.top < kbRect.top : null,
       dialogScrollable: d.scrollHeight > d.clientHeight,

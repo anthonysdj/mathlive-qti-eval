@@ -1,7 +1,7 @@
 {
   "errors": [],
   "flows": {
-    "firstOpenMs": 332,
+    "firstOpenMs": 305,
     "tabs": [
       " Fractions ",
       " Roots ",
@@ -43,7 +43,7 @@
       "latex": "\\sqrt{\\placeholder{}}",
       "focusBackInField": true
     },
-    "panelAria": "- tabpanel \"Roots\":\n  - button \"Square root\"\n  - button \"Cube root\"\n  - button \"Nth root\"",
+    "panelAria": "- tabpanel \"Roots\":\n  - paragraph: Drag a piece into the equation, or onto an empty box. Or press it to insert at the cursor; Tab moves between empty boxes.\n  - group:\n    - button \"Square root\"\n    - button \"Cube root\"\n    - button \"Nth root\"",
     "mathSpanTabbable": 0,
     "arithmeticTabs": [
       " Fractions ",
@@ -197,8 +197,9 @@
     "keyboardHeight": 262,
     "keyboardShare": 0.31,
     "fieldVisibleAboveKeyboard": true,
-    "panelKeysTop": 283,
+    "fieldBelowTopOfScreen": true,
+    "panelKeysTop": 376,
     "panelKeysVisibleAboveKeyboard": true,
-    "dialogScrollable": false
+    "dialogScrollable": true
   }
 }

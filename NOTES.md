@@ -27,6 +27,14 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
 
+## 2026-10-26 — Drag and drop in the equation builder
+
+- **MathLive has no drop support, but `getOffsetFromPoint` + `getElementInfo(offset).bounds` are enough.** Inserting at an empty box's offset replaces the box. → `docs/03-equation-builder.md` §8.
+- **`getElementInfo` gives no `bounds` for a superscript/subscript atom.** Use its contents and base instead. A tall atom's bounds can reach outside the field.
+- **Anything appended to `<body>` is drawn under a modal `<dialog>`** (top layer), whatever its z-index. The drag ghost and the drop mark use `popover="manual"` to get above it.
+- **Phone: the equation dialog moved past the top of the screen when MathLive's keyboard showed** (it only had `margin-bottom`). It's now capped in height, and builder-check records `fieldBelowTopOfScreen`.
+- Node 24.15.0 for the Angular CLI now comes from the container's nvm (`source /opt/nvm/nvm.sh && nvm install 24.15.0`).
+
 ## 2026-10-26 — Fix: `pnpm start` in apps/authoring
 
 `ng serve` failed with "Could not resolve './palette'" from `sandbox/builder/src/index.ts`. The dev server pre-bundles anything under `node_modules`, including the workspace packages that point at TypeScript sources, and its pre-bundler (rolldown) does not resolve extensionless `.ts` imports. `ng build` was unaffected, which is why the M2/M3 checks (which use the built app) passed. Fix:
