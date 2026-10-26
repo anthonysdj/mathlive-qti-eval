@@ -5,9 +5,13 @@
   "scripts": {
     "test": "vitest run",
     "typecheck": "tsc --noEmit -p .",
-    "compare": "VITE_PROBE=1 vitest run tests/compare-dump.test.ts"
+    "compare": "VITE_PROBE=1 vitest run tests/compare-dump.test.ts",
+    "gallery": "node scripts/gallery.mjs",
+    "print": "node --experimental-strip-types scripts/print-svg.mjs",
+    "size": "node scripts/bundle-size.mjs"
   },
   "dependencies": {
+    "@mathjax/mathjax-newcm-font": "4.1.3",
     "@mathjax/src": "4.1.3",
     "mathlive": "0.111.1",
     "temml": "0.14.0"

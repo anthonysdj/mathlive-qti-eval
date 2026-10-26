@@ -64,6 +64,10 @@ This is `storageMathml()` in [`src/pipeline.ts`](../sandbox/converters/src/pipel
 
 If our QTI player already loads MathJax, MathJax-generated MathML is a reasonable alternative. It is more MathML-3-semantic (`mathcolor`, `<menclose>`), but verbose, and the `data-latex` / `data-mjx-*` attributes should be stripped before storage. Nothing here rules it out. It loses to Temml only on output size and on native rendering.
 
+## Print
+
+The PDF pipeline can't use CSS. The stored Temml MathML converts cleanly to standalone SVG with MathJax (60/60, after a small preprocessing step). See [print-svg.md](print-svg.md).
+
 ## What this changes in the plan
 
 - **M2 (Froala):** the persisted HTML stores the Temml output with an annotation. Editing loads the annotation's LaTeX into `<math-field>`; display uses the stored MathML (embedding strategy (b) pairs naturally with this). MathLive's `getValue('math-ml')` isn't used for storage at all.

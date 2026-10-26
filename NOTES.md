@@ -10,6 +10,7 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 | `mathml-to-latex` | 1.8.0 (exact) | `sandbox/basic` (runtime) | MathLive cannot read MathML. We need *some* MathML→LaTeX path to re-hydrate annotation-less content (Wiris, legacy). Used by `src/serialize.ts` as the fallback only. MIT. |
 | `temml` | 0.14.0 (exact) | `sandbox/converters` | Candidate LaTeX→MathML converter for stored MathML (MIT). Includes its mhchem extension. Recommended in `findings/mathml-converters.md`. |
 | `@mathjax/src` | 4.1.3 (exact) | `sandbox/converters` | Second candidate converter, for comparison (Apache-2.0). Only the TeX input and the MathML serialiser are used. |
+| `@mathjax/mathjax-newcm-font` | 4.1.3 (exact) | `sandbox/converters` | Font data for MathJax's SVG output in the print-path spike (already a transitive dependency; pinned directly because `src/print.ts` imports it). |
 | `vite` | 8.3.5 | dev | Sandbox dev server and build. |
 | `vitest` + `@vitest/browser-playwright` | 5.0.5 | dev | MathLive needs a real browser (layout, FontFace, custom elements, adoptedStyleSheets), so tests run in Chromium, not jsdom. |
 | `playwright` | 1.64.1 | dev | Browser driver for Vitest and the runtime-check script. |
@@ -17,6 +18,14 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 | `@types/node` | 22 | dev | Types for the config files and scripts. |
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
+
+## 2026-10-26 — Spike: print path (MathML → SVG)
+
+- Ton recalls RenderX (probably XEP, XSL-FO) as the PDF engine, with formulas converted to images. Not confirmed yet.
+- Temml MathML → MathJax SVG (Node, `fontCache: 'none'`): all 60 cases correct after `prepareForSvg()`. → `findings/print-svg.md`.
+- Two surprises, found only by looking at the rendered images: (1) Temml's `<mtd style="padding…">` makes MathJax overlap matrix entries and clip `cases`; (2) MathJax copies Temml's `class="tml-…"` onto the SVG, where Temml's CSS (if loaded on the same page) hides `\vec`/`\bar`. The fix is to strip both before conversion.
+- MathJax 4 loads font ranges on demand. In Node, import `@mathjax/src/js/util/asyncLoad/esm.js` or `\mathbb` fails ("No mathjax.asyncLoad method specified").
+- `sandbox/converters` now has two Vitest projects: browser (Chromium) and node (print path).
 
 ## 2026-10-26 — Spike: MathML converters
 
