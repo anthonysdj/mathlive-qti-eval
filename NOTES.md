@@ -21,6 +21,11 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
 
+## 2026-10-26 — Same math font for native MathML?
+
+- Ton asked whether pointing the browser at the same math font would make screen and print consistent. Measured in Chromium with New Computer Modern Math as a web font: median 42.0% differing pixels vs the print SVG (45.7% with the default font, 0.3% with the same SVG). Shapes match; layout (operator spacing, script size, matrix gaps) doesn't. → `findings/consistency.md`, `findings/same-font.html`.
+- The font isn't committed (1.1 MB, GUST font licence). CTAN is blocked from the cloud container; the copy used came from the `typst-assets` 0.13.1 crate (crates.io).
+
 ## 2026-10-26 — Demo: render an inserted equation in the page
 
 - `sandbox/converters` now has a Vite demo (`pnpm dev`). Insert in MathLive stores Temml MathML; the page shows MathJax SVG (same as print) plus a visually hidden `<math>` for screen readers. Click an equation to edit it. → `findings/insert-demo.md`.

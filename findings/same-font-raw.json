@@ -1,0 +1,438 @@
+{
+  "summary": {
+    "defaultFont": {
+      "median": 0.45707656612529,
+      "max": 0.6370087336244541
+    },
+    "sameFont": {
+      "median": 0.4197292069632495,
+      "max": 0.5815038419319429
+    },
+    "sameSvg": {
+      "median": 0.002777777777777778,
+      "max": 0.026923076923076925
+    }
+  },
+  "rows": [
+    {
+      "id": "frac",
+      "latex": "\\frac{a}{b}",
+      "defaultFont": 0.5208333333333334,
+      "sameFont": 0.44506258692628653,
+      "sameSvg": 0.00546448087431694
+    },
+    {
+      "id": "frac-short",
+      "latex": "\\frac12",
+      "defaultFont": 0.4606413994169096,
+      "sameFont": 0.4326923076923077,
+      "sameSvg": 0.00872093023255814
+    },
+    {
+      "id": "dfrac",
+      "latex": "\\dfrac{1}{x+1}",
+      "defaultFont": 0.37489609310058186,
+      "sameFont": 0.33292307692307693,
+      "sameSvg": 0.0015661707126076742
+    },
+    {
+      "id": "binom",
+      "latex": "\\binom{n}{k}",
+      "defaultFont": 0.3763157894736842,
+      "sameFont": 0.45584988962472406,
+      "sameSvg": 0.0032733224222585926
+    },
+    {
+      "id": "nested-frac",
+      "latex": "\\frac{1}{1+\\frac{1}{x}}",
+      "defaultFont": 0.4747612551159618,
+      "sameFont": 0.4772545889864326,
+      "sameSvg": 0.002506265664160401
+    },
+    {
+      "id": "sqrt",
+      "latex": "\\sqrt{x^2+1}",
+      "defaultFont": 0.40469061876247503,
+      "sameFont": 0.37201017811704834,
+      "sameSvg": 0.002875629043853343
+    },
+    {
+      "id": "nthroot",
+      "latex": "\\sqrt[3]{x}",
+      "defaultFont": 0.46322827125119387,
+      "sameFont": 0.4670981661272923,
+      "sameSvg": 0.0015625
+    },
+    {
+      "id": "sup",
+      "latex": "x^2",
+      "defaultFont": 0.46167883211678834,
+      "sameFont": 0.4173387096774194,
+      "sameSvg": 0.014124293785310734
+    },
+    {
+      "id": "subsup",
+      "latex": "x_i^2",
+      "defaultFont": 0.4352112676056338,
+      "sameFont": 0.37925445705024313,
+      "sameSvg": 0.009259259259259259
+    },
+    {
+      "id": "prime",
+      "latex": "f'(x)",
+      "defaultFont": 0.46235795454545453,
+      "sameFont": 0.375,
+      "sameSvg": 0.002512562814070352
+    },
+    {
+      "id": "sci",
+      "latex": "6.02\\times10^{23}",
+      "defaultFont": 0.46058394160583943,
+      "sameFont": 0.35482546201232035,
+      "sameSvg": 0.0037858301784748512
+    },
+    {
+      "id": "pmatrix",
+      "latex": "\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}",
+      "defaultFont": 0.5433158040409631,
+      "sameFont": 0.5815038419319429,
+      "sameSvg": 0.001015744032503809
+    },
+    {
+      "id": "bmatrix",
+      "latex": "\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}",
+      "defaultFont": 0.611796643632774,
+      "sameFont": 0.49021185304371145,
+      "sameSvg": 0.0009930486593843098
+    },
+    {
+      "id": "cases",
+      "latex": "f(x)=\\begin{cases}1&x>0\\\\0&\\text{otherwise}\\end{cases}",
+      "defaultFont": 0.5409775364107627,
+      "sameFont": 0.47892303508294803,
+      "sameSvg": 0.0013519603424966202
+    },
+    {
+      "id": "aligned",
+      "latex": "\\begin{aligned}a&=b+c\\\\&=d\\end{aligned}",
+      "defaultFont": 0.5552300029299736,
+      "sameFont": 0.4491938507686539,
+      "sameSvg": 0.00202020202020202
+    },
+    {
+      "id": "int",
+      "latex": "\\int_0^1 f(x)\\,dx",
+      "defaultFont": 0.5077473182359953,
+      "sameFont": 0.40123934934159566,
+      "sameSvg": 0.003298515667949423
+    },
+    {
+      "id": "sum",
+      "latex": "\\sum_{i=1}^{n} i^2",
+      "defaultFont": 0.47413793103448276,
+      "sameFont": 0.5415335463258786,
+      "sameSvg": 0.003937007874015748
+    },
+    {
+      "id": "lim",
+      "latex": "\\lim_{x\\to\\infty}\\frac{1}{x}",
+      "defaultFont": 0.39796747967479673,
+      "sameFont": 0.3909426987060998,
+      "sameSvg": 0.006775067750677507
+    },
+    {
+      "id": "partial",
+      "latex": "\\frac{\\partial f}{\\partial x}",
+      "defaultFont": 0.47655259822560203,
+      "sameFont": 0.47681660899653977,
+      "sameSvg": 0.014647137150466045
+    },
+    {
+      "id": "oint",
+      "latex": "\\oint_C \\vec{F}\\cdot d\\vec{r}",
+      "defaultFont": 0.5001981767736822,
+      "sameFont": 0.48961937716262977,
+      "sameSvg": 0.0013324450366422385
+    },
+    {
+      "id": "leftright",
+      "latex": "\\left(\\frac{a}{b}\\right)",
+      "defaultFont": 0.4470918009810792,
+      "sameFont": 0.4205794205794206,
+      "sameSvg": 0.0015082956259426848
+    },
+    {
+      "id": "abs",
+      "latex": "\\left|x\\right|",
+      "defaultFont": 0.3635077793493635,
+      "sameFont": 0.2114695340501792,
+      "sameSvg": 0.0024813895781637717
+    },
+    {
+      "id": "norm",
+      "latex": "\\lVert v\\rVert",
+      "defaultFont": 0.42540904716073147,
+      "sameFont": 0.16377171215880892,
+      "sameSvg": 0
+    },
+    {
+      "id": "angle",
+      "latex": "\\langle u,v\\rangle",
+      "defaultFont": 0.32260795935647757,
+      "sameFont": 0.3191268191268191,
+      "sameSvg": 0.001394700139470014
+    },
+    {
+      "id": "set",
+      "latex": "\\{x\\mid x>0\\}",
+      "defaultFont": 0.3755416466056813,
+      "sameFont": 0.31805929919137466,
+      "sameSvg": 0.010623229461756374
+    },
+    {
+      "id": "greek",
+      "latex": "\\alpha+\\beta=\\Gamma",
+      "defaultFont": 0.34210526315789475,
+      "sameFont": 0.40854047163798596,
+      "sameSvg": 0.002544529262086514
+    },
+    {
+      "id": "mathbb",
+      "latex": "\\mathbb{R}",
+      "defaultFont": 0.459412780656304,
+      "sameFont": 0.5197841726618705,
+      "sameSvg": 0
+    },
+    {
+      "id": "mathbf",
+      "latex": "\\mathbf{v}",
+      "defaultFont": 0.4627831715210356,
+      "sameFont": 0.49429657794676807,
+      "sameSvg": 0.02262443438914027
+    },
+    {
+      "id": "relations",
+      "latex": "a\\le b\\ne c\\approx d",
+      "defaultFont": 0.4512027491408935,
+      "sameFont": 0.40589198036006546,
+      "sameSvg": 0
+    },
+    {
+      "id": "pm",
+      "latex": "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+      "defaultFont": 0.4345911949685535,
+      "sameFont": 0.4263217097862767,
+      "sameSvg": 0.0028268551236749115
+    },
+    {
+      "id": "trig",
+      "latex": "\\sin^2\\theta+\\cos^2\\theta=1",
+      "defaultFont": 0.3939632545931758,
+      "sameFont": 0.4536649214659686,
+      "sameSvg": 0.0003866976024748647
+    },
+    {
+      "id": "log",
+      "latex": "\\log_2 8=3",
+      "defaultFont": 0.4326241134751773,
+      "sameFont": 0.4000927213722763,
+      "sameSvg": 0.0006230529595015577
+    },
+    {
+      "id": "operatorname",
+      "latex": "\\operatorname{lcm}(a,b)",
+      "defaultFont": 0.3622641509433962,
+      "sameFont": 0.2874158467115484,
+      "sameSvg": 0.0013218770654329147
+    },
+    {
+      "id": "logic",
+      "latex": "\\forall x\\in A,\\exists y",
+      "defaultFont": 0.3988439306358382,
+      "sameFont": 0.39408172851103807,
+      "sameSvg": 0.0031645569620253164
+    },
+    {
+      "id": "arrow",
+      "latex": "A\\Rightarrow B",
+      "defaultFont": 0.4465601965601966,
+      "sameFont": 0.3781446540880503,
+      "sameSvg": 0
+    },
+    {
+      "id": "vec",
+      "latex": "\\vec{v}",
+      "defaultFont": 0.4523809523809524,
+      "sameFont": 0.38271604938271603,
+      "sameSvg": 0.00398406374501992
+    },
+    {
+      "id": "hat",
+      "latex": "\\hat{x}",
+      "defaultFont": 0.4322429906542056,
+      "sameFont": 0.40053763440860213,
+      "sameSvg": 0.003703703703703704
+    },
+    {
+      "id": "bar",
+      "latex": "\\bar{x}",
+      "defaultFont": 0.49107142857142855,
+      "sameFont": 0.4787234042553192,
+      "sameSvg": 0.026923076923076925
+    },
+    {
+      "id": "overline",
+      "latex": "\\overline{AB}",
+      "defaultFont": 0.6370087336244541,
+      "sameFont": 0.5049857549857549,
+      "sameSvg": 0.002838221381267739
+    },
+    {
+      "id": "overrightarrow",
+      "latex": "\\overrightarrow{AB}",
+      "defaultFont": 0.5881226053639846,
+      "sameFont": 0.41989987484355445,
+      "sameSvg": 0
+    },
+    {
+      "id": "underbrace",
+      "latex": "\\underbrace{a+b}_{n}",
+      "defaultFont": 0.5407621804148577,
+      "sameFont": 0.4491139240506329,
+      "sameSvg": 0.0043859649122807015
+    },
+    {
+      "id": "overbrace",
+      "latex": "\\overbrace{a+b}^{n}",
+      "defaultFont": 0.48535353535353537,
+      "sameFont": 0.43016194331983804,
+      "sameSvg": 0.001728608470181504
+    },
+    {
+      "id": "mathring",
+      "latex": "\\mathring{A}",
+      "defaultFont": 0.6176066024759285,
+      "sameFont": 0.4197292069632495,
+      "sameSvg": 0.002777777777777778
+    },
+    {
+      "id": "xrightarrow",
+      "latex": "A\\xrightarrow{k}B",
+      "defaultFont": 0.598763186613314,
+      "sameFont": 0.5204513399153737,
+      "sameSvg": 0.00946372239747634
+    },
+    {
+      "id": "ce-water",
+      "latex": "\\ce{H2O}",
+      "defaultFont": 0.3143507972665148,
+      "sameFont": 0.2802907915993538,
+      "sameSvg": 0.008356545961002786
+    },
+    {
+      "id": "ce-reaction",
+      "latex": "\\ce{2H2 + O2 -> 2H2O}",
+      "defaultFont": 0.41879582315041103,
+      "sameFont": 0.4257622624834291,
+      "sameSvg": 0.002085195114685731
+    },
+    {
+      "id": "chem-manual",
+      "latex": "\\mathrm{H_2O}",
+      "defaultFont": 0.3143507972665148,
+      "sameFont": 0.2802907915993538,
+      "sameSvg": 0.008356545961002786
+    },
+    {
+      "id": "unit-mathrm",
+      "latex": "9.8\\,\\mathrm{m/s^2}",
+      "defaultFont": 0.47389240506329117,
+      "sameFont": 0.3076923076923077,
+      "sameSvg": 0
+    },
+    {
+      "id": "unit-degree",
+      "latex": "90\\degree",
+      "defaultFont": 0.32166301969365424,
+      "sameFont": 0.3634336677814939,
+      "sameSvg": 0.002881844380403458
+    },
+    {
+      "id": "percent",
+      "latex": "50\\%",
+      "defaultFont": 0.365399534522886,
+      "sameFont": 0.35374697824335216,
+      "sameSvg": 0.005154639175257732
+    },
+    {
+      "id": "text",
+      "latex": "\\text{if } x>0",
+      "defaultFont": 0.34054834054834054,
+      "sameFont": 0.3128930817610063,
+      "sameSvg": 0.003777148253068933
+    },
+    {
+      "id": "color",
+      "latex": "\\textcolor{red}{x}+y",
+      "defaultFont": 0.5491329479768786,
+      "sameFont": 0.4701492537313433,
+      "sameSvg": 0.007267441860465116
+    },
+    {
+      "id": "space-tilde",
+      "latex": "a~b",
+      "defaultFont": 0.43766937669376693,
+      "sameFont": 0.29444444444444445,
+      "sameSvg": 0.008492569002123142
+    },
+    {
+      "id": "phantom",
+      "latex": "\\phantom{x}+1",
+      "defaultFont": 0.33712984054669703,
+      "sameFont": 0.28967254408060455,
+      "sameSvg": 0.00267379679144385
+    },
+    {
+      "id": "boxed",
+      "latex": "\\boxed{x=1}",
+      "defaultFont": 0.5427568602425016,
+      "sameFont": 0.5545150501672241,
+      "sameSvg": 0
+    },
+    {
+      "id": "placeholder",
+      "latex": "\\frac{\\placeholder{}}{\\placeholder{}}",
+      "defaultFont": 0.49079189686924496,
+      "sameFont": 0.5728250244379277,
+      "sameSvg": 0
+    },
+    {
+      "id": "prompt",
+      "latex": "x+\\placeholder[ans]{}=5",
+      "defaultFont": 0.45707656612529,
+      "sameFont": 0.43435662965382105,
+      "sameSvg": 0.0007993605115907274
+    },
+    {
+      "id": "decimal-comma",
+      "latex": "3{,}14",
+      "defaultFont": 0.3805394990366089,
+      "sameFont": 0.3782654127481714,
+      "sameSvg": 0.0013333333333333333
+    },
+    {
+      "id": "macro-R",
+      "latex": "x\\in\\R",
+      "defaultFont": 0.48215586307356156,
+      "sameFont": 0.4218340611353712,
+      "sameSvg": 0.0032292787944025836
+    },
+    {
+      "id": "macro-vecb",
+      "latex": "\\vecb{v}+\\vecb{w}",
+      "defaultFont": 0.407871198568873,
+      "sameFont": 0.396875,
+      "sameSvg": 0.0012376237623762376
+    }
+  ]
+}
