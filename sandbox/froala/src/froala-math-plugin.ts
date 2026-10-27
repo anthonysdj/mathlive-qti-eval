@@ -10,6 +10,7 @@
 // the toolbar. The plugin is on by default once registered (pluginsEnabled).
 
 import { fromPersistedMathml } from '@sandbox/basic/src/serialize';
+import { toFieldLatex } from '@sandbox/converters/src/pipeline';
 import { EquationDialog } from './equation-dialog';
 import { defineMathEq, type MathEqElement } from './math-eq-element';
 import { hydrate, createEq, toEditorHtml, toStoredHtml } from './math-html';
@@ -84,7 +85,7 @@ export function registerMathPlugin(FroalaEditor: any) {
       let note: string | undefined;
       if (eq) {
         const found = fromPersistedMathml(eq.getAttribute('data-mathml') ?? '');
-        latex = found.latex;
+        latex = toFieldLatex(found.latex);
         if (found.source === 'converted')
           note = 'This equation was made in another editor. Its LaTeX was converted from MathML, so check it before you save.';
         (eq as MathEqElement).editing = true;

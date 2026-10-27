@@ -17,7 +17,7 @@ The question: can everything Wiris MathType does be done with MathLive's `<math-
 | Feature list (MathType toolbar → LaTeX) | [`sandbox/wiris-parity/src/features.ts`](../sandbox/wiris-parity/src/features.ts) |
 | Pipeline check per formula | [`src/run.ts`](../sandbox/wiris-parity/src/run.ts), [`tests/notation.test.ts`](../sandbox/wiris-parity/tests/notation.test.ts) → [`findings/wiris-parity-raw.json`](../findings/wiris-parity-raw.json) |
 | MathType MathML import | [`src/wiris-import.ts`](../sandbox/wiris-parity/src/wiris-import.ts), [`src/wiris-samples.ts`](../sandbox/wiris-parity/src/wiris-samples.ts), [`tests/wiris-import.test.ts`](../sandbox/wiris-parity/tests/wiris-import.test.ts) → [`findings/wiris-import-raw.json`](../findings/wiris-import-raw.json) |
-| Name mappings MathLive ↔ Temml | [`src/compat.ts`](../sandbox/wiris-parity/src/compat.ts) |
+| Name mappings MathLive ↔ Temml | `toStandardLatex()` / `toFieldLatex()` in [`sandbox/converters/src/pipeline.ts`](../sandbox/converters/src/pipeline.ts) |
 | Copy/paste MathML, `$$…$$` in text | [`src/editor-extras.ts`](../sandbox/wiris-parity/src/editor-extras.ts), [`tests/editor.test.ts`](../sandbox/wiris-parity/tests/editor.test.ts) |
 | Alt text and braille | [`tests/speech.node.test.ts`](../sandbox/wiris-parity/tests/speech.node.test.ts) → [`findings/wiris-speech.json`](../findings/wiris-speech.json) |
 | Tests | 140 (131 in Chromium, 9 in Node) |
@@ -51,8 +51,8 @@ A 79th entry is a known failure kept as a test: column arithmetic written with `
 
 What needed care:
 
-- **Arc over letters.** MathLive draws `\overarc`, Temml doesn't know it. [`compat.ts`](../sandbox/wiris-parity/src/compat.ts) stores it as `\wideparen`, which is the same arc in both.
-- **Long division and circled.** MathLive writes `\enclose{longdiv}{…}` and `\enclose{circle}{…}`. Temml has no `\enclose`, but it has `\longdiv` and `\textcircled`, which give the same `<menclose>`. `compat.ts` maps them for storage and maps them back when the stored LaTeX is loaded into the field.
+- **Arc over letters.** MathLive draws `\overarc`, Temml doesn't know it. `toStandardLatex()` ([`pipeline.ts`](../sandbox/converters/src/pipeline.ts)) stores it as `\wideparen`, which is the same arc in both.
+- **Long division and circled.** MathLive writes `\enclose{longdiv}{…}` and `\enclose{circle}{…}`. Temml has no `\enclose`, but it has `\longdiv` and `\textcircled`, which give the same `<menclose>`. `toStandardLatex()` maps them for storage and `toFieldLatex()` maps them back when a stored equation is loaded into the field (Froala dialog and `latexOf()`).
 - **Column arithmetic** is a right-aligned `array` with `\underline` for the line. **MathLive 0.111.1 has no `\hline`** (error box), which is the usual way to draw the line in LaTeX.
 - **MathLive's spoken text is empty for all of chemistry, aligned steps, over/underset, line breaks, segment arrows and boxed**, and wrong for some it does read: `\enclose{circle}` and `\enclose{longdiv}` come out as "crossed out", floor/ceiling as "of 'X'", and labelled arrows and cases lose their content. This is only the authoring-time feedback, though. What delivery and screen readers use is the stored MathML (§5).
 
@@ -85,7 +85,7 @@ Hand-writing `<mstack>` MathML ourselves would keep the semantics, but then noth
 
 | MathType | How we do it | Status | Evidence |
 |---|---|---|---|
-| Template palette with tabs | Builder panel: 14 categories, 143 templates, Tab between empty boxes | ✅ | M3, [`docs/03`](03-equation-builder.md) §2 |
+| Template palette with tabs | Builder panel: 19 categories, 199 templates, Tab between empty boxes. It has a tab for each MathType toolbar tab (Arrows, Decorations, Big operators, Format and Elementary math were added after this check; screenshots `findings/screenshots/builder-tab-*.png`) | ✅ | M3, [`docs/03`](03-equation-builder.md) §2, `builder-check.json` → `mathtypeTabs` |
 | Custom toolbars (toolbar XML, hiding tabs) | Allowed-symbols profiles hide tabs and refuse typed input too | ✅ | M3 §4 |
 | Type LaTeX directly | Native in `<math-field>` | ✅ | M1 |
 | Keyboard navigation inside the formula | Native arrows, Tab between slots | ✅ | M1, M3 |

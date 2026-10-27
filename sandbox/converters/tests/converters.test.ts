@@ -5,7 +5,7 @@ import temml from 'temml';
 import { MathfieldElement } from 'mathlive';
 import { loadTemmlMhchem, mathjaxConverter, mathliveConverter, temmlConverter, type Converter } from '../src/converters';
 import { check } from '../src/check';
-import { storageMathml, toStandardLatex } from '../src/pipeline';
+import { storageMathml, toFieldLatex, toStandardLatex } from '../src/pipeline';
 import { cases, MACROS } from '../src/cases';
 
 let mf: MathfieldElement;
@@ -104,6 +104,13 @@ describe('Storage format and safety', () => {
     // A typed y'' (MathLive writes \doubleprime, which Temml doesn't know)
     expect(toStandardLatex("y^{\\doubleprime}+y^{\\tripleprime}")).toBe('y^{\\prime\\prime}+y^{\\prime\\prime\\prime}');
     expect(temmlConverter.convert(toStandardLatex('y^{\\doubleprime}')).error).toBeUndefined();
+    // MathLive's long division, circle and arc, under the names Temml has
+    expect(toStandardLatex('3\\enclose{longdiv}[shadow="none"]{12\\frac{1}{2}}+\\enclose{circle}{5}+\\overarc{AB}')).toBe(
+      '3\\longdiv{12\\frac{1}{2}}+\\textcircled{5}+\\wideparen{AB}'
+    );
+    expect(toFieldLatex('3\\longdiv{12\\frac{1}{2}}+\\textcircled{5}')).toBe('3\\enclose{longdiv}{12\\frac{1}{2}}+\\enclose{circle}{5}');
+    expect(toStandardLatex('\\enclose{phasorangle}{x}')).toBe('\\enclose{phasorangle}{x}');
+    expect(temmlConverter.convert(toStandardLatex('\\enclose{longdiv}{125}')).mathml).toContain('notation="longdiv"');
   });
 
   it('custom macros: the expanded LaTeX converts cleanly', () => {

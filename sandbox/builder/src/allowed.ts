@@ -140,7 +140,7 @@ export const PROFILES: AllowedProfile[] = [
   {
     id: 'calculus',
     label: 'Calculus',
-    categories: ['fractions', 'roots', 'scripts', 'brackets', 'operators', 'relations', 'greek', 'functions', 'calculus', 'matrices', 'sets'],
+    categories: ['fractions', 'roots', 'scripts', 'brackets', 'operators', 'relations', 'greek', 'functions', 'calculus', 'bigops', 'matrices', 'decorations', 'sets'],
   },
   {
     id: 'chemistry',

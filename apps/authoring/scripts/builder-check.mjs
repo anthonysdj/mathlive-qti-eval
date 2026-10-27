@@ -170,6 +170,37 @@ async function closeDialog(page) {
   await page.waitForTimeout(100);
   flows.storedChemistry = await lastStoredTex(page);
 
+
+  // The tabs that follow MathType's toolbar (docs/04-mathlive-vs-wiris.md):
+  // a screenshot of each, then a long division built from the Elementary
+  // math tab and saved. Long division is MathLive-only LaTeX (\enclose) that
+  // the pipeline stores under Temml's name (\longdiv).
+  await settings(page, { profile: 'everything' });
+  await openInsert(page);
+  flows.mathtypeTabs = {};
+  for (const id of ['arrows', 'decorations', 'bigops', 'format', 'elementary']) {
+    await page.click(`#eb-tab-${id}`);
+    await page.waitForTimeout(200);
+    flows.mathtypeTabs[id] = await page.locator('[role="tabpanel"] [data-item]').count();
+    await page.locator('dialog .eb').screenshot({ path: `${shots}builder-tab-${id}.png` });
+  }
+  await page.click('[data-item="longdiv"]');
+  await page.keyboard.type('41');
+  await page.keyboard.press('Tab');
+  await page.keyboard.type('3');
+  await page.keyboard.press('Tab');
+  await page.keyboard.type('123');
+  await page.waitForTimeout(250);
+  flows.longDivisionInField = await fieldLatex(page);
+  await page.screenshot({ path: `${shots}builder-longdiv.png` });
+  await page.keyboard.press('Enter');
+  await page.waitForFunction(() => !document.querySelector('dialog[open]'));
+  await page.waitForTimeout(300);
+  flows.storedLongDivision = await lastStoredTex(page);
+  flows.longDivisionDrawn = await page.evaluate(() =>
+    [...document.querySelectorAll('.fr-element math-eq')].at(-1)?.shadowRoot?.querySelectorAll('svg path').length ?? 0
+  );
+
   // Dark theme
   await settings(page, { profile: 'everything', theme: 'dark' });
   await openInsert(page);

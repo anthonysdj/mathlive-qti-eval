@@ -2,7 +2,7 @@
 
 MathLive **0.111.1**, Temml **0.14.0**, Angular **22.2.3**. Every claim below points to a test in [`sandbox/builder`](../sandbox/builder) or to the browser check [`apps/authoring/scripts/builder-check.mjs`](../apps/authoring/scripts/builder-check.mjs), whose output is [`findings/builder-check.json`](../findings/builder-check.json).
 
-**Result.** The equation dialog from M2 now has a palette-driven builder under its field. Authors who don't know LaTeX pick templates from 14 categories, Tab between the empty boxes, type chemistry and units as plain text, and see the LaTeX, the stored MathML, the spoken text and the printed rendering while they type. A per-assessment profile restricts what can be entered, whichever way it arrives. Input UI decision: **the panel, with the custom virtual keyboard shown automatically on touch devices** (§5). Both are generated from one palette definition.
+**Result.** The equation dialog from M2 now has a palette-driven builder under its field. Authors who don't know LaTeX pick templates from 19 categories, Tab between the empty boxes, type chemistry and units as plain text, and see the LaTeX, the stored MathML, the spoken text and the printed rendering while they type. A per-assessment profile restricts what can be entered, whichever way it arrives. Input UI decision: **the panel, with the custom virtual keyboard shown automatically on touch devices** (§5). Both are generated from one palette definition.
 
 | | Where |
 |---|---|
@@ -18,7 +18,7 @@ MathLive **0.111.1**, Temml **0.14.0**, Angular **22.2.3**. Every claim below po
 
 ```mermaid
 flowchart TB
-  P["palette.ts<br/>14 categories, 143 templates,<br/>2 text entries"] --> A["allowed.ts<br/>profile → allowed tokens"]
+  P["palette.ts<br/>19 categories, 199 templates,<br/>2 text entries"] --> A["allowed.ts<br/>profile → allowed tokens"]
   A --> C["BuilderController<br/>(one per math-field)"]
   P --> K["keyboard.ts<br/>MathLive layouts"]
   A --> K
@@ -49,9 +49,14 @@ flowchart TB
 | Greek letters | 18 lower case, 9 capitals | |
 | Functions | sin cos tan sin⁻¹ ln log log_b exp f(x) | |
 | Calculus | ∫, ∫ₐᵇ, Σ, Π, lim, d/dx, d²/dx², ∂/∂x, ′, ∇ | |
-| Matrices | 2×2, 3×3, [2×2], determinant, column vector, cases, vec/hat/bar | |
+| Matrices | 2×2, 3×3, [2×2], determinant, column vector, cases, binomial | |
 | Sets and logic | ∈ ∉ ⊂ ⊆ ∪ ∩ ∅ ℕ ℤ ℚ ℝ ∀ ∃ | |
 | Geometry | ∠ △ ⊥ ∥ ≅ ∼ ° segment | |
+| Arrows | → ← ↔ ↑ ↓ ⇐ ↦ ⟶ ⇌, arrows with text above (and below) | MathType's Arrows tab |
+| Decorations | hat, bar, vector, dots, tilde, wide hat, over/underline, ray, line, arc, labelled braces, cancel (3 kinds), box, circle | MathType's Decorations tab. The arc and circle are MathLive-only LaTeX, stored under Temml's names (`\wideparen`, `\textcircled`) by `toStandardLatex()` |
+| Big operators | Σ Π ∐ ⋃ ⋂ ⨁ ⨂ ⋁ ⋀ with limits, ∬ ∭ ∮ | MathType's Big operators tab |
+| Format | red, blue, green, bold, upright, larger, smaller, thin and wide space | MathType's Format tab. Select first: they wrap the selection (`#0`). Letters typed into an empty upright box still come out italic (§11) |
+| Elementary math | column addition, subtraction, multiplication, long division, division sign, small carry digit | MathType's Elementary math tab, as a right-aligned table with `\underline` (MathLive has no `\hline`). Long division is `\enclose{longdiv}`, stored as `\longdiv` and mapped back on load. See [`docs/04`](04-mathlive-vs-wiris.md) §2 |
 | Chemistry | H₂O, →, ⇌, ↑, ↓, e⁻ + **text entry** | `2H2 + O2 -> 2H2O` → `\ce{…}` |
 | Units | m cm km kg g s m/s m/s² N J W Ω °C mol L + **text entry** | `kPa` → `\,\mathrm{kPa}` |
 
