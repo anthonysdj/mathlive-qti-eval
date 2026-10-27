@@ -13,55 +13,7 @@ const SAMPLE =
   selector: 'app-root',
   imports: [MathFroalaEditor, StoredHtmlPreview],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    <main>
-      <h1>Item authoring: equations in Froala (Angular)</h1>
-      <p class="hint">Use the √ button or Ctrl+Shift+M to insert an equation; click one to edit it. The equation builder in the dialog follows the settings below.</p>
-
-      <div class="settings">
-        <label>
-          Allowed symbols
-          <select id="profile" (change)="profileId.set($any($event.target).value)">
-            @for (p of profiles; track p.id) {
-              <option [value]="p.id" [selected]="p.id === profileId()">{{ p.label }}</option>
-            }
-          </select>
-        </label>
-        <label>
-          Input
-          <select id="ui" (change)="ui.set($any($event.target).value)">
-            <option value="panel" [selected]="ui() === 'panel'">Panel (keyboard on touch)</option>
-            <option value="keyboard" [selected]="ui() === 'keyboard'">Virtual keyboard</option>
-            <option value="both" [selected]="ui() === 'both'">Both</option>
-          </select>
-        </label>
-        <label>
-          Theme
-          <select id="theme" (change)="theme.set($any($event.target).value)">
-            <option value="light" [selected]="theme() === 'light'">Light</option>
-            <option value="dark" [selected]="theme() === 'dark'">Dark</option>
-          </select>
-        </label>
-      </div>
-
-      <label class="toggle"><input type="checkbox" [checked]="show()" (change)="show.set(!show())" /> Show the editor</label>
-      @if (show()) {
-        <app-math-froala-editor [(value)]="stem" [profile]="profile()" [ui]="ui()" />
-      }
-
-      <div class="controls">
-        <button type="button" (click)="saved.set(stem())">Save</button>
-        <button type="button" (click)="stem.set(saved())" [disabled]="!saved()">Load saved</button>
-        <button type="button" (click)="stem.set(sample)">Load sample</button>
-      </div>
-
-      <h2>Preview</h2>
-      <div class="preview" [appStoredHtmlPreview]="stem()"></div>
-
-      <h2>Stored HTML</h2>
-      <pre class="stored">{{ stem() }}</pre>
-    </main>
-  `,
+  templateUrl: './app.html',
   styles: `
     main { max-width: 860px; margin: 0 auto; padding: 24px 16px; font: 15px/1.5 system-ui, sans-serif; }
     h1 { font-size: 22px; margin: 0 0 8px; }
