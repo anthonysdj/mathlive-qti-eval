@@ -25,6 +25,11 @@ export type CategoryId =
   | 'matrices'
   | 'sets'
   | 'geometry'
+  | 'arrows'
+  | 'decorations'
+  | 'bigops'
+  | 'format'
+  | 'elementary'
   | 'chemistry'
   | 'units'
   // The author's saved equations (saved.ts): not in CATEGORIES, the host adds the tab
@@ -226,9 +231,7 @@ export const CATEGORIES: Category[] = [
       { id: 'det2', label: '2 by 2 determinant', insert: '\\begin{vmatrix}#?&#?\\\\#?&#?\\end{vmatrix}' },
       { id: 'colvec', label: 'Column vector', insert: '\\begin{pmatrix}#?\\\\#?\\end{pmatrix}' },
       { id: 'cases', label: 'Cases (piecewise)', insert: '\\begin{cases}#?&#?\\\\#?&#?\\end{cases}' },
-      { id: 'vec', label: 'Vector arrow', insert: '\\vec{#0}' },
-      { id: 'hat', label: 'Hat', insert: '\\hat{#0}' },
-      { id: 'bar', label: 'Bar', insert: '\\bar{#0}' },
+      { id: 'binom', label: 'Binomial coefficient', insert: '\\binom{#?}{#?}' },
     ],
   },
   {
@@ -264,6 +267,105 @@ export const CATEGORIES: Category[] = [
       sym('sim', '\\sim', 'Similar to'),
       sym('degree', '^{\\circ}', 'Degrees'),
       { id: 'segment', label: 'Line segment', insert: '\\overline{#0}' },
+    ],
+  },
+  // The next five follow MathType's toolbar tabs of the same names, so authors
+  // moving from MathType find what they had (docs/04-mathlive-vs-wiris.md).
+  {
+    id: 'arrows',
+    label: 'Arrows',
+    short: '→',
+    items: [
+      sym('rightarrow', '\\rightarrow', 'Right arrow'),
+      sym('leftarrow', '\\leftarrow', 'Left arrow'),
+      sym('leftrightarrow', '\\leftrightarrow', 'Left-right arrow'),
+      sym('uparrow', '\\uparrow', 'Up arrow'),
+      sym('downarrow', '\\downarrow', 'Down arrow'),
+      sym('Leftarrow', '\\Leftarrow', 'Is implied by'),
+      sym('mapsto', '\\mapsto', 'Maps to'),
+      sym('longrightarrow', '\\longrightarrow', 'Long right arrow'),
+      sym('harpoons', '\\rightleftharpoons', 'Equilibrium harpoons'),
+      { id: 'xrightarrow', label: 'Arrow with text above', insert: '\\xrightarrow{#?}' },
+      { id: 'xrightarrow2', label: 'Arrow with text above and below', insert: '\\xrightarrow[#?]{#?}' },
+      { id: 'xleftarrow', label: 'Left arrow with text above', insert: '\\xleftarrow{#?}' },
+    ],
+  },
+  {
+    id: 'decorations',
+    label: 'Decorations',
+    short: 'x̂',
+    items: [
+      { id: 'hat', label: 'Hat', insert: '\\hat{#0}' },
+      { id: 'bar', label: 'Bar', insert: '\\bar{#0}' },
+      { id: 'vec', label: 'Vector arrow', insert: '\\vec{#0}' },
+      { id: 'dot', label: 'Dot above (time derivative)', insert: '\\dot{#0}' },
+      { id: 'ddot', label: 'Two dots above', insert: '\\ddot{#0}' },
+      { id: 'tilde', label: 'Tilde', insert: '\\tilde{#0}' },
+      { id: 'widehat', label: 'Wide hat', insert: '\\widehat{#0}' },
+      { id: 'overline', label: 'Line above (repeating decimal)', insert: '\\overline{#0}' },
+      { id: 'underline', label: 'Line below', insert: '\\underline{#0}' },
+      { id: 'ray', label: 'Arrow above (ray, vector AB)', insert: '\\overrightarrow{#0}' },
+      { id: 'line', label: 'Double arrow above (line)', insert: '\\overleftrightarrow{#0}' },
+      { id: 'arc', label: 'Arc above', insert: '\\overarc{#0}' },
+      { id: 'overbrace', label: 'Brace above with label', insert: '\\overbrace{#0}^{#?}' },
+      { id: 'underbrace', label: 'Brace below with label', insert: '\\underbrace{#0}_{#?}' },
+      { id: 'cancel', label: 'Cancel (strike through)', insert: '\\cancel{#0}' },
+      { id: 'bcancel', label: 'Cancel, other diagonal', insert: '\\bcancel{#0}' },
+      { id: 'xcancel', label: 'Cross out', insert: '\\xcancel{#0}' },
+      { id: 'boxed', label: 'Box', insert: '\\boxed{#0}' },
+      { id: 'circled', label: 'Circle', insert: '\\enclose{circle}{#0}' },
+    ],
+  },
+  {
+    id: 'bigops',
+    label: 'Big operators',
+    short: '∑',
+    items: [
+      { id: 'big-sum', label: 'Sum with limits', insert: '\\sum_{#?}^{#?}#0' },
+      { id: 'big-prod', label: 'Product with limits', insert: '\\prod_{#?}^{#?}#0' },
+      { id: 'coprod', label: 'Coproduct', insert: '\\coprod_{#?}#0' },
+      { id: 'bigcup', label: 'Union of a family of sets', insert: '\\bigcup_{#?}#0' },
+      { id: 'bigcap', label: 'Intersection of a family of sets', insert: '\\bigcap_{#?}#0' },
+      { id: 'bigoplus', label: 'Direct sum', insert: '\\bigoplus_{#?}#0' },
+      { id: 'bigotimes', label: 'Tensor product', insert: '\\bigotimes_{#?}#0' },
+      { id: 'bigvee', label: 'Big or', insert: '\\bigvee_{#?}#0' },
+      { id: 'bigwedge', label: 'Big and', insert: '\\bigwedge_{#?}#0' },
+      { id: 'iint', label: 'Double integral', insert: '\\iint_{#?}#0\\,\\differentialD #?' },
+      { id: 'iiint', label: 'Triple integral', insert: '\\iiint_{#?}#0\\,\\differentialD #?' },
+      { id: 'oint', label: 'Contour integral', insert: '\\oint_{#?}#0\\,\\differentialD #?' },
+    ],
+  },
+  {
+    id: 'format',
+    label: 'Format',
+    short: 'A̲',
+    // Select part of the equation first: #0 wraps the selection
+    items: [
+      { id: 'color-red', label: 'Red', insert: '\\textcolor{#d7263d}{#0}', display: '\\textcolor{#d7263d}{\\mathrm{A}}' },
+      { id: 'color-blue', label: 'Blue', insert: '\\textcolor{#1b64da}{#0}', display: '\\textcolor{#1b64da}{\\mathrm{A}}' },
+      { id: 'color-green', label: 'Green', insert: '\\textcolor{#1a7f37}{#0}', display: '\\textcolor{#1a7f37}{\\mathrm{A}}' },
+      { id: 'bold', label: 'Bold', insert: '\\boldsymbol{#0}', display: '\\boldsymbol{\\mathrm{B}}' },
+      { id: 'upright', label: 'Upright (not italic)', insert: '\\mathrm{#0}', display: '\\mathrm{R}' },
+      { id: 'large', label: 'Larger', insert: '{\\large #0}', display: '{\\large A}' },
+      { id: 'small', label: 'Smaller', insert: '{\\small #0}', display: '{\\small A}' },
+      sym('thin-space', '\\,', 'Thin space'),
+      sym('quad', '\\quad', 'Wide space'),
+    ],
+  },
+  {
+    id: 'elementary',
+    label: 'Elementary math',
+    short: '÷',
+    // Column arithmetic as a right-aligned table: LaTeX has no column
+    // arithmetic, and MathLive has no \hline, so the line is \underline on the
+    // row above it (docs/04-mathlive-vs-wiris.md §2).
+    items: [
+      { id: 'col-add', label: 'Column addition', insert: '\\begin{array}{r}#?\\\\\\underline{+\\,#?}\\\\#?\\end{array}' },
+      { id: 'col-sub', label: 'Column subtraction', insert: '\\begin{array}{r}#?\\\\\\underline{-\\,#?}\\\\#?\\end{array}' },
+      { id: 'col-mul', label: 'Column multiplication', insert: '\\begin{array}{r}#?\\\\\\underline{\\times\\,#?}\\\\#?\\end{array}' },
+      { id: 'longdiv', label: 'Long division', insert: '\\begin{array}{r}#?\\\\#?\\enclose{longdiv}{#?}\\end{array}' },
+      { id: 'longdiv-short', label: 'Long division sign', insert: '#@\\enclose{longdiv}{#?}' },
+      { id: 'carry', label: 'Small carry digit', insert: '{\\scriptstyle #?}' },
     ],
   },
   {

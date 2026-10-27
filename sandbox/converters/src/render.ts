@@ -12,7 +12,7 @@ import './mathjax-browser-fonts'; // before print.ts: on-demand glyph ranges in 
 import type { MathfieldElement } from 'mathlive';
 import temml from 'temml';
 import { mathmlToSvg } from './print';
-import { toStandardLatex } from './pipeline';
+import { toFieldLatex, toStandardLatex } from './pipeline';
 
 const MATHML_NS = 'http://www.w3.org/1998/Math/MathML';
 
@@ -29,7 +29,7 @@ export function storedMathml(mf: MathfieldElement): string {
 /** The LaTeX annotation of a stored equation, to load it back into the field for editing. */
 export function latexOf(mathml: string): string {
   const doc = new DOMParser().parseFromString(mathml, 'application/xml');
-  return doc.getElementsByTagNameNS(MATHML_NS, 'annotation')[0]?.textContent ?? '';
+  return toFieldLatex(doc.getElementsByTagNameNS(MATHML_NS, 'annotation')[0]?.textContent ?? '');
 }
 
 /** Build the element that displays a stored equation. */

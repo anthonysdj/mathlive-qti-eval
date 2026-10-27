@@ -28,6 +28,14 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
 
+## 2026-10-27 — MathType's tabs in the equation builder
+
+- Ton asked to see MathType's tabs in the authoring app. The builder now has Arrows, Decorations, Big operators, Format and Elementary math (19 categories, 199 templates; vec/hat/bar moved from Matrices to Decorations, so the Calculus profile also gets Decorations and Big operators). All pass the per-item insert/Tab/store/reload test.
+- The `\enclose{longdiv|circle}` and `\overarc` mappings moved from sandbox/wiris-parity into `toStandardLatex()`, with `toFieldLatex()` for loading (used by `latexOf()` and the Froala dialog), so the dialog can save them.
+- **MathLive's `getValue('latex')` itself writes `\enclose{longdiv}[shadow="none",solid currentColor]{…}`**, not only `latex-expanded`. The mapping skips the bracket.
+- **An `aligned` template with an empty first cell on the second row (`\\&=#?`) breaks Tab order**: MathLive stops in the empty cell. Not added.
+- MathLive draws `\overarc` over a single box like a hat, so the Arc button looks like Wide hat.
+
 ## 2026-10-27 — M4: can MathLive reproduce MathType?
 
 - Ton reframed M4: not an adoption decision, but whether everything MathType does can be done with `<math-field>` and our pipeline. → `docs/04-mathlive-vs-wiris.md`, `sandbox/wiris-parity` (140 tests).

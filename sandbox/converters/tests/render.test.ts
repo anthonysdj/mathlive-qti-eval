@@ -127,7 +127,8 @@ describe('editing and saving', () => {
   });
 
   it('a command the converter does not know is refused, not stored broken', () => {
-    mf.setValue('\\enclose{circle}{x}');
+    // (\enclose{circle} and \enclose{longdiv} are mapped to Temml's names, see pipeline.ts)
+    mf.setValue('\\enclose{phasorangle}{x}');
     expect(() => storedMathml(mf)).toThrow();
   });
 });

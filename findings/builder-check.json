@@ -1,7 +1,7 @@
 {
   "errors": [],
   "flows": {
-    "firstOpenMs": 308,
+    "firstOpenMs": 329,
     "tabs": [
       " Fractions ",
       " Roots ",
@@ -15,6 +15,11 @@
       " Matrices ",
       " Sets and logic ",
       " Geometry ",
+      " Arrows ",
+      " Decorations ",
+      " Big operators ",
+      " Format ",
+      " Elementary math ",
       " Chemistry ",
       " Units ",
       " My equations "
@@ -39,10 +44,10 @@
       "button Cancel"
     ],
     "arrowToTab": "Roots",
-    "firstKeyAfterTab": null,
+    "firstKeyAfterTab": "Square root",
     "keyboardOnlyInsert": {
-      "latex": "",
-      "focusBackInField": false
+      "latex": "\\sqrt{\\placeholder{}}",
+      "focusBackInField": true
     },
     "panelAria": "- tabpanel \"Roots\":\n  - paragraph: Drag a piece into the equation, or onto an empty box. Or press it to insert at the cursor; Tab moves between empty boxes.\n  - group:\n    - button \"Square root\"\n    - button \"Cube root\"\n    - button \"Nth root\"",
     "mathSpanTabbable": 0,
@@ -62,6 +67,16 @@
     "chemistryInField": "\\ce{2H2 + O2 -> 2H2O}",
     "chemistryFocusBack": "math-field",
     "storedChemistry": "\\ce{2H2 + O2 -> 2H2O}",
+    "mathtypeTabs": {
+      "arrows": 12,
+      "decorations": 19,
+      "bigops": 12,
+      "format": 9,
+      "elementary": 6
+    },
+    "longDivisionInField": "\\begin{array}{r}41\\\\ 3\\enclose{longdiv}[shadow=\"none\",solid currentColor]{123}\\end{array}",
+    "storedLongDivision": "\\begin{array}{r}41\\\\ 3\\longdiv{123}\\end{array}",
+    "longDivisionDrawn": 7,
     "darkDialogBackground": "rgb(27, 34, 48)"
   },
   "compare": [
@@ -192,7 +207,7 @@
     "viewportHeight": 900,
     "dialogBottom": 510,
     "keyboardTop": 523,
-    "aria": "- toolbar:\n  - text: 123 Numbers a/b Fractions √ Roots xⁿ Powers and subscripts ( ) Brackets ±× Operators ≤ Relations αβ Greek letters sin Functions ∫ Calculus [::] Matrices ∈ Sets and logic ∠ Geometry H₂O Chemistry m/s Units abc Roman Letters\n  - img\n  - text: Undo\n  - img\n  - text: Redo\n  - img\n  - text: Paste from Clipboard\n- text: x y 7 8 9 + − a b 4 5 6 × ÷ n = 1 2 3 < > ■ ▢ Power ( ) 0 . ▢ ■ Fraction\n- img\n- img\n- img\n- img"
+    "aria": "- toolbar:\n  - text: 123 Numbers a/b Fractions √ Roots xⁿ Powers and subscripts ( ) Brackets ±× Operators ≤ Relations αβ Greek letters sin Functions ∫ Calculus [::] Matrices ∈ Sets and logic ∠ Geometry → Arrows x̂ Decorations ∑ Big operators A̲ Format ÷ Elementary math H₂O Chemistry m/s Units abc Roman Letters\n  - img\n  - text: Undo\n  - img\n  - text: Redo\n  - img\n  - text: Paste from Clipboard\n- text: x y 7 8 9 + − a b 4 5 6 × ÷ n = 1 2 3 < > ■ ▢ Power ( ) 0 . ▢ ■ Fraction\n- img\n- img\n- img\n- img"
   },
   "phone": {
     "keyboardShown": true,
@@ -200,7 +215,7 @@
     "keyboardShare": 0.31,
     "fieldVisibleAboveKeyboard": true,
     "fieldBelowTopOfScreen": true,
-    "panelKeysTop": 376,
+    "panelKeysTop": 440,
     "panelKeysVisibleAboveKeyboard": true,
     "dialogScrollable": true
   }
