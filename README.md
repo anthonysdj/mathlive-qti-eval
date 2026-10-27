@@ -12,7 +12,7 @@ Evaluating MathLive for a QTI 3.0 authoring tool: how it works, Froala integrati
 | Spike: Temml and MathJax on a Java backend | done | [`findings/java-temml.md`](findings/java-temml.md) |
 | M2 Froala | done | [`docs/02-froala-integration.md`](docs/02-froala-integration.md) |
 | M3 Equation builder | done | [`docs/03-equation-builder.md`](docs/03-equation-builder.md) |
-| M4 Decision | not started | |
+| M4 Can MathLive reproduce MathType? | done | [`docs/04-mathlive-vs-wiris.md`](docs/04-mathlive-vs-wiris.md) |
 
 Surprises and version pins are in [`NOTES.md`](NOTES.md).
 
@@ -64,4 +64,12 @@ pnpm print     # Temml MathML → SVG for print, side by side with screen render
 pnpm build && pnpm demo:shot  # drive the built demo and screenshot it
 pnpm consistency  # pixel-diff the same SVG on screen (Chromium) vs print (resvg) → findings/consistency.html
 pnpm size      # bundle size per converter
+```
+
+## Running the MathType coverage check
+
+```sh
+cd sandbox/wiris-parity
+pnpm test     # 131 tests in Chromium + 9 in Node: MathType notations, MathType MathML import, editor features, alt text
+pnpm dump     # regenerate findings/wiris-parity-raw.json and findings/wiris-import-raw.json
 ```

@@ -21,11 +21,24 @@ Running log of versions, surprises, bugs and workarounds. Newest first.
 | JUnit 5, Jackson | 5.11.4 / 2.18.2 | `sandbox/java-temml` (test) | Tests; Jackson reads the Node results to compare. |
 | `vite` | 8.3.5 | dev | Sandbox dev server and build. |
 | `vitest` + `@vitest/browser-playwright` | 5.0.5 | dev | MathLive needs a real browser (layout, FontFace, custom elements, adoptedStyleSheets), so tests run in Chromium, not jsdom. |
+| `speech-rule-engine` | 5.0.0-rc.4 (exact) | `sandbox/wiris-parity` | Alt text in several languages and Nemeth braille from stored MathML, our stand-in for MathType's accessibility service. Already a transitive dependency of `@mathjax/src` (same version); made direct because the test imports it. Apache-2.0. |
 | `playwright` | 1.64.1 | dev | Browser driver for Vitest and the runtime-check script. |
 | `typescript` | 7.0.2 | dev | Type checking (`pnpm typecheck`). |
 | `@types/node` | 22 | dev | Types for the config files and scripts. |
 
 On machines with a pre-installed Chromium that doesn't match Playwright's build, set `PW_CHROMIUM=/path/to/chrome` (the cloud container uses `/opt/pw-browsers/chromium`). Otherwise run `pnpm exec playwright install chromium`.
+
+## 2026-10-27 — M4: can MathLive reproduce MathType?
+
+- Ton reframed M4: not an adoption decision, but whether everything MathType does can be done with `<math-field>` and our pipeline. → `docs/04-mathlive-vs-wiris.md`, `sandbox/wiris-parity` (140 tests).
+- All 78 MathType toolbar notations we listed edit, store (Temml), print (MathJax) and get spoken (SRE). Handwriting is the only thing that's not possible.
+- **MathLive 0.111.1 has no `\hline`** (error box in an `array`). Column arithmetic uses `\underline` on the row above the line.
+- **MathLive knows `\overarc` and `\enclose{longdiv|circle}`, Temml doesn't**, but Temml has `\wideparen`, `\longdiv` and `\textcircled` for the same MathML. `compat.ts` maps them both ways. `latex-expanded` writes `\enclose{longdiv}[shadow="none"]{…}` with the default style in brackets.
+- **MathJax 4.1.3 can't draw `<mstack>`/`<mlongdiv>`** ("Unknown node type"), and Chromium draws `<mstack>` as one line. MathType's elementary math must be converted on load to display at all.
+- **mathml-to-latex 1.8.0 loses most of MathType's styling**: `mathvariant="normal"` (units and chemistry go italic), `mathcolor`/`mathbackground`/`mathsize`, `<mfenced>` (parentheses become `bmatrix`; an empty close fence gives `\right` with nothing after it), circle → box, top-level line breaks. `wiris-import.ts` handles them first.
+- **MathLive's copy puts no MathML on the clipboard** (LaTeX + its JSON only), and pasted MathML is taken as text. `editor-extras.ts` adds both.
+- **MathLive's spoken text** is empty for `\ce`, `aligned`, `\overset`, `\boxed`, `\overrightarrow`, and says "crossed out" for `\enclose{circle}` and `\enclose{longdiv}`.
+- speech-rule-engine: its ES module index loads its CLI (`commander`), and `js/common/system.js` alone returns empty text under Vitest (no locale files found). The CommonJS build via `createRequire` works. Its `euro` braille gave nothing for some formulas.
 
 ## 2026-10-26 — Fix: MathJax "dynamic import cannot be analyzed" warning in `pnpm start`
 

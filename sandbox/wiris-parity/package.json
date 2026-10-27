@@ -1,0 +1,31 @@
+{
+  "name": "@sandbox/wiris-parity",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p .",
+    "dump": "VITE_DUMP=1 vitest run tests/dump.test.ts"
+  },
+  "dependencies": {
+    "@mathjax/mathjax-newcm-font": "4.1.3",
+    "@mathjax/src": "4.1.3",
+    "@sandbox/basic": "workspace:*",
+    "@sandbox/converters": "workspace:*",
+    "@sandbox/froala": "workspace:*",
+    "@sandbox/builder": "workspace:*",
+    "froala-editor": "5.5.0",
+    "mathlive": "0.111.1",
+    "mathml-to-latex": "1.8.0",
+    "speech-rule-engine": "5.0.0-rc.4",
+    "temml": "0.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@vitest/browser-playwright": "5.0.5",
+    "playwright": "1.64.1",
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}
