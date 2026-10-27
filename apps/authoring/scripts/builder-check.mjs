@@ -131,7 +131,7 @@ async function closeDialog(page) {
   await page.waitForTimeout(100);
   flows.keyboardOnlyInsert = { latex: await fieldLatex(page), focusBackInField: await page.evaluate(() => document.activeElement?.localName === 'math-field') };
   flows.panelAria = await page.locator('dialog .eb [role="tabpanel"]').ariaSnapshot();
-  flows.mathSpanTabbable = await page.locator('dialog math-span').evaluateAll((els) => els.filter((e) => e.tabIndex >= 0).length);
+  flows.mathSpanTabbable = await page.locator('dialog eb-math').evaluateAll((els) => els.filter((e) => e.tabIndex >= 0).length);
   await closeDialog(page);
 
   // Profiles: arithmetic refuses powers; typing | with a real keyboard

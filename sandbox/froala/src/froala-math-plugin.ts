@@ -162,10 +162,23 @@ export function registerMathPlugin(FroalaEditor: any) {
       editor.events.trigger('contentChanged');
     };
 
-    const onClick = (e: MouseEvent) => {
+    const eqOf = (e: Event) => {
       const eq = (e.target as Element).closest?.(EQ_TAG) as HTMLElement | null;
-      if (eq && editor.el.contains(eq)) {
+      return eq && editor.el.contains(eq) ? eq : null;
+    };
+    // A press on an equation must not put the selection inside its shadow
+    // root (Firefox does): Froala walks up from the selection with
+    // Element.matches and throws on the ShadowRoot. Its own click handler
+    // (toolbar state) is kept away from equation clicks for the same reason,
+    // so both listen on the wrapper in the capture phase.
+    const onMousedown = (e: MouseEvent) => {
+      if (eqOf(e)) e.preventDefault();
+    };
+    const onClick = (e: MouseEvent) => {
+      const eq = eqOf(e);
+      if (eq) {
         e.preventDefault();
+        e.stopPropagation();
         void open(eq);
       }
     };
@@ -183,17 +196,19 @@ export function registerMathPlugin(FroalaEditor: any) {
         if (hydrate(editor.el)) editor.undo.saveStep();
       });
       editor.events.on('html.get', (html: string) => toStoredHtml(html, editor.doc ?? document));
-      editor.el.addEventListener('click', onClick);
       wrapper = editor.el.parentNode as HTMLElement;
       wrapper.addEventListener('keydown', onKeydown, true);
+      wrapper.addEventListener('mousedown', onMousedown, true);
+      wrapper.addEventListener('click', onClick, true);
       // Content already in the element when Froala starts (needs withMathOptions)
       hydrate(editor.el);
 
       editor.events.on(
         'destroy',
         () => {
-          editor.el.removeEventListener('click', onClick);
           wrapper?.removeEventListener('keydown', onKeydown, true);
+          wrapper?.removeEventListener('mousedown', onMousedown, true);
+          wrapper?.removeEventListener('click', onClick, true);
           dialog?.destroy();
           dialog = null;
         },

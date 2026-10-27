@@ -24,7 +24,7 @@ import {
   untracked,
   viewChildren,
 } from '@angular/core';
-import type { MathfieldElement } from 'mathlive';
+import { MathSpanElement, type MathfieldElement } from 'mathlive';
 import {
   BuilderController,
   PROFILES,
@@ -51,11 +51,22 @@ import {
  */
 export type BuilderUi = 'panel' | 'keyboard' | 'both';
 
+/**
+ * <eb-math>: a <math-span> for palette pieces. <math-span> always adds
+ * MathLive's own MathML for screen readers, which is wrong for \overline,
+ * \underline, \scriptstyle and empty-slot operators (console noise, and
+ * Firefox reports the bad <msup>/<munder>/<munderover>). The pieces are
+ * aria-hidden (the button has the label), so it is left out.
+ */
+class PaletteMath extends MathSpanElement {}
+(PaletteMath.prototype as unknown as { _addMathML(): void })._addMathML = () => {};
+if (!customElements.get('eb-math')) customElements.define('eb-math', PaletteMath);
+
 const EMPTY_PREVIEW: Preview = { latex: '', mathml: '', error: null, spoken: '' };
 
 @Component({
   selector: 'app-equation-builder',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA], // <math-span>, <math-eq>
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], // <eb-math>, <math-eq>
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './equation-builder.html',
   styleUrl: './equation-builder.css',

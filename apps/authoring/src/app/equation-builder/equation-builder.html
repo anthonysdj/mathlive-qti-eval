@@ -40,7 +40,7 @@
                     (mousedown)="$event.preventDefault()"
                     (click)="insert(item)"
                   >
-                    <math-span aria-hidden="true" tabindex="-1">{{ display(item, '\\square') }}</math-span>
+                    <eb-math aria-hidden="true" tabindex="-1">{{ display(item, '\\square') }}</eb-math>
                   </button>
                   <span class="eb-saved-name">{{ s.name }}</span>
                   @if (s.shortcut) {
@@ -68,7 +68,7 @@
               (mousedown)="$event.preventDefault()"
               (click)="insert(item)"
             >
-              <math-span aria-hidden="true" tabindex="-1">{{ display(item, '\\square') }}</math-span>
+              <eb-math aria-hidden="true" tabindex="-1">{{ display(item, '\\square') }}</eb-math>
             </button>
           }
         </div>
