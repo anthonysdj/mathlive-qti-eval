@@ -1,0 +1,1837 @@
+{
+ "mathlive": "0.111.1",
+ "temml": "0.14.0",
+ "rows": [
+  {
+   "id": "frac",
+   "tab": "General",
+   "name": "Fraction",
+   "latex": "\\frac{a+1}{b}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mi>a</mi><mo>+</mo><mn>1</mn></mrow><mi>b</mi></mfrac></math>",
+   "spokenText": "the fraction 'A' plus 1 over 'B'. End fraction.",
+   "svgPaths": 4
+  },
+  {
+   "id": "bevelled",
+   "tab": "General",
+   "name": "Bevelled (slash) fraction",
+   "latex": "{}^{a}\\!/_{b}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mrow></mrow><mi>a</mi></msup><mrow style=\"margin-left:-0.1667em;\"></mrow><msub><mi>/</mi><mi>b</mi></msub></mrow></math>",
+   "spokenText": "to the 'A'; / sub 'B'",
+   "svgPaths": 3
+  },
+  {
+   "id": "sqrt",
+   "tab": "General",
+   "name": "Square root",
+   "latex": "\\sqrt{x^2+1}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mrow><msup><mi>x</mi><mn class=\"tml-sml-pad\">2</mn></msup><mo>+</mo><mn>1</mn></mrow></msqrt></math>",
+   "spokenText": "the square root of 'X' squared plus 1. End square root",
+   "svgPaths": 5
+  },
+  {
+   "id": "nroot",
+   "tab": "General",
+   "name": "n-th root",
+   "latex": "\\sqrt[3]{27}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mn>27</mn><mn>3</mn></mroot></math>",
+   "spokenText": "the cube root of 27. End cube root",
+   "svgPaths": 4
+  },
+  {
+   "id": "sup",
+   "tab": "General",
+   "name": "Superscript",
+   "latex": "x^{2}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>x</mi><mn class=\"tml-sml-pad\">2</mn></msup></math>",
+   "spokenText": "'X' squared",
+   "svgPaths": 2
+  },
+  {
+   "id": "sub",
+   "tab": "General",
+   "name": "Subscript",
+   "latex": "a_{n}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>a</mi><mi>n</mi></msub></math>",
+   "spokenText": "'A' sub 'N'",
+   "svgPaths": 2
+  },
+  {
+   "id": "subsup",
+   "tab": "General",
+   "name": "Sub- and superscript",
+   "latex": "x_{i}^{2}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mi>x</mi><mi>i</mi><mn class=\"tml-sml-pad\">2</mn></msubsup></math>",
+   "spokenText": "'X' squared sub 'I'",
+   "svgPaths": 3
+  },
+  {
+   "id": "parens",
+   "tab": "General",
+   "name": "Stretchy brackets",
+   "latex": "\\left(\\frac{a}{b}\\right)",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mi>a</mi><mi>b</mi></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></math>",
+   "spokenText": "Open paren. 'A' over 'B' Close paren.",
+   "svgPaths": 4
+  },
+  {
+   "id": "brackets",
+   "tab": "General",
+   "name": "Square, curly, angle brackets",
+   "latex": "\\left[x\\right]\\left\\{y\\right\\}\\left\\langle z\\right\\rangle",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">[</mo><mi>x</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">]</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">{</mo><mi>y</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">}</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">⟨</mo><mi>z</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">⟩</mo></mrow></mrow></math>",
+   "spokenText": "[ 'X']open brace 'Y'close braceleft angle bracket 'Z'right angle bracket",
+   "svgPaths": 9
+  },
+  {
+   "id": "abs",
+   "tab": "General",
+   "name": "Absolute value and norm",
+   "latex": "\\left|x\\right|+\\left\\|v\\right\\|",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">|</mo><mi>x</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">|</mo></mrow><mo>+</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">‖</mo><mi>v</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">‖</mo></mrow></mrow></math>",
+   "spokenText": "Vertical bar 'X'Vertical bar plus \\| 'V'\\|",
+   "svgPaths": 7
+  },
+  {
+   "id": "floor",
+   "tab": "General",
+   "name": "Floor and ceiling",
+   "latex": "\\lfloor x\\rfloor+\\lceil y\\rceil",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">⌊</mo><mi>x</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">⌋</mo></mrow><mo>+</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">⌈</mo><mi>y</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">⌉</mo></mrow></mrow></math>",
+   "spokenText": "of 'X' plus of 'Y'",
+   "svgPaths": 7
+  },
+  {
+   "id": "onesided",
+   "tab": "General",
+   "name": "One-sided bracket",
+   "latex": "\\left.\\frac{df}{dx}\\right|_{x=0}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\"></mo><mfrac><mrow><mi>d</mi><mi>f</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">|</mo></mrow><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></msub></math>",
+   "spokenText": ". the fraction 'D' 'F' over 'D' 'X'. End fraction.Vertical bar subscript 'X' equals 0. End subscript.",
+   "svgPaths": 8
+  },
+  {
+   "id": "text",
+   "tab": "General",
+   "name": "Text in a formula",
+   "latex": "\\text{area}=\\pi r^2",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mtext>area</mtext><mo>=</mo><mi>π</mi><msup><mi>r</mi><mn class=\"tml-sml-pad\">2</mn></msup></mrow></math>",
+   "spokenText": "area equals pie 'R' squared",
+   "svgPaths": 8
+  },
+  {
+   "id": "func",
+   "tab": "General",
+   "name": "Recognised function names",
+   "latex": "\\sin x+\\cos x+\\log_{2}x+\\ln x",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>x</mi><mo>+</mo><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>x</mi><mo>+</mo><msub><mi>log</mi><mn>2</mn></msub><mo>⁡</mo><mspace width=\"0.1667em\"></mspace><mi>x</mi><mo>+</mo><mrow><mi>ln</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>x</mi></mrow></math>",
+   "spokenText": "sine 'X' plus cosine 'X' plus log sub 2 'X' plus ln 'X'",
+   "svgPaths": 23
+  },
+  {
+   "id": "ops",
+   "tab": "Symbols",
+   "name": "Operators",
+   "latex": "a\\pm b\\mp c\\times d\\div e\\cdot f",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi><mo>±</mo><mi>b</mi><mo>∓</mo><mi>c</mi><mo>×</mo><mi>d</mi><mo>÷</mo><mi>e</mi><mo>⋅</mo><mi>f</mi></mrow></math>",
+   "spokenText": "'A' plus or minus 'B' minus or plus 'C' times 'D' divided by 'E' times 'F'",
+   "svgPaths": 11
+  },
+  {
+   "id": "rel",
+   "tab": "Symbols",
+   "name": "Relations",
+   "latex": "a\\le b\\ge c\\ne d\\approx e\\equiv f\\sim g\\cong h\\propto i",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi><mo>≤</mo><mi>b</mi><mo>≥</mo><mi>c</mi><mo>≠</mo><mi>d</mi><mo>≈</mo><mi>e</mi><mo>≡</mo><mi>f</mi><mo>∼</mo><mi>g</mi><mo>≅</mo><mi>h</mi><mo>∝</mo><mi>i</mi></mrow></math>",
+   "spokenText": "'A' is less than or equal to 'B' is greater than or equal to 'C' 'D' approx 'E' equiv 'F' sim 'G' cong 'H' propto 'I'",
+   "svgPaths": 17
+  },
+  {
+   "id": "notrel",
+   "tab": "Symbols",
+   "name": "Negated relations",
+   "latex": "a\\not\\equiv b\\nless c\\nsubseteq D",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi><mo>≢</mo><mi>b</mi><mo>≮</mo><mi>c</mi><mo>⊈</mo><mi>D</mi></mrow></math>",
+   "spokenText": "'A' 'B' nless 'C' nsubseteq 'capital D'",
+   "svgPaths": 8
+  },
+  {
+   "id": "sets",
+   "tab": "Symbols",
+   "name": "Set notation",
+   "latex": "A\\cup B\\cap C\\subset D\\subseteq E\\in F\\notin G\\setminus H\\emptyset",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>A</mi><mo>∪</mo><mi>B</mi><mo>∩</mo><mi>C</mi><mo>⊂</mo><mi>D</mi><mo>⊆</mo><mi>E</mi><mo>∈</mo><mi>F</mi><mo>∉</mo><mi>G</mi><mo>∖</mo><mi>H</mi><mi>∅</mi></mrow></math>",
+   "spokenText": "'capital A' cup 'capital B' cap 'capital C' subset 'capital D' subseteq 'capital E' element of 'capital F' notin 'capital G' setminus 'capital H' emptyset",
+   "svgPaths": 16
+  },
+  {
+   "id": "numsets",
+   "tab": "Symbols",
+   "name": "Number sets",
+   "latex": "\\mathbb{N}\\subset\\mathbb{Z}\\subset\\mathbb{Q}\\subset\\mathbb{R}\\subset\\mathbb{C}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>ℕ</mi><mo>⊂</mo><mi>ℤ</mi><mo>⊂</mo><mi>ℚ</mi><mo>⊂</mo><mi>ℝ</mi><mo>⊂</mo><mi>ℂ</mi></mrow></math>",
+   "spokenText": "'capital N' subset 'capital Z' subset 'capital Q' subset 'capital R' subset 'capital C'",
+   "svgPaths": 9
+  },
+  {
+   "id": "logic",
+   "tab": "Symbols",
+   "name": "Logic",
+   "latex": "\\forall x\\exists y\\neg p\\land q\\lor r\\Rightarrow s\\Leftrightarrow t",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>∀</mi><mi>x</mi><mi>∃</mi><mi>y</mi><mo form=\"prefix\" stretchy=\"false\">¬</mo><mi>p</mi><mo>∧</mo><mi>q</mi><mo>∨</mo><mi>r</mi><mo stretchy=\"false\">⇒</mo><mi>s</mi><mo stretchy=\"false\">⇔</mo><mi>t</mi></mrow></math>",
+   "spokenText": "for all 'X' there exists 'Y' not 'P' and 'Q' or 'R' implies 'S' Leftrightarrow 'T'",
+   "svgPaths": 14
+  },
+  {
+   "id": "geometry",
+   "tab": "Symbols",
+   "name": "Geometry symbols",
+   "latex": "\\angle ABC=90^{\\circ},\\ AB\\parallel CD,\\ AB\\perp BC,\\ \\triangle ABC",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>∠</mi><mi>A</mi><mi>B</mi><mi>C</mi><mo>=</mo><msup><mn>90</mn><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">∘</mo></msup><mo separator=\"true\">,</mo><mtext> </mtext><mi>A</mi><mi>B</mi><mo>∥</mo><mi>C</mi><mi>D</mi><mo separator=\"true\">,</mo><mtext> </mtext><mi>A</mi><mi>B</mi><mo>⟂</mo><mi>B</mi><mi>C</mi><mo separator=\"true\">,</mo><mtext> </mtext><mi>△</mi><mi>A</mi><mi>B</mi><mi>C</mi></mrow></math>",
+   "spokenText": "angle 'capital A' 'capital B' 'capital C' equals 90 to the circ ; comma 'capital A' 'capital B' parallel 'capital C' 'capital D' comma 'capital A' 'capital B' perp 'capital B' 'capital C' comma triangle 'capital A' 'capital B' 'capital C'",
+   "svgPaths": 28
+  },
+  {
+   "id": "misc",
+   "tab": "Symbols",
+   "name": "Infinity, dots, primes",
+   "latex": "\\infty,\\ \\ldots,\\ \\cdots,\\ \\vdots,\\ \\ddots,\\ f'(x)",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>∞</mi><mo separator=\"true\">,</mo><mtext> </mtext><mi>…</mi><mo separator=\"true\">,</mo><mtext> </mtext><mi>⋯</mi><mo separator=\"true\">,</mo><mtext> </mtext><mrow><mi>⋮</mi><mspace width=\"0pt\" height=\"14.944pt\"></mspace></mrow><mo separator=\"true\">,</mo><mtext> </mtext><mi>⋱</mi><mo separator=\"true\">,</mo><mtext> </mtext><msup><mi>f</mi><mo lspace=\"0em\" rspace=\"0em\" class=\"tml-prime tml-lrg-pad\">′</mo></msup><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>x</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>",
+   "spokenText": "infinity comma ldots comma dot dot dot comma vdots comma ddots comma 'F' to the prime; of 'X'",
+   "svgPaths": 20
+  },
+  {
+   "id": "arrows",
+   "tab": "Arrows",
+   "name": "Arrows",
+   "latex": "\\to\\leftarrow\\leftrightarrow\\Rightarrow\\Leftarrow\\uparrow\\downarrow\\mapsto",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo rspace=\"0em\">→</mo><mo stretchy=\"false\" rspace=\"0em\" lspace=\"0em\">←</mo><mo stretchy=\"false\" rspace=\"0em\" lspace=\"0em\">↔</mo><mo stretchy=\"false\" rspace=\"0em\" lspace=\"0em\">⇒</mo><mo stretchy=\"false\" rspace=\"0em\" lspace=\"0em\">⇐</mo><mo stretchy=\"false\" rspace=\"0em\" lspace=\"0em\">↑</mo><mo stretchy=\"false\" rspace=\"0em\" lspace=\"0em\">↓</mo><mo lspace=\"0em\">↦</mo></mrow></math>",
+   "spokenText": "to leftarrow leftrightarrow implies Leftarrow uparrow downarrow mapsto",
+   "svgPaths": 8
+  },
+  {
+   "id": "arrowlabel",
+   "tab": "Arrows",
+   "name": "Arrow with text over and under",
+   "latex": "A\\xrightarrow[\\text{under}]{\\text{over}}B",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>A</mi><mrow><mspace width=\"0.2778em\"></mspace><munderover accent=\"false\"><mo stretchy=\"true\" lspace=\"0\" rspace=\"0\">→</mo><munder><mrow><mspace width=\"0.4286em\"></mspace><mtext>under</mtext><mspace width=\"0.4286em\"></mspace></mrow><mspace width=\"3.5000em\"></mspace></munder><mover><mrow><mspace width=\"0.4286em\"></mspace><mtext>over</mtext><mspace width=\"0.4286em\"></mspace></mrow><mspace width=\"3.5000em\"></mspace></mover></munderover><mspace width=\"0.2778em\"></mspace></mrow><mi>B</mi></mrow></math>",
+   "spokenText": "'capital A' 'capital B'",
+   "svgPaths": 13
+  },
+  {
+   "id": "harpoons",
+   "tab": "Arrows",
+   "name": "Harpoons",
+   "latex": "\\rightleftharpoons\\rightharpoonup\\leftharpoondown",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo stretchy=\"false\" rspace=\"0em\">⇌</mo><mo stretchy=\"false\" rspace=\"0em\" lspace=\"0em\">⇀</mo><mo stretchy=\"false\" lspace=\"0em\">↽</mo></mrow></math>",
+   "spokenText": "rightleftharpoons rightharpoonup leftharpoondown",
+   "svgPaths": 3
+  },
+  {
+   "id": "greek",
+   "tab": "Greek",
+   "name": "Lower-case Greek",
+   "latex": "\\alpha\\beta\\gamma\\delta\\epsilon\\varepsilon\\theta\\lambda\\mu\\pi\\sigma\\phi\\varphi\\omega",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>α</mi><mi>β</mi><mi>γ</mi><mi>δ</mi><mi>ϵ</mi><mi>ε</mi><mi>θ</mi><mi>λ</mi><mi>μ</mi><mi>π</mi><mi>σ</mi><mi>ϕ</mi><mi>φ</mi><mi>ω</mi></mrow></math>",
+   "spokenText": "alpha beta gamma delta epsilon varepsilon theta lambda mew pie sigma phi varphi omega",
+   "svgPaths": 14
+  },
+  {
+   "id": "Greek",
+   "tab": "Greek",
+   "name": "Upper-case Greek",
+   "latex": "\\Gamma\\Delta\\Theta\\Lambda\\Pi\\Sigma\\Phi\\Psi\\Omega",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">Γ</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">Θ</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">Λ</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">Π</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">Σ</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">Φ</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">Ψ</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">Ω</mi><mspace></mspace></mrow></mrow></math>",
+   "spokenText": "Gamma Delta Theta Lambda Pi Sigma Phi Psi Omega",
+   "svgPaths": 9
+  },
+  {
+   "id": "pmatrix",
+   "tab": "Matrices",
+   "name": "Matrix in parentheses",
+   "latex": "\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mtable><mtr><mtd style=\"padding-left:0em;padding-right:5.9776pt;\"><mn>1</mn></mtd><mtd style=\"padding-left:5.9776pt;padding-right:0em;\"><mn>2</mn></mtd></mtr><mtr><mtd style=\"padding-left:0em;padding-right:5.9776pt;\"><mn>3</mn></mtd><mtd style=\"padding-left:5.9776pt;padding-right:0em;\"><mn>4</mn></mtd></mtr></mtable><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></math>",
+   "spokenText": "begin parenthesis matrix row 1 column 1: 1, column 2: 2, row 2 column 1: 3, column 2: 4 end parenthesis matrix",
+   "svgPaths": 6
+  },
+  {
+   "id": "bmatrix",
+   "tab": "Matrices",
+   "name": "Matrix in square brackets",
+   "latex": "\\begin{bmatrix}a&b&c\\\\d&e&f\\end{bmatrix}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">[</mo><mtable><mtr><mtd style=\"padding-left:0em;padding-right:5.9776pt;\"><mi>a</mi></mtd><mtd style=\"padding-left:5.9776pt;padding-right:5.9776pt;\"><mi>b</mi></mtd><mtd style=\"padding-left:5.9776pt;padding-right:0em;\"><mi>c</mi></mtd></mtr><mtr><mtd style=\"padding-left:0em;padding-right:5.9776pt;\"><mi>d</mi></mtd><mtd style=\"padding-left:5.9776pt;padding-right:5.9776pt;\"><mi>e</mi></mtd><mtd style=\"padding-left:5.9776pt;padding-right:0em;\"><mi>f</mi></mtd></mtr></mtable><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">]</mo></mrow></math>",
+   "spokenText": "begin square brackets matrix row 1 column 1: 'A', column 2: 'B', column 3: 'C', row 2 column 1: 'D', column 2: 'E', column 3: 'F' end square brackets matrix",
+   "svgPaths": 8
+  },
+  {
+   "id": "det",
+   "tab": "Matrices",
+   "name": "Determinant",
+   "latex": "\\begin{vmatrix}a&b\\\\c&d\\end{vmatrix}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">|</mo><mtable><mtr><mtd style=\"padding-left:0em;padding-right:5.9776pt;\"><mi>a</mi></mtd><mtd style=\"padding-left:5.9776pt;padding-right:0em;\"><mi>b</mi></mtd></mtr><mtr><mtd style=\"padding-left:0em;padding-right:5.9776pt;\"><mi>c</mi></mtd><mtd style=\"padding-left:5.9776pt;padding-right:0em;\"><mi>d</mi></mtd></mtr></mtable><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">|</mo></mrow></math>",
+   "spokenText": "begin bars matrix row 1 column 1: 'A', column 2: 'B', row 2 column 1: 'C', column 2: 'D' end bars matrix",
+   "svgPaths": 6
+  },
+  {
+   "id": "matdots",
+   "tab": "Matrices",
+   "name": "Matrix with dots",
+   "latex": "\\begin{pmatrix}a_{11}&\\cdots&a_{1n}\\\\\\vdots&\\ddots&\\vdots\\\\a_{m1}&\\cdots&a_{mn}\\end{pmatrix}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mtable><mtr><mtd style=\"padding-left:0em;padding-right:5.9776pt;\"><msub><mi>a</mi><mn>11</mn></msub></mtd><mtd style=\"padding-left:5.9776pt;padding-right:5.9776pt;\"><mi>⋯</mi></mtd><mtd style=\"padding-left:5.9776pt;padding-right:0em;\"><msub><mi>a</mi><mrow><mn>1</mn><mi>n</mi></mrow></msub></mtd></mtr><mtr><mtd style=\"padding-left:0em;padding-right:5.9776pt;\"><mrow><mi>⋮</mi><mspace width=\"0pt\" height=\"14.944pt\"></mspace></mrow></mtd><mtd style=\"padding-left:5.9776pt;padding-right:5.9776pt;\"><mi>⋱</mi></mtd><mtd style=\"padding-left:5.9776pt;padding-right:0em;\"><mrow><mi>⋮</mi><mspace width=\"0pt\" height=\"14.944pt\"></mspace></mrow></mtd></mtr><mtr><mtd style=\"padding-left:0em;padding-right:5.9776pt;\"><msub><mi>a</mi><mrow><mi>m</mi><mn>1</mn></mrow></msub></mtd><mtd style=\"padding-left:5.9776pt;padding-right:5.9776pt;\"><mi>⋯</mi></mtd><mtd style=\"padding-left:5.9776pt;padding-right:0em;\"><msub><mi>a</mi><mrow><mi>m</mi><mi>n</mi></mrow></msub></mtd></mtr></mtable><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></math>",
+   "spokenText": "begin parenthesis matrix row 1 column 1: 'A' subscript 11. End subscript. , column 2: dot dot dot , column 3: 'A' subscript 1 'N'. End subscript. , row 2 column 1: vdots , column 2: ddots , column 3: vdots , row 3 column 1: 'A' subscript 'M'1. End subscript. , column 2: dot dot dot , column 3: 'A' subscript 'M' 'N'. End subscript. end parenthesis matrix",
+   "svgPaths": 23
+  },
+  {
+   "id": "cases",
+   "tab": "Matrices",
+   "name": "Piecewise function",
+   "latex": "f(x)=\\begin{cases}x&x\\ge0\\\\-x&x<0\\end{cases}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>f</mi><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>x</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>=</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">{</mo><mtable><mtr><mtd class=\"tml-left\" style=\"padding-left:0em;padding-right:0em;\"><mi>x</mi></mtd><mtd class=\"tml-left\" style=\"padding-left:1em;padding-right:0em;\"><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd class=\"tml-left\" style=\"padding-left:0em;padding-right:0em;\"><mrow><mo form=\"prefix\" stretchy=\"false\">−</mo><mi>x</mi></mrow></mtd><mtd class=\"tml-left\" style=\"padding-left:1em;padding-right:0em;\"><mrow><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></mtd></mtr></mtable><mo fence=\"true\" form=\"postfix\" stretchy=\"true\"></mo></mrow></mrow></math>",
+   "spokenText": "'F' of 'X' equals",
+   "svgPaths": 15
+  },
+  {
+   "id": "system",
+   "tab": "Matrices",
+   "name": "System of equations",
+   "latex": "\\left\\{\\begin{aligned}2x+y&=5\\\\x-y&=1\\end{aligned}\\right.",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">{</mo><mtable displaystyle=\"true\" class=\"tml-jot\"><mtr><mtd class=\"tml-right\" style=\"padding-left:0em;padding-right:0em;\"><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mi>y</mi></mrow></mtd><mtd class=\"tml-left\" style=\"padding-left:0em;padding-right:0em;\"><mrow><mo>=</mo><mn>5</mn></mrow></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"padding-left:0em;padding-right:0em;\"><mrow><mi>x</mi><mo>−</mo><mi>y</mi></mrow></mtd><mtd class=\"tml-left\" style=\"padding-left:0em;padding-right:0em;\"><mrow><mo>=</mo><mn>1</mn></mrow></mtd></mtr></mtable><mo fence=\"true\" form=\"postfix\" stretchy=\"true\"></mo></mrow></math>",
+   "spokenText": "open brace.",
+   "svgPaths": 12
+  },
+  {
+   "id": "align",
+   "tab": "Matrices",
+   "name": "Aligned steps (align at =)",
+   "latex": "\\begin{aligned}(a+b)^2&=(a+b)(a+b)\\\\&=a^2+2ab+b^2\\end{aligned}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": false,
+     "detail": "no spoken text"
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable displaystyle=\"true\" class=\"tml-jot\"><mtr><mtd class=\"tml-right\" style=\"padding-left:0em;padding-right:0em;\"><msup><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mn>2</mn></msup></mtd><mtd class=\"tml-left\" style=\"padding-left:0em;padding-right:0em;\"><mrow><mo>=</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"padding-left:0em;padding-right:0em;\"><mrow></mrow></mtd><mtd class=\"tml-left\" style=\"padding-left:0em;padding-right:0em;\"><mrow><mo>=</mo><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></mtd></mtr></mtable></math>",
+   "spokenText": "",
+   "svgPaths": 27
+  },
+  {
+   "id": "colalign",
+   "tab": "Matrices",
+   "name": "Table with column alignment",
+   "latex": "\\begin{array}{lcr}a&b&c\\\\aaa&bbb&ccc\\end{array}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd class=\"tml-left\" style=\"padding-left:0pt;padding-right:5.9776pt;\"><mi>a</mi></mtd><mtd style=\"padding-left:5.9776pt;padding-right:5.9776pt;\"><mi>b</mi></mtd><mtd class=\"tml-right\" style=\"padding-left:5.9776pt;padding-right:0pt;\"><mi>c</mi></mtd></mtr><mtr><mtd class=\"tml-left\" style=\"padding-left:0pt;padding-right:5.9776pt;\"><mrow><mi>a</mi><mi>a</mi><mi>a</mi></mrow></mtd><mtd style=\"padding-left:5.9776pt;padding-right:5.9776pt;\"><mrow><mi>b</mi><mi>b</mi><mi>b</mi></mrow></mtd><mtd class=\"tml-right\" style=\"padding-left:5.9776pt;padding-right:0pt;\"><mrow><mi>c</mi><mi>c</mi><mi>c</mi></mrow></mtd></mtr></mtable></math>",
+   "spokenText": "begin array row 1 column 1: 'A', column 2: 'B', column 3: 'C', row 2 column 1: 'A' 'A' 'A', column 2: 'B' 'B' 'B', column 3: 'C' 'C' 'C' end array",
+   "svgPaths": 12
+  },
+  {
+   "id": "binom",
+   "tab": "Matrices",
+   "name": "Binomial coefficient",
+   "latex": "\\binom{n}{k}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo fence=\"true\">(</mo><mfrac linethickness=\"0px\"><mi>n</mi><mi>k</mi></mfrac><mo fence=\"true\">)</mo></mrow></math>",
+   "spokenText": "'N' over 'K'",
+   "svgPaths": 4
+  },
+  {
+   "id": "over",
+   "tab": "Scripts and layouts",
+   "name": "Over and under scripts",
+   "latex": "\\overset{\\text{def}}{=}\\ \\underset{n}{\\max}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": false,
+     "detail": "no spoken text"
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mover><mo>=</mo><mtext>def</mtext></mover></mrow><mtext> </mtext><mrow><munder><mrow><mi>max</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>n</mi></munder></mrow></mrow></math>",
+   "spokenText": "",
+   "svgPaths": 10
+  },
+  {
+   "id": "prescript",
+   "tab": "Scripts and layouts",
+   "name": "Left scripts (pre-sub/superscript)",
+   "latex": "{}_{a}^{b}X",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msubsup><mrow></mrow><mi>a</mi><mi>b</mi></msubsup><mi>X</mi></mrow></math>",
+   "spokenText": "to the 'B'; sub 'A' 'capital X'",
+   "svgPaths": 3
+  },
+  {
+   "id": "linebreak",
+   "tab": "Scripts and layouts",
+   "name": "Line break inside a formula",
+   "latex": "\\begin{gathered}a+b+c\\\\=d\\end{gathered}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": false,
+     "detail": "no spoken text"
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable displaystyle=\"true\" class=\"tml-jot\"><mtr><mtd style=\"padding-left:0em;padding-right:0em;\"><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>+</mo><mi>c</mi></mrow></mtd></mtr><mtr><mtd style=\"padding-left:0em;padding-right:0em;\"><mrow><mo>=</mo><mi>d</mi></mrow></mtd></mtr></mtable></math>",
+   "spokenText": "",
+   "svgPaths": 7
+  },
+  {
+   "id": "accents",
+   "tab": "Decorations",
+   "name": "Accents",
+   "latex": "\\hat{a}\\ \\bar{b}\\ \\vec{v}\\ \\dot{x}\\ \\ddot{y}\\ \\tilde{n}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mover><mi>a</mi><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mtext> </mtext><mover><mi>b</mi><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">‾</mo></mover><mtext> </mtext><mover><mi>v</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mtext> </mtext><mover><mi>x</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">˙</mo></mover><mtext> </mtext><mover><mi>y</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">¨</mo></mover><mtext> </mtext><mover><mi>n</mi><mo stretchy=\"false\" style=\"math-depth:0;\">~</mo></mover></mrow></math>",
+   "spokenText": "hat over 'A' 'B' barvector 'V'dot over 'X'double dot over 'Y'tilde over 'N'",
+   "svgPaths": 17
+  },
+  {
+   "id": "wide",
+   "tab": "Decorations",
+   "name": "Wide accents",
+   "latex": "\\widehat{ABC}\\ \\widetilde{xy}\\ \\overline{AB}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mover><mrow><mi>A</mi><mi>B</mi><mi>C</mi></mrow><mo stretchy=\"true\" class=\"tml-hat-4\" style=\"math-depth:0;\">ˆ</mo></mover><mtext> </mtext><mover><mrow><mi>x</mi><mi>y</mi></mrow><mo stretchy=\"true\" class=\"tml-tilde-2\" style=\"math-depth:0;\">~</mo></mover><mtext> </mtext><menclose notation=\"top\" class=\"tml-overline\"><mrow><mi>A</mi><mi>B</mi></mrow></menclose></mrow></math>",
+   "spokenText": "hat over 'capital A' 'capital B' 'capital C'tilde over 'X' 'Y'",
+   "svgPaths": 11
+  },
+  {
+   "id": "segment",
+   "tab": "Decorations",
+   "name": "Segment, ray, line (geometry)",
+   "latex": "\\overline{AB}\\ \\overrightarrow{AB}\\ \\overleftrightarrow{AB}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": false,
+     "detail": "no spoken text"
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><menclose notation=\"top\" class=\"tml-overline\"><mrow><mi>A</mi><mi>B</mi></mrow></menclose><mtext> </mtext><mover><mrow><mi>A</mi><mi>B</mi></mrow><mo stretchy=\"true\" style=\"math-depth:0;\">→</mo></mover><mtext> </mtext><mover><mrow><mi>A</mi><mi>B</mi></mrow><mo stretchy=\"true\" style=\"math-depth:0;\">↔</mo></mover></mrow></math>",
+   "spokenText": "",
+   "svgPaths": 10
+  },
+  {
+   "id": "arc",
+   "tab": "Decorations",
+   "name": "Arc over letters",
+   "latex": "\\overarc{AB}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mrow><mi>A</mi><mi>B</mi></mrow><mo stretchy=\"true\" style=\"math-depth:0;\">⏜</mo></mover></math>",
+   "spokenText": "arc over 'capital A' 'capital B'",
+   "svgPaths": 3
+  },
+  {
+   "id": "braces",
+   "tab": "Decorations",
+   "name": "Over- and underbrace with label",
+   "latex": "\\underbrace{a+\\cdots+a}_{n}\\ \\overbrace{b+b}^{2}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><munder><munder><mrow><mi>a</mi><mo>+</mo><mi>⋯</mi><mo>+</mo><mi>a</mi></mrow><mo stretchy=\"true\" style=\"math-depth:0;\">⏟</mo></munder><mi>n</mi></munder></mrow><mtext> </mtext><mrow><mover><mover><mrow><mi>b</mi><mo>+</mo><mi>b</mi></mrow><mo stretchy=\"true\" style=\"math-depth:0;\">⏞</mo></mover><mn>2</mn></mover></mrow></mrow></math>",
+   "spokenText": "sub 'N' squared",
+   "svgPaths": 13
+  },
+  {
+   "id": "cancel",
+   "tab": "Decorations",
+   "name": "Cancel (strike-through)",
+   "latex": "\\frac{\\cancel{2}x}{\\cancel{2}}\\ \\bcancel{y}\\ \\xcancel{z}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><menclose notation=\"updiagonalstrike\"><mn>2</mn><mrow class=\"tml-cancel upstrike\"></mrow></menclose><mi>x</mi></mrow><menclose notation=\"updiagonalstrike\"><mn>2</mn><mrow class=\"tml-cancel upstrike\"></mrow></menclose></mfrac><mtext> </mtext><menclose notation=\"downdiagonalstrike\"><mi>y</mi><mrow class=\"tml-cancel downstrike\"></mrow></menclose><mtext> </mtext><menclose notation=\"updiagonalstrike downdiagonalstrike\"><mi>z</mi><mrow class=\"tml-cancel tml-xcancel\"></mrow></menclose></mrow></math>",
+   "spokenText": "the fraction crossed out 2. End crossed out. 'X' over crossed out 2. End crossed out.. End fraction. crossed out 'Y'. End crossed out. crossed out 'Z'. End crossed out.",
+   "svgPaths": 7
+  },
+  {
+   "id": "boxed",
+   "tab": "Decorations",
+   "name": "Boxed result",
+   "latex": "\\boxed{x=2}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": false,
+     "detail": "no spoken text"
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow scriptlevel=\"0\" displaystyle=\"true\" style=\"padding:3pt;border:1px solid;\"><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow></mrow></math>",
+   "spokenText": "",
+   "svgPaths": 3
+  },
+  {
+   "id": "repeating",
+   "tab": "Decorations",
+   "name": "Repeating decimal",
+   "latex": "0.\\overline{3}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0.</mn><menclose notation=\"top\" class=\"tml-overline\"><mn>3</mn></menclose></mrow></math>",
+   "spokenText": "0.",
+   "svgPaths": 3
+  },
+  {
+   "id": "sum",
+   "tab": "Big operators",
+   "name": "Sum with limits",
+   "latex": "\\sum_{i=1}^{n}i^2",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msubsup><mo movablelimits=\"false\">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msup><mi>i</mi><mn>2</mn></msup></mrow></math>",
+   "spokenText": "the summation from 'I' equals 1 to 'N' of 'I' squared",
+   "svgPaths": 7
+  },
+  {
+   "id": "prod",
+   "tab": "Big operators",
+   "name": "Product",
+   "latex": "\\prod_{k=1}^{n}k",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msubsup><mo movablelimits=\"false\">∏</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mi>k</mi></mrow></math>",
+   "spokenText": "the product from 'K' equals 1 to 'N' of 'K'",
+   "svgPaths": 6
+  },
+  {
+   "id": "bigcup",
+   "tab": "Big operators",
+   "name": "Big union and intersection",
+   "latex": "\\bigcup_{i}A_i\\ \\bigcap_{j}B_j",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mo movablelimits=\"false\">⋃</mo><mi>i</mi></msub><msub><mi>A</mi><mi>i</mi></msub><mtext> </mtext><msub><mo movablelimits=\"false\">⋂</mo><mi>j</mi></msub><msub><mi>B</mi><mi>j</mi></msub></mrow></math>",
+   "spokenText": "⋃ sub 'I' 'capital A' sub 'I' ⋂ sub 'J' 'capital B' sub 'J'",
+   "svgPaths": 9
+  },
+  {
+   "id": "coprod",
+   "tab": "Big operators",
+   "name": "Coproduct, big O-plus",
+   "latex": "\\coprod_{i}X_i\\ \\bigoplus_{k}V_k",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mo movablelimits=\"false\">∐</mo><mi>i</mi></msub><msub><mi>X</mi><mi>i</mi></msub><mtext> </mtext><msub><mo movablelimits=\"false\">⨁</mo><mi>k</mi></msub><msub><mi>V</mi><mi>k</mi></msub></mrow></math>",
+   "spokenText": "∐ sub 'I' 'capital X' sub 'I' ⨁ sub 'K' 'capital V' sub 'K'",
+   "svgPaths": 9
+  },
+  {
+   "id": "int",
+   "tab": "Calculus",
+   "name": "Definite integral",
+   "latex": "\\int_{0}^{1}x^2\\,\\mathrm{d}x",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msubsup><mo movablelimits=\"false\">∫</mo><mn>0</mn><mn>1</mn></msubsup><msup><mi>x</mi><mn class=\"tml-sml-pad\">2</mn></msup><mspace width=\"0.1667em\"></mspace><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>x</mi></mrow></math>",
+   "spokenText": "the integral from 0 to 1 of 'X' squared 'D' 'X'",
+   "svgPaths": 7
+  },
+  {
+   "id": "iint",
+   "tab": "Calculus",
+   "name": "Double, triple and contour integrals",
+   "latex": "\\iint_{D}f\\,\\mathrm{d}A\\ \\iiint_{V}g\\,\\mathrm{d}V\\ \\oint_{C}F\\cdot\\mathrm{d}r",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mo movablelimits=\"false\">∬</mo><mi>D</mi></msub><mi>f</mi><mspace width=\"0.1667em\"></mspace><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>A</mi><mtext> </mtext><msub><mo movablelimits=\"false\">∭</mo><mi>V</mi></msub><mi>g</mi><mspace width=\"0.1667em\"></mspace><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>V</mi><mtext> </mtext><msub><mo movablelimits=\"false\">∮</mo><mi>C</mi></msub><mi>F</mi><mo>⋅</mo><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>r</mi></mrow></math>",
+   "spokenText": "∬ sub 'capital D' 'F' 'D' 'capital A' ∭ sub 'capital V' 'G' 'D' 'capital V' ∮ sub 'capital C' 'capital F' times 'D' 'R'",
+   "svgPaths": 18
+  },
+  {
+   "id": "lim",
+   "tab": "Calculus",
+   "name": "Limit",
+   "latex": "\\lim_{x\\to0}\\frac{\\sin x}{x}=1",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>lim</mi><mrow><mi>x</mi><mo>→</mo><mn>0</mn></mrow></msub><mo>⁡</mo><mspace width=\"0.1667em\"></mspace><mfrac><mrow><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>x</mi></mrow><mi>x</mi></mfrac><mo>=</mo><mn>1</mn></mrow></math>",
+   "spokenText": "lim subscript 'X' to 0. End subscript. the fraction sine 'X' over 'X'. End fraction. equals 1",
+   "svgPaths": 15
+  },
+  {
+   "id": "deriv",
+   "tab": "Calculus",
+   "name": "Derivative",
+   "latex": "\\frac{\\mathrm{d}y}{\\mathrm{d}x}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>y</mi></mrow><mrow><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>x</mi></mrow></mfrac></math>",
+   "spokenText": "the fraction 'D' 'Y' over 'D' 'X'. End fraction.",
+   "svgPaths": 4
+  },
+  {
+   "id": "partial",
+   "tab": "Calculus",
+   "name": "Partial derivative",
+   "latex": "\\frac{\\partial^2 f}{\\partial x\\,\\partial y}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>f</mi></mrow><mrow><mi>∂</mi><mi>x</mi><mspace width=\"0.1667em\"></mspace><mi>∂</mi><mi>y</mi></mrow></mfrac></math>",
+   "spokenText": "the fraction partial derivative of squared 'F' over partial derivative of 'X' partial derivative of 'Y'. End fraction.",
+   "svgPaths": 7
+  },
+  {
+   "id": "nabla",
+   "tab": "Calculus",
+   "name": "Gradient, divergence",
+   "latex": "\\nabla f,\\ \\nabla\\cdot\\vec{F}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo form=\"prefix\" stretchy=\"false\">∇</mo><mi>f</mi><mo separator=\"true\">,</mo><mtext> </mtext><mo form=\"prefix\" stretchy=\"false\">∇</mo><mo form=\"prefix\" stretchy=\"false\">⋅</mo><mover><mi>F</mi><mo stretchy=\"false\" class=\"tml-vec chr-lrg wbk-lrg-vec\">→</mo></mover></mrow></math>",
+   "spokenText": "nabla 'F' comma nabla times vector 'capital F'",
+   "svgPaths": 8
+  },
+  {
+   "id": "evalbar",
+   "tab": "Calculus",
+   "name": "Evaluation bar",
+   "latex": "\\left[F(x)\\right]_{a}^{b}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">[</mo><mi>F</mi><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>x</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">]</mo></mrow><mi>a</mi><mi>b</mi></msubsup></math>",
+   "spokenText": "[ 'capital F' of 'X'] to the 'B'; sub 'A'",
+   "svgPaths": 8
+  },
+  {
+   "id": "color",
+   "tab": "Format",
+   "name": "Text colour",
+   "latex": "\\textcolor{red}{x}+\\textcolor{#0000ff}{y}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi style=\"color:#ff0000;\">x</mi><mo>+</mo><mi style=\"color:#0000ff;\">y</mi></mrow></math>",
+   "spokenText": "'X' plus 'Y'",
+   "svgPaths": 3
+  },
+  {
+   "id": "bgcolor",
+   "tab": "Format",
+   "name": "Background colour",
+   "latex": "\\colorbox{yellow}{$x+1$}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow mathbackground=\"#FFFF00\" style=\"padding:0.3em;\"><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mrow></math>",
+   "spokenText": "'X' plus 1",
+   "svgPaths": 3
+  },
+  {
+   "id": "bold",
+   "tab": "Format",
+   "name": "Bold and upright",
+   "latex": "\\mathbf{v}+\\boldsymbol{\\alpha}+\\mathrm{d}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>𝐯</mi><mo>+</mo><mi>𝜶</mi><mo>+</mo><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow></mrow></math>",
+   "spokenText": "'V' plus alpha plus 'D'",
+   "svgPaths": 5
+  },
+  {
+   "id": "fonts",
+   "tab": "Format",
+   "name": "Font styles (script, fraktur, sans, mono)",
+   "latex": "\\mathcal{L}\\ \\mathfrak{g}\\ \\mathsf{A}\\ \\mathtt{x}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi class=\"mathcal\">ℒ</mi><mtext> </mtext><mi>𝔤</mi><mtext> </mtext><mi>𝖠</mi><mtext> </mtext><mi>𝚡</mi></mrow></math>",
+   "spokenText": "'capital L' 'G' 'capital A' 'X'",
+   "svgPaths": 7
+  },
+  {
+   "id": "size",
+   "tab": "Format",
+   "name": "Font size",
+   "latex": "{\\large x}+{\\small y}+{\\Huge z}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mstyle mathsize=\"1.2000em\"><mi>x</mi></mstyle><mo>+</mo><mstyle mathsize=\"0.9000em\"><mi>y</mi></mstyle><mo>+</mo><mstyle mathsize=\"2.4880em\"><mi>z</mi></mstyle></mrow></math>",
+   "spokenText": "'X' plus 'Y' plus 'Z'",
+   "svgPaths": 5
+  },
+  {
+   "id": "spacing",
+   "tab": "Format",
+   "name": "Manual spacing",
+   "latex": "a\\,b\\;c\\quad d\\qquad e\\!f",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>a</mi><mspace width=\"0.1667em\"></mspace><mi>b</mi><mspace width=\"0.2778em\"></mspace><mi>c</mi><mspace width=\"1em\"></mspace><mi>d</mi><mspace width=\"2em\"></mspace><mi>e</mi><mrow style=\"margin-left:-0.1667em;\"></mrow><mi>f</mi></mrow></math>",
+   "spokenText": "'A' 'B' 'C' 'D' 'E' 'F'",
+   "svgPaths": 6
+  },
+  {
+   "id": "stack-hline",
+   "tab": "Elementary math",
+   "name": "Column addition, line as \\hline",
+   "latex": "\\begin{array}{r}123\\\\+\\,456\\\\\\hline579\\end{array}",
+   "stages": {
+    "mathlive": {
+     "ok": false,
+     "detail": "unknown-command \\hline"
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><mn>123</mn></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"border-bottom:0.06em solid;padding-left:0pt;padding-right:0pt;\"><mrow><mo form=\"prefix\" stretchy=\"false\">+</mo><mspace width=\"0.1667em\"></mspace><mn>456</mn></mrow></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><mn>579</mn></mtd></mtr></mtable></math>",
+   "spokenText": "begin array row 1 column 1: 123, row 2 column 1: plus 456, row 3 column 1: 579 end array",
+   "svgPaths": 10
+  },
+  {
+   "id": "stack-add",
+   "tab": "Elementary math",
+   "name": "Column addition",
+   "latex": "\\begin{array}{r}123\\\\\\underline{+\\,456}\\\\579\\end{array}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><mn>123</mn></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><menclose notation=\"bottom\" class=\"tml-underline\"><mrow><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">+</mo><mspace width=\"0.1667em\"></mspace><mn>456</mn></mrow></menclose></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><mn>579</mn></mtd></mtr></mtable></math>",
+   "spokenText": "begin array row 1 column 1: 123, row 2 column 1: , row 3 column 1: 579 end array",
+   "svgPaths": 10
+  },
+  {
+   "id": "carries",
+   "tab": "Elementary math",
+   "name": "Column addition with carries",
+   "latex": "\\begin{array}{r}\\scriptstyle1\\phantom{0}\\\\58\\\\\\underline{+\\,67}\\\\125\\end{array}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><mstyle scriptlevel=\"1\" displaystyle=\"false\"><mn>1</mn><mphantom><mn>0</mn></mphantom></mstyle></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><mn>58</mn></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><menclose notation=\"bottom\" class=\"tml-underline\"><mrow><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">+</mo><mspace width=\"0.1667em\"></mspace><mn>67</mn></mrow></menclose></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><mn>125</mn></mtd></mtr></mtable></math>",
+   "spokenText": "begin array row 1 column 1: , row 2 column 1: 58, row 3 column 1: , row 4 column 1: 125 end array",
+   "svgPaths": 9
+  },
+  {
+   "id": "stack-mul",
+   "tab": "Elementary math",
+   "name": "Column multiplication",
+   "latex": "\\begin{array}{r}23\\\\\\underline{\\times\\,12}\\\\46\\\\\\underline{23\\phantom{0}}\\\\276\\end{array}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><mn>23</mn></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><menclose notation=\"bottom\" class=\"tml-underline\"><mrow><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">×</mo><mspace width=\"0.1667em\"></mspace><mn>12</mn></mrow></menclose></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><mn>46</mn></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><menclose notation=\"bottom\" class=\"tml-underline\"><mrow><mn>23</mn><mphantom><mn>0</mn></mphantom></mrow></menclose></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><mn>276</mn></mtd></mtr></mtable></math>",
+   "spokenText": "begin array row 1 column 1: 23, row 2 column 1: , row 3 column 1: 46, row 4 column 1: , row 5 column 1: 276 end array",
+   "svgPaths": 12
+  },
+  {
+   "id": "longdiv",
+   "tab": "Elementary math",
+   "name": "Long division (US style)",
+   "latex": "\\begin{array}{r}41\\\\3\\enclose{longdiv}{125}\\end{array}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><mn>41</mn></mtd></mtr><mtr><mtd class=\"tml-right\" style=\"padding-left:0pt;padding-right:0pt;\"><mrow><mn>3</mn><menclose notation=\"longdiv\" class=\"longdiv-top\"><mn>125</mn><mrow class=\"longdiv-arc\"></mrow></menclose></mrow></mtd></mtr></mtable></math>",
+   "spokenText": "begin array row 1 column 1: 41, row 2 column 1: 3 crossed out 125. End crossed out. end array",
+   "svgPaths": 7
+  },
+  {
+   "id": "circled",
+   "tab": "Decorations",
+   "name": "Circled",
+   "latex": "\\enclose{circle}{5}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"circle\" class=\"circle-pad\"><mtext>5</mtext><mrow class=\"textcircle\"></mrow></menclose></math>",
+   "spokenText": "crossed out 5. End crossed out.",
+   "svgPaths": 1
+  },
+  {
+   "id": "ce-formula",
+   "tab": "ChemType",
+   "name": "Chemical formula",
+   "latex": "\\ce{H2SO4}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": false,
+     "detail": "no spoken text"
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">H</mi><mspace></mspace></mrow><msub><mrow></mrow><mn>2</mn></msub><mpadded lspace=\"0\"><mi>SO</mi></mpadded><msub><mrow></mrow><mn>4</mn></msub></mrow></math>",
+   "spokenText": "",
+   "svgPaths": 5
+  },
+  {
+   "id": "ce-reaction",
+   "tab": "ChemType",
+   "name": "Reaction with arrow",
+   "latex": "\\ce{2H2 + O2 -> 2H2O}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": false,
+     "detail": "no spoken text"
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>2</mn><mspace width=\"0.1667em\"></mspace><mrow><mi mathvariant=\"normal\">H</mi><mspace></mspace></mrow><msub><mrow></mrow><mn>2</mn></msub><mrow></mrow><mo>+</mo><mrow></mrow><mrow><mi mathvariant=\"normal\">O</mi><mspace></mspace></mrow><msub><mrow></mrow><mn>2</mn></msub><mrow><mspace width=\"0.2778em\"></mspace><mover accent=\"false\"><mo stretchy=\"true\" lspace=\"0\" rspace=\"0\">→</mo><mspace width=\"2.8571em\"></mspace></mover><mspace width=\"0.2778em\"></mspace></mrow><mn>2</mn><mspace width=\"0.1667em\"></mspace><mrow><mi mathvariant=\"normal\">H</mi><mspace></mspace></mrow><msub><mrow></mrow><mn>2</mn></msub><mrow><mi mathvariant=\"normal\">O</mi><mspace></mspace></mrow></mrow></math>",
+   "spokenText": "",
+   "svgPaths": 12
+  },
+  {
+   "id": "ce-equilibrium",
+   "tab": "ChemType",
+   "name": "Equilibrium arrow",
+   "latex": "\\ce{N2 + 3H2 <=> 2NH3}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": false,
+     "detail": "no spoken text"
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">N</mi><mspace></mspace></mrow><msub><mrow></mrow><mn>2</mn></msub><mrow></mrow><mo>+</mo><mrow></mrow><mn>3</mn><mspace width=\"0.1667em\"></mspace><mrow><mi mathvariant=\"normal\">H</mi><mspace></mspace></mrow><msub><mrow></mrow><mn>2</mn></msub><mrow><mspace width=\"0.2778em\"></mspace><mover accent=\"false\"><mo stretchy=\"true\" lspace=\"0\" rspace=\"0\">⇌</mo><mspace width=\"2.8571em\"></mspace></mover><mspace width=\"0.2778em\"></mspace></mrow><mn>2</mn><mspace width=\"0.1667em\"></mspace><mpadded lspace=\"0\"><mi>NH</mi></mpadded><msub><mrow></mrow><mn>3</mn></msub></mrow></math>",
+   "spokenText": "",
+   "svgPaths": 13
+  },
+  {
+   "id": "ce-ions",
+   "tab": "ChemType",
+   "name": "Ions and charges",
+   "latex": "\\ce{SO4^2- + Ba^2+ -> BaSO4 v}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": false,
+     "detail": "no spoken text"
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mpadded lspace=\"0\"><mi>SO</mi></mpadded><msub><mrow></mrow><mn>4</mn></msub><msup><mrow></mrow><mrow><mn>2</mn><mo lspace=\"0em\" rspace=\"0em\">−</mo></mrow></msup><mrow></mrow><mo>+</mo><mrow></mrow><mpadded lspace=\"0\"><mi>Ba</mi></mpadded><msup><mrow></mrow><mrow><mn>2</mn><mo lspace=\"0em\" rspace=\"0em\">+</mo></mrow></msup><mrow><mspace width=\"0.2778em\"></mspace><mover accent=\"false\"><mo stretchy=\"true\" lspace=\"0\" rspace=\"0\">→</mo><mspace width=\"2.8571em\"></mspace></mover><mspace width=\"0.2778em\"></mspace></mrow><mpadded lspace=\"0\"><mi>BaSO</mi></mpadded><msub><mrow></mrow><mn>4</mn></msub><mo stretchy=\"false\">↓</mo><mrow></mrow></mrow></math>",
+   "spokenText": "",
+   "svgPaths": 18
+  },
+  {
+   "id": "ce-states",
+   "tab": "ChemType",
+   "name": "States of matter",
+   "latex": "\\ce{NaCl(aq) + AgNO3(aq) -> AgCl(s) + NaNO3(aq)}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": false,
+     "detail": "no spoken text"
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mpadded lspace=\"0\"><mi>NaCl</mi></mpadded><mspace width=\"0.1111em\"></mspace><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mpadded lspace=\"0\"><mi>aq</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mrow></mrow><mo>+</mo><mrow></mrow><mpadded lspace=\"0\"><mi>AgNO</mi></mpadded><msub><mrow></mrow><mn>3</mn></msub><mspace width=\"0.1111em\"></mspace><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mpadded lspace=\"0\"><mi>aq</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mrow><mspace width=\"0.2778em\"></mspace><mover accent=\"false\"><mo stretchy=\"true\" lspace=\"0\" rspace=\"0\">→</mo><mspace width=\"2.8571em\"></mspace></mover><mspace width=\"0.2778em\"></mspace></mrow><mpadded lspace=\"0\"><mi>AgCl</mi></mpadded><mspace width=\"0.1111em\"></mspace><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mrow><mi mathvariant=\"normal\">s</mi><mspace></mspace></mrow><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mrow></mrow><mo>+</mo><mrow></mrow><mpadded lspace=\"0\"><mi>NaNO</mi></mpadded><msub><mrow></mrow><mn>3</mn></msub><mspace width=\"0.1111em\"></mspace><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mpadded lspace=\"0\"><mi>aq</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>",
+   "spokenText": "",
+   "svgPaths": 37
+  },
+  {
+   "id": "ce-isotope",
+   "tab": "ChemType",
+   "name": "Isotope (mass and atomic number)",
+   "latex": "\\ce{^{235}_{92}U}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": false,
+     "detail": "no spoken text"
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msubsup><mpadded width=\"0.1px\"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height=\"0px\" depth=\"0px\"><mphantom><mn>92</mn></mphantom></mpadded><mpadded height=\"0px\" depth=\"0px\"><mphantom><mn>235</mn></mphantom></mpadded></msubsup><msubsup><mpadded width=\"0.1px\"><mphantom><mi>X</mi></mphantom></mpadded><mrow><mpadded width=\"0.1px\"><mphantom><mn>2</mn></mphantom></mpadded><mpadded lspace=\"-1width\" width=\"0.1px\" style=\"position:relative;\"><mpadded width=\"0.1px\"><mphantom><mn>92</mn></mphantom></mpadded><mn style=\"position:absolute;right:0;bottom:0;\">92</mn></mpadded></mrow><mrow><mpadded width=\"0.1px\"><mphantom><mn>2</mn></mphantom></mpadded><mpadded lspace=\"-1width\" width=\"0.1px\" style=\"position:relative;\"><mpadded width=\"0.1px\"><mphantom><mn>235</mn></mphantom></mpadded><mn style=\"position:absolute;right:0;bottom:0;\">235</mn></mpadded></mrow></msubsup><mrow><mi mathvariant=\"normal\">U</mi><mspace></mspace></mrow></mrow></math>",
+   "spokenText": "",
+   "svgPaths": 6
+  },
+  {
+   "id": "ce-conditions",
+   "tab": "ChemType",
+   "name": "Reaction conditions over the arrow",
+   "latex": "\\ce{CaCO3 ->[\\Delta] CaO + CO2}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": false,
+     "detail": "no spoken text"
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mpadded lspace=\"0\"><mi>CaCO</mi></mpadded><msub><mrow></mrow><mn>3</mn></msub><mrow><mspace width=\"0.2778em\"></mspace><mover accent=\"false\"><mo stretchy=\"true\" lspace=\"0\" rspace=\"0\">→</mo><mover><mrow><mspace width=\"0.4286em\"></mspace><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mspace width=\"0.4286em\"></mspace></mrow><mspace width=\"4.0000em\"></mspace></mover></mover><mspace width=\"0.2778em\"></mspace></mrow><mpadded lspace=\"0\"><mi>CaO</mi></mpadded><mrow></mrow><mo>+</mo><mrow></mrow><mpadded lspace=\"0\"><mi>CO</mi></mpadded><msub><mrow></mrow><mn>2</mn></msub></mrow></math>",
+   "spokenText": "",
+   "svgPaths": 15
+  },
+  {
+   "id": "ce-bonds",
+   "tab": "ChemType",
+   "name": "Bonds",
+   "latex": "\\ce{H-C#N}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": false,
+     "detail": "no spoken text"
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">H</mi><mspace></mspace></mrow><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">−</mo><mrow><mi mathvariant=\"normal\">C</mi><mspace></mspace></mrow><mo lspace=\"0em\" rspace=\"0em\">≡</mo><mrow><mi mathvariant=\"normal\">N</mi><mspace></mspace></mrow></mrow></math>",
+   "spokenText": "",
+   "svgPaths": 5
+  },
+  {
+   "id": "units",
+   "tab": "Format",
+   "name": "Units",
+   "latex": "9.8\\,\\mathrm{m}/\\mathrm{s}^{2}",
+   "stages": {
+    "mathlive": {
+     "ok": true
+    },
+    "temml": {
+     "ok": true
+    },
+    "svg": {
+     "ok": true
+    },
+    "spoken": {
+     "ok": true
+    }
+   },
+   "mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>9.8</mn><mspace width=\"0.1667em\"></mspace><mrow><mi mathvariant=\"normal\">m</mi><mspace></mspace></mrow><mi>/</mi><msup><mrow><mi mathvariant=\"normal\">s</mi><mspace></mspace></mrow><mn>2</mn></msup></mrow></math>",
+   "spokenText": "9.8 'M'/ 'S' squared",
+   "svgPaths": 7
+  }
+ ]
+}

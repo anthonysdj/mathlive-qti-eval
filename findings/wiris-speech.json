@@ -1,0 +1,713 @@
+{
+ "frac": {
+  "mathlive": "the fraction 'A' plus 1 over 'B'. End fraction.",
+  "en": "the fraction with numerator a plus 1 and denominator b",
+  "es": "empezar fracción a más 1 entre b finalizar fracción",
+  "fr": "fraction avec numérateur a plus 1 et dénominateur b",
+  "de": "Bruch mit Zähler a plus 1 und Nenner b",
+  "it": "frazione con numeratore a più 1 e denominatore b",
+  "nemeth": "⠹⠁⠬⠂⠌⠃⠼"
+ },
+ "bevelled": {
+  "mathlive": "to the 'A'; / sub 'B'",
+  "en": "super a slash sub b",
+  "es": "superíndice a barra oblicua subíndice b línea base",
+  "fr": "à la puissance a barre oblique sub b",
+  "de": "hoch a Schrägstrich Index b",
+  "it": "alla a-esima potenza diviso pedice b",
+  "nemeth": "⠘⠁⠸⠌⠰⠃⠐"
+ },
+ "sqrt": {
+  "mathlive": "the square root of 'X' squared plus 1. End square root",
+  "en": "the square root of x squared plus 1",
+  "es": "empezar raíz cuadrada x al cuadrado más 1 finalizar raíz cuadrada",
+  "fr": "la racine carrée de x au carré plus 1",
+  "de": "Quadratwurzel aus x Quadrat plus 1",
+  "it": "radice quadrata di x quadrato più 1",
+  "nemeth": "⠜⠭⠘⠆⠐⠬⠂⠻"
+ },
+ "nroot": {
+  "mathlive": "the cube root of 27. End cube root",
+  "en": "the cube root of 27",
+  "es": "empezar raíz cúbica 27 finalizar raíz cúbica",
+  "fr": "la racine cubique de 27",
+  "de": "Kubikwurzel aus 27",
+  "it": "radice cubica di 27",
+  "nemeth": "⠣⠒⠜⠆⠶⠻"
+ },
+ "sup": {
+  "mathlive": "'X' squared",
+  "en": "x squared",
+  "es": "x al cuadrado",
+  "fr": "x au carré",
+  "de": "x Quadrat",
+  "it": "x quadrato",
+  "nemeth": "⠭⠘⠆"
+ },
+ "sub": {
+  "mathlive": "'A' sub 'N'",
+  "en": "a sub n",
+  "es": "a subíndice n",
+  "fr": "a sub n",
+  "de": "a Index n",
+  "it": "a pedice n",
+  "nemeth": "⠁⠰⠝"
+ },
+ "subsup": {
+  "mathlive": "'X' squared sub 'I'",
+  "en": "x sub i squared",
+  "es": "x subíndice i superíndice 2",
+  "fr": "x sub i au carré",
+  "de": "x Index i Quadrat",
+  "it": "x pedice i quadrato",
+  "nemeth": "⠭⠰⠊⠘⠆"
+ },
+ "parens": {
+  "mathlive": "Open paren. 'A' over 'B' Close paren.",
+  "en": "open paren a over b close paren",
+  "es": "paréntesis izquierdo empezar fracción a entre b finalizar fracción paréntesis derecho",
+  "fr": "parenthèse gauche a sur b parenthèse droite",
+  "de": "Klammer auf a geteilt durch b Klammer zu",
+  "it": "parentesi tonda aperta a fratto b parentesi tonda chiusa",
+  "nemeth": "⠷⠹⠁⠌⠃⠼⠾"
+ },
+ "brackets": {
+  "mathlive": "[ 'X']open brace 'Y'close braceleft angle bracket 'Z'right angle bracket",
+  "en": "x times the set y times left angle bracket z right angle bracket",
+  "es": "corchete izquierdo x corchete derecho empezar llave y finalizar llave corchete agudo izquierdo z corchete agudo derecho",
+  "fr": "x multiplié par ensemble y multiplié par chevron mathématique gauche z chevron droit",
+  "de": "x mal die Menge y mal Mathematische linke Winkelklammer z Mathematische rechtwinklige Klammer",
+  "it": "x per l'insieme y per parentesi angolata sinistra z parentesi angolata destra",
+  "nemeth": "⠈⠷⠭⠈⠾⠨⠷⠽⠨⠾⠨⠨⠷⠵⠨⠨⠾"
+ },
+ "abs": {
+  "mathlive": "Vertical bar 'X'Vertical bar plus \\| 'V'\\|",
+  "en": "the absolute value of x plus the metric of v",
+  "es": "empezar valor absoluto x finalizar valor absoluto más empezar métrica v finalizar métrica",
+  "fr": "la valeur absolue de x plus métrique de v",
+  "de": "der Betrag von x plus die Metrik von v",
+  "it": "valore assoluto di x più metrica di v",
+  "nemeth": "⠳⠭⠳⠬⠳⠳⠧⠳⠳"
+ },
+ "floor": {
+  "mathlive": "of 'X' plus of 'Y'",
+  "en": "floor of x plus ceiling of y",
+  "es": "esquina inferior izquierda x esquina inferior derecha más esquina superior izquierda y esquina superior derecha",
+  "fr": "plancher à gauche x plancher à droite plus plafond à gauche y plafond à droite",
+  "de": "linke Abrundungsklammer x rechter Abrundungsklammer plus linke Aufrundungsklammer y rechte Aufrundungsklammer",
+  "it": "parentesi sinistra di arrotondamento per difetto x parentesi destra di arrotondamento per difetto più parentesi sinistra di arrotondamento per eccesso y parentesi destra di arrotondamento per eccesso",
+  "nemeth": "⠈⠰⠷⠭⠈⠰⠾⠬⠈⠘⠷⠽⠈⠘⠾"
+ },
+ "onesided": {
+  "mathlive": ". the fraction 'D' 'F' over 'D' 'X'. End fraction.Vertical bar subscript 'X' equals 0. End subscript.",
+  "en": "d f over d x vertical bar sub x equals 0",
+  "es": "empezar fracción d f entre d x finalizar fracción barra vertical subíndice x igual 0",
+  "fr": "d f sur d x barre verticale sub x égale 0",
+  "de": "d f geteilt durch d x senkrechter Strich Index x ist gleich 0",
+  "it": "d f fratto d x barra verticale pedice x uguale a 0",
+  "nemeth": "⠹⠙⠋⠌⠙⠭⠼⠳⠰⠭⠀⠰⠨⠅⠀⠼⠴"
+ },
+ "text": {
+  "mathlive": "area equals pie 'R' squared",
+  "en": "area equals pi r squared",
+  "es": "area igual pi r al cuadrado",
+  "fr": "area égale pi r au carré",
+  "de": "area ist gleich pi r Quadrat",
+  "it": "area uguale a pi greco r quadrato",
+  "nemeth": "⠁⠗⠑⠁⠀⠨⠅⠀⠨⠏⠗⠘⠆"
+ },
+ "func": {
+  "mathlive": "sine 'X' plus cosine 'X' plus log sub 2 'X' plus ln 'X'",
+  "en": "sine x plus cosine x plus the log base 2 of x plus l n x",
+  "es": "seno x más coseno x más logaritmo subíndice 2 línea base x más logaritmo neperiano x",
+  "fr": "sinus x plus cosinus x plus log base 2 de x plus l n x",
+  "de": "Sinus x plus Kosinus x plus der Logarithmus Basis 2 von x plus l n x",
+  "it": "seno di x più coseno di x più logaritmo base 2 di x più l n di x",
+  "nemeth": "⠎⠊⠝⠀⠭⠬⠉⠕⠎⠀⠭⠬⠇⠕⠛⠆⠀⠭⠬⠇⠝⠀⠭"
+ },
+ "ops": {
+  "mathlive": "'A' plus or minus 'B' minus or plus 'C' times 'D' divided by 'E' times 'F'",
+  "en": "a plus or minus b minus or plus c times d divided by e times f",
+  "es": "a más menos b menos más c por d dividido e punto f",
+  "fr": "a plus ou moins b moins ou plus c multiplié par d divisé par e opérateur point f",
+  "de": "a plus minus b minus plus c mal d geteilt durch e mal f",
+  "it": "a più o meno b meno più c per d diviso per e punto f",
+  "nemeth": "⠁⠬⠤⠃⠤⠬⠉⠈⠡⠙⠨⠌⠑⠡⠋"
+ },
+ "rel": {
+  "mathlive": "'A' is less than or equal to 'B' is greater than or equal to 'C' 'D' approx 'E' equiv 'F' sim 'G' cong 'H' propto 'I'",
+  "en": "a is less than or equal to b is greater than or equal to c is not equal to d almost equals e is identical to f tilde g approximately equals h proportional to i",
+  "es": "a menor o igual que b mayor o igual que c no es igual a d aproximado e idéntico a f tilde g aproximadamente igual a h proporcional a i",
+  "fr": "a plus petit ou égal à b plus grand ou égal à c pas égal à d presque égal à e identique à f opérateur tilde g approximativement égal à h proportionnel à i",
+  "de": "a kleiner oder gleich b größer oder gleich c ungleich d beinahe gleich e kongruent mit f Tildeoperator g ungefähr gleich h proportional zu i",
+  "it": "a minore o uguale a b maggiore o uguale a c diverso da d circa uguale a e identico a f tilde g approssimativamente uguale a h proporzionale a i",
+  "nemeth": "⠁⠀⠐⠅⠱⠀⠃⠀⠨⠂⠱⠀⠉⠀⠌⠨⠅⠀⠙⠀⠈⠱⠈⠱⠀⠑⠀⠸⠇⠀⠋⠀⠈⠱⠀⠛⠀⠈⠱⠨⠅⠀⠓⠀⠰⠆⠀⠊"
+ },
+ "notrel": {
+  "mathlive": "'A' 'B' nless 'C' nsubseteq 'capital D'",
+  "en": "a is identical to ̸ b is not less than c neither a subset of nor equal to D",
+  "es": "a idéntico a ̸ b no menor que c no incluido ni igual a mayúscula D",
+  "fr": "a identique à ̸ b pas plus petit que c ni un sous ensemble ni égal à D",
+  "de": "a kongruent mit ̸ b nicht kleiner als c weder Teilmenge noch gleich D",
+  "it": "a identico a ̸ b non minore di c né un sottoinsieme di né uguale a D",
+  "nemeth": "⠁⠀⠸⠇⠐̸⠀⠃⠀⠌⠐⠅⠀⠉⠀⠌⠸⠐⠅⠱⠀⠠⠙"
+ },
+ "sets": {
+  "mathlive": "'capital A' cup 'capital B' cap 'capital C' subset 'capital D' subseteq 'capital E' element of 'capital F' notin 'capital G' setminus 'capital H' emptyset",
+  "en": "A union B intersection C subset of D subset of or equal to E is a member of F is not a member of G set minus H of empty set",
+  "es": "mayúscula A unión mayúscula B intersección mayúscula C incluido en mayúscula D incluido o igual a mayúscula E perteneciente a mayúscula F no perteneciente a mayúscula G menos mayúscula H conjunto vacío",
+  "fr": "A union B intersection C sous ensemble de D sous ensemble ou égal à E est un F n'est pas un G différence d'ensembles H de ensemble vide",
+  "de": "A Vereinigung B Durchschnitt C echte Teilmenge von D Teilmenge oder gleich E Element von F ist kein Element von G Mengendifferenz H von leere Menge",
+  "it": "A unione B intersezione C sottoinsieme di D sottoinsieme di o uguale a E appartiene ad F non appartiene ad G insieme meno H di insieme vuoto",
+  "nemeth": "⠠⠁⠨⠬⠠⠃⠨⠩⠠⠉⠀⠸⠐⠅⠀⠠⠙⠀⠸⠐⠅⠱⠀⠠⠑⠀⠈⠑⠀⠠⠋⠀⠌⠈⠑⠀⠠⠛⠸⠡⠠⠓⠸⠴"
+ },
+ "numsets": {
+  "mathlive": "'capital N' subset 'capital Z' subset 'capital Q' subset 'capital R' subset 'capital C'",
+  "en": "the natural numbers subset of the integers subset of the rational numbers subset of the real numbers subset of the complex numbers",
+  "es": "negrita de pizarra mayúscula N incluido en negrita de pizarra mayúscula Z incluido en negrita de pizarra mayúscula Q incluido en negrita de pizarra mayúscula R incluido en negrita de pizarra mayúscula C",
+  "fr": "les nombres entier naturel sous ensemble de les nombres entiers sous ensemble de les nombres rationnels sous ensemble de les nombres réels sous ensemble de les nombres complexes",
+  "de": "die natürlichen Zahlen echte Teilmenge von die ganzen Zahlen echte Teilmenge von die rationalen Zahlen echte Teilmenge von die reellen Zahlen echte Teilmenge von die komplexen Zahlen",
+  "it": "i numeri naturali sottoinsieme di gli interi sottoinsieme di i numeri razionali sottoinsieme di i numeri reali sottoinsieme di i numeri complessi",
+  "nemeth": "⠈⠰⠠⠝⠀⠸⠐⠅⠀⠈⠰⠠⠵⠀⠸⠐⠅⠀⠈⠰⠠⠟⠀⠸⠐⠅⠀⠈⠰⠠⠗⠀⠸⠐⠅⠀⠈⠰⠠⠉"
+ },
+ "logic": {
+  "mathlive": "for all 'X' there exists 'Y' not 'P' and 'Q' or 'R' implies 'S' Leftrightarrow 'T'",
+  "en": "for all x there exists y not p and q or r right double arrow s left right double arrow t",
+  "es": "para todo x existe y negación p y q o r flecha doble s flecha doble izquierda-derecha t",
+  "fr": "pour tous x il existe y négation p et logique q ou logique r double flèche droite s double flèche bilatérale t",
+  "de": "für alle x es gibt y nicht p und q oder r Doppelpfeil nach rechts s Linker rechter Doppelpfeil t",
+  "it": "per ogni x esiste y simbolo not p e q o r freccia doppia verso destra s freccia doppia sinistra destra t",
+  "nemeth": "⠈⠯⠭⠈⠿⠽⠏⠈⠩⠟⠈⠬⠗⠀⠫⠶⠶⠕⠀⠎⠀⠫⠪⠪⠶⠶⠕⠀⠞"
+ },
+ "geometry": {
+  "mathlive": "angle 'capital A' 'capital B' 'capital C' equals 90 to the circ ; comma 'capital A' 'capital B' parallel 'capital C' 'capital D' comma 'capital A' 'capital B' perp 'capital B' 'capital C' comma triangle 'capital A' 'capital B' 'capital C'",
+  "en": "angle A B C equals 90 raised to the composed with power comma empty A B parallel to C D comma empty A B perpendicular B C comma empty white up pointing triangle A B C",
+  "es": "ángulo mayúscula A mayúscula B mayúscula C igual 90 superíndice composición línea base coma mayúscula A mayúscula B paralela a mayúscula C mayúscula D coma mayúscula A mayúscula B perpendicular mayúscula B mayúscula C coma triángulo mayúscula A mayúscula B mayúscula C",
+  "fr": "angle A B C égale 90 à la puissance opérateur rond virgule A B parallèle à C D virgule A B perpendiculaire à B C virgule triangle blanc pointant vers le haut A B C",
+  "de": "Winkel A B C ist gleich 90 hoch verknüpft mit Komma A B parallel zu C D Komma A B Aufrecht B C Komma Weißes nach oben zeigendes Dreieck A B C",
+  "it": "angolo A B C uguale a 90 elevato alla composizione virgola A B parallelo a C D virgola A B perpendicolare  B C virgola triangolo up-pointing bianco A B C",
+  "nemeth": "⠫⠪⠀⠠⠁⠠⠃⠠⠉⠀⠨⠅⠀⠼⠔⠴⠘⠨⠡⠠⠀⠀⠠⠁⠠⠃⠫⠇⠠⠉⠠⠙⠠⠀⠀⠠⠁⠠⠃⠫⠏⠠⠃⠠⠉⠠⠀⠀⠀⠫⠞⠀⠠⠁⠠⠃⠠⠉"
+ },
+ "misc": {
+  "mathlive": "infinity comma ldots comma dot dot dot comma vdots comma ddots comma 'F' to the prime; of 'X'",
+  "en": "infinity comma empty dot dot dot comma empty dot dot dot comma empty vertical ellipsis comma empty down right diagonal ellipsis comma empty f prime of x",
+  "es": "infinito coma puntos suspensivos coma puntos suspensivos altos coma puntos suspensivos verticales coma puntos suspensivos diagonales bajando coma f prima paréntesis izquierdo x paréntesis derecho",
+  "fr": "infini virgule points de suspension virgule trois points médians virgule trois points suspendus virgule trois points diagonaux vers le coin bas à droite virgule f prime de x",
+  "de": "unendlich Komma horizontale Ellipsis Komma Zentrierte horizontale Ellipse Komma Vertikale Ellipsis Komma Diagonale Ellipse, oben links nach unten rechts Komma f Strich von x",
+  "it": "infinito virgola punti di sospensione virgola puntini in orizzontale virgola puntini in verticale virgola puntini in diagonale verso basso destra virgola f primo di x",
+  "nemeth": "⠠⠿⠠⠀⠀⠀⠄⠄⠄⠠⠀⠀⠀⠄⠄⠄⠠⠀⠀⠀⠣⠄⠄⠄⠠⠀⠀⠀⠰⠄⠄⠄⠠⠀⠀⠋⠄⠷⠭⠾"
+ },
+ "arrows": {
+  "mathlive": "to leftarrow leftrightarrow implies Leftarrow uparrow downarrow mapsto",
+  "en": "right arrow left arrow left right arrow right double arrow left double arrow up arrow down arrow right arrow from bar",
+  "es": "flecha derecha flecha izquierda flecha izquierda y derecha flecha doble flecha doble hacia la izquierda flecha arriba flecha abajo flecha derecha de barra",
+  "fr": "flèche droite flèche gauche flèche bilatérale double flèche droite double flèche gauche flèche vers le haut flèche vers le bas flèche d'un taquet droite",
+  "de": "Pfeil nach rechts Pfeil nach links Linker rechter Pfeil Doppelpfeil nach rechts Doppelpfeil nach links Aufwärtspfeil Pfeil nach unten Pfeil nach rechts von der Bar",
+  "it": "freccia verso destra freccia verso sinistra freccia sinistra e destra freccia doppia verso destra freccia doppia sinistra freccia verso l'alto freccia verso il basso freccia destra dalla barra :  Mappa della notazione z",
+  "nemeth": "⠫⠕⠫⠪⠒⠒⠫⠪⠒⠒⠕⠫⠶⠶⠕⠫⠪⠶⠶⠫⠣⠒⠒⠕⠫⠩⠒⠒⠕⠫⠳⠒⠒⠕"
+ },
+ "arrowlabel": {
+  "mathlive": "'capital A' 'capital B'",
+  "en": "A right arrow with under below and over above B",
+  "es": "mayúscula A flecha derecha bajoíndice under sobreíndice over finalizar índices mayúscula B",
+  "fr": "A flèche droite avec under dessous et over dessus B",
+  "de": "A Pfeil nach rechts mit under unten und over oben B",
+  "it": "A freccia verso destra con under sotto e over sopra B",
+  "nemeth": "⠠⠁⠀⠐⠐⠫⠕⠩⠥⠝⠙⠑⠗⠣⠕⠧⠑⠗⠻⠀⠠⠃"
+ },
+ "harpoons": {
+  "mathlive": "rightleftharpoons rightharpoonup leftharpoondown",
+  "en": "right harpoon over left harpoon right harpoon with barb up left harpoon with barb down",
+  "es": "arpón derecho arriba de arpón izquierdo flecha derecha con arpón arriba flecha izquierda con arpón debajo",
+  "fr": "harpon droit par dessus harpon gauche harpon droit avec dent dressée harpon gauche avec dent baissée",
+  "de": "Harpune nach rechts über Harpune nach links Harpune nach rechts mit Barb nach oben Harpune nach links mit Barb nach unten",
+  "it": "arpione destro sopra arpione sinistro arpione destro sopra arpione sinistro in basso",
+  "nemeth": "⠫⠒⠒⠈⠕⠫⠈⠪⠒⠒⠫⠒⠒⠈⠕⠫⠠⠪⠒⠒"
+ },
+ "greek": {
+  "mathlive": "alpha beta gamma delta epsilon varepsilon theta lambda mew pie sigma phi varphi omega",
+  "en": "alpha beta gamma delta epsilon epsilon theta lamda mu pi sigma phi phi omega",
+  "es": "alfa beta gamma delta épsilon épsilon theta lambda mi pi sigma phi phi omega",
+  "fr": "alpha bêta gamma delta epsilon epsilon thêta lambda mû pi sigma phi phi oméga",
+  "de": "alpha beta gamma delta epsilon epsilon theta lambda my pi sigma phi phi omega",
+  "it": "alfa beta gamma delta epsilon epsilon theta lambda mu pi greco sigma phi phi omega",
+  "nemeth": "⠨⠁⠨⠃⠨⠛⠨⠙⠨⠑⠨⠑⠨⠹⠨⠇⠨⠍⠨⠏⠨⠎⠨⠋⠨⠈⠋⠨⠺"
+ },
+ "Greek": {
+  "mathlive": "Gamma Delta Theta Lambda Pi Sigma Phi Psi Omega",
+  "en": "normal Gamma times normal triangle times normal Theta times normal Lamda times normal Pi times normal Sigma times normal Phi times normal Psi times ohms",
+  "es": "normal mayúscula Gamma normal mayúscula Delta normal mayúscula Theta normal mayúscula Lambda normal mayúscula Pi normal mayúscula Sigma normal mayúscula Phi normal mayúscula Psi normal mayúscula Omega",
+  "fr": "Gamma en normal multiplié par triangle en normal multiplié par Thêta en normal multiplié par Lambda en normal multiplié par Pi en normal multiplié par Sigma en normal multiplié par Phi en normal multiplié par Psi en normal multiplié par ohms",
+  "de": "normales Gamma mal normales Dreieck mal normales Theta mal normales Lambda mal normales Pi mal normales Sigma mal normales Phi mal normales Psi mal Ohm",
+  "it": "Gamma normale per triangolo normale per Theta normale per Lambda normale per Pi greca normale per Sigma normale per Phi normale per Psi normale per ohm",
+  "nemeth": "⠨⠠⠛⠨⠠⠙⠨⠠⠹⠨⠠⠇⠨⠠⠏⠨⠠⠎⠨⠠⠋⠨⠠⠽⠨⠠⠺"
+ },
+ "pmatrix": {
+  "mathlive": "begin parenthesis matrix row 1 column 1: 1, column 2: 2, row 2 column 1: 3, column 2: 4 end parenthesis matrix",
+  "en": "the 2 by 2 matrix Row 1: 1 2 Row 2: 3 4",
+  "es": "empezar matriz 2 por 2 primera fila primera columna 1 segunda columna 2 segunda fila primera columna 3 segunda columna 4 finalizar matriz",
+  "fr": "la matrice de dimension 2 par 2 Rangée 1: 1 2 Rangée 2: 3 4",
+  "de": "die 2 mal 2 Matrize Zeile 1: 1 2 Zeile 2: 3 4",
+  "it": "matrice 2 per 2 Riga 1: 1 2 Riga 2: 3 4",
+  "nemeth": "⠠⠷⠼⠂⠀⠼⠆⠠⠾⠀⠠⠷⠼⠒⠀⠼⠲⠠⠾"
+ },
+ "bmatrix": {
+  "mathlive": "begin square brackets matrix row 1 column 1: 'A', column 2: 'B', column 3: 'C', row 2 column 1: 'D', column 2: 'E', column 3: 'F' end square brackets matrix",
+  "en": "the 2 by 3 matrix Row 1: a b c Row 2: d e f",
+  "es": "empezar matriz 2 por 3 primera fila primera columna a segunda columna b tercera columna c segunda fila primera columna d segunda columna e tercera columna f finalizar matriz",
+  "fr": "la matrice de dimension 2 par 3 Rangée 1: a b c Rangée 2: d e f",
+  "de": "die 2 mal 3 Matrize Zeile 1: a b c Zeile 2: d e f",
+  "it": "matrice 2 per 3 Riga 1: a b c Riga 2: d e f",
+  "nemeth": "⠈⠠⠷⠁⠀⠃⠀⠉⠈⠠⠾⠀⠈⠠⠷⠙⠀⠑⠀⠋⠈⠠⠾"
+ },
+ "det": {
+  "mathlive": "begin bars matrix row 1 column 1: 'A', column 2: 'B', row 2 column 1: 'C', column 2: 'D' end bars matrix",
+  "en": "the determinant of the 2 by 2 matrix Row 1: a b Row 2: c d",
+  "es": "empezar determinante 2 por 2 primera fila a b segunda fila c d finalizar determinante",
+  "fr": "le déterminant de la matrice de dimension 2 par 2 Rangée 1: a b Rangée 2: c d",
+  "de": "die Determinante der 2 mal 2 Matrize Zeile 1: a b Zeile 2: c d",
+  "it": "determinante della matrice 2 per 2 Riga 1: a b Riga 2: c d",
+  "nemeth": "⠠⠳⠁⠀⠃⠠⠳⠀⠠⠳⠉⠀⠙⠠⠳"
+ },
+ "matdots": {
+  "mathlive": "begin parenthesis matrix row 1 column 1: 'A' subscript 11. End subscript. , column 2: dot dot dot , column 3: 'A' subscript 1 'N'. End subscript. , row 2 column 1: vdots , column 2: ddots , column 3: vdots , row 3 column 1: 'A' subscript 'M'1. End subscript. , column 2: dot dot dot , column 3: 'A' subscript 'M' 'N'. End subscript. end parenthesis matrix",
+  "en": "the 3 by 3 matrix Row 1: Column 1, a sub 11 Column 2, dot dot dot Column 3, a sub 1 n Row 2: Column 1, vertical ellipsis Column 2, down right diagonal ellipsis Column 3, vertical ellipsis Row 3: Column 1, a sub m 1 Column 2, dot dot dot Column 3, a sub m n",
+  "es": "empezar matriz 3 por 3 primera fila primera columna a subíndice 11 segunda columna puntos suspensivos altos tercera columna a subíndice 1 n segunda fila primera columna puntos suspensivos verticales segunda columna puntos suspensivos diagonales bajando tercera columna puntos suspensivos verticales tercera fila primera columna a subíndice m línea base 1 segunda columna puntos suspensivos altos tercera columna a subíndice m n finalizar matriz",
+  "fr": "la matrice de dimension 3 par 3 Rangée 1: Colonne 1, a sub 11 Colonne 2, trois points médians Colonne 3, a sub 1 n Rangée 2: Colonne 1, trois points suspendus Colonne 2, trois points diagonaux vers le coin bas à droite Colonne 3, trois points suspendus Rangée 3: Colonne 1, a sub m 1 Colonne 2, trois points médians Colonne 3, a sub m n",
+  "de": "die 3 mal 3 Matrize Zeile 1: Spalte 1, a Index 11 Spalte 2, Zentrierte horizontale Ellipse Spalte 3, a Index 1 n Zeile 2: Spalte 1, Vertikale Ellipsis Spalte 2, Diagonale Ellipse, oben links nach unten rechts Spalte 3, Vertikale Ellipsis Zeile 3: Spalte 1, a Index m 1 Spalte 2, Zentrierte horizontale Ellipse Spalte 3, a Index m n",
+  "it": "matrice 3 per 3 Riga 1: Colonna 1, a pedice 11 Colonna 2, puntini in orizzontale Colonna 3, a pedice 1 n Riga 2: Colonna 1, puntini in verticale Colonna 2, puntini in diagonale verso basso destra Colonna 3, puntini in verticale Riga 3: Colonna 1, a pedice m 1 Colonna 2, puntini in orizzontale Colonna 3, a pedice m n",
+  "nemeth": "⠠⠷⠁⠂⠂⠀⠄⠄⠄⠀⠁⠰⠂⠝⠐⠠⠾⠀⠠⠷⠄⠄⠄⠀⠄⠄⠄⠀⠄⠄⠄⠠⠾⠀⠠⠷⠁⠰⠍⠐⠂⠐⠀⠄⠄⠄⠀⠁⠰⠍⠝⠠⠾"
+ },
+ "cases": {
+  "mathlive": "'F' of 'X' equals",
+  "en": "f of x equals 2 cases Case 1: x x is greater than or equal to 0 Case 2: negative x x is less than 0",
+  "es": "f paréntesis izquierdo x paréntesis derecho igual empezar esquema llave izquierda alargada primera fila primera columna x segunda columna x mayor o igual que 0 segunda fila primera columna menos x segunda columna x menor que 0 finalizar esquema",
+  "fr": "f de x égale 2 cas Cas 1: x x plus grand ou égal à 0 Cas 2: négatif x x inférieur à 0",
+  "de": "f von x ist gleich 2 Fälle Fall 1: x x größer oder gleich 0 Fall 2: minus x x kleiner als 0",
+  "it": "f di x uguale a 2 casi Caso 1: x x maggiore o uguale a 0 Caso 2: meno x x minore di 0",
+  "nemeth": "⠋⠷⠭⠾⠀⠨⠅⠀⠨⠠⠷⠭⠀⠭⠀⠨⠂⠱⠀⠼⠴⠀⠨⠠⠷⠤⠭⠀⠭⠀⠐⠅⠀⠼⠴⠐"
+ },
+ "system": {
+  "mathlive": "open brace.",
+  "en": "2 cases Case 1: 2 x plus y equals 5 Case 2: x minus y equals 1",
+  "es": "empezar esquema llave izquierda alargada primera fila primera columna 2 x más y segunda columna igual 5 segunda fila primera columna x menos y segunda columna igual 1 finalizar esquema",
+  "fr": "2 cas Cas 1: 2 x plus y égale 5 Cas 2: x moins y égale 1",
+  "de": "2 Fälle Fall 1: 2 x plus y ist gleich 5 Fall 2: x minus y ist gleich 1",
+  "it": "2 casi Caso 1: 2 x più y uguale a 5 Caso 2: x meno y uguale a 1",
+  "nemeth": "⠨⠠⠷⠼⠆⠭⠬⠽⠀⠨⠅⠀⠼⠢⠀⠨⠠⠷⠭⠤⠽⠀⠨⠅⠀⠼⠂⠐"
+ },
+ "align": {
+  "mathlive": "",
+  "en": "2 lines Line 1: open paren a plus b close paren squared equals open paren a plus b close paren times open paren a plus b close paren Line 2: blank equals a squared plus 2 a b plus b squared",
+  "es": "empezar esquema primera fila primera columna paréntesis izquierdo a más b paréntesis derecho al cuadrado segunda columna igual paréntesis izquierdo a más b paréntesis derecho paréntesis izquierdo a más b paréntesis derecho segunda fila primera columna espacio segunda columna igual a al cuadrado más 2 a b más b al cuadrado finalizar esquema",
+  "fr": "2 lignes Ligne 1: parenthèse gauche a plus b parenthèse droite au carré égale parenthèse gauche a plus b parenthèse droite multiplié par parenthèse gauche a plus b parenthèse droite Ligne 2: vide égale a au carré plus 2 a b plus b au carré",
+  "de": "2 Zeilen Zeile 1: Klammer auf a plus b Klammer zu Quadrat ist gleich Klammer auf a plus b Klammer zu mal Klammer auf a plus b Klammer zu Zeile 2: leer ist gleich a Quadrat plus 2 a b plus b Quadrat",
+  "it": "2 linee Riga 1: parentesi tonda aperta a più b parentesi tonda chiusa quadrato uguale a parentesi tonda aperta a più b parentesi tonda chiusa per parentesi tonda aperta a più b parentesi tonda chiusa Riga 2: vuoto uguale a a quadrato più 2 a b più b quadrato",
+  "nemeth": "⠷⠁⠬⠃⠾⠘⠆⠐⠀⠨⠅⠀⠷⠁⠬⠃⠾⠷⠁⠬⠃⠾⠀⠀⠀⠨⠅⠀⠁⠘⠆⠐⠬⠆⠁⠃⠬⠃⠘⠆"
+ },
+ "colalign": {
+  "mathlive": "begin array row 1 column 1: 'A', column 2: 'B', column 3: 'C', row 2 column 1: 'A' 'A' 'A', column 2: 'B' 'B' 'B', column 3: 'C' 'C' 'C' end array",
+  "en": "2 lines Line 1: a b c Line 2: a a a b b b c c c",
+  "es": "empezar esquema primera fila primera columna a segunda columna b tercera columna c segunda fila primera columna a a a segunda columna b b b tercera columna c c c finalizar esquema",
+  "fr": "2 lignes Ligne 1: a b c Ligne 2: a a a b b b c c c",
+  "de": "2 Zeilen Zeile 1: a b c Zeile 2: a a a b b b c c c",
+  "it": "2 linee Riga 1: a b c Riga 2: a a a b b b c c c",
+  "nemeth": "⠁⠀⠃⠀⠉⠀⠁⠁⠁⠀⠃⠃⠃⠀⠉⠉⠉"
+ },
+ "binom": {
+  "mathlive": "'N' over 'K'",
+  "en": "the 2 by 1 column matrix n k",
+  "es": "empezar binomial n en k finalizar binomial",
+  "fr": "la matrice colonne de dimension 2 par 1 n k",
+  "de": "die 2 mal 1 Spaltenmatrize n k",
+  "it": "matrice colonna 2 per 1 n k",
+  "nemeth": "⠷⠝⠩⠅⠾"
+ },
+ "over": {
+  "mathlive": "",
+  "en": "is defined to be empty max over n",
+  "es": "igual sobreíndice def finalizar índices máximo bajoíndice n finalizar índices",
+  "fr": "est défini par maximum sur n",
+  "de": "ist definiert als Maximum über n",
+  "it": "è definito essere massimo sopra n",
+  "nemeth": "⠐⠨⠅⠣⠙⠑⠋⠻⠀⠐⠍⠁⠭⠩⠝⠻"
+ },
+ "prescript": {
+  "mathlive": "to the 'B'; sub 'A' 'capital X'",
+  "en": "sub a and super b X",
+  "es": "subíndice a superíndice b línea base mayúscula X",
+  "fr": "sub a à la puissance b X",
+  "de": "Index a hoch b X",
+  "it": "pedice a alla b-esima potenza X",
+  "nemeth": "⠰⠁⠘⠃⠐⠠⠭"
+ },
+ "linebreak": {
+  "mathlive": "",
+  "en": "2 lines Line 1: a plus b plus c Line 2: equals d",
+  "es": "empezar esquema primera fila  a más b más c segunda fila  igual d finalizar esquema",
+  "fr": "2 lignes Ligne 1: a plus b plus c Ligne 2: égale d",
+  "de": "2 Zeilen Zeile 1: a plus b plus c Zeile 2: ist gleich d",
+  "it": "2 linee Riga 1: a più b più c Riga 2: uguale a d",
+  "nemeth": "⠁⠬⠃⠬⠉⠀⠨⠅⠀⠙"
+ },
+ "accents": {
+  "mathlive": "hat over 'A' 'B' barvector 'V'dot over 'X'double dot over 'Y'tilde over 'N'",
+  "en": "a ˆ empty b overline empty v right arrow empty x dot above empty y two dots empty n tilde",
+  "es": "modificando superior a con ˆ b barra modificando superior v con flecha derecha modificando superior x con punto en superescrito modificando superior y con diéresis n tilde",
+  "fr": "a ˆ b tiret en chef v flèche droite x point en chef y tréma n tilde",
+  "de": "a ˆ b Überschrift v Pfeil nach rechts x Überpunkt y diaeresis n tilde",
+  "it": "a ˆ b barra superiore v freccia verso destra x punto sopra y dieresi n tilde",
+  "nemeth": "⠐⠁⠣ˆ⠻⠀⠃⠱⠀⠐⠧⠣⠫⠕⠻⠀⠐⠭⠣⠡⠻⠀⠐⠽⠣⠻⠀⠐⠝⠣⠈⠱⠻"
+ },
+ "wide": {
+  "mathlive": "hat over 'capital A' 'capital B' 'capital C'tilde over 'X' 'Y'",
+  "en": "A B C ˆ empty x y tilde empty A B horizontal bar",
+  "es": "modificando superior mayúscula A mayúscula B mayúscula C con ˆ modificando superior x y con tilde mayúscula A mayúscula B barra",
+  "fr": "A B C ˆ x y tilde multiplié par multiplié par AB",
+  "de": "A B C ˆ x y tilde mal mal AB",
+  "it": "A B C ˆ x y tilde per per AB",
+  "nemeth": "⠐⠠⠁⠠⠃⠠⠉⠣ˆ⠻⠀⠐⠭⠽⠣⠈⠱⠻⠀⠐⠠⠁⠠⠃⠣⠱⠻"
+ },
+ "segment": {
+  "mathlive": "",
+  "en": "A B horizontal bar empty A B right arrow empty A B left right arrow",
+  "es": "mayúscula A mayúscula B barra modificando superior mayúscula A mayúscula B con flecha derecha modificando superior mayúscula A mayúscula B con flecha izquierda y derecha",
+  "fr": "multiplié par multiplié par AB A B flèche droite A B flèche bilatérale",
+  "de": "mal mal AB A B Pfeil nach rechts A B Linker rechter Pfeil",
+  "it": "per per AB A B freccia verso destra A B freccia sinistra e destra",
+  "nemeth": "⠐⠠⠁⠠⠃⠣⠱⠻⠀⠐⠠⠁⠠⠃⠣⠫⠕⠻⠀⠐⠠⠁⠠⠃⠣⠫⠪⠒⠒⠕⠻"
+ },
+ "arc": {
+  "mathlive": "arc over 'capital A' 'capital B'",
+  "en": "A B top parenthesis",
+  "es": "modificando superior mayúscula A mayúscula B con paréntesis superior",
+  "fr": "A B parenthèse supérieure",
+  "de": "A B Obere Klammer",
+  "it": "A B parentesi superiore",
+  "nemeth": "⠐⠠⠁⠠⠃⠣⠻"
+ },
+ "braces": {
+  "mathlive": "sub 'N' squared",
+  "en": "a plus dot dot dot plus a with bottom brace below with n below empty b plus b top brace with 2 above",
+  "es": "modificando inferior a más puntos suspensivos altos más a con corchete rizado inferior bajoíndice n finalizar índices modificando superior b más b con corchete rizado superior sobreíndice 2 finalizar índices",
+  "fr": "a plus trois points médians plus a avec accolade inférieure dessous avec n dessous b plus b accolade supérieure avec 2 dessus",
+  "de": "a plus Zentrierte horizontale Ellipse plus a mit Untere geschweifte Klammer unten mit n unten b plus b Obere geschweifte Klammer mit 2 oben",
+  "it": "a più puntini in orizzontale più a con parentesi graffa inferiore sotto con n sotto b più b parentesi graffa superiore con 2 sopra",
+  "nemeth": "⠐⠐⠁⠬⠄⠄⠄⠀⠬⠁⠩⠣⠨⠾⠻⠩⠝⠻⠀⠐⠐⠃⠬⠃⠣⠣⠨⠷⠻⠣⠆⠻"
+ },
+ "cancel": {
+  "mathlive": "the fraction crossed out 2. End crossed out. 'X' over crossed out 2. End crossed out.. End fraction. crossed out 'Y'. End crossed out. crossed out 'Z'. End crossed out.",
+  "en": "the fraction with numerator crossed out 2 x and denominator crossed out 2 empty crossed out y empty enclosed with updiagonalstrike downdiagonalstrike z",
+  "es": "empezar fracción tachado 2 finalizar tachado x entre tachado 2 finalizar tachado finalizar fracción tachado y finalizar tachado empezar rodear updiagonalstrike downdiagonalstrike z finalizar rodear",
+  "fr": "fraction avec numérateur 2 x et dénominateur 2 y z",
+  "de": "Bruch mit Zähler 2 x und Nenner 2 y z",
+  "it": "frazione con numeratore 2 x e denominatore 2 y z",
+  "nemeth": "⠹⠪⠆⠻⠭⠌⠪⠆⠻⠼⠀⠪⠽⠻⠀⠫updiagonalstrike downdiagonalstrike⠸⠫⠵⠻"
+ },
+ "boxed": {
+  "mathlive": "",
+  "en": "x equals 2",
+  "es": "x igual 2",
+  "fr": "x égale 2",
+  "de": "x ist gleich 2",
+  "it": "x uguale a 2",
+  "nemeth": "⠭⠀⠨⠅⠀⠼⠆"
+ },
+ "repeating": {
+  "mathlive": "0.",
+  "en": "0 period 3 horizontal bar",
+  "es": "0 punto 3 barra",
+  "fr": "0 point 3",
+  "de": "0 Punkt 3",
+  "it": "0 punto 3",
+  "nemeth": "⠼⠴⠨⠐⠒⠣⠱⠻"
+ },
+ "sum": {
+  "mathlive": "the summation from 'I' equals 1 to 'N' of 'I' squared",
+  "en": "the sum from i equals 1 to n of i squared",
+  "es": "sumatorio bajoíndice i igual 1 sobreíndice n finalizar índices i al cuadrado",
+  "fr": "le sommation de i égale 1 à n de i au carré",
+  "de": "Summe von i ist gleich 1 bis n über i Quadrat",
+  "it": "il sommatoria da i uguale a 1 a n di i quadrato",
+  "nemeth": "⠐⠨⠠⠎⠩⠊⠀⠨⠅⠀⠼⠂⠣⠝⠻⠊⠘⠆"
+ },
+ "prod": {
+  "mathlive": "the product from 'K' equals 1 to 'N' of 'K'",
+  "en": "the product from k equals 1 to n of k",
+  "es": "producto bajoíndice k igual 1 sobreíndice n finalizar índices k",
+  "fr": "le produit de k égale 1 à n de k",
+  "de": "Produkt von k ist gleich 1 bis n über k",
+  "it": "il produttoria da k uguale a 1 a n di k",
+  "nemeth": "⠐⠩⠅⠀⠨⠅⠀⠼⠂⠣⠝⠻⠅"
+ },
+ "bigcup": {
+  "mathlive": "⋃ sub 'I' 'capital A' sub 'I' ⋂ sub 'J' 'capital B' sub 'J'",
+  "en": "the n ary union over i of A sub i empty the n ary intersection over j of B sub j",
+  "es": "unión bajoíndice i finalizar índices mayúscula A subíndice i línea base intersección bajoíndice j finalizar índices mayúscula B subíndice j línea base",
+  "fr": "le réunion de la famille sur i de A sub i le intersection de la famille sur j de B sub j",
+  "de": "N-stufige Vereinigung über i über A Index i N-stufiger Durchschnitt über j über B Index j",
+  "it": "il unione sopra i di A pedice i il intersezione sopra j di B pedice j",
+  "nemeth": "⠐⠨⠬⠩⠊⠻⠠⠁⠰⠊⠐⠀⠐⠨⠩⠩⠚⠻⠠⠃⠰⠚"
+ },
+ "coprod": {
+  "mathlive": "∐ sub 'I' 'capital X' sub 'I' ⨁ sub 'K' 'capital V' sub 'K'",
+  "en": "the coproduct over i of X sub i empty the n ary circled plus over k of V sub k",
+  "es": "coproducto bajoíndice i finalizar índices mayúscula X subíndice i línea base operador N-Ary Circled Plus bajoíndice k finalizar índices mayúscula V subíndice k línea base",
+  "fr": "le coproduit sur i de X sub i le opérateur plus cerclé n aire sur k de V sub k",
+  "de": "Koprodukt über i über X Index i N-Ary Circled Plus Operator über k über V Index k",
+  "it": "il coprodotto sopra i di X pedice i il più cerchiato sopra k di V pedice k",
+  "nemeth": "⠐⠩⠊⠻⠠⠭⠰⠊⠐⠀⠐⠫⠉⠸⠫⠬⠻⠩⠅⠻⠠⠧⠰⠅"
+ },
+ "int": {
+  "mathlive": "the integral from 0 to 1 of 'X' squared 'D' 'X'",
+  "en": "the integral from 0 to 1 of x squared normal d x",
+  "es": "integral definida subíndice 0 superíndice 1 línea base x al cuadrado normal d x",
+  "fr": "le intégrale de 0 à 1 de x au carré d en normal x",
+  "de": "das Integral von 0 bis 1 über x Quadrat normales d x",
+  "it": "il integrale da 0 a 1 di x quadrato d normale x",
+  "nemeth": "⠮⠰⠴⠘⠂⠐⠭⠘⠆⠐⠙⠭"
+ },
+ "iint": {
+  "mathlive": "∬ sub 'capital D' 'F' 'D' 'capital A' ∭ sub 'capital V' 'G' 'D' 'capital V' ∮ sub 'capital C' 'capital F' times 'D' 'R'",
+  "en": "the double integral over D of f of normal d A empty the triple integral over V of g of normal d V empty the contour integral over C of F times normal d r",
+  "es": "integral doble bajoíndice mayúscula D finalizar índices f normal d mayúscula A integral triple bajoíndice mayúscula V finalizar índices g normal d mayúscula V integral de contorno bajoíndice mayúscula C finalizar índices mayúscula F punto normal d r",
+  "fr": "le intégrale double sur D de f de d en normal A le intégrale triple sur V de g de d en normal V le intégrale de contour sur C de F opérateur point d en normal r",
+  "de": "das Doppelintegral über D über f von normales d A das Dreifachintegral über V über g von normales d V das Randintegral über C über F mal normales d r",
+  "it": "il integrale doppio sopra D di f di d normale A il integrale triplo sopra V di g di d normale V il integrale di contorno sopra C di F punto d normale r",
+  "nemeth": "⠐⠮⠮⠩⠠⠙⠻⠋⠙⠠⠁⠀⠐⠮⠮⠮⠩⠠⠧⠻⠛⠙⠠⠧⠀⠐⠮⠈⠫⠉⠻⠩⠠⠉⠻⠠⠋⠡⠙⠗"
+ },
+ "lim": {
+  "mathlive": "lim subscript 'X' to 0. End subscript. the fraction sine 'X' over 'X'. End fraction. equals 1",
+  "en": "lim over x right arrow 0 of sine x over x equals 1",
+  "es": "límite bajoíndice x flecha derecha 0 finalizar índices empezar fracción seno x entre x finalizar fracción igual 1",
+  "fr": "limite sur x flèche droite 0 de sinus x sur x égale 1",
+  "de": "Limes über x Pfeil nach rechts 0 von Sinus x geteilt durch x ist gleich 1",
+  "it": "limite sopra x freccia verso destra 0 di seno di x fratto x uguale a 1",
+  "nemeth": "⠐⠇⠊⠍⠩⠭⠀⠫⠕⠀⠼⠴⠻⠀⠹⠎⠊⠝⠀⠭⠌⠭⠼⠀⠨⠅⠀⠼⠂"
+ },
+ "deriv": {
+  "mathlive": "the fraction 'D' 'Y' over 'D' 'X'. End fraction.",
+  "en": "normal d times y over normal d x",
+  "es": "empezar fracción normal d y entre normal d x finalizar fracción",
+  "fr": "d en normal multiplié par y sur d en normal x",
+  "de": "normales d mal y geteilt durch normales d x",
+  "it": "d normale per y fratto d normale x",
+  "nemeth": "⠹⠙⠽⠌⠙⠭⠼"
+ },
+ "partial": {
+  "mathlive": "the fraction partial derivative of squared 'F' over partial derivative of 'X' partial derivative of 'Y'. End fraction.",
+  "en": "the fraction with numerator partial differential squared f and denominator partial differential x partial differential y",
+  "es": "empezar fracción diferencial parcial al cuadrado f entre diferencial parcial x diferencial parcial y finalizar fracción",
+  "fr": "fraction avec numérateur dérivée partielle au carré f et dénominateur dérivée partielle x dérivée partielle y",
+  "de": "Bruch mit Zähler partielle Ableitung Quadrat f und Nenner partielle Ableitung x partielle Ableitung y",
+  "it": "frazione con numeratore derivata parziale quadrato f e denominatore derivata parziale x derivata parziale y",
+  "nemeth": "⠹⠈⠙⠘⠆⠐⠋⠌⠈⠙⠭⠈⠙⠽⠼"
+ },
+ "nabla": {
+  "mathlive": "nabla 'F' comma nabla times vector 'capital F'",
+  "en": "nabla f comma empty nabla times F right arrow",
+  "es": "nabla f coma nabla punto modificando superior mayúscula F con flecha derecha",
+  "fr": "nabla f virgule nabla opérateur point F flèche droite",
+  "de": "nabla f Komma nabla mal F Pfeil nach rechts",
+  "it": "nabla f virgola nabla punto F freccia verso destra",
+  "nemeth": "⠨⠫⠋⠠⠀⠀⠨⠫⠡⠐⠠⠋⠣⠫⠕⠻"
+ },
+ "evalbar": {
+  "mathlive": "[ 'capital F' of 'X'] to the 'B'; sub 'A'",
+  "en": "open bracket F of x close bracket sub a to the b-th power",
+  "es": "corchete izquierdo mayúscula F paréntesis izquierdo x paréntesis derecho corchete derecho subíndice a superíndice b",
+  "fr": "crochet gauche F de x crochet droit sub a à la puissance b",
+  "de": "eckige Klammer auf F von x eckige Klammer zu Index a hoch b",
+  "it": "parentesi quadra aperta F di x parentesi quadra chiusa pedice a alla b-esima potenza",
+  "nemeth": "⠈⠷⠠⠋⠷⠭⠾⠈⠾⠰⠁⠘⠃"
+ },
+ "color": {
+  "mathlive": "'X' plus 'Y'",
+  "en": "x plus y",
+  "es": "x más y",
+  "fr": "x plus y",
+  "de": "x plus y",
+  "it": "x più y",
+  "nemeth": "⠭⠬⠽"
+ },
+ "bgcolor": {
+  "mathlive": "'X' plus 1",
+  "en": "x plus 1",
+  "es": "x más 1",
+  "fr": "x plus 1",
+  "de": "x plus 1",
+  "it": "x più 1",
+  "nemeth": "⠭⠬⠂"
+ },
+ "bold": {
+  "mathlive": "'V' plus alpha plus 'D'",
+  "en": "bold v plus bold italic alpha plus normal d",
+  "es": "negrita v más negrita cursiva alfa más normal d",
+  "fr": "v en gras plus alpha en italique gras plus d en normal",
+  "de": "fettes v plus fettkursives alpha plus normales d",
+  "it": "v grassetto più alfa grassetto italico più d normale",
+  "nemeth": "⠸⠰⠧⠬⠸⠨⠨⠁⠬⠙"
+ },
+ "fonts": {
+  "mathlive": "'capital L' 'G' 'capital A' 'X'",
+  "en": "script L empty German g empty sans serif A empty monospace x",
+  "es": "script mayúscula L Fraktur g sans serif mayúscula A monoespacio x",
+  "fr": "L de ronde g en gothique A sans empattement x en chasse fixe",
+  "de": "Schreibschrift L Fraktur g serifenloses A nichtproportionales x",
+  "it": "L script g gotico A senza grazie x monospazio",
+  "nemeth": "⠈⠰⠠⠇⠀⠸⠛⠀⠠⠨⠰⠠⠁⠀⠭"
+ },
+ "size": {
+  "mathlive": "'X' plus 'Y' plus 'Z'",
+  "en": "x plus y plus z",
+  "es": "x más y más z",
+  "fr": "x plus y plus z",
+  "de": "x plus y plus z",
+  "it": "x più y più z",
+  "nemeth": "⠭⠬⠽⠬⠵"
+ },
+ "spacing": {
+  "mathlive": "'A' 'B' 'C' 'D' 'E' 'F'",
+  "en": "a times b times c empty d empty e f",
+  "es": "a b c d e f",
+  "fr": "a multiplié par b multiplié par c d e f",
+  "de": "a mal b mal c d e f",
+  "it": "a per b per c d e f",
+  "nemeth": "⠁⠃⠉⠀⠙⠀⠑⠋"
+ },
+ "stack-hline": {
+  "mathlive": "begin array row 1 column 1: 123, row 2 column 1: plus 456, row 3 column 1: 579 end array",
+  "en": "3 lines Line 1: 123 Line 2: positive 456 Line 3: 579",
+  "es": "empezar esquema primera fila  123 segunda fila  más 456 tercera fila  579 finalizar esquema",
+  "fr": "3 lignes Ligne 1: 123 Ligne 2: positif 456 Ligne 3: 579",
+  "de": "3 Zeilen Zeile 1: 123 Zeile 2: plus 456 Zeile 3: 579",
+  "it": "3 linee Riga 1: 123 Riga 2: più 456 Riga 3: 579",
+  "nemeth": "⠼⠂⠆⠒⠀⠬⠲⠢⠖⠀⠼⠢⠶⠔"
+ },
+ "stack-add": {
+  "mathlive": "begin array row 1 column 1: 123, row 2 column 1: , row 3 column 1: 579 end array",
+  "en": "3 lines Line 1: 123 Line 2: positive 456 over horizontal bar Line 3: 579",
+  "es": "empezar esquema primera fila  123 segunda fila  más 456 subbarra tercera fila  579 finalizar esquema",
+  "fr": "3 lignes Ligne 1: 123 Ligne 2: plus plus 456 Ligne 3: 579",
+  "de": "3 Zeilen Zeile 1: 123 Zeile 2: plus plus 456 Zeile 3: 579",
+  "it": "3 linee Riga 1: 123 Riga 2: più più 456 Riga 3: 579",
+  "nemeth": "⠼⠂⠆⠒⠀⠐⠬⠲⠢⠖⠩⠱⠻⠀⠼⠢⠶⠔"
+ },
+ "carries": {
+  "mathlive": "begin array row 1 column 1: , row 2 column 1: 58, row 3 column 1: , row 4 column 1: 125 end array",
+  "en": "4 lines Line 1: 1 Line 2: 58 Line 3: positive 67 over horizontal bar Line 4: 125",
+  "es": "empezar esquema primera fila  1 segunda fila  58 tercera fila  más 67 subbarra cuarta fila  125 finalizar esquema",
+  "fr": "4 lignes Ligne 1: 1 Ligne 2: 58 Ligne 3: plus plus 67 Ligne 4: 125",
+  "de": "4 Zeilen Zeile 1: 1 Zeile 2: 58 Zeile 3: plus plus 67 Zeile 4: 125",
+  "it": "4 linee Riga 1: 1 Riga 2: 58 Riga 3: più più 67 Riga 4: 125",
+  "nemeth": "⠼⠂⠀⠼⠢⠦⠀⠐⠬⠖⠶⠩⠱⠻⠀⠼⠂⠆⠢"
+ },
+ "stack-mul": {
+  "mathlive": "begin array row 1 column 1: 23, row 2 column 1: , row 3 column 1: 46, row 4 column 1: , row 5 column 1: 276 end array",
+  "en": "5 lines Line 1: 23 Line 2: times 12 over horizontal bar Line 3: 46 Line 4: 23 over horizontal bar Line 5: 276",
+  "es": "empezar esquema primera fila  23 segunda fila  por 12 subbarra tercera fila  46 cuarta fila  23 subbarra quinta fila  276 finalizar esquema",
+  "fr": "5 lignes Ligne 1: 23 Ligne 2: multiplié par multiplié par 12 Ligne 3: 46 Ligne 4: 23 Ligne 5: 276",
+  "de": "5 Zeilen Zeile 1: 23 Zeile 2: mal mal 12 Zeile 3: 46 Zeile 4: 23 Zeile 5: 276",
+  "it": "5 linee Riga 1: 23 Riga 2: per per 12 Riga 3: 46 Riga 4: 23 Riga 5: 276",
+  "nemeth": "⠼⠆⠒⠀⠐⠈⠡⠂⠆⠩⠱⠻⠀⠼⠲⠖⠀⠐⠼⠆⠒⠩⠱⠻⠀⠼⠆⠶⠖"
+ },
+ "longdiv": {
+  "mathlive": "begin array row 1 column 1: 41, row 2 column 1: 3 crossed out 125. End crossed out. end array",
+  "en": "2 lines Line 1: 41 Line 2: 3 enclosed with long division 125",
+  "es": "empezar esquema primera fila  41 segunda fila  3 empezar rodear división larga 125 finalizar rodear finalizar esquema",
+  "fr": "2 lignes Ligne 1: 41 Ligne 2: 3 125",
+  "de": "2 Zeilen Zeile 1: 41 Zeile 2: 3 125",
+  "it": "2 linee Riga 1: 41 Riga 2: 3 125",
+  "nemeth": "⠼⠲⠂⠀⠼⠒⠫long division⠸⠫⠂⠆⠢⠻"
+ },
+ "circled": {
+  "mathlive": "crossed out 5. End crossed out.",
+  "en": "enclosed with circle 5",
+  "es": "empezar rodear círculo 5 finalizar rodear",
+  "fr": "5",
+  "de": "5",
+  "it": "5",
+  "nemeth": "⠫⠉⠸⠫⠼⠢⠻"
+ },
+ "ce-formula": {
+  "mathlive": "",
+  "en": "normal H of sub 2 SO sub 4",
+  "es": "normal mayúscula H subíndice 2 línea base mayúscula S mayúscula O subíndice 4",
+  "fr": "H en normal de sub 2 SO sub 4",
+  "de": "normales H von Index 2 SO Index 4",
+  "it": "H normale di pedice 2 SO pedice 4",
+  "nemeth": "⠠⠓⠆⠠⠠⠎⠕⠲"
+ },
+ "ce-reaction": {
+  "mathlive": "",
+  "en": "2 normal H of sub 2 plus normal O sub 2 right arrow 2 normal H of sub 2 normal O",
+  "es": "2 normal mayúscula H subíndice 2 línea base más normal mayúscula O subíndice 2 línea base flecha derecha 2 normal mayúscula H subíndice 2 línea base normal mayúscula O",
+  "fr": "2 H en normal de sub 2 plus O en normal sub 2 flèche droite 2 H en normal de sub 2 O en normal",
+  "de": "2 normales H von Index 2 plus normales O Index 2 Pfeil nach rechts 2 normales H von Index 2 normales O",
+  "it": "2 H normale di pedice 2 più O normale pedice 2 freccia verso destra 2 H normale di pedice 2 O normale",
+  "nemeth": "⠼⠆⠠⠓⠆⠬⠠⠕⠆⠀⠫⠕⠀⠼⠆⠠⠓⠆⠠⠕"
+ },
+ "ce-equilibrium": {
+  "mathlive": "",
+  "en": "Newtons sub 2 plus 3 normal H of sub 2 right harpoon over left harpoon 2 times NH sub 3",
+  "es": "normal mayúscula N subíndice 2 línea base más 3 normal mayúscula H subíndice 2 línea base arpón derecho arriba de arpón izquierdo 2 mayúscula N mayúscula H subíndice 3",
+  "fr": "newtons sub 2 plus 3 H en normal de sub 2 harpon droit par dessus harpon gauche 2 multiplié par NH sub 3",
+  "de": "Newton Index 2 plus 3 normales H von Index 2 Harpune nach rechts über Harpune nach links 2 mal NH Index 3",
+  "it": "newton pedice 2 più 3 H normale di pedice 2 arpione destro sopra arpione sinistro 2 per NH pedice 3",
+  "nemeth": "⠠⠝⠆⠬⠒⠠⠓⠆⠀⠫⠒⠒⠈⠕⠫⠈⠪⠒⠒⠀⠼⠆⠠⠠⠝⠓⠒"
+ },
+ "ce-ions": {
+  "mathlive": "",
+  "en": "SO sub 4 super 2 minus plus Ba raised to the 2 plus power right arrow BaSO sub 4 down arrow",
+  "es": "mayúscula S mayúscula O subíndice 4 línea base superíndice 2 menos línea base más mayúscula B a superíndice 2 más línea base flecha derecha mayúscula B a mayúscula S mayúscula O subíndice 4 línea base flecha abajo",
+  "fr": "SO sub 4 à la puissance 2 moins plus Ba à la puissance 2 plus flèche droite BaSO sub 4 flèche vers le bas",
+  "de": "SO Index 4 hoch 2 minus plus Ba hoch 2 plus Pfeil nach rechts BaSO Index 4 Pfeil nach unten",
+  "it": "SO pedice 4 elevato alla 2 meno più Ba elevato alla 2 più freccia verso destra BaSO pedice 4 freccia verso il basso",
+  "nemeth": "⠠⠠⠎⠕⠲⠘⠆⠤⠐⠬⠠⠃⠁⠘⠆⠬⠀⠫⠕⠀⠠⠃⠁⠠⠎⠠⠕⠲⠀⠫⠩⠒⠒⠕"
+ },
+ "ce-states": {
+  "mathlive": "",
+  "en": "NaCl of open paren aq close paren plus AgNO sub 3 times open paren aq close paren right arrow AgCl of seconds plus NaNO sub 3 times open paren aq close paren",
+  "es": "mayúscula N a mayúscula C l paréntesis izquierdo aq paréntesis derecho más mayúscula A g mayúscula N mayúscula O subíndice 3 línea base paréntesis izquierdo aq paréntesis derecho flecha derecha mayúscula A g mayúscula C l paréntesis izquierdo normal s paréntesis derecho más mayúscula N a mayúscula N mayúscula O subíndice 3 línea base paréntesis izquierdo aq paréntesis derecho",
+  "fr": "NaCl de parenthèse gauche aq parenthèse droite plus AgNO sub 3 multiplié par parenthèse gauche aq parenthèse droite flèche droite AgCl de secondes plus NaNO sub 3 multiplié par parenthèse gauche aq parenthèse droite",
+  "de": "NaCl von Klammer auf aq Klammer zu plus AgNO Index 3 mal Klammer auf aq Klammer zu Pfeil nach rechts AgCl von Sekunden plus NaNO Index 3 mal Klammer auf aq Klammer zu",
+  "it": "NaCl di parentesi tonda aperta aq parentesi tonda chiusa più AgNO pedice 3 per parentesi tonda aperta aq parentesi tonda chiusa freccia verso destra AgCl di secondi più NaNO pedice 3 per parentesi tonda aperta aq parentesi tonda chiusa",
+  "nemeth": "⠠⠝⠁⠠⠉⠇⠷⠁⠟⠾⠬⠠⠁⠛⠠⠝⠠⠕⠒⠷⠁⠟⠾⠀⠫⠕⠀⠠⠁⠛⠠⠉⠇⠷⠎⠾⠬⠠⠝⠁⠠⠝⠠⠕⠒⠷⠁⠟⠾"
+ },
+ "ce-isotope": {
+  "mathlive": "",
+  "en": "sub 92 and super 235 normal U",
+  "es": "subíndice 92 superíndice 235 línea base normal mayúscula U",
+  "fr": "sub 92 à la puissance 235 U en normal",
+  "de": "Index 92 hoch 235 normales U",
+  "it": "pedice 92 alla 235a potenza U normale",
+  "nemeth": "⠰⠔⠆⠘⠆⠒⠢⠐⠠⠥"
+ },
+ "ce-conditions": {
+  "mathlive": "",
+  "en": "CaCO sub 3 right arrow sign with normal triangle over it CaO plus CO sub 2",
+  "es": "mayúscula C a mayúscula C mayúscula O subíndice 3 línea base flecha derecha sobreíndice normal mayúscula Delta finalizar índices mayúscula C a mayúscula O más mayúscula C mayúscula O subíndice 2",
+  "fr": "CaCO sub 3 signe flèche droite avec triangle en normal dessus CaO plus CO sub 2",
+  "de": "CaCO Index 3 Pfeil nach rechts Zeichen mit darüberstehendem normales Dreieck CaO plus CO Index 2",
+  "it": "CaCO pedice 3 segno freccia verso destra con triangolo normale sopra esso CaO più CO pedice 2",
+  "nemeth": "⠠⠉⠁⠠⠉⠠⠕⠒⠀⠐⠫⠒⠒⠕⠣⠨⠠⠙⠻⠀⠠⠉⠁⠠⠕⠬⠠⠠⠉⠕⠆"
+ },
+ "ce-bonds": {
+  "mathlive": "",
+  "en": "normal H minus Celsius is identical to Newtons",
+  "es": "normal mayúscula H menos normal mayúscula C idéntico a normal mayúscula N",
+  "fr": "H en normal moins celcius identique à newtons",
+  "de": "normales H minus Grad Celsius kongruent mit Newton",
+  "it": "H normale meno gradi celsius identico a newton",
+  "nemeth": "⠠⠓⠤⠠⠉⠀⠸⠇⠀⠠⠝"
+ },
+ "units": {
+  "mathlive": "9.8 'M'/ 'S' squared",
+  "en": "9.8 meters divided by seconds squared",
+  "es": "9,8 normal m dividido normal s al cuadrado",
+  "fr": "9,8 mètres divisé par secondes au carré",
+  "de": "9,8 Meter geteilt durch Sekunden Quadrat",
+  "it": "9,8 metri diviso per secondi quadrato",
+  "nemeth": "⠼⠔⠨⠦⠍⠸⠌⠎⠘⠆"
+ }
+}
