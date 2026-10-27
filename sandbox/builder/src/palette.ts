@@ -426,7 +426,7 @@ export function categoryOf(itemId: string): Category | undefined {
 
 /**
  * LaTeX for showing an item on a button or keycap, slots drawn as boxes.
- * Keycaps draw \placeholder{}; static rendering (<math-span>) draws nothing
+ * Keycaps draw \placeholder{}; static rendering (<math-span>, <eb-math>) draws nothing
  * for it, so the panel passes \square.
  */
 export function displayLatex(item: PaletteItem, slot = '\\placeholder{}'): string {

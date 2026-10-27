@@ -71,7 +71,7 @@
   outline: 2px solid var(--eb-focus, var(--eb-accent, #0b5fff));
   outline-offset: 2px;
 }
-.eb-key math-span { pointer-events: none; }
+.eb-key eb-math { pointer-events: none; }
 
 .eb-entry {
   display: flex;

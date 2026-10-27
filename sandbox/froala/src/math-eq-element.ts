@@ -76,6 +76,12 @@ export class MathEqElement extends HTMLElement {
     const mathml = this.mathml;
     if (mathml === this.#shown) return;
     this.#shown = mathml;
+    // Nothing yet: a framework may connect the element before binding data-mathml
+    if (!mathml) {
+      this.#root.replaceChildren();
+      this.#pending = Promise.resolve();
+      return;
+    }
     this.#pending = rendered(mathml).then(
       (wrapper) => {
         if (this.#shown !== mathml) return; // changed while rendering
